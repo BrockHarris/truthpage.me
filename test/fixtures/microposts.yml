@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  truth: MyString
+  user_id: MyString
+
+two:
+  truth: MyString
+  user_id: MyString
