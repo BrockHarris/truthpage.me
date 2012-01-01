@@ -1,4 +1,14 @@
 Truthpage::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/contact"
+
+  get "pages/feedback"
+
+  get "pages/privacy"
+
+  get "pages/terms"
+
   resources :microposts
 
   resources :users
