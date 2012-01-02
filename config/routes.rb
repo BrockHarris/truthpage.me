@@ -1,4 +1,7 @@
 Truthpage::Application.routes.draw do
+ 
+  get "users/new"
+
   get "pages/home"
 
   get "pages/contact"
@@ -8,7 +11,18 @@ Truthpage::Application.routes.draw do
   get "pages/privacy"
 
   get "pages/terms"
+  
+  get "pages/help"
 
+
+ match '/signup',  :to => 'users#new'
+  match '/contact', :to => 'pages#contact'
+  match '/home',   :to => 'pages#home'
+  match '/help',    :to => 'pages#help'
+  match '/feedback',    :to => 'pages#feedback'
+  match '/privacy',    :to => 'pages#privacy'
+  match '/terms',    :to => 'pages#terms'
+ 
   resources :microposts
 
   resources :users
@@ -62,7 +76,7 @@ Truthpage::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'pages#home'
 
   # See how all your routes lay out with "rake routes"
 
