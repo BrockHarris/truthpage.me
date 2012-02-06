@@ -1,0 +1,9 @@
+<h1>no search in this version.</h1>
+
+<%= form_tag users_path, :method => 'get' do  %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+

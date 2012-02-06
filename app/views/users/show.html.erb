@@ -1,0 +1,30 @@
+<%= @user.name %>'s profile, 
+(<%= @user.email %>)
+
+
+<table class="profile" summary="info">
+  <tr>
+    <td class="main">
+      
+		
+
+<h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+	<%= render 'shared/micropost_form' %>
+	
+	<% unless @user.microposts.empty? %>
+	        <table class="microposts" summary="User microposts">
+	          <%= render @microposts %>
+	        </table>
+	      
+	      <% end %>
+	    </td>
+	    <td class="sidebar round">
+	      <%= render 'follow_form' if signed_in?%>
+	      <strong></strong> profile link<%= link_to user_path(@user), @user %><br />
+	      <strong>Posts shared:</strong> <%= @user.microposts.count %>
+	    </td>
+	  </tr>
+	</table>
