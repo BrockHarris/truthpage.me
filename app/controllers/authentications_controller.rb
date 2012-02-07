@@ -15,7 +15,8 @@ class AuthenticationsController < ApplicationController
       redirect_to authentications_url
     else
       #TOFIX: this user creation will likely have to change based on the hashes of the different services.
-      user = User.new(:email=>omniauth['info']['email'], :username=>omniauth['info']['nickname'])
+      #right now it only covers identity and facebook correctly. Consider refactoring to the model. 
+      user = User.new(:email=>omniauth['info']['email'], :username=>omniauth['info']['nickname'] || omniauth['info']['name'])
       user.authentications.build(:provider => omniauth ['provider'], :uid => omniauth['uid'])
       user.save!
       flash[:notice] = "Signed in successfully."
@@ -35,6 +36,7 @@ class AuthenticationsController < ApplicationController
     redirect_to authentications_url
   end
 
+  #quick and dirty devise-like helper.
   def sign_in_and_redirect_to(user, url)
     session.clear
     session[:user_id] = user.id

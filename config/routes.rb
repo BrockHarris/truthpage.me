@@ -1,7 +1,8 @@
 Truthpage::Application.routes.draw do 
 
-  match '/signin',  :to => 'authentications#new'
+  match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
+  match '/signup', :to => 'identities#new'
   match '/contact', :to => 'pages#contact'
   match '/home',   :to => 'pages#home'
   match '/help',    :to => 'pages#help'
@@ -22,6 +23,7 @@ Truthpage::Application.routes.draw do
   resources :sessions,   :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
+  resources :identities
 
   root :to => 'pages#home'
  

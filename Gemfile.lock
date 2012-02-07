@@ -32,6 +32,7 @@ GEM
     addressable (2.2.6)
     annotate (2.4.0)
     arel (2.2.1)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
@@ -81,10 +82,11 @@ GEM
       rack
     omniauth-facebook (1.2.0)
       omniauth-oauth2 (~> 1.0.0)
-    omniauth-google (1.0.1)
-      multi_json
-      omniauth (~> 1.0.0)
-      omniauth-oauth
+    omniauth-google-oauth2 (0.1.9)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+    omniauth-identity (1.0.0)
+      omniauth (~> 1.0)
     omniauth-oauth (1.0.0)
       oauth
       omniauth (~> 1.0)
@@ -169,6 +171,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (= 2.4.0)
+  bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.1.1)
   factory_girl_rails (= 1.0)
   gravatar_image_tag (= 1.0.0.pre2)
@@ -178,7 +181,8 @@ DEPENDENCIES
   nifty-generators (>= 0.4.0)
   omniauth
   omniauth-facebook
-  omniauth-google
+  omniauth-google-oauth2
+  omniauth-identity
   omniauth-twitter
   pg
   rails (= 3.1.3)
