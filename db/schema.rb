@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -29,12 +30,14 @@ ActiveRecord::Schema.define(:version => 20120205202127) do
   end
 
   create_table "microposts", :force => true do |t|
-    t.integer  "belongs_to_id"
     t.string   "content"
     t.integer  "user_id"
+    t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "microposts", ["user_id", "profile_id", "created_at"], :name => "index_microposts_on_user_id_and_profile_id_and_created_at"
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -48,18 +51,16 @@ ActiveRecord::Schema.define(:version => 20120205202127) do
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
   create_table "users", :force => true do |t|
-    t.string   "uid",                :limit => nil
-    t.string   "provider",           :limit => nil
-    t.string   "username"
-    t.string   "name",               :limit => nil
+    t.string   "provider"
+    t.string   "uid"
     t.string   "email"
-    t.string   "password"
-    t.string   "dob"
+    t.string   "username"
+    t.date     "dob"
+    t.boolean  "admin",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "encrypted_password"
-    t.string   "salt"
-    t.boolean  "admin"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

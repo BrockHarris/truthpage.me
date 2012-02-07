@@ -3,42 +3,37 @@ class UsersController < ApplicationController
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user,   :only => :destroy
    
-      def index
-         @title = "All users"
-         #@users = User.paginate(:page => params[:page])   
-         @users = User.search(params[:search])
-      end
+  def index
+     @title = "All users"
+     #@users = User.paginate(:page => params[:page])   
+     @users = User.search(params[:search])
+  end
+  
+  def show
+      @user = User.find(params[:id])
+      @microposts = Micropost.find_all_by_belongs_to_id(@user.id)
+      @micropost  = current_user.microposts.build(params[:micropost])
+      @title = @user.name
+  end
       
-      def show
-          @user = User.find(params[:id])
-          @microposts = Micropost.find_all_by_belongs_to_id(@user.id)
-          @micropost  = current_user.microposts.build(params[:micropost])
-          @title = @user.name
-      end
-   
-      
-      
-      def new
-        @user = User.new
+  
+  def new
+    @user = User.new
+    @title = "Sign up"
+  end
+  
+  def create
+     
+      @user = User.new(params[:user])
+      if @user.save
+        sign_in @user
+        flash[:success] = "Welcome to the Sample App!"
+        redirect_to root_url
+      else
         @title = "Sign up"
+        render 'new'
       end
-      
-      def create
-         
-          @user = User.new(params[:user])
-          if @user.save
-            sign_in @user
-            flash[:success] = "Welcome to the Sample App!"
-            redirect_to root_url
-          else
-            @title = "Sign up"
-            render 'new'
-          end
-          
-        
-          
-      
-      end
+  end
       
       def newpost
   
@@ -93,11 +88,11 @@ class UsersController < ApplicationController
      private
 
          def authenticate
-           deny_access unless signed_in?
+           deny_access unless current_user
          end
 
          def correct_user
            @user = User.find(params[:id])
-           redirect_to(root_path) unless current_user?(@user)
+           redirect_to(root_path) unless current_user==@user
          end
      end

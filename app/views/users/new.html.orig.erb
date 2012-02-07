@@ -1,0 +1,27 @@
+<h1>Sign up</h1>
+
+<%= link_to "Sign in with Facebook", "/auth/facebook" %> or 
+<%= link_to "Sign in with Twitter", "/auth/twitter" %>
+
+<%= form_for(@user) do |f| %>
+ <%= render 'shared/error_messages', :object => f.object %> 
+ <div class="signupset">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "formfield"%>
+  </div>
+  <div class="signupset">
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => "formfield" %>
+  </div>
+  <div class="signupset">
+    <%= f.label :password %>
+    <%= f.password_field :password, :class => "formfield" %>
+  </div>
+  <div class="signupset">
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, :class => "formfield" %>
+  </div>
+  <div class="actions">
+    <%= f.submit '', :class => 'signupset_submit'%>
+  </div>
+<% end %>

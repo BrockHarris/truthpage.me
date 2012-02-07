@@ -22,7 +22,7 @@
 	      <% end %>
 	    </td>
 	    <td class="sidebar round">
-	      <%= render 'follow_form' if signed_in?%>
+	      <%= render 'follow_form' if current_user%>
 	      <strong></strong> profile link<%= link_to user_path(@user), @user %><br />
 	      <strong>Posts shared:</strong> <%= @user.microposts.count %>
 	    </td>

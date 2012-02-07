@@ -1,125 +1,52 @@
+<%= content_for :head do %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+          $('#globalfeed').vTicker({ 
+            // http://plugins.jquery.com/project/vTicker
+            speed: 700,
+            pause: 5000,
+            animation: 'fade',
+            mousePause: true,
+            showItems: 1,
+            direction: 'down',
+            height: 411
+        });
+    $("gravatar").each(function(){crop($(this),75,50);});
+    });
+  </script>
+
+<% end %>
 
 
-
-
-
-
-
-
-
-
-
-
-<% if signed_in? %>
+<% if current_user %>
   <table class="front" summary="signed in">
     <tr>
       <td class="main">
         <div class="welcome_line">Dashboard</div>
-		<h1 class="micropost">"posts" shared by you and your friends</h1>
+		    <h1 class="micropost">"posts" shared by you and your friends</h1>
         
-		<%= render 'shared/feed' %>
+		    <%= render 'shared/feed' %>
       </td>
       <td class="sidebar round">
         <%= render 'shared/user_info' %>
-		<%= render 'shared/stats' %>
-		
-          
-        
-      
-</td>
+		    <%= render 'shared/stats' %>
+      </td>
     </tr>
   </table>
 
 <% else %>
 
+  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
 
-
-
-
-
-<div class="welcome_line">
-	Welcome to our site!
-</div>
-
-
-<div class="home_signin_line"> Sign in: </div>	
-<%= form_for (:session, :url => sessions_path) do |f| %>
-
-	<div class="home_email">
-    <%= f.label :email %>
-    <%= f.text_field :email, :class => "formfield" %></p>
-  </div>
-  <div class="home_password">
-    <%= f.label :password %>
-    <%= f.password_field :password, :class => "formfield" %>
-  </div>
- <div class="signup_link">Don't have an account yet? <%= link_to "get one here.", signup_path %></div> 
-<div class="home_submit">
-    <%= f.submit '', :class => 'signin_button'%>
-  </div>
-<% end %>
-
-<%= link_to "Sign in with Facebook", "/auth/facebook" %>
-
-
-
-<h1></h1>
-
-
-
-
-
-
-
-
-<p>
-
-</p>
-
-
-<p>
-
-</p>
-
-<table class="front" summary="feed">
+  <table class="front" summary="feed">
     <tr>
-      
-		
-		<td class="main">
-        <h1 class="micropost">Live post feed here</h1>
-        <div class="globalfeed">
-        <%= render 'shared/globalfeed' %>
-       </div>
-	</td>
-     
+      <td class="main">
+          <h1 class="micropost">Live post feed here</h1>
+          <div class="globalfeed">
+          <%= render 'shared/globalfeed' %>
+         </div>
+      </td>
     </tr>
   </table>
    
-<script type="text/javascript">
-$(document).ready(function() {
-      $('#globalfeed').vTicker({ 
-        // http://plugins.jquery.com/project/vTicker
-        speed: 700,
-        pause: 5000,
-        animation: 'fade',
-        mousePause: true,
-        showItems: 1,
-        direction: 'down',
-        height: 411
-    });
-
-});
-
-function init() {
-     $("gravatar").each(function(){
-        crop($(this),75,50);
-     });
-}
-window.onload = init; 
-</script>
-
-
-
-
-
 <% end %>

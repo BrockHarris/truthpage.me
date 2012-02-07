@@ -1,18 +1,6 @@
-<h1>Sign in to your truthpage.me profile!</h1>
-
-<%= form_for(:session, :url => sessions_path) do |f| %>
-  
-	<div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit '', :class => 'signin_button'%>
-  </div>
+<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= link_to "Sign Out", signout_path %>
+<% else %>
+  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
 <% end %>
-
-<p>Don't have a profile yet? <%= link_to "Sign up now!", signup_path %></p>
