@@ -1,7 +1,6 @@
 Truthpage::Application.routes.draw do 
 
-  match '/signup',  :to => 'users#new'
-  match '/signin',  :to => 'sessions#new'
+  match '/signin',  :to => 'authentications#new'
   match '/signout', :to => 'sessions#destroy'
   match '/contact', :to => 'pages#contact'
   match '/home',   :to => 'pages#home'
@@ -10,8 +9,8 @@ Truthpage::Application.routes.draw do
   match '/privacy',    :to => 'pages#privacy'
   match '/terms',    :to => 'pages#terms'
   match '/',        :to => 'pages#home'
-  match "/auth/:provider/callback" => "sessions#create"
-  match "/auth/failure" => "sessions#auth_failure"
+  match "/auth/:provider/callback" => "authentications#create"
+  match "/auth/failure" => "authentications#auth_failure"
   
   resources :microposts
   resources :users do
@@ -19,6 +18,7 @@ Truthpage::Application.routes.draw do
         get :following, :followers
       end
   end
+  resources :authentications
   resources :sessions,   :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]

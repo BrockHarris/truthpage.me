@@ -1,6 +1,6 @@
 require 'digest'
 class User < ActiveRecord::Base
-  has_many :authorizations
+  has_many :authentications
   
   has_many :microposts, :dependent => :destroy
   has_many :relationships, :foreign_key => "follower_id",
@@ -21,14 +21,12 @@ class User < ActiveRecord::Base
   end
 
   #temp..
-  def self.create_with_omniauth(auth)
-    create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.username = auth["info"]["nickname"]
-      user.email = auth["info"]["email"]
-    end
-  end
+  # def self.create_with_omniauth(auth)
+  #   create! do |user|
+  #     user.username = auth["info"]["nickname"]
+  #     user.email = auth["info"]["email"]
+  #   end
+  # end
                                                                           
   def following?(followed)
       relationships.find_by_followed_id(followed)
