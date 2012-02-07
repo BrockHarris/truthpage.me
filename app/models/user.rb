@@ -1,6 +1,7 @@
 require 'digest'
 class User < ActiveRecord::Base
-  has_many :authentications
+  has_many :authentications, :dependent=>:destroy
+  has_many :identities, :through=>:authentications
   
   has_many :microposts, :dependent => :destroy
   has_many :relationships, :foreign_key => "follower_id",
@@ -10,7 +11,6 @@ class User < ActiveRecord::Base
                                      :class_name => "Relationship",
                                      :dependent => :destroy
   has_many :followers, :through => :reverse_relationships, :source => :follower
-
     
   def self.search(search)
    if search
@@ -19,14 +19,6 @@ class User < ActiveRecord::Base
       all
    end
   end
-
-  #temp..
-  # def self.create_with_omniauth(auth)
-  #   create! do |user|
-  #     user.username = auth["info"]["nickname"]
-  #     user.email = auth["info"]["email"]
-  #   end
-  # end
                                                                           
   def following?(followed)
       relationships.find_by_followed_id(followed)
@@ -55,4 +47,5 @@ class User < ActiveRecord::Base
   def name
     username
   end
+
 end

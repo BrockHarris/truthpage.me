@@ -25,6 +25,10 @@ Truthpage::Application.routes.draw do
   resources :relationships, :only => [:create, :destroy]
   resources :identities
 
+  namespace :admin do
+    resources :users
+  end
+
   root :to => 'pages#home'
  
 end
