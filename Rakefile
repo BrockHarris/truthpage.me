@@ -4,4 +4,5 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+
 Truthpage::Application.load_tasks

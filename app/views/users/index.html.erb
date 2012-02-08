@@ -1,31 +1,21 @@
-<h1>Listing users</h1>
+<div class="search_header">Find your friends on truthpage!</div>
 
-<table>
-  <tr>
-    <th>Username</th>
-    <th>Display</th>
-    <th>Email</th>
-    <th>Password</th>
-    <th>Dob</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.username %></td>
-    <td><%= user.display %></td>
-    <td><%= user.email %></td>
-    <td><%= user.password %></td>
-    <td><%= user.dob %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<%= form_tag users_path, :method => 'get' do  %>
+  <p>
+    <%= text_field_tag :search, params[:search], :class => 'search_field' %>
+    <%= submit_tag "Search", :name => nil, :class =>"search_button" %>
+  </p>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New User', new_user_path %>
+<div class="search_subheader">Search by name, or email.</div>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <div class="search_results">
+		<%= gravatar_for user, :size => 40 %>
+      <%= link_to user.name, user %>
+ 
+		</div>
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate %>

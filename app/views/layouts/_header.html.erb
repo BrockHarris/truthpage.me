@@ -1,12 +1,29 @@
-      <header>
+  <header>
 <div class="header_text">     
  truthpage.me
-</div>        
+</div>     
+
+<% if signed_in? %>
+<div class="welcome_user">Welcome, <%= current_user.name %>!</div>   
+<% end %>
 <nav class="round">
-          <ul>
-            <li><%= link_to "Home", root_path %></li> | 
-            <li><%= link_to "Help", help_path %></li> | 
-            <li><%= link_to "Sign in", '#' %></li>
-          </ul>
-        </nav>
-      </header>
+    <ul>
+      <div class="headerlink_place">
+      <% if signed_in? %>
+      <li><%= link_to "Friends", "/users?utf8=✓&search=" , :class =>"headerlink"%></li> |
+		<li><%= link_to "Profile", current_user, :class =>"headerlink" %></li> |
+		<li><%= link_to "Settings", edit_user_path(current_user), :class =>"headerlink" %></li> |
+      <% end %>
+      
+      <% if signed_in? %>
+    <li><%= link_to "Dashboard", root_path, :class =>"headerlink" %></li> |  
+	<li><%= link_to "Signout", signout_path, :class =>"headerlink", :method => :delete %></li>
+      <% else %>
+    <li><%= link_to "Home", root_path, :class =>"headerlink" %></li> | 
+ 	<li><%= link_to "Signup", signup_path, :class =>"headerlink" %></li>
+      
+	<% end %>
+	</div>
+    </ul>
+  </nav>
+</header>

@@ -1,9 +1,168 @@
-<h1>truthpage.me</h1>
+
+
+
+<div id="fb-root"></div>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=186414394781001";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script 
+type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
+</script>
+
+
+
+
+
+
+
+
+
+<% if signed_in? %>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <div class="welcome_line"></div>
+		<div class="micropost">
+		<div class="dashfeed_header">Truth feed </div>
+			</div>
+        <div class="microfeed_spacer">...</div>
+		<%= render 'shared/feed' %>
+      </td>
+      <td class="sidebar round">
+       <div class="dash_user"><%= current_user.name %></div> 
+		<div class="dash_gravatar"><%= gravatar_for current_user, :size => 120 %></div>
+		
+		<%= render 'shared/stats' %>
+		</p>
+		<div class="micro_header">Recently shared:</div>
+		<div class="microfeed_spacer">...</div>
+		<%= render 'shared/microfeed' %>
+          
+        <div class="stat_spacer">You've shared <%= pluralize(current_user.microposts.count, "truth") %> so far!</div>
+      
+</td>
+    </tr>
+  </table>
+
+<% else %>
+
+
+
+
+
+
+<div class="welcome_line">
+	Welcome to truthpage.me, a fun and simple way to share truths with your friends!
+</div>
+
+
+<div class="home_signin_line"> Sign in: </div>	
+<%= form_for (:session, :url => sessions_path) do |f| %>
+
+	<div class="home_email">
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => "formfield" %></p>
+  </div>
+  <div class="home_password">
+    <%= f.label :password %>
+    <%= f.password_field :password, :class => "formfield" %>
+  </div>
+ <div class="signup_link">Don't have a truthpage yet? <%= link_to "get one here.", signup_path %></div> 
+<div class="home_submit">
+    <%= f.submit '', :class => 'signin_button'%>
+  </div>
+<% end %>
+
+<%= link_to "Sign in with Facebook", "/auth/facebook" %>
+
+
+
+<h1></h1>
+
+
+
+
+
+
+
 
 <p>
-  This is the home page for the
-  <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-  sample application.
+
 </p>
 
-<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+
+<p>
+
+</p>
+
+<table class="front" summary="feed">
+    <tr>
+      
+		
+		<td class="main">
+        <h1 class="micropost">Live truth feed</h1>
+        <div class="globalfeed">
+        <%= render 'shared/globalfeed' %>
+       </div>
+	</td>
+     
+    </tr>
+  </table>
+   
+<script type="text/javascript">
+$(document).ready(function() {
+      $('#globalfeed').vTicker({ 
+        // http://plugins.jquery.com/project/vTicker
+        speed: 700,
+        pause: 5000,
+        animation: 'fade',
+        mousePause: true,
+        showItems: 1,
+        direction: 'down',
+        height: 411
+    });
+
+});
+
+function init() {
+     $("gravatar").each(function(){
+        crop($(this),75,50);
+     });
+}
+window.onload = init; 
+</script>
+
+
+
+
+<div class="fblike">
+
+	<g:plusone annotation="inline"></g:plusone>
+	
+
+	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Check out truthpage.me and see how easy it is to get a truth from your friends!" data-hashtags="truthpage.me">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
+
+<div class="fb-like" data-href="http://truthpage.me" data-send="true" data-width="450" data-show-faces="false" data-action="recommend" data-font="tahoma"> </div>
+
+
+ 
+</div>
+<% end %>

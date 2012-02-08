@@ -1,8 +1,36 @@
 class PagesController < ApplicationController
   def home
-  @title = "home"
+      @title = "Home"
+      @globalfeed_items = Micropost.all
+    if signed_in?
+      
+      @micropost = Micropost.new
+      @feed_items = current_user.feed.paginate(:page => params[:page])
+      @microfeed_items = Micropost.where(:user_id => current_user.id).limit(5)
   end
-
+  
+  
+  end
+  
+  def new
+    @user = User.new
+  end
+  
+  def create
+     
+    user = User.authenticate(params[:session][:email],
+                             params[:session][:password])
+    if user.nil?
+      flash.now[:error] = "Invalid email/password combination."
+      @title = "Sign in"
+      render 'new'
+    else
+      sign_in user
+      redirect_back_or user
+    end
+    
+  end
+  
   def contact
   @title = "contact"
   end

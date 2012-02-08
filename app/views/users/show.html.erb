@@ -1,30 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Username:</b>
-  <%= @user.username %>
-</p>
-
-<p>
-  <b>Display:</b>
-  <%= @user.display %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
-
-<p>
-  <b>Dob:</b>
-  <%= @user.dob %>
-</p>
+<div class="profile_name"><%= @user.name %></div><div class="profile_email">(<%= @user.email %>)</div>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+
+	<%= render 'shared/micropost_form' %>
+	
+	
+	        <table class="microposts" summary="User microposts">
+	          <%= render @microposts %>
+	        </table>
+	      
+	      
+	    </td>
+	    <td class="sidebar round">
+	    <div class="profile_gravatar"><%= gravatar_for @user, :size => 160 %></div>  
+		<%= render 'follow_form' if signed_in?%>
+	      <strong></strong> truthpage.me<%= link_to user_path(@user), @user %><br />
+	      <strong>Truths shared:</strong> <%= @user.microposts.count %>
+	
+	    </td>
+	  </tr>
+	</table>
