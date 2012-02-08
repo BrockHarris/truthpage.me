@@ -1,9 +1,21 @@
-<h1>no search in this version.</h1>
+<div class="search_header">Find your friends on truthpage!</div>
 
 <%= form_tag users_path, :method => 'get' do  %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :search, params[:search], :class => 'search_field' %>
+    <%= submit_tag "Search", :name => nil, :class =>"search_button" %>
   </p>
 <% end %>
-
+<div class="search_subheader">Search by name, or email.</div>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <div class="search_results">
+		<%= gravatar_for user, :size => 40 %>
+      <%= link_to user.name, user %>
+ 
+		</div>
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate %>

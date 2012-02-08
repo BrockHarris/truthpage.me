@@ -33,7 +33,7 @@ Truthpage::Application.routes.draw do
   
   get "pages/help"
 
-
+  
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
@@ -44,7 +44,7 @@ Truthpage::Application.routes.draw do
   match '/privacy',    :to => 'pages#privacy'
   match '/terms',    :to => 'pages#terms'
   match '/',        :to => 'pages#home'
-  match "/auth/:provider/callback" => "websessions#create"
+  match "/auth/:provider/callback" => "sessions#omnicreate"
   resources :microposts
 
   resources :users

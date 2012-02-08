@@ -6,17 +6,19 @@
     <span class="user">
       <%= link_to feed_item.user.name, feed_item.user %>
     </span>
-    <span class="content">said: <%= feed_item.content %></span>
-    <span class="timestamp">
-      Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
-    </span>
+    <span class="dashfeed_content">truth is <%= feed_item.content %></div>
+    <div class="feed_timestamp">
+      Shared <%= time_ago_in_words(feed_item.created_at) %> ago.
+    </div>
   </td>
   <% if current_user?(feed_item.user) %>
   <td>
-    <%= link_to "delete", feed_item, :method => :destroy,
+   <div class="delete_link_place"> 
+<%= link_to "delete", feed_item, :method => :destroy,
                                      :confirm => "You sure?",
                                      :title => feed_item.content, 
-									  :class => "delete_link"%>
-  </td>
+									  :class => "delete_link" %>
+</di>  
+</td>
   <% end %>
 </tr>

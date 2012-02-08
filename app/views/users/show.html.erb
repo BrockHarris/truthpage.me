@@ -1,30 +1,25 @@
-<%= @user.name %>'s profile, 
-(<%= @user.email %>)
+<div class="profile_name"><%= @user.name %></div><div class="profile_email">(<%= @user.email %>)</div>
 
 
-<table class="profile" summary="info">
+<table class="profile" summary="Profile information">
   <tr>
     <td class="main">
-      
-		
 
-<h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
 	<%= render 'shared/micropost_form' %>
 	
-	<% unless @user.microposts.empty? %>
+	
 	        <table class="microposts" summary="User microposts">
 	          <%= render @microposts %>
 	        </table>
 	      
-	      <% end %>
+	      
 	    </td>
 	    <td class="sidebar round">
-	      <%= render 'follow_form' if signed_in?%>
-	      <strong></strong> profile link<%= link_to user_path(@user), @user %><br />
-	      <strong>Posts shared:</strong> <%= @user.microposts.count %>
+	    <div class="profile_gravatar"><%= gravatar_for @user, :size => 160 %></div>  
+		<%= render 'follow_form' if signed_in?%>
+	      <strong></strong> truthpage.me<%= link_to user_path(@user), @user %><br />
+	      <strong>Truths shared:</strong> <%= @user.microposts.count %>
+	
 	    </td>
 	  </tr>
 	</table>

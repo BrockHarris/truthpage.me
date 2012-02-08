@@ -6,7 +6,7 @@ class PagesController < ApplicationController
       
       @micropost = Micropost.new
       @feed_items = current_user.feed.paginate(:page => params[:page])
-      @ownpost = Micropost.find_all_by_user_id(current_user.id)
+      @microfeed_items = Micropost.where(:user_id => current_user.id).limit(5)
   end
   
   

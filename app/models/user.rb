@@ -1,6 +1,6 @@
 require 'digest'
 class User < ActiveRecord::Base
-  has_many :authorizations
+  
   attr_accessor :password
   
    attr_accessible :name, :email, :password, :password_confirmation
@@ -31,16 +31,12 @@ class User < ActiveRecord::Base
     
     def self.search(search)
      if search
-        where('name LIKE ?', "%#{search}%")
+        where('name LIKE ? OR email LIKE ?', "%#{search}%","%#{search}%")
      else
         all
      end
     end
-    
-    def self.create_from_hash!(hash)
-      create(:name => hash['user_info']['name'])
-    end
-                                                                                  
+                                                                                   
     def has_password?(submitted_password)
       encrypted_password == encrypt(submitted_password)
     end
