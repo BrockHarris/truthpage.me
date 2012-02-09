@@ -359,9 +359,13 @@ padding:10px;
 }
 .profile_gravatar {
 	margin-bottom:15px;
+<<<<<<< HEAD
 	text-align:center;
 	border-top:1px solid #aaaaaa;
 	
+=======
+	margin-left:12%;
+>>>>>>> f9e9f1aea53163323cd86296b6826057ac1ec104
 }
 .dashfeed_content {
 	font-size: 13pt;
@@ -593,8 +597,10 @@ div.user_info a {
 }
 
 div.user_info span.user_name {
+
 vertical-align:top;  
 position: absolute;
+
 }
 
 div.user_info span.microposts {
@@ -617,3 +623,67 @@ font-weight:200;
 	border: #AAAAAA solid;
 	border-width: 1px;
 }
+
+
+.authentications {
+  margin-bottom: 30px;
+}
+
+.authentication {
+  float: left;
+  background-color: #EEE;
+  border: solid 1px #999;
+  padding: 5px 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.authentication .remove {
+  text-decoration: none;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #333;
+  padding: 2px 4px;
+  font-size: 10px;
+}
+
+.authentication .remove:hover {
+  color: #FFF;
+  background-color: #777;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+.authentication img {
+  float: left;
+}
+
+.authentication .provider, .authentication .uid {
+  margin-left: 38px;
+  margin-right: 20px;
+}
+
+.authentication .provider {
+  font-weight: bold;
+}
+
+.authentication .uid {
+  color: #666;
+  font-size: 11px;
+}
+
+.auth_provider img {
+  display: block;
+}
+
+.auth_provider {
+  float: left;
+  text-decoration: none;
+  margin-right: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+

@@ -1,3 +1,4 @@
+
 <% title "Sign In" %>
 
 <% if @authentications %>
@@ -36,4 +37,7 @@
   <%= image_tag "openid_64.png", :size => "64x64", :alt => "OpenID" %>
   OpenID
 </a>
+
+<%= render :partial=>"services" %>
+
 <div class="clear"></div>

@@ -1,3 +1,4 @@
+
 <div class="profile_name">
 <%= @user.name %>
 </div>
@@ -30,6 +31,22 @@
 		<%= render 'follow_form' if signed_in?%>
 	      <strong></strong> truthpage.me<%= link_to user_path(@user), @user %><br />
 	      <strong>Truths shared:</strong> <%= @user.microposts.count %>
+
+
+	
+	
+	        <table class="microposts" summary="User microposts">
+	          <%= render @microposts %>
+	        </table>
+	      
+	      
+	    </td>
+	    <td class="sidebar round">
+	    <div class="profile_gravatar"><%= gravatar_for @user, :size => 160 %></div>  
+		<%= render 'follow_form' if signed_in?%>
+	      <strong></strong> truthpage.me<%= link_to user_path(@user), @user %><br />
+	      <strong>Truths shared:</strong> <%= @user.microposts.count %>
+	
 
 	    </td>
 	  </tr>

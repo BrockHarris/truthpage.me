@@ -1,3 +1,4 @@
+
 <% if current_user.photo.exists?%>
 	<%= image_tag current_user.photo.url(:small) %>
 <% else %>
@@ -11,11 +12,13 @@
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
+
   </div>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
@@ -27,16 +30,9 @@
   </div>
 	<%= f.file_field :photo %>
 	<br />
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
 <% end %>
 
-
-
-
-
-
-	
-	
-	

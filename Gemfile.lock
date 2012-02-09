@@ -32,6 +32,7 @@ GEM
     addressable (2.2.6)
     annotate (2.4.0)
     arel (2.2.1)
+
     aws-s3 (0.6.2)
       builder
       mime-types
@@ -44,6 +45,7 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     cocaine (0.2.1)
+
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0)
@@ -51,10 +53,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+
     devise (1.5.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.1)
+
     diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.2.13)
@@ -70,9 +74,11 @@ GEM
     gravatar_image_tag (1.0.0.pre2)
     hashie (1.2.0)
     hike (1.2.1)
+
     httparty (0.8.1)
       multi_json
       multi_xml
+
     i18n (0.6.0)
     jquery-rails (1.0.19)
       railties (~> 3.0)
@@ -87,7 +93,9 @@ GEM
     mocha (0.10.0)
       metaclass (~> 0.0.1)
     multi_json (1.0.4)
+
     multi_xml (0.4.1)
+
     multipart-post (1.1.4)
     nifty-generators (0.4.6)
     nokogiri (1.5.0)
@@ -100,10 +108,18 @@ GEM
       rack
     omniauth-facebook (1.2.0)
       omniauth-oauth2 (~> 1.0.0)
+
     omniauth-google (1.0.1)
       multi_json
       omniauth (~> 1.0.0)
       omniauth-oauth
+
+    omniauth-google-oauth2 (0.1.9)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+    omniauth-identity (1.0.0)
+      omniauth (~> 1.0)
+
     omniauth-oauth (1.0.0)
       oauth
       omniauth (~> 1.0)
@@ -112,12 +128,15 @@ GEM
       omniauth (~> 1.0)
     omniauth-twitter (0.0.7)
       omniauth-oauth (~> 1.0)
+
     orm_adapter (0.0.5)
     paperclip (2.5.2)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+=======
+
     pg (0.12.0)
       rake-compiler (~> 0.7)
     polyglot (0.3.3)
@@ -183,25 +202,34 @@ GEM
     uglifier (1.2.1)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+
     uuidtools (2.1.2)
     warden (1.1.0)
       rack (>= 1.0)
+
     webrat (0.7.1)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
     will_paginate (3.0.2)
+
     xml-simple (1.1.1)
+
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   annotate (= 2.4.0)
+
   aws-s3
   aws-sdk
   coffee-rails (~> 3.1.1)
   devise
+
+  bcrypt-ruby (~> 3.0.0)
+  coffee-rails (~> 3.1.1)
+
   factory_girl_rails (= 1.0)
   gravatar_image_tag (= 1.0.0.pre2)
   jquery-rails
@@ -210,9 +238,15 @@ DEPENDENCIES
   nifty-generators (>= 0.4.0)
   omniauth
   omniauth-facebook
+
   omniauth-google
   omniauth-twitter
   paperclip
+
+  omniauth-google-oauth2
+  omniauth-identity
+  omniauth-twitter
+
   pg
   rails (= 3.1.3)
   rspec-rails (= 2.6.1)
