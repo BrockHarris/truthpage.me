@@ -1,4 +1,9 @@
-<div class="profile_name"><%= @user.name %></div><div class="profile_email">(<%= @user.email %>)</div>
+<div class="profile_name">
+<%= @user.name %>
+</div>
+<div class="profile_email">
+	(<%= @user.email %>)
+	</div>
 
 
 <table class="profile" summary="Profile information">
@@ -16,8 +21,10 @@
 	    </td>
 	    <td class="sidebar round">
 	    <div class="profile_gravatar">	
-	<% if @user.photo.exists? then %>
+			<% if @user.photo.exists?%>
 				<%= image_tag @user.photo.url(:small) %>
+			<% else %>
+				<%= image_tag "genericpic.jpg" %>
 			<% end %>
 			</div>  
 		<%= render 'follow_form' if signed_in?%>

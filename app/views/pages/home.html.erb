@@ -46,9 +46,11 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
       <td class="sidebar round">
        <div class="dash_user"><%= current_user.name %></div> 
 		<div class="dash_gravatar">
-		<% if current_user.photo.exists? then %>
-			<%= image_tag current_user.photo.url(:small) %>
-		<% end %>
+			<% if current_user.photo.exists?%>
+				<%= image_tag current_user.photo.url(:small) %>
+			<% else %>
+				<%= image_tag "genericpic.jpg" %>
+			<% end %>
 		</div>
 		
 		<%= render 'shared/stats' %>
