@@ -1,6 +1,4 @@
 
-
-
 <div id="fb-root"></div>
 
 <script>(function(d, s, id) {
@@ -25,104 +23,50 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
 </script>
 
 
-
-
-
-
-
-
-
-<% if signed_in? %>
+<% if current_user %>
   <table class="front" summary="For signed-in users">
     <tr>
       <td class="main">
         <div class="welcome_line"></div>
-		<div class="micropost">
-		<div class="dashfeed_header">Truth feed </div>
-			</div>
+        <div class="micropost">
+        <div class="dashfeed_header">Truth feed </div>
+        </div>
         <div class="microfeed_spacer">...</div>
-		<%= render 'shared/feed' %>
+        <%= render 'shared/feed' %>
       </td>
       <td class="sidebar round">
-       <div class="dash_user"><%= current_user.name %></div> 
-		<div class="dash_gravatar"><%= gravatar_for current_user, :size => 120 %></div>
-		
-		<%= render 'shared/stats' %>
-		</p>
-		<div class="micro_header">Recently shared:</div>
-		<div class="microfeed_spacer">...</div>
-		<%= render 'shared/microfeed' %>
-          
+        <div class="dash_user"><%= current_user.name %></div> 
+        <div class="dash_gravatar"><%= gravatar_for current_user, :size => 120 %></div>
+        <%= render 'shared/stats' %>
+        <div class="micro_header">Recently shared:</div>
+        <div class="microfeed_spacer">...</div>
+          <%= render 'shared/microfeed' %>   
         <div class="stat_spacer">You've shared <%= pluralize(current_user.microposts.count, "truth") %> so far!</div>
-      
-</td>
+      </td>
     </tr>
   </table>
-
 <% else %>
-
-
-
-
-
 
 <div class="welcome_line">
 	Welcome to truthpage.me, a fun and simple way to share truths with your friends!
 </div>
 
-
 <div class="home_signin_line"> Sign in: </div>	
-<%= form_for (:session, :url => sessions_path) do |f| %>
-
-	<div class="home_email">
-    <%= f.label :email %>
-    <%= f.text_field :email, :class => "formfield" %></p>
-  </div>
-  <div class="home_password">
-    <%= f.label :password %>
-    <%= f.password_field :password, :class => "formfield" %>
-  </div>
- <div class="signup_link">Don't have a truthpage yet? <%= link_to "get one here.", signup_path %></div> 
-<div class="home_submit">
-    <%= f.submit '', :class => 'signin_button'%>
-  </div>
-<% end %>
+  
+<div class="signup_link">Don't have a truthpage yet? <%= link_to "get one here.", signup_path %></div> 
 
 <%= link_to "Sign in with Facebook", "/auth/facebook" %>
 
-
-
-<h1></h1>
-
-
-
-
-
-
-
-
-<p>
-
-</p>
-
-
-<p>
-
-</p>
-
 <table class="front" summary="feed">
-    <tr>
-      
-		
-		<td class="main">
-        <h1 class="micropost">Live truth feed</h1>
-        <div class="globalfeed">
+  <tr>
+    <td class="main">
+      <h1 class="micropost">Live truth feed</h1>
+      <div class="globalfeed">
         <%= render 'shared/globalfeed' %>
-       </div>
-	</td>
-     
-    </tr>
-  </table>
+      </div>
+    </td>
+  </tr>
+</table>
    
 <script type="text/javascript">
 $(document).ready(function() {
