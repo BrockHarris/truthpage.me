@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120108191824) do
+ActiveRecord::Schema.define(:version => 20120208194657) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -21,15 +21,12 @@ ActiveRecord::Schema.define(:version => 20120108191824) do
   end
 
   create_table "microposts", :force => true do |t|
-    
+    t.integer  "belongs_to_id"
     t.string   "content"
     t.integer  "user_id"
-    t.integer   "belongs_to_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -43,8 +40,10 @@ ActiveRecord::Schema.define(:version => 20120108191824) do
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
   create_table "users", :force => true do |t|
+    t.string   "uid",                :limit => nil
+    t.string   "provider",           :limit => nil
     t.string   "username"
-    t.string   "name"
+    t.string   "name",               :limit => nil
     t.string   "email"
     t.string   "password"
     t.string   "dob"
@@ -52,7 +51,10 @@ ActiveRecord::Schema.define(:version => 20120108191824) do
     t.datetime "updated_at"
     t.string   "encrypted_password"
     t.string   "salt"
-    t.boolean  "admin",              :default => false
+    t.boolean  "admin"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
 end

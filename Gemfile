@@ -15,6 +15,9 @@ gem 'omniauth-google'
 gem 'nifty-generators', '>= 0.4.0'
 gem 'devise'
 gem 'jquery-rails'
+gem 'paperclip'
+gem 'aws-s3'
+gem 'aws-sdk'
 
 # Gems used only for assets and not required
 # in production environments by default.

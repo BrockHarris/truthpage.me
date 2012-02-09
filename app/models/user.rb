@@ -3,7 +3,16 @@ class User < ActiveRecord::Base
   
   attr_accessor :password
   
-   attr_accessible :name, :email, :password, :password_confirmation
+   attr_accessible :name, :email, :password, :password_confirmation, :photo
+    
+    has_attached_file :photo,
+                      :styles => {
+                      :thumb=> "100x100#",
+                      :small  => "400x400>" },
+                      :storage => :s3,
+                      :s3_credentials => "#{Rails.root}/config/s3.yml",
+                      :path => "/:style/:id/:filename"
+                      
     has_many :microposts, :dependent => :destroy
     has_many :relationships, :foreign_key => "follower_id",
                                :dependent => :destroy

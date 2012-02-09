@@ -1,6 +1,6 @@
 <h1>Profile settings</h1>
 
-<%= form_for(@user) do |f| %>
+<%= form_for @user, :html=> { :multipart => true} do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
     <%= f.label :name %><br />
@@ -14,6 +14,10 @@
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </div>
+
+<%= f.file_field :photo %>
+<br />
+
   <div class="field">
     <%= f.label :password_confirmation, "Confirmation" %><br />
     <%= f.password_field :password_confirmation %>
@@ -23,7 +27,14 @@
   </div>
 <% end %>
 
-<div>
-  <%= gravatar_for @user %>
-  <a href="http://gravatar.com/emails">change</a>
-</div>
+
+	 
+
+<% if current_user.photo.exists? then %>
+	<%= image_tag current_user.photo.url(:small) %>
+<% end %>
+
+
+	
+	
+	

@@ -1,0 +1,12 @@
+development:
+  bucket: truthpage-development
+  access_key_id: AKIAI5F4AK22PQJ3VHFA
+  secret_access_key: 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
+test:
+  bucket: bucket-test
+  access_key_id: AKIAI5F4AK22PQJ3VHFA
+  secret_access_key: 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
+production:
+  bucket: truthpage-production
+  access_key_id: AKIAI5F4AK22PQJ3VHFA
+  secret_access_key: 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
