@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   def home
         @title = "Home"
         @globalfeed_items = Micropost.all
-      if signed_in?
+      if current_user
         @micropost = Micropost.new
         @feed_items = current_user.feed.paginate(:page => params[:page])
         @microfeed_items = Micropost.where(:user_id => current_user.id).limit(5)

@@ -1,9 +1,7 @@
 require 'digest'
 class User < ActiveRecord::Base
-
   has_many :authentications, :dependent=>:destroy
   has_many :identities, :through=>:authentications
-
   has_many :microposts, :dependent => :destroy
   has_many :relationships, :foreign_key => "follower_id",
                              :dependent => :destroy
@@ -23,7 +21,7 @@ class User < ActiveRecord::Base
   
   def self.search(search)
    if search
-      where('name LIKE ? OR email LIKE ?', "%#{search}%","%#{search}%")
+      where('username LIKE ? OR email LIKE ?', "%#{search}%","%#{search}%")
    else
       all
    end

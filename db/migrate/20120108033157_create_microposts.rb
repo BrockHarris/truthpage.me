@@ -4,7 +4,7 @@ class CreateMicroposts < ActiveRecord::Migration
       t.string :content
       t.integer :user_id
       t.integer :profile_id
-
+      t.integer :belongs_to_id
       t.timestamps
     end
     add_index :microposts, [:user_id, :profile_id, :created_at]

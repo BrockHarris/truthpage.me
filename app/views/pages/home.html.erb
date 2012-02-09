@@ -63,21 +63,14 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
 <% else %>
 
 
-
-
-
-
-
 <div class="welcome_line">
 	Welcome to truthpage.me, a fun and simple way to share truths with your friends!
 </div>
-
-
-<div class="home_signin_line"> Sign in: </div>	
+	
   
 <div class="signup_link">Don't have a truthpage yet? <%= link_to "get one here.", signup_path %></div> 
 
-<%= link_to "Sign in with Facebook", "/auth/facebook" %>
+<%= render :partial=>'authentications/services' %>
 
 <table class="front" summary="feed">
   <tr>
