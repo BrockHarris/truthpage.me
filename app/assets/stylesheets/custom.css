@@ -359,7 +359,9 @@ padding:10px;
 }
 .profile_gravatar {
 	margin-bottom:15px;
-	margin-left:12%;
+	text-align:center;
+	border-top:1px solid #aaaaaa;
+	
 }
 .dashfeed_content {
 	font-size: 13pt;
@@ -393,7 +395,7 @@ padding:10px;
 	margin-top: 10px;
 	margin-bottom: 5px;
 	float:left;
-	margin-left: 2%;
+	text-align:center;
 	border-top:1px solid #aaaaaa;
 }
 .dash_user {
@@ -591,7 +593,8 @@ div.user_info a {
 }
 
 div.user_info span.user_name {
-  position: absolute;
+vertical-align:top;  
+position: absolute;
 }
 
 div.user_info span.microposts {

@@ -15,7 +15,11 @@
 	      
 	    </td>
 	    <td class="sidebar round">
-	    <div class="profile_gravatar"><%= gravatar_for @user, :size => 160 %></div>  
+	    <div class="profile_gravatar">	
+	<% if @user.photo.exists? then %>
+				<%= image_tag @user.photo.url(:small) %>
+			<% end %>
+			</div>  
 		<%= render 'follow_form' if signed_in?%>
 	      <strong></strong> truthpage.me<%= link_to user_path(@user), @user %><br />
 	      <strong>Truths shared:</strong> <%= @user.microposts.count %>

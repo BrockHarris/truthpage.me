@@ -1,13 +1,12 @@
 class PagesController < ApplicationController
   def home
-      @title = "Home"
-      @globalfeed_items = Micropost.all
-    if signed_in?
-      
-      @micropost = Micropost.new
-      @feed_items = current_user.feed.paginate(:page => params[:page])
-      @microfeed_items = Micropost.where(:user_id => current_user.id).limit(5)
-  end
+        @title = "Home"
+        @globalfeed_items = Micropost.all
+      if signed_in?
+        @micropost = Micropost.new
+        @feed_items = current_user.feed.paginate(:page => params[:page])
+        @microfeed_items = Micropost.where(:user_id => current_user.id).limit(5)
+    end
   
   
   end

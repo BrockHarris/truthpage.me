@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
     
     has_attached_file :photo,
                       :styles => {
-                      :thumb=> "100x100#",
-                      :small  => "400x400>" },
+                      :thumb=> "50x50#",
+                      :small  => "220x220>" },
                       :storage => :s3,
                       :s3_credentials => "#{Rails.root}/config/s3.yml",
                       :path => "/:style/:id/:filename"

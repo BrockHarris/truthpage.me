@@ -45,7 +45,11 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
       </td>
       <td class="sidebar round">
        <div class="dash_user"><%= current_user.name %></div> 
-		<div class="dash_gravatar"><%= gravatar_for current_user, :size => 120 %></div>
+		<div class="dash_gravatar">
+		<% if current_user.photo.exists? then %>
+			<%= image_tag current_user.photo.url(:small) %>
+		<% end %>
+		</div>
 		
 		<%= render 'shared/stats' %>
 		</p>
@@ -55,7 +59,7 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
           
         <div class="stat_spacer">You've shared <%= pluralize(current_user.microposts.count, "truth") %> so far!</div>
       	
-			<% end %>
+			
 </td>
     </tr>
   </table>
