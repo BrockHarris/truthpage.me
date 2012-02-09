@@ -1,6 +1,10 @@
 <tr>
   <td class="gravatar">
-    <%= link_to gravatar_for(globalfeed_item.user), globalfeed_item.user %>
+    <% if globalfeed_item.user.photo.exists?%>    
+		<%= link_to image_tag(globalfeed_item.user.photo.url(:thumb)), globalfeed_item.user %>
+		<% else %>
+				<%= image_tag "genericpic-thumb.jpg" %>
+		<% end %>
   </td>
   <td class="micropost">
     <span class="user">

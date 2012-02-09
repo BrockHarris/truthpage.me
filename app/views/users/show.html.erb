@@ -6,13 +6,13 @@
     <td class="main">
 
 	<%= render 'shared/micropost_form' %>
-	
-	
+
+
 	        <table class="microposts" summary="User microposts">
 	          <%= render @microposts %>
 	        </table>
-	      
-	      
+
+
 	    </td>
 	    <td class="sidebar round">
 	    <div class="profile_gravatar">	
@@ -23,7 +23,7 @@
 		<%= render 'follow_form' if signed_in?%>
 	      <strong></strong> truthpage.me<%= link_to user_path(@user), @user %><br />
 	      <strong>Truths shared:</strong> <%= @user.microposts.count %>
-	
+
 	    </td>
 	  </tr>
 	</table>
