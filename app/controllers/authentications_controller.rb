@@ -4,10 +4,29 @@ class AuthenticationsController < ApplicationController
   end
 
   def create
-    auth = request.env["rack.auth"]
-    current_user.authentications.find_or_create_by_provider_and_uid(auth['provider'], auth['uid'])
-    flash[:notice] = "Authentication successful."
-    redirect_to authentications_url
+    omniauth = request.env["omniauth.auth"]
+    authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
+    if authentication
+      flash[:notice] = "Signed in successfully."
+      sign_in_and_redirect_to(authentication.user, root_url)
+    elsif current_user
+      current_user.authentications.create(:provider => omniauth['provider'], :uid => omniauth['uid'])
+      flash[:notice] = "Authentication successful."
+      redirect_to authentications_url
+    else
+      #TOFIX: this user creation will likely have to change based on the hashes of the different services.
+      #right now it only covers identity and facebook correctly. Consider refactoring to the model. 
+      user = User.new(:email=>omniauth['info']['email'], :username=>omniauth['info']['nickname'] || omniauth['info']['name'])
+      user.authentications.build(:provider => omniauth ['provider'], :uid => omniauth['uid'])
+      user.save!
+      flash[:notice] = "Signed in successfully."
+      sign_in_and_redirect_to(user, root_url)
+    end
+  end
+
+  def auth_failure
+    flash[:error] = "Authentication Failed"
+    redirect_to new_session_url
   end
 
   def destroy
@@ -15,5 +34,12 @@ class AuthenticationsController < ApplicationController
     @authentication.destroy
     flash[:notice] = "Successfully destroyed authentication."
     redirect_to authentications_url
+  end
+
+  #quick and dirty devise-like helper.
+  def sign_in_and_redirect_to(user, url)
+    session.clear
+    session[:user_id] = user.id
+    redirect_to url
   end
 end

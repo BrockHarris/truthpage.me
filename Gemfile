@@ -11,9 +11,9 @@ gem 'json'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-identity'
 gem 'nifty-generators', '>= 0.4.0'
-gem 'devise'
 gem 'jquery-rails'
 
 # Gems used only for assets and not required
@@ -27,7 +27,7 @@ end
 
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
