@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120208194657) do
 
-  create_table "_microposts_old_20120209", :force => true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.integer  "profile_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -41,9 +33,9 @@ ActiveRecord::Schema.define(:version => 20120208194657) do
     t.string   "content"
     t.integer  "user_id"
     t.integer  "profile_id"
+    t.integer  "belongs_to_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "belongs_to_id"
   end
 
   add_index "microposts", ["user_id", "profile_id", "created_at"], :name => "index_microposts_on_user_id_and_profile_id_and_created_at"
@@ -60,8 +52,8 @@ ActiveRecord::Schema.define(:version => 20120208194657) do
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
   create_table "users", :force => true do |t|
-    t.string   "username",               :limit => nil
     t.string   "email"
+    t.string   "username"
     t.date     "dob"
     t.boolean  "admin",              :default => false
     t.datetime "created_at"

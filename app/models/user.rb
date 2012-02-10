@@ -26,6 +26,15 @@ class User < ActiveRecord::Base
       all
    end
   end
+
+  def self.omniauth_find_or_create(omniauth)
+    email     = omniauth['info']['email']
+    username  = omniauth['info']['nickname'] || omniauth['info']['name']
+    user = User.find_or_create_by_email_and_username(:email=>omniauth['info']['email'], :username=>omniauth['info']['nickname'] || omniauth['info']['name'])
+    user.authentications.build(:provider => omniauth ['provider'], :uid => omniauth['uid'])
+    user.save!
+    user
+  end
                                                                                    
   def following?(followed)
       relationships.find_by_followed_id(followed)
@@ -49,10 +58,6 @@ class User < ActiveRecord::Base
   
   def secure_hash(string)
     Digest::SHA2.hexdigest(string)
-  end
-
-  def name
-    User.name
   end
 
 end

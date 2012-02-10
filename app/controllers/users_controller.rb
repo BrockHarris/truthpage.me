@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @microposts = Micropost.find_all_by_belongs_to_id(@user.id)
     @micropost  = current_user.microposts.build(params[:micropost])
-    @title = @user.name
+    @title = @user.username
   end
    
   def new
