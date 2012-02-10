@@ -17,7 +17,7 @@
       Shared <%= time_ago_in_words(feed_item.created_at) %> ago.
     </div>
   </td>
-  <% if current_user?(feed_item.user) %>
+  <% if current_user = (feed_item.user) %>
   <td>
    <div class="delete_link_place"> 
 <%= link_to "delete", feed_item, :method => :destroy,
