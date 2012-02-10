@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20120208194657) do
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
   create_table "users", :force => true do |t|
-    t.string   "name",               :limit => nil
+    t.string   "username",               :limit => nil
     t.string   "email"
     t.string   "password"
     t.datetime "created_at"

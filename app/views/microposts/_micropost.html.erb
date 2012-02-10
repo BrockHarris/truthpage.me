@@ -1,7 +1,7 @@
 <tr>
 
 <td class="gravatar">
-	<% if micropost.user.photo.exists?%>    
+	<% if micropost.user.photo.url(:thumb)exists?%>    
 		<%= link_to image_tag(micropost.user.photo.url(:thumb)) %>
 	<% else %>
 			<%= image_tag "genericpic-thumb.jpg" %>
@@ -21,7 +21,7 @@
  
  </td>
 
-<% if current_user?(micropost.user) %>
+<% if current_user = (micropost.user) %>
   
 <td> 
 <div class="delete_link_place">   
