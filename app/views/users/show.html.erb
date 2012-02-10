@@ -28,7 +28,7 @@
 				<%= image_tag "genericpic.jpg" %>
 			<% end %>
 			</div>  
-		<%= render 'follow_form' if signed_in?%>
+		<%= render 'follow_form' if current_user %>
 	      <strong></strong> truthpage.me<%= link_to user_path(@user), @user %><br />
 	      <strong>Truths shared:</strong> <%= @user.microposts.count %>
 
@@ -43,7 +43,7 @@
 	    </td>
 	    <td class="sidebar round">
 	    <div class="profile_gravatar"><%= gravatar_for @user, :size => 160 %></div>  
-		<%= render 'follow_form' if signed_in?%>
+		<%= render 'follow_form' if current_user %>
 	      <strong></strong> truthpage.me<%= link_to user_path(@user), @user %><br />
 	      <strong>Truths shared:</strong> <%= @user.microposts.count %>
 	
