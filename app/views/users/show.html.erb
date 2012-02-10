@@ -1,6 +1,6 @@
 
 <div class="profile_name">
-<%= @user.name %>
+<%= @user.username %>
 </div>
 <div class="profile_email">
 	(<%= @user.email %>)
@@ -28,7 +28,7 @@
 			<% end %>
 			</div>  
 		<%= render 'follow_form' if current_user %>
-	      <strong></strong> truthpage.me<%= link_to user_path(@user), @user %><br />
+	      <strong>Profile link:</strong> truthpage.me<%= link_to user_path(@user), @user %><br />
 	      <strong>Truths shared:</strong> <%= @user.microposts.count %>
 	        <table class="microposts" summary="User microposts">
 	          <%= render @microposts %>
