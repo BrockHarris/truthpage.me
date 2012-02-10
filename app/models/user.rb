@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
   end
 
   def name
-    username
+    User.name
   end
 
 end
