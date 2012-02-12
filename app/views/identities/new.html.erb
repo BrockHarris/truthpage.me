@@ -13,19 +13,19 @@
   <% end %>
   <div class="field">
     <%= label_tag :name %><br>
-    <%= text_field_tag :name, @identity.try(:name) %>
+    <%= text_field_tag :name, @identity.try(:name), :class => "formfield" %>
   </div>
   <div class="field">
     <%= label_tag :email %><br>
-    <%= text_field_tag :email, @identity.try(:email) %>
+    <%= text_field_tag :email, @identity.try(:email), :class => "formfield" %>
   </div>
   <div class="field">
     <%= label_tag :password %><br>
-    <%= password_field_tag :password %>
+    <%= password_field_tag :password, "", :class => "formfield" %>
   </div>
   <div class="field">
     <%= label_tag :password_confirmation %><br>
-    <%= password_field_tag :password_confirmation %>
+    <%= password_field_tag :password_confirmation, "", :class => "formfield" %>
   </div>
   <div class="actions"><%= submit_tag "Register" %></div>
 <% end %>

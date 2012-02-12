@@ -9,11 +9,11 @@
 <%= form_tag "/auth/identity/callback" do %>
   <div class="field">
     <%= label_tag :auth_key, "Email" %><br>
-    <%= text_field_tag :auth_key %>
+    <%= text_field_tag :auth_key, "", :class => "formfield" %>
   </div>
   <div class="field">
     <%= label_tag :password %><br>
-    <%= password_field_tag :password %>
+    <%= password_field_tag :password, "", :class => "formfield" %>
   </div>
   <div class="actions"><%= submit_tag "Login" %></div>
 <% end %>
