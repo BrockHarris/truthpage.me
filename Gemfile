@@ -20,7 +20,7 @@ gem 'aws-sdk'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-identity'
 gem 'nifty-generators', '>= 0.4.0'
-gem 'jquery-rails'
+
 
 
 # Gems used only for assets and not required

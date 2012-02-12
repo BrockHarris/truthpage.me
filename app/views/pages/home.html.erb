@@ -90,27 +90,34 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
   </tr>
 </table>
 
+<div class='myclass'>
+<ul>
+<li>some content</li>
+<li>some content</li>
+<li>some content</li>
+<li>some content</li>
+<li>some content</li>
+<li>some content</li>
+<li>some content</li>
+</ul>
+</div>
+
+
    
 <script type="text/javascript">
 $(document).ready(function() {
-      $('micropostfeed').vTicker({ 
+      $(".myclass").vTicker({ 
         // http://plugins.jquery.com/project/vTicker
-        speed: 700,
-        pause: 5000,
+        speed: 500,
+        pause: 3000,
         animation: 'fade',
         mousePause: true,
-        showItems: 1,
+        showItems: 3,
         direction: 'down',
-        height: 411
+        height: 0
     });
 
 });
-
-function init() {
-     $("photo").each(function(){
-        crop($(this),50,50);
-     });
-}
 window.onload = init; 
 </script>
 
