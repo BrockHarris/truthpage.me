@@ -35,21 +35,31 @@ class User < ActiveRecord::Base
     user.save!
     user
   end
-                                                                                   
-  def following?(followed)
-      relationships.find_by_followed_id(followed)
+                    
+  #returns the relationship object IF this object is followed by the supplied user argument.                                                                                 
+  def following?(user)
+    relationships.find_by_followed_id(user)
   end
 
-  def follow!(followed)
-      relationships.create!(:followed_id => followed.id)
+  #adds a relationship object with this user object and the one supplied in the argument.
+  def follow!(user)
+    relationships.create!(:followed_id => user.id)
+  end
+
+  #deletes a relationship object with this user object and the one supplied in the argument.
+  def unfollow!(user)
+     relationships.find_by_followed_id(user).destroy
+  end
+
+  #returns a boolean if this user object can be followed by the one supplied in the argument.
+  def followable_by?(user)
+    return false if self.id == user.id #can't follow self
+    return false if user.following?(self) #can't follow someone already following
+    true #otherwise 
   end
     
-  def unfollow!(followed)
-     relationships.find_by_followed_id(followed).destroy
-  end
-  
   def feed
-      Micropost.from_users_followed_by(self)
+    Micropost.from_users_followed_by(self)
   end
   
   def globalfeed

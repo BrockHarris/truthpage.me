@@ -19,6 +19,8 @@ Truthpage::Application.routes.draw do
   resources :microposts
   resources :users do
       member do
+        post :follow
+        post :unfollow
         get :following, :followers
       end
   end
