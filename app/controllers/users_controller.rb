@@ -82,7 +82,11 @@ class UsersController < ApplicationController
   end
 
   private
-
+  
+  def deny_access
+      redirect_to signin_path, :notice => "You need to sign in first!"
+  end
+  
   def authenticate
     deny_access unless current_user
   end
