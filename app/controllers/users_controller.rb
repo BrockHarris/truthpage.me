@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @title = "All users"
     #@users = User.paginate(:page => params[:page])   
     @usersearch = User.search(params[:search])
-    @users = @usersearch.paginate(:page => 1, :per_page => 30)
+    @users = @usersearch.paginate(:page => params[:page], :per_page => 1)
   end
   
   def show
