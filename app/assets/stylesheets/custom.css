@@ -341,16 +341,58 @@ padding:10px;
 }
 .formfield {
 	font-size: 12pt;
-	width: 200px;
+	color: #444444;
+	width: 230px;
 	height: 27px;
 	border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
-	border: 1px solid #444444;
+	border: 1px solid #aaaaaa;
 }
 .profile_name {
 	font-size:20pt;
 	
+}
+.change_pic {
+	float:left;
+	margin-left:66%;
+	margin-top:20px;
+	color: #3B3131;
+	font-size:12pt;
+}
+.settings_fields{
+	margin-left:80px;
+	margin-top:20px;
+}
+.savesettings {
+	border:none;
+	display: block;
+	width: 150px; height: 32px;
+	background-image: url('changepicture.jpg');
+	background-position: top;
+	text-indent: -9999px;
+}
+.savesettings:hover {
+	cursor:pointer;
+	background-position: bottom;
+}
+.save_button {
+	margin-top:70px;
+	margin-left:10%;
+}
+.settings_header {
+	font-size: 24pt;
+	margin-left:50px;
+	color: #000044;
+}
+.settingsphoto{
+	float:right;
+	margin-right:100px;
+	margin-top:30px;
+	height: 220px;
+	-webkit-box-shadow: 4px 4px 8px rgba(50, 50, 50, 0.91);
+	-moz-box-shadow:    4px 4px 8px rgba(50, 50, 50, 0.91);
+	box-shadow:         4px 4px 8px rgba(50, 50, 50, 0.91);
 }
 .profile_email {
 	font-size:12pt;
@@ -359,13 +401,8 @@ padding:10px;
 }
 .profile_gravatar {
 	margin-bottom:15px;
-<<<<<<< HEAD
 	text-align:center;
 	border-top:1px solid #aaaaaa;
-	
-=======
-	margin-left:12%;
->>>>>>> f9e9f1aea53163323cd86296b6826057ac1ec104
 }
 .dashfeed_content {
 	font-size: 13pt;
@@ -373,6 +410,7 @@ padding:10px;
 	color:#333333;
 	margin-left:5px;
 	vertical-align:bottom;
+	width: 550px;
 }
 .feed_timestamp{
 	vertical-align:bottom;

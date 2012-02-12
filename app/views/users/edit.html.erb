@@ -1,29 +1,33 @@
 
+<div class="settingsphoto">
 <% if current_user.photo.exists?%>
 	<%= image_tag current_user.photo.url(:small) %>
 <% else %>
 	<%= image_tag "genericpic.jpg" %>
 <% end %>
+</div>
 
-<h1>Profile settings</h1>
+<div class="settings_header">Profile settings</div>
 
 <%= form_for @user, :html=> { :multipart => true} do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
-  <div class="field">
+  <div class="settings_fields">
     <%= f.label :name %><br />
-    <%= f.text_field :username %>
+    <%= f.text_field :username, :class =>"formfield" %>
 
   </div>
-  <div class="field">
+  <div class="settings_fields">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :class =>"formfield" %>
   </div>
-
+	<div class="change_pic">
+		Change profile picture:<br />
 	<%= f.file_field :photo %>
+	</div>
 	<br />
 
-  <div class="actions">
-    <%= f.submit "Update" %>
+  <div class="save_button">
+    <%= f.submit '', :class => 'savesettings'%>
   </div>
 <% end %>
 

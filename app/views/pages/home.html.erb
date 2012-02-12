@@ -34,7 +34,9 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
 		<div class="dashfeed_header">Truth feed </div>
 			</div>
         <div class="microfeed_spacer">...</div>
+		<div class="dashfeed_content">
 		<%= render 'shared/feed' %>
+		</div>
       </td>
       <td class="sidebar round">
        <div class="dash_user"><%= current_user.username %></div> 
@@ -46,12 +48,14 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
 			<% end %>
 		</div>
 		<%= render 'shared/stats' %>
-		
+		<br />
+		<strong>Profile link:</strong> truthpage.me<%= link_to user_path(@user), @user %><br />
 		
 		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="truth is? leave one on my truthpage!" data-size="large" data-count="none">Tweet</a>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 		</script>
 		
+		<p/>
 		<div class="micro_header"><strong>Recently shared:</strong></div>
 		<div class="microfeed_spacer">...</div>
 		<%= render 'shared/microfeed' %>
@@ -89,7 +93,7 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
    
 <script type="text/javascript">
 $(document).ready(function() {
-      $('#globalfeed').vTicker({ 
+      $('micropostfeed').vTicker({ 
         // http://plugins.jquery.com/project/vTicker
         speed: 700,
         pause: 5000,
@@ -103,8 +107,8 @@ $(document).ready(function() {
 });
 
 function init() {
-     $("gravatar").each(function(){
-        crop($(this),75,50);
+     $("photo").each(function(){
+        crop($(this),50,50);
      });
 }
 window.onload = init; 
