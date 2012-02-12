@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @title = "All users"
     #@users = User.paginate(:page => params[:page])   
     @usersearch = User.search(params[:search])
+    @usersearch = @usersearch - [current_user] #eliminate self from the result
     @users = @usersearch.paginate(:page => params[:page], :per_page => 10)
   end
   
@@ -57,6 +58,18 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = @user.followers.paginate(:page => params[:page])
     render 'show_follow'
+  end
+
+  def follow
+    @user = User.find(params[:id])
+    current_user.follow!(@user)
+    redirect_to users_path, :notice=>"You're now following #{@user.username}"
+  end
+
+  def unfollow
+    @user = User.find(params[:id])
+    current_user.unfollow!(@user)
+    redirect_to users_path, :notice=>"You're no longer following #{@user.username}"
   end
 
   def edit
