@@ -1,0 +1,24 @@
+<%= content_for :head do %>
+  <script type="text/javascript">
+    $(function(){
+      $('#new-ticker').totemticker({
+        row_height  :   '100px',
+        next        :   '#ticker-next',
+        previous    :   '#ticker-previous',
+        stop        :   '#stop',
+        start       :   '#start',
+        });
+    });
+  </script>
+<% end %>
+
+
+<ul id="new-ticker">
+    <li>some content</li>
+    <li>some content</li>
+    <li>some content</li>
+    <li>some content</li>
+    <li>some content</li>
+    <li>some content</li>
+    <li>some content</li>
+  </ul>
