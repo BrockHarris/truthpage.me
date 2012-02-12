@@ -12,6 +12,7 @@ Truthpage::Application.routes.draw do
   match '/privacy',    :to => 'pages#privacy'
   match '/terms',    :to => 'pages#terms'
   match '/',        :to => 'pages#home'
+  match '/tickertest', :to=>'pages#tickertest'
   match "/auth/:provider/callback" => "authentications#create"
   match "/auth/failure" => "authentications#auth_failure"
   

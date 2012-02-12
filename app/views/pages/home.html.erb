@@ -1,3 +1,18 @@
+<%= content_for :head do %>
+  <script type="text/javascript">
+    $(function(){
+      $('#new-ticker').totemticker({
+        row_height  :   '100px',
+        next        :   '#ticker-next',
+        previous    :   '#ticker-previous',
+        stop        :   '#stop',
+        start       :   '#start',
+        });
+    });
+  </script>
+<% end %>
+
+
 <div id="fb-root"></div>
 
 <script>(function(d, s, id) {
@@ -90,53 +105,29 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
   </tr>
 </table>
 
-<div class='myclass'>
-<ul>
-<li>some content</li>
-<li>some content</li>
-<li>some content</li>
-<li>some content</li>
-<li>some content</li>
-<li>some content</li>
-<li>some content</li>
-</ul>
-</div>
 
-
-   
-<script type="text/javascript">
-$(document).ready(function() {
-      $(".myclass").vTicker({ 
-        // http://plugins.jquery.com/project/vTicker
-        speed: 500,
-        pause: 3000,
-        animation: 'fade',
-        mousePause: true,
-        showItems: 3,
-        direction: 'down',
-        height: 0
-    });
-
-});
-window.onload = init; 
-</script>
-
+  <ul id="new-ticker">
+    <li>some content</li>
+    <li>some content</li>
+    <li>some content</li>
+    <li>some content</li>
+    <li>some content</li>
+    <li>some content</li>
+    <li>some content</li>
+  </ul>
 
 
 
 <div class="fblike">
 
-	<g:plusone annotation="inline"></g:plusone>
-	
+  <g:plusone annotation="inline"></g:plusone>
 
-	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Check out truthpage.me and see how easy it is to get a truth from your friends!" data-hashtags="truthpage.me">Tweet</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Check out truthpage.me and see how easy it is to get a truth from your friends!" data-hashtags="truthpage.me">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-<a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
+  <a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
 
-<div class="fb-like" data-href="http://truthpage.me" data-send="true" data-width="450" data-show-faces="false" data-action="recommend" data-font="tahoma"> </div>
+  <div class="fb-like" data-href="http://truthpage.me" data-send="true" data-width="450" data-show-faces="false" data-action="recommend" data-font="tahoma"> </div>
 
-
- 
-</div>
+  </div>
 <% end %>
