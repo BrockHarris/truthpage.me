@@ -12,7 +12,8 @@ class MicropostsController < ApplicationController
   end
  
   def destroy
-     @micropost.destroy
-    redirect_back_or root_path
-    end
+    Micropost.find(params[:id]).destroy
+    flash[:success] = "your post has been removed"
+    redirect_to(:back)
+  end
 end
