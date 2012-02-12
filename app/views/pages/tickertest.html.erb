@@ -1,7 +1,7 @@
 <%= content_for :head do %>
   <script type="text/javascript">
     $(function(){
-      $('#new-ticker').totemticker({
+      $('#vertical-ticker').totemticker({
         row_height  :   '100px',
         next        :   '#ticker-next',
         previous    :   '#ticker-previous',
@@ -10,15 +10,30 @@
         });
     });
   </script>
+  <style>
+    #vertical-ticker{
+      height:400px;
+      overflow:hidden;
+      margin:0; padding:0;
+      -webkit-box-shadow:0 1px 3px rgba(0,0,0, .4);
+    }
+
+    #vertical-ticker li{
+      padding:35px 20px;
+      display:block;
+      background:#efefef;
+      color:#333;
+      border-bottom:1px solid #ddd;
+      text-align:center;
+      font-size:25px;
+      font-weight:bold;
+      font-family: Helvetica Neue, times, serif;
+    }
+  </style>
 <% end %>
 
-
-<ul id="new-ticker">
-    <li>some content1</li>
-    <li>some content2</li>
-    <li>some content3</li>
-    <li>some content4</li>
-    <li>some content5</li>
-    <li>some content6</li>
-    <li>some content7</li>
-  </ul>
+<ul id="vertical-ticker" style="overflow-x: hidden; overflow-y: hidden; ">
+<% for mp in Micropost.all.take(20) do %>  
+  <li><%= render :partial=>"shared/microfeed_item", :locals=>{:microfeed_item=>mp} %></li>
+<% end %>
+</ul>
