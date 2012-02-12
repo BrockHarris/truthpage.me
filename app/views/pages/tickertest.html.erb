@@ -29,6 +29,7 @@
       font-weight:bold;
       font-family: Helvetica Neue, times, serif;
     }
+    p.centered{width:300px; margin:10px auto;}
   </style>
 <% end %>
 
@@ -37,3 +38,4 @@
   <li><%= render :partial=>"shared/microfeed_item", :locals=>{:microfeed_item=>mp} %></li>
 <% end %>
 </ul>
+<p class="centered"><a href="#" id="ticker-previous">Previous</a> / <a href="#" id="ticker-next">Next</a> / <a id="stop" href="#">Stop</a> / <a id="start" href="#">Start</a></p>
