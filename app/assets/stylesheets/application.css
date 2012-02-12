@@ -4,8 +4,4 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree . 
-<<<<<<< HEAD
 */
-=======
-*/
->>>>>>> f9e9f1aea53163323cd86296b6826057ac1ec104

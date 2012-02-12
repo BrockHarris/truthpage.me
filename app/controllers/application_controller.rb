@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   #TODO: create some more robust authorization helpers or implement cancan
   def require_admin
-    redirect_to root_path unless current_user.try(:admin)
+    redirect_to(root_path, :notice=>"Access Denied") unless current_user.try(:admin)
   end
 
 end

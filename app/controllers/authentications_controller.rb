@@ -4,7 +4,6 @@ class AuthenticationsController < ApplicationController
   end
 
   def create
-
     omniauth = request.env["omniauth.auth"]
     authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
     if authentication
@@ -17,9 +16,13 @@ class AuthenticationsController < ApplicationController
     else
       #TOFIX: this user creation will likely have to change based on the hashes of the different services.
       #right now it only covers identity and facebook correctly. Consider refactoring to the model. 
+<<<<<<< HEAD
       user = User.new(:email=>omniauth['info']['email'], :username=>omniauth['info']['nickname'] || omniauth['info']['name'])
       user.authentications.build(:provider => omniauth ['provider'], :uid => omniauth['uid'])
       user.save!
+=======
+      user = User.omniauth_find_or_create(omniauth)
+>>>>>>> fde11e46cfa3a0a6b697b88c318b433de93c54da
       flash[:notice] = "Signed in successfully."
       sign_in_and_redirect_to(user, root_url)
     end
@@ -28,7 +31,6 @@ class AuthenticationsController < ApplicationController
   def auth_failure
     flash[:error] = "Authentication Failed"
     redirect_to new_session_url
-
   end
 
   def destroy
