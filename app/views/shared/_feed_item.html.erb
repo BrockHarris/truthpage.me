@@ -4,13 +4,11 @@
 	 <%= render_user_avatar(feed_item.user, :thumb) %>
   </td>
   <td class="micropost">
-    <span class="user">
-      <%= link_to feed_item.user.username, feed_item.user %>
-    </span>
-    <span class="dashfeed_content">truth is <%= feed_item.content %></div>
     <div class="feed_timestamp">
       <%= render_feed_stamp(feed_item) %>
     </div>
+    <span class="dashfeed_content">truth is <%= feed_item.content %></div>
+    
   </td>
   <% if current_user = (feed_item.user) %>
   <td>

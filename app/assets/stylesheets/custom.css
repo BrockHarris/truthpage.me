@@ -414,17 +414,17 @@ padding:10px;
 	font-size: 13pt;
 	font-family: arial;
 	color:#333333;
-	margin-left:5px;
+	margin-left:px;
 	vertical-align:bottom;
-	width: 550px;
+	width: 500px;
+	float:left;
 }
 .feed_timestamp{
-	vertical-align:bottom;
-	margin-top: 20px;
-	margin-bottom:-25px;
-	font-size: 10pt;
-	font-style: ;
-	color:#004466;
+	vertical-align:top;
+	font-size: 11pt;
+	margin-top: -9px;
+	padding-bottom: 4px;
+	color:gray;
 }
 .dashfeed_header {
 	text-align:center;
