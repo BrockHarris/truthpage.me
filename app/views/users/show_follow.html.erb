@@ -17,7 +17,12 @@
       <%= render 'shared/stats' %>
       <% unless @users.empty? %>
         <% @users.each do |user| %>
-          <%= link_to gravatar_for(user, :size => 30), user %>
+		<% if @user.photo.exists?%>    
+			<%= link_to image_tag(user.photo.url(:thumb)), user %>
+			<% else %>
+					<%= image_tag "genericpic-thumb.jpg" %>
+			<% end %>
+			
         <% end %>
       <% end %>
     </td>
