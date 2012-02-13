@@ -76,7 +76,7 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
 		      <script>
 		        $(function(){
 
-		          $("a#invite_fb_friends").click(function() {
+		          $("#invite_fb_friends").click(function() {
 		            FB.init({ 
 		               appId:'186414394781001', 
 		               channelUrl : '//localhost:3000/channel.html', // Channel File
@@ -85,7 +85,32 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
 				      xfbml      : true  // parse XFBML
 		            });
 
-		            FB.ui({ method: 'apprequests', message: '<%= current_user.username %> invites you'});
+		            FB.ui(
+					  {
+					   method: 'feed',
+					   message: 'message here',
+					   name: 'name here',
+					   caption: 'truth is on truthpage.me',
+					      description: (
+					      'description' +
+					      'description user\'s identity, ' +
+					      'description'
+					   ),
+					   link: 'http://www.truthpage.me/',
+					   picture: 'tp-logo.png',
+					   actions: [
+					        { name: 'truthpage.me', link: 'http://www.truthpage.me/' }
+					   ],
+					  user_message_prompt: 'Share a truth status'
+					  },
+					  function(response) {
+					    if (response && response.post_id) {
+					      alert('Post was published.');
+					    } else {
+					      alert('Post was not published.');
+					    }
+					  }
+					);
 		          });
 		        });
 		      </script>
@@ -148,7 +173,7 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
 
   <g:plusone annotation="inline"></g:plusone>
 
-  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Check out truthpage.me and see how easy it is to get a truth from your friends!" data-hashtags="truthpage.me">Tweet</a>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="truth is? leave one on my truthpage!" data-hashtags="truthpage.me">Tweet</a>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
   <a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
