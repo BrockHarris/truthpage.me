@@ -2,6 +2,7 @@ class Micropost < ActiveRecord::Base
   attr_accessible :content, :belongs_to_id
   
   belongs_to :user
+  belongs_to :target_user, :class_name=>"User", :foreign_key=>"belongs_to_id"
   
   validates :content, :presence => true, :length => { :maximum => 240 }
   validates :user_id, :presence => true

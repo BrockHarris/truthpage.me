@@ -9,7 +9,7 @@
     </span>
     <span class="dashfeed_content">truth is <%= feed_item.content %></div>
     <div class="feed_timestamp">
-      Shared <%= time_ago_in_words(feed_item.created_at) %> ago.
+      <%= render_feed_stamp(feed_item) %>
     </div>
   </td>
   <% if current_user = (feed_item.user) %>
