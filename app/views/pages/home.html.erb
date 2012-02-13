@@ -23,8 +23,8 @@ type="text/javascript" src="http://platform.tumblr.com/v1/share.js">
 
 
 <% if current_user %>
-	<%= render 'shared/authenticated_home' %>
+	<%= render 'pages/authenticated_home' %>
 <% else %>
-	<%= render 'shared/unauthenticated_home'%>
+	<%= render 'pages/unauthenticated_home'%>
 <% end %>
 
