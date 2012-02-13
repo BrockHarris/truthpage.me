@@ -1,0 +1,84 @@
+
+  <table class="front" summary="for authenticated users">
+    <tr>
+      <td class="main">
+        <div class="welcome_line"></div>
+
+		<div class="micropost">
+		<div class="dashfeed_header">Truth feed </div>
+			</div>
+        <div class="microfeed_spacer">...</div>
+		<div class="dashfeed_content">
+		<%= render 'shared/feed' %>
+		</div>
+      </td>
+      <td class="sidebar round">
+       <div class="dash_user"><%= current_user.username %></div> 
+		<div class="dash_gravatar">
+			<%= render_user_avatar(current_user, :small) %>
+		</div>
+		<%= render 'shared/stats' %>
+		<br />
+		<strong>Profile link:</strong> truthpage.me<%= link_to user_path(@user), @user %><br />
+		
+		<div id="friends">
+		      <p><%= link_to "Share on Facebook", "#", :id => "invite_fb_friends" %></p>
+
+		      <div id="fb-root"></div>
+
+		      <script src="http://connect.facebook.net/en_US/all.js"></script>
+
+		      <script>
+		        $(function(){
+
+		          $("#invite_fb_friends").click(function() {
+		            FB.init({ 
+		               appId:'186414394781001', 
+		               channelUrl : '//localhost:3000/channel.html', // Channel File
+				      status     : true, // check login status
+				      cookie     : true, // enable cookies to allow the server to access the session
+				      xfbml      : true  // parse XFBML
+		            });
+
+		            FB.ui(
+					  {
+					   method: 'feed',
+					   message: 'message here',
+					   name: 'truth is?',
+					   caption: 'post one on my truthpage!',
+					   link: 'http://www.truthpage.me/',
+					   picture: 'http://wwww.truthpage.me/app/assets/images/tp-logo.png',
+					   actions: [
+					        { name: 'truthpage.me', link: 'http://www.truthpage.me/' }
+					   ],
+					  user_message_prompt: 'Share a truth status'
+					  },
+					  function(response) {
+					    if (response && response.post_id) {
+					      alert('your post has been shared');
+					    } else {
+					      
+					    }
+					  }
+					);
+		          });
+		        });
+		      </script>
+		    </div>
+		
+		
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="truth is? leave one on my truthpage!" data-size="large" data-count="none">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		</script>
+		
+		<p/>
+		<div class="micro_header"><strong>Recently shared:</strong></div>
+		<div class="microfeed_spacer">...</div>
+		<%= render 'shared/microfeed' %>
+          
+        <div class="stat_spacer">You've shared <%= pluralize(current_user.microposts.count, "truth") %> so far!</div>
+      	
+			
+</td>
+    </tr>
+  </table>
