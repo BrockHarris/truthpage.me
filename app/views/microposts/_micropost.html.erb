@@ -1,36 +1,24 @@
 <tr>
-
-<td class="gravatar">
-	<% if micropost.user.photo.exists?%>    
-		<%= link_to image_tag(micropost.user.photo.url(:thumb)) %>
-	<% else %>
-			<%= image_tag "genericpic-thumb.jpg" %>
-	<% end %>
-	
-	</td>
-<td class="micropost">
+  <td class="gravatar">
+    <%= render_user_avatar(micropost.user, :thumb) %>
+  </td>
+  <td class="micropost">
     <span class="user">
       <%= link_to micropost.user.username, micropost.user %>
- 
     </span>
-	<span class="content">truth is <%= micropost.content %></span>
+    <span class="content">truth is <%= micropost.content %></span>
     <span class="timestamp">
       Shared <%= time_ago_in_words(micropost.created_at) %> ago.
-
     </span>
- 
- </td>
-
-<% if current_user = (micropost.user) %>
-  
-<td> 
-<div class="delete_link_place">   
-<%= link_to "delete", micropost, :class => "delete_link",
-									 :method => :delete,
-                                     :confirm => "are you sure you want to delete this?",
-                                     :title => micropost.content %>
-</div>
   </td>
-
+  <% if current_user = (micropost.user) %>
+    <td> 
+      <div class="delete_link_place">   
+      <%= link_to "delete", micropost, :class => "delete_link",
+      :method => :delete,
+      :confirm => "are you sure you want to delete this?",
+      :title => micropost.content %>
+      </div>
+    </td>
   <% end %>
 </tr>

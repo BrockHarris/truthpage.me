@@ -12,17 +12,10 @@
   <% @users.each do |user| %>
     <li>
       <div class="search_results">
-
-		<% if user.photo.exists?%>
-		<%= image_tag user.photo.url(:thumb) %>
-      	<% else %>
-			<%= image_tag "genericpic-thumb.jpg" %>
-		<% end %>
-
-    <%= link_to user.username, user %>
-    <%= render_follow_links(user) %>
-
-		</div>
+        <%= render_user_avatar(user, :thumb) %>
+        <%= link_to user.username, user %>
+        <%= render_follow_links(user) %>
+      </div>
     </li>
   <% end %>
 </ul>

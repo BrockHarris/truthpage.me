@@ -1,36 +1,24 @@
-
 <div class="profile_name">
-<%= @user.username %>
+	<%= @user.username %>
 </div>
 <div class="profile_email">
 	(<%= @user.email %>)
-	</div>
-
+</div>
 
 <table class="profile" summary="Profile information">
-  <tr>
-    <td class="main">
-
-	<%= render 'shared/micropost_form' %>
-
-
-	        <table class="microposts" summary="User microposts">
-	          <%= render @microposts %>
-	        </table>
-
-	    </td>
-	    <td class="sidebar round">
-	    <div class="profile_gravatar">	
-			<% if @user.photo.exists?%>
-				<%= image_tag @user.photo.url(:small) %>
-			<% else %>
-				<%= image_tag "genericpic.jpg" %>
-			<% end %>
+	<tr>
+		<td class="main">
+			<%= render 'microposts/form' %>
+			<table class="microposts" summary="User microposts">
+				<%= render @microposts %>
+			</table>
+		</td>
+		<td class="sidebar round">
+			<div class="profile_gravatar">	
+				<%= render_user_avatar(@user, :small) %>
 			</div>  
-		<%= render 'shared/stats' %>
-	      
-	      <strong>Truths shared:</strong> <%= @user.microposts.count %>
-	        
-	    </td>
-	  </tr>
-	</table>
+			<%= render 'shared/stats' %>
+			<strong>Truths shared:</strong> <%= @user.microposts.count %>
+		</td>
+	</tr>
+</table>

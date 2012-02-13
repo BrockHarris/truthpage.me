@@ -17,12 +17,7 @@
       <%= render 'shared/stats' %>
       <% unless @users.empty? %>
         <% @users.each do |user| %>
-		<% if @user.photo.exists?%>    
-				<%= link_to image_tag(user.photo.url(:thumb)), user %>
-			<% else %>
-				<%= link_to image_tag "genericpic-thumb.jpg" %>
-			<% end %>
-			
+		      <%= render_user_avatar(user, :thumb) %>
         <% end %>
       <% end %>
     </td>

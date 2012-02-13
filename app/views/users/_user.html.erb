@@ -1,10 +1,5 @@
 <li>
-	<% if user.photo.exists?%>    
-		<%= link_to image_tag(user.photo.url(:thumb)), user %>
-		<% else %>
-				<%= image_tag "genericpic-thumb.jpg" %>
-		<% end %>
-  
+	<%= render_user_avatar(user, :thumb) %>
   <%= link_to user.username, user %>
   <% if current_user.admin? %>
   | <%= link_to "delete", user, :method => :delete, :confirm => "You sure?",

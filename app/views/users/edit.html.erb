@@ -1,10 +1,6 @@
 
 <div class="settingsphoto">
-<% if current_user.photo.exists?%>
-	<%= image_tag current_user.photo.url(:small) %>
-<% else %>
-	<%= image_tag "genericpic.jpg" %>
-<% end %>
+<%= render_user_avatar(current_user, :small) %>
 </div>
 
 <div class="settings_header">Profile settings</div>
