@@ -8,7 +8,9 @@
 <table class="profile" summary="Profile information">
 	<tr>
 		<td class="main">
+			<% if current_user %>
 			<%= render 'microposts/form' %>
+			<% end %>
 			<table class="microposts" summary="User microposts">
 				<%= render @microposts %>
 			</table>

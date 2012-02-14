@@ -10,14 +10,5 @@
     <span class="dashfeed_content">truth is <%= feed_item.content %></div>
     
   </td>
-  <% if current_user = (feed_item.user) %>
-  <td>
-    <div class="delete_link_place"> 
-      <%= link_to "delete", feed_item, :method => :delete,
-                                     :confirm => "are you sure you want to delete this?",
-                                     :title => feed_item.content, 
-    							  :class => "delete_link" %>
-    </div>  
-  </td>
-  <% end %>
+  
 </tr>
