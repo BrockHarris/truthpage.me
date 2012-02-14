@@ -226,24 +226,26 @@ td.main {
 	margin-bottom:5px;
 	margin-left:48px;
 }
-.unfollow_button{
+.unfollow_button {
+	margin-top:-45px;
 	border:none;
+	float:right;
 	display: block;
-	width: 114px; height: 32px;
+	width: 106px; height: 34px;
 	background-image: url('unfollowbutton.jpg');
 	background-position: top;
 	text-indent: -9999px;
-
 }
 .unfollow_button:hover {
 	cursor:pointer;
 	background-position: bottom;
-
 }
 .follow_button {
+	margin-top:-45px;
 	border:none;
+	float:right;
 	display: block;
-	width: 114px; height: 32px;
+	width: 106px; height: 34px;
 	background-image: url('followbutton.jpg');
 	background-position: top;
 	text-indent: -9999px;
@@ -396,7 +398,7 @@ padding:10px;
 	float:right;
 	margin-right:100px;
 	margin-top:30px;
-	margin-bottom:-10px;
+	clip:rect(0px,0px,10px,0px);
 	-webkit-box-shadow: 4px 4px 8px rgba(50, 50, 50, 0.91);
 	-moz-box-shadow:    4px 4px 8px rgba(50, 50, 50, 0.91);
 	box-shadow:         4px 4px 8px rgba(50, 50, 50, 0.91);

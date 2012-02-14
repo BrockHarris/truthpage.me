@@ -14,10 +14,10 @@ module UsersHelper
   end
 
   def follow_link(user, opts={})
-    button_to "follow", follow_user_path(user)
+    button_to "", follow_user_path(user), :class => 'follow_button'
   end
 
   def unfollow_link(user, opts={})
-    button_to "stop following", unfollow_user_path(user)
+    button_to "stop following", unfollow_user_path(user), :class => 'unfollow_button'
   end
 end
