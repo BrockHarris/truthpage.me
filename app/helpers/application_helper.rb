@@ -14,5 +14,9 @@ module ApplicationHelper
   def render_feed_stamp(micropost)
     "#{link_to(micropost.user.username)} shared with #{link_to(micropost.target_user.username, user_path(micropost.target_user))} #{time_ago_in_words(micropost.created_at)} ago:".html_safe
   end
+  
+  def render_smallfeed_stamp(micropost)
+     "shared with #{link_to(micropost.target_user.username, user_path(micropost.target_user))}".html_safe
+  end
 
 end

@@ -396,6 +396,7 @@ padding:10px;
 	float:right;
 	margin-right:100px;
 	margin-top:30px;
+	margin-bottom:-10px;
 	-webkit-box-shadow: 4px 4px 8px rgba(50, 50, 50, 0.91);
 	-moz-box-shadow:    4px 4px 8px rgba(50, 50, 50, 0.91);
 	box-shadow:         4px 4px 8px rgba(50, 50, 50, 0.91);
@@ -459,7 +460,7 @@ padding:10px;
 }
 .micro_timestamp {
 	font-size: 12px;
-	float:right;
+	float:left;
 	text-align: center;
 	margin-top:20px;
 	color: #004466;
@@ -468,6 +469,7 @@ padding:10px;
 	vertical-align:top;
 	font-size: 14px;
 		font-style:italic;
+		float:left;
 }
 .microfeed_spacer {
 	margin-top:5px;
