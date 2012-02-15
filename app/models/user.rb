@@ -17,7 +17,11 @@ class User < ActiveRecord::Base
                     :small  => "220x220>" },
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
-                    :path => "/:style/:id/:filename"  
+                    :path => "/:style/:id/:filename" 
+                    
+  def to_param
+    "#{id}-#{username}"
+  end                   
   
   def self.search(search)
    if search

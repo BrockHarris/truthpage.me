@@ -14,8 +14,6 @@ class AuthenticationsController < ApplicationController
       flash[:notice] = "Authentication successful."
       redirect_to authentications_url
     else
-      #TOFIX: this user creation will likely have to change based on the hashes of the different services.
-      #right now it only covers identity and facebook correctly. Consider refactoring to the model. 
       user = User.omniauth_find_or_create(omniauth)
       flash[:notice] = "Signed in successfully."
       sign_in_and_redirect_to(user, root_url)
