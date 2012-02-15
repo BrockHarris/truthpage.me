@@ -22,7 +22,7 @@ module ApplicationHelper
 
   def render_micropost_delete(micropost)
     #assuming that an admin or the creator can delete his own post. What about the target, can he?
-    if current_user.admin? || current_user==micropost.user
+    if current_user && (current_user.admin? || current_user==micropost.user)
       label = current_user.admin? ? "administrator delete" : "delete"
       link_to label, micropost, :method => :delete,
                                 :confirm => "are you sure you want to delete this?",

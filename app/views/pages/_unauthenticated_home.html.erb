@@ -1,10 +1,39 @@
- <div class="welcome_line">
-	Welcome to truthpage.me, a fun and simple way to share truths with your friends!
-  </div>
+  <%= content_for :head do %>
+  <script type="text/javascript">
+    $(function(){
+      $('#vertical-ticker').totemticker({
+        row_height  :   '55px',
+        next        :   '#ticker-next',
+        previous    :   '#ticker-previous',
+        stop        :   '#stop',
+        start       :   '#start',
+        });
+    });
+  </script>
+  <style>
+    
+  </style>
+<% end %>
 
-  <div class="signup_link">Don't have a truthpage yet? <%= link_to "get one here.", signup_path %></div> 
 
-	<%= render :partial=>'authentications/services' %>
+ <div id="welcome_line">
+	Welcome to truthpage.me, a fun and simple way to share truths!
+  <p>Don't have a truthpage yet? <br />
+    Sign in with 
+    <a href="/auth/facebook">
+      <%= image_tag "facebook_64.png", :size => "64x64", :alt => "Facebook", :class=>"facebook" %>
+    </a>
+    <br/> 
+    or <%= link_to "get your truthpage here", signup_path %> and start posting truths!
+    </p> 
+</div>
+
+  <ul id="vertical-ticker" style="overflow-x: hidden; overflow-y: hidden; ">
+    <% for mp in Micropost.all.take(50) do %>  
+      <li><%= render :partial=>"microposts/micropost", :locals=>{:micropost=>mp} %></li>
+    <% end %>
+  </ul>
+  <p id="ticker-control" class="centered">[&nbsp;<a href="#" id="ticker-previous">Previous</a> / <a href="#" id="ticker-next">Next</a> / <a id="stop" href="#">Stop</a> / <a id="start" href="#">Start</a>&nbsp;]</p>
 
   <div class="fblike">
 

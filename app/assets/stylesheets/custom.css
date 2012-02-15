@@ -195,7 +195,7 @@ td.main {
   width: 70%;
   padding: 1em;
 }
-.welcome_line{
+#welcome_line{
 	margin-left: 10%;
 	margin-right: 10%;
 	text-align:center;
@@ -205,6 +205,9 @@ td.main {
 	color:#000033;
 	text-shadow: 0 0 10px white;
 }
+#welcome_line p {font-size:80%;}
+#welcome_line a img.facebook{vertical-align:middle;}
+
 .stat_spacer {
 	margin-top:10px;
 	font-size:12pt;
@@ -275,11 +278,6 @@ td.main {
 	cursor:pointer;
 margin-top:20px;
 margin-left: 400px;
-}
-.signup_link {
-	font-size: 10pt;
-	margin-top:10px;
-	margin-left: 50px;
 }
 
 .share_placement{
@@ -736,3 +734,23 @@ font-weight:200;
   margin-bottom: 10px;
 }
 
+#vertical-ticker{
+  height:275px;
+  overflow:hidden;
+  margin:0; padding:0;
+  -webkit-box-shadow:0 1px 3px rgba(0,0,0, .4);
+}
+
+#vertical-ticker li{
+  height:55px;
+  display:block;
+  background:#efefef;
+  color:#333;
+  border-bottom:1px solid #ddd;
+  text-align:center;
+  font-size:15px;
+  font-weight:normal;
+  font-family: Helvetica Neue, times, serif;
+}
+#vertical-ticker li img{vertical-align:middle;}
+p#ticker-control{font-size:12px; width:165px; margin:10px auto;}
