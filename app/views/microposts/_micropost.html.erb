@@ -14,10 +14,7 @@
   <% if current_user = (micropost.user) %>
     <td> 
       <div class="delete_link_place">   
-      <%= link_to "delete", micropost, :class => "delete_link",
-      :method => :delete,
-      :confirm => "are you sure you want to delete this?",
-      :title => micropost.content %>
+        <%= render_micropost_delete(micropost) %>
       </div>
     </td>
   <% end %>
