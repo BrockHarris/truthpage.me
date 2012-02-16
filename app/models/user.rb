@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :path => "/:style/:id/:filename" 
+  
+  validate :username, :uniqueness=>true
+  validate :email, :uniqueness=>true                  
                     
   def to_param
     username
