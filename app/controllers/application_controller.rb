@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     session[:return_to] = nil
   end
 
-  def login_required(msg=MESSAGE_MUST_BE_LOGGED_IN)
+  def login_required
     unless current_user
       store_location
       flash[:notice] = msg
@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def access_denied(msg=MESSAGE_INSUFFICIENT_RIGHTS)
+  def access_denied(msg = MESSAGE_INSUFFICIENT_RIGHTS)
     flash[:error] = msg
     redirect_to root_url
     return false

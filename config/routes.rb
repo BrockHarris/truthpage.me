@@ -1,10 +1,10 @@
 Truthpage::Application.routes.draw do 
 
-
+  match '/:id', :to => 'users#show'
+  match 'users/:id' => 'users#show'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   match '/signup', :to => 'identities#new'
-
   match '/contact', :to => 'pages#contact'
   match '/home',   :to => 'pages#home'
   match '/help',    :to => 'pages#help'
