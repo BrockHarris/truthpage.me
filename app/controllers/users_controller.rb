@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :only => [:index, :show, :edit, :update, :destroy]
-  before_filter :correct_user, :only => [:edit, :update]
-  before_filter :admin_user,   :only => :destroy
-  before_filter :find_user, :only=>[:show,:following, :followers, :follow, :unfollow, :edit, :update, :destroy]
+  before_filter :login_required, :only => [:index, :show, :edit, :update, :destroy]
+  before_filter :correct_user, :only => [:edit, :update, :destroy]
+  before_filter :find_user, :only=>[:show, :following, :followers, :follow, :unfollow, :edit, :update, :destroy]
 
   def index
     @title = "All users"
@@ -32,17 +31,6 @@ class UsersController < ApplicationController
     else
       @title = "Sign up"
       render 'new'
-    end
-  end
-
-  def newpost
-    @micropost  = current_user.microposts.build(params[:micropost])
-    if @micropost.save
-      flash[:success] = "Truth posted!"
-      redirect_to @user
-    else
-      @feed_items = []
-      render 'pages/home'
     end
   end
 
@@ -101,14 +89,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
-  def deny_access
-      redirect_to signin_path, :notice => "You need to sign in first!"
-  end
-  
-  def authenticate
-    deny_access unless current_user
-  end
-
   def correct_user
     @user = find_user
     redirect_to(root_path) unless current_user==@user

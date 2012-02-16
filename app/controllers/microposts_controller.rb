@@ -1,5 +1,6 @@
 class MicropostsController < ApplicationController
-
+  before_filter :login_required
+  
   def create
     @micropost  = current_user.microposts.build(params[:micropost])
     if @micropost.save

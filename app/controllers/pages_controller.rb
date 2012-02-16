@@ -1,52 +1,33 @@
 class PagesController < ApplicationController
 
   def home
-        @title = "Home"
-        @globalfeed_items = Micropost.all
-      if current_user
-        @micropost = Micropost.new
-        @feed_items = current_user.feed.paginate(:page => params[:page])
-        @microfeed_items = Micropost.where(:user_id => current_user.id).limit(5)
+    @title = "Home"
+    @globalfeed_items = Micropost.all #TOFIX: This is going to be a BAD thing if there are millions of posts.
+    if current_user
+      @micropost = Micropost.new
+      @feed_items = current_user.feed.paginate(:page => params[:page])
+      @microfeed_items = Micropost.where(:user_id => current_user.id).limit(5)
     end
-  end
-  
-  def new
-    @user = User.new
-  end
-  
-  def create
-
-    user = User.authenticate(params[:session][:email],
-                             params[:session][:password])
-    if user.nil?
-      flash.now[:error] = "Invalid email/password combination."
-      @title = "Sign in"
-      render 'new'
-    else
-      sign_in user
-      redirect_back_or user
-    end
-    
   end
   
   def contact
-  @title = "contact"
+    @title = "contact"
   end
 
   def feedback
-  @title = "feedback"
+    @title = "feedback"
   end
 
   def privacy
-  @title = "privacy"
+    @title = "privacy"
   end
 
   def terms
-  @title = "terms & conditions"
+    @title = "terms & conditions"
   end
   
   def help
-  @title = "Help"
+    @title = "Help"
   end
 
 end

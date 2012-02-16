@@ -1,14 +1,12 @@
 class AuthenticationsController < ApplicationController
-  def index
-    @authentications = current_user.authentications if current_user
-  end
+  before_filter :login_required, :only=>[:destroy]
 
   def create
     omniauth = request.env["omniauth.auth"]
     authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
     if authentication
       flash[:notice] = "Signed in successfully."
-      sign_in_and_redirect_to(authentication.user, root_url)
+      sign_in_and_redirect_back_or_default(authentication.user, user_path(authentication.user))
     elsif current_user
       current_user.authentications.create(:provider => omniauth['provider'], :uid => omniauth['uid'])
       flash[:notice] = "Authentication successful."
@@ -16,7 +14,7 @@ class AuthenticationsController < ApplicationController
     else
       user = User.omniauth_find_or_create(omniauth)
       flash[:notice] = "Signed in successfully."
-      sign_in_and_redirect_to(user, root_url)
+      sign_in_and_redirect_back_or_default(user, user_path(user))
     end
   end
 
@@ -32,12 +30,9 @@ class AuthenticationsController < ApplicationController
     redirect_to authentications_url
   end
 
-
-  #quick and dirty devise-like helper.
-  def sign_in_and_redirect_to(user, url)
-    session.clear
+  def sign_in_and_redirect_back_or_default(user, url=request.url)
     session[:user_id] = user.id
-    redirect_to url
+    redirect_back_or_default url
   end
 
 end

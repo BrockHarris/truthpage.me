@@ -1,6 +1,7 @@
 class RelationshipsController < ApplicationController
-  before_filter :authenticate
+  before_filter :login_required
 
+  #TODO: Not sure this controller is even necessary. Remove it, if not. 
   def create
     @user = User.find(params[:relationship][:followed_id])
     current_user.follow!(@user)
