@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
                     :path => "/:style/:id/:filename" 
                     
   def to_param
-    "#{id}-#{username}"
+    username
   end                   
   
   def self.search(search)
