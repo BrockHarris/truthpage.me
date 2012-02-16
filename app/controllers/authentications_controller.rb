@@ -1,6 +1,13 @@
 class AuthenticationsController < ApplicationController
   before_filter :login_required, :only=>[:destroy]
-
+  
+  #def index
+   # @authentications = current_user.authentications if current_user	
+  #end
+  
+  # MIKE- saw you scratched this, wasn't sure if you're going to replace it or not, but in the user
+  #     creation process you get redirected to authentications#index 
+  
   def create
     omniauth = request.env["omniauth.auth"]
     authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])

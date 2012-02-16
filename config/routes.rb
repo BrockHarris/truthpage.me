@@ -1,7 +1,6 @@
 Truthpage::Application.routes.draw do 
 
-  match '/:id', :to => 'users#show'
-  match 'users/:id' => 'users#show'
+  
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   match '/signup', :to => 'identities#new'
@@ -33,7 +32,8 @@ Truthpage::Application.routes.draw do
   namespace :admin do
     resources :users
   end
-
+  match '/:id', :to => 'users#show'
+  match 'users/:id' => 'users#show'
   root :to => 'pages#home'
 
  
