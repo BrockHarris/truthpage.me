@@ -32,8 +32,6 @@ Truthpage::Application.routes.draw do
   namespace :admin do
     resources :users
   end
-  match '/:id', :to => 'users#show'
-  match 'users/:id' => 'users#show'
   root :to => 'pages#home'
 
  
