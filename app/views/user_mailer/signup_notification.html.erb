@@ -1,0 +1,5 @@
+This is a simple notification that a new user has signed up for the Truthpage.me Application.
+
+The new user <%=@user.username %> (<%=@user.email %>) has been mailed an activation link and will be required to follow this link in order to activate their account.
+
+<%="http://#{SITE_URL_HOST}"%><%= admin_user_path(@user) %>

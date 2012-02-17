@@ -754,3 +754,20 @@ font-weight:200;
 }
 #vertical-ticker li img{vertical-align:middle;}
 p#ticker-control{font-size:12px; width:165px; margin:10px auto;}
+
+#flash {
+  padding: 5px 8px;
+  margin: 10px 0;
+  text-align:center;
+  font-weight:bold;
+}
+
+#flash.notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash.error, #flash.alert{
+  background-color: #FCC;
+  border: solid 1px #C66;
+}

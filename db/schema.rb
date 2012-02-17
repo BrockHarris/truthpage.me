@@ -11,20 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120208194657) do
+ActiveRecord::Schema.define(:version => 20120108191824) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
     t.string   "provider"
     t.string   "uid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "identities", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -54,15 +46,25 @@ ActiveRecord::Schema.define(:version => 20120208194657) do
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "username"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.string   "reset_code",               :limit => 50
+    t.datetime "reset_code_at"
+    t.string   "state",                    :limit => 25
+    t.string   "activation_code",          :limit => 100
+    t.datetime "activated_at"
+    t.datetime "activation_email_sent_at"
     t.date     "dob"
-    t.boolean  "admin",              :default => false
+    t.boolean  "admin",                                   :default => false
+    t.integer  "created_by"
+    t.string   "photo_file_name"
+    t.string   "photo_file_type"
+    t.integer  "photo_file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["username"], :name => "index_users_on_username"
 
 end

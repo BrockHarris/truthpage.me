@@ -1,0 +1,20 @@
+<h1>Reset Your Password</h1>
+<% @user.password = @user.password_confirmation = nil %>
+
+<div class="form">
+  <%= form_tag :action => 'reset' do |f| -%>
+    <div class="settings_fields">
+    <%= label_tag :password, 'Password' %>
+    <%= password_field_tag :password, "", :class =>"formfield" %>
+    </div>
+
+    <div class="settings_fields">
+    <%= label_tag :password_confirmation, 'Confirm' %>
+    <%= password_field_tag :password_confirmation, "", :class =>"formfield" %>
+    </div>
+
+    <div>    
+    <%= submit_tag 'Change Password' %>
+    </div>
+<% end -%>
+</div>

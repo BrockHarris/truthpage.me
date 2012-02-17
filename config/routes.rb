@@ -1,9 +1,8 @@
 Truthpage::Application.routes.draw do 
 
-  
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
-  match '/signup', :to => 'identities#new'
+  match '/signup', :to => 'users#new'
   match '/contact', :to => 'pages#contact'
   match '/home',   :to => 'pages#home'
   match '/help',    :to => 'pages#help'
@@ -14,7 +13,13 @@ Truthpage::Application.routes.draw do
   match '/tickertest', :to=>'pages#tickertest'
   match "/auth/:provider/callback" => "authentications#create"
   match "/auth/failure" => "authentications#auth_failure"
-  
+  #user activation etc.
+  match '/activate/:id/:activation_code', :to=>"users#activation", :as=>"activate"
+  match "/assist", :to=>"users#assist", :as=>"assist"
+  match "/reset/:id/:reset_code", :to=>"users#reset", :as=>"reset"
+  match "/activate_user/:id", :to=>"users#activate", :as=>"activate_user"
+  match "/welcome_user/:id", :to=>"users#welcome", :as=>"welcome_user"
+
   resources :microposts
   resources :users do
       member do
@@ -27,12 +32,10 @@ Truthpage::Application.routes.draw do
   resources :sessions,   :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
-  resources :identities
 
   namespace :admin do
     resources :users
   end
   root :to => 'pages#home'
 
- 
 end

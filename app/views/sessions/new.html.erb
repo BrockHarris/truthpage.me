@@ -3,18 +3,18 @@
 <div style="clear:both"></div>
 <p>
   <strong>Don&rsquo;t use Facebook?</strong>
-  <%= link_to "Create a truthpage.me account", new_identity_path %> or login below.
+  <%= link_to "Create a truthpage.me account", new_session_path %> or login below.
 </p>
   
-<%= form_tag "/auth/identity/callback" do %>
+<%= form_tag sessions_path do %>
   <div class="field">
-    <%= label_tag :auth_key, "Email" %><br>
-    <%= text_field_tag :auth_key, "", :class => "formfield" %>
+    <%= label_tag :login, "Username or Email" %><br />
+    <%= text_field_tag :login, params[:login], :class => "formfield" %>
   </div>
   <div class="field">
-    <%= label_tag :password %><br>
+    <%= label_tag :password %><br />
     <%= password_field_tag :password, "", :class => "formfield" %>
   </div>
-  <div class="actions"><%= submit_tag "Login" %></div>
+  <div class="actions"><%= submit_tag "Log in", :class=>'login' %></div>
+  <div><%= link_to "Forgot your Password?", assist_url, :id=>"forgot-password" %></div>
 <% end %>
-
