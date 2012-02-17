@@ -27,10 +27,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      @user.register! #set status to pending
-      @user.send_activation_email!
-      flash[:notice] = "Thanks for signing up! An email has been sent to #{@user.email} with instructions on how to immediately activate your account."
-      redirect_to root_url
+      #skip sending a registration email, explicitly activate user and redirect to signin.
+      #@user.register! #set status to pending
+      #@user.send_activation_email!
+      #flash[:notice] = "Thanks for signing up! An email has been sent to #{@user.email} with instructions on how to immediately activate your account."
+      @user.activate!
+      flash[:notice] = "Thanks for signing up! Sign in below."
+      redirect_to signin_url
     else
       render :action => 'new'
     end
