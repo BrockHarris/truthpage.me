@@ -1,5 +1,6 @@
 require 'active_support/secure_random'
 class User < ActiveRecord::Base
+  
   has_many :authentications, :dependent=>:destroy
   has_many :identities, :through=>:authentications
   has_many :microposts, :dependent => :destroy
@@ -23,7 +24,7 @@ class User < ActiveRecord::Base
   validates :email, :uniqueness=>true, :format=>{:with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i}
   validates :password, :length=>{:minimum => 4}, :on => :create                
   validates_confirmation_of :password
-
+  
   attr_accessor :password
   before_save :prepare_password                  
   

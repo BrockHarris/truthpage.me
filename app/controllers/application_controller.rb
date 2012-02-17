@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper :all # include all helpers, all the time
+  include SimpleCaptcha::ControllerHelpers
+  helper :all 
   helper_method :current_user
 
   def current_user

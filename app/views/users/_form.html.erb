@@ -1,7 +1,7 @@
 <%= form_for @user, :html=> { :multipart => true} do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="settings_fields">
-    <%= f.label :name %><br />
+    <%= f.label "username" %><br />
     <%= f.text_field :username, :class =>"formfield" %>
 
   </div>
@@ -17,13 +17,9 @@
     <%= f.label :password_confirmation, "Confirm Password" %><br />
     <%= f.password_field :password_confirmation, :class =>"formfield" %>
   </div>  
-  <div class="change_pic">
-    Change profile picture:<br />
-  <%= f.file_field :photo %>
-  </div>
-  <br />
 
+	<%= show_simple_captcha :label => "(human authentication)" %>
   <div class="save_button">
-    <%= f.submit '', :class => 'savesettings'%>
+    <%= f.submit 'signup'%>
   </div>
 <% end %>

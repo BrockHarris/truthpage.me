@@ -23,20 +23,27 @@ class UsersController < ApplicationController
     @title = "Sign up"
   end
   
-  #this method is only called by non admins... e.g. a user creating an account
+
   def create
-    @user = User.new(params[:user])
-    if @user.save
-      #skip sending a registration email, explicitly activate user and redirect to signin.
-      #@user.register! #set status to pending
-      #@user.send_activation_email!
-      #flash[:notice] = "Thanks for signing up! An email has been sent to #{@user.email} with instructions on how to immediately activate your account."
-      @user.activate!
-      flash[:notice] = "Thanks for signing up! Sign in below."
-      redirect_to signin_url
+      @user = User.new(params[:user])
+    if simple_captcha_valid?
+      if @user.save
+        #skip sending a registration email, explicitly activate user and redirect to signin.
+        #@user.register! #set status to pending
+        #@user.send_activation_email!
+        #flash[:notice] = "Thanks for signing up! An email has been sent to #{@user.email} with instructions on how to immediately activate your account."
+        @user.activate!
+        flash[:notice] = "Thanks for signing up!"
+        redirect_to root_url
+      else
+        render :action => 'new'
+      end
     else
-      render :action => 'new'
+       flash[:error] = "captcha invalid"
+       render :action => 'new'
     end
+  
+    
   end
 
   def following

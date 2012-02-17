@@ -19,7 +19,7 @@ gem 'aws-s3'
 gem 'aws-sdk'
 #gem 'omniauth-google-oauth2'
 gem 'nifty-generators', '>= 0.4.0'
-
+gem "galetahub-simple_captcha", :require => "simple_captcha"
 
 
 # Gems used only for assets and not required
