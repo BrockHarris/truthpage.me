@@ -1,0 +1,15 @@
+<%= form_for @user, :url=>complete_session_authentication_path do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <%= f.hidden_field :mode, :value=>"service" %>
+  <div class="settings_fields">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, :class =>"formfield" %>
+  </div>
+  <div class="settings_fields">
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :class =>"formfield readonly", :readonly=>true %>
+  </div>
+  <div class="save_button">
+    <%= f.submit '', :class => 'savesettings'%>
+  </div>
+<% end %>

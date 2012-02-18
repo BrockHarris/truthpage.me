@@ -6,34 +6,41 @@ class AuthenticationsController < ApplicationController
   end
   
   def create
-    omniauth = request.env["omniauth.auth"]
-    authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
+    @omniauth = request.env["omniauth.auth"]
+    authentication = Authentication.where(:provider=>@omniauth['provider'],:uid=>@omniauth['uid']).where("user_id IS NOT NULL").first
     if authentication
       flash[:notice] = "Signed in successfully."
       sign_in_and_redirect_back_or_default(authentication.user, user_path(authentication.user))
     elsif current_user
-      current_user.authentications.create(:provider => omniauth['provider'], :uid => omniauth['uid'])
+      #the user is logged in and trying to add another authentication (we don't support this...yet.)
+      current_user.authentications.create(:provider => @omniauth['provider'], :uid => @omniauth['uid'])
       flash[:notice] = "Authentication successful."
       redirect_to authentications_url
     else
       #User is attempting a signup using a service.
-      #raise omniauth.to_yaml
-      if user = User.find_by_email(omniauth[:info][:email])
-        #see if the user's email exists in our app, if so, notify and redirect to signin.
-        flash[:notice]="#{omniauth[:info][:email]} already has an account, signin using your password below."
-        redirect_to(signin_path(:email=>user.email))
-      elsif user = User.find_by_username(omniauth[:info][:nickname])
-        #else see if the user's username exists in our app, if so, redirect to a page where they can submit their username
-        flash[:notice]="#{omniauth[:info][:username]} is already taken, please create an alternate for your account."
-        raise 'username exists'
+      if user = User.find_by_email(@omniauth[:info][:email])
+        #if the user's email exists in our app, notify and redirect to signin. (They can add an auth after login - when we hook it up.)
+        handle_authentication_email_conflict
+      elsif user = User.find_by_username(@omniauth[:info][:nickname])
+        #else if the user's username exists in our app, redirect to a page where they can submit their truthapp username.
+        handle_authentication_username_conflict
       else
-        #else create the user with this username and email, rand password, associate auth and sign them in. 
-        raise "create a user and append an auth!"
-        user = User.create_by_email_and_username(:email=>omniauth['info']['email'], :username=>omniauth['info']['nickname'] || omniauth['info']['name'])
-        user.authentications.build(:provider => omniauth ['provider'], :uid => omniauth['uid'])
-        user.save!
-        sign_in_and_redirect_back_or_default(user, user_path(user))
+        #else create the user with this username and email, associate auth and sign them in. 
+        handle_new_user_creation_through_authentication
       end  
+    end
+  end
+
+  #this controller action will attempt to create a new user and associate the authentication record in session.
+  def complete_session_authentication
+    raise 'No authentication in session' unless session[:pending_authentication_id]
+    @user = User.new(params[:user])
+    if @user.save
+      @user.authentications << Authentication.find(session[:pending_authentication_id])
+      session[:pending_authentication_id] = nil #nix the id in session after successful assoc
+      sign_in_and_redirect_back_or_default(@user, user_path(@user))
+    else
+      render :action=>"incomplete_authorization"
     end
   end
 
@@ -49,9 +56,31 @@ class AuthenticationsController < ApplicationController
     redirect_to authentications_url
   end
 
+  private
+
   def sign_in_and_redirect_back_or_default(user, url=request.url)
     session[:user_id] = user.id
     redirect_back_or_default url
+  end
+
+  def handle_authentication_username_conflict
+    flash[:notice]="Username #{@omniauth[:info][:nickname]} is already taken, please create an alternate for your truthpage account."
+    #create an authorization object and store the id in session
+    session[:pending_authentication_id] = Authentication.create!(:provider => @omniauth['provider'], :uid =>@omniauth['uid'])
+    @user = User.new(:email=>@omniauth[:info][:email]) #create a user object for the form we're about to render.
+    render :action=>"incomplete_authorization"
+  end
+
+  def handle_authentication_email_conflict
+    flash[:notice]="#{@omniauth[:info][:email]} already has an account, signin using your password below."
+    redirect_to(signin_path(:email=>user.email))
+  end
+
+  def handle_new_user_creation_through_authentication
+    user = User.create_by_email_and_username(:email=>@omniauth['info']['email'], :username=>@omniauth['info']['nickname'] || @omniauth['info']['name'])
+    user.authentications.build(:provider => @omniauth ['provider'], :uid => @omniauth['uid'])
+    user.save!
+    sign_in_and_redirect_back_or_default(user, user_path(user))
   end
 
 end
