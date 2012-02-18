@@ -41,14 +41,15 @@ class User < ActiveRecord::Base
 
   #TODO: This will have to be fixed to handle the scenario where a signup through fb happens to 
   #conflict with a user's username. 
-  def self.omniauth_find_or_create(omniauth)
-    email     = omniauth['info']['email']
-    username  = omniauth['info']['nickname'] || omniauth['info']['name']
-    user = User.find_or_create_by_email_and_username(:email=>omniauth['info']['email'], :username=>omniauth['info']['nickname'] || omniauth['info']['name'])
-    user.authentications.build(:provider => omniauth ['provider'], :uid => omniauth['uid'])
-    user.save!
-    user
-  end
+  # def self.omniauth_find_or_create(omniauth)
+  #   signup_mode = "service"
+  #   email     = omniauth['info']['email']
+  #   username  = omniauth['info']['nickname'] || omniauth['info']['name']
+  #   user = User.find_or_create_by_email_and_username(:email=>omniauth['info']['email'], :username=>omniauth['info']['nickname'] || omniauth['info']['name'])
+  #   user.authentications.build(:provider => omniauth ['provider'], :uid => omniauth['uid'])
+  #   user.save!
+  #   user
+  # end
                     
   #returns the relationship object IF this object is followed by the supplied user argument.                                                                                 
   def following?(user)
