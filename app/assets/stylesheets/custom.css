@@ -789,3 +789,5 @@ p#ticker-control{font-size:12px; width:165px; margin:10px auto;}
   background-color: #FCC;
   border: solid 1px #C66;
 }
+
+input.readonly{background:#ccc;}
