@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
     session[:return_to] = url
   end
 
+  def sign_in_and_redirect_back_or_default(user, url=request.url)
+    session[:user_id] = user.id
+    redirect_back_or_default url
+  end
+
   def redirect_back_or_default(default)
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil

@@ -23,18 +23,17 @@ class UsersController < ApplicationController
     @title = "Sign up"
   end
   
-
   def create
-      @user = User.new(params[:user])
+    @user = User.new(params[:user])
     if simple_captcha_valid?
       if @user.save
-        #skip sending a registration email, explicitly activate user and redirect to signin.
+        #skip sending a registration email, explicitly activate user, sign-in and redirect.
         #@user.register! #set status to pending
         #@user.send_activation_email!
         #flash[:notice] = "Thanks for signing up! An email has been sent to #{@user.email} with instructions on how to immediately activate your account."
         @user.activate!
         flash[:notice] = "Thanks for signing up!"
-        redirect_to root_url
+        sign_in_and_redirect_back_or_default(@user, users_path(@user))
       else
         render :action => 'new'
       end
@@ -42,8 +41,6 @@ class UsersController < ApplicationController
        flash[:error] = "captcha invalid"
        render :action => 'new'
     end
-  
-    
   end
 
   def following
