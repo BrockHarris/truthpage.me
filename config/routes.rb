@@ -20,6 +20,8 @@ Truthpage::Application.routes.draw do
   match "/activate_user/:id", :to=>"users#activate", :as=>"activate_user"
   match "/welcome_user/:id", :to=>"users#welcome", :as=>"welcome_user"
 
+  match "complete_session_authentication_path", :to=>"authentications#complete_session_authentication", :as=>:complete_session_authentication
+
   resources :microposts
   resources :users do
       member do

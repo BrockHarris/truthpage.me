@@ -19,14 +19,20 @@ class User < ActiveRecord::Base
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :path => "/:style/:id/:filename" 
-  validates :username, :uniqueness=>true, :format=>{ :with => /^[-\w\._@]+$/i, :message => "should only contain letters, numbers, or .-_@"}
+
+  validates :username, :length=>{:minimum => 3}, :uniqueness=>true, :format=>{ :with => /^[-\w\._@]+$/i, :message => "should only contain letters, numbers, or .-_@"}
   validates :email, :uniqueness=>true, :format=>{:with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i}
-  validates :password, :length=>{:minimum => 4}, :on => :create                
+  validates :password, :length=>{:minimum => 4}, :on => :create, :unless=>Proc.new{|u| u.service_mode?}                
   validates_confirmation_of :password
   
-  attr_accessor :password
+  attr_accessor :password, :mode
+
   before_save :prepare_password                  
   
+  def service_mode?
+    mode=="service"
+  end
+
   def to_param
     username
   end                   
@@ -37,17 +43,6 @@ class User < ActiveRecord::Base
    else
       all
    end
-  end
-
-  #TODO: This will have to be fixed to handle the scenario where a signup through fb happens to 
-  #conflict with a user's username. 
-  def self.omniauth_find_or_create(omniauth)
-    email     = omniauth['info']['email']
-    username  = omniauth['info']['nickname'] || omniauth['info']['name']
-    user = User.find_or_create_by_email_and_username(:email=>omniauth['info']['email'], :username=>omniauth['info']['nickname'] || omniauth['info']['name'])
-    user.authentications.build(:provider => omniauth ['provider'], :uid => omniauth['uid'])
-    user.save!
-    user
   end
                     
   #returns the relationship object IF this object is followed by the supplied user argument.                                                                                 
