@@ -477,6 +477,9 @@ padding:10px;
 	margin-top:-12px;
 	float:left;
 }
+.side_container {
+	width:70px;
+}
 .micro_header {
 	font-size:13pt;
 	border-bottom:1px solid #cccccc;
@@ -776,13 +779,16 @@ p#ticker-control{font-size:12px; width:165px; margin:10px auto;}
 
 #flash {
   padding: 5px 8px;
-  margin: 10px 0;
+  margin-left: auto;
+	margin-right:auto;
   text-align:center;
+	margin-bottom:10px;
+	width: 70%;
 }
 
 #flash.notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
+  background-color: #99ccff;
+  border: solid 1px #3388ff;
 }
 
 #flash.error, #flash.alert{

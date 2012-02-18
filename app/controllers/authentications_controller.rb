@@ -9,7 +9,7 @@ class AuthenticationsController < ApplicationController
     @omniauth = request.env["omniauth.auth"]
     authentication = Authentication.where(:provider=>@omniauth['provider'],:uid=>@omniauth['uid']).where("user_id IS NOT NULL").first
     if authentication
-      flash[:notice] = "Signed in successfully."
+      flash[:notice] = "Welcome to truthpage.me!"
       sign_in_and_redirect_back_or_default(authentication.user, user_path(authentication.user))
     elsif current_user
       #the user is logged in and trying to add another authentication (we don't support this...yet.)
@@ -58,11 +58,6 @@ class AuthenticationsController < ApplicationController
 
   private
 
-  def sign_in_and_redirect_back_or_default(user, url=request.url)
-    session[:user_id] = user.id
-    redirect_back_or_default url
-  end
-
   def handle_authentication_username_conflict
     flash[:notice]="Username #{@omniauth[:info][:nickname]} is already taken, please create an alternate for your truthpage account."
     #create an authorization object and store the id in session
@@ -77,7 +72,7 @@ class AuthenticationsController < ApplicationController
   end
 
   def handle_new_user_creation_through_authentication
-    user = User.create_by_email_and_username(:email=>@omniauth['info']['email'], :username=>@omniauth['info']['nickname'] || @omniauth['info']['name'])
+    user = User.new(:mode=>"service", :email=>@omniauth['info']['email'], :username=>@omniauth['info']['nickname'] || @omniauth['info']['name'])
     user.authentications.build(:provider => @omniauth ['provider'], :uid => @omniauth['uid'])
     user.save!
     sign_in_and_redirect_back_or_default(user, user_path(user))

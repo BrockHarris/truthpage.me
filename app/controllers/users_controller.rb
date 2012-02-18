@@ -28,13 +28,13 @@ class UsersController < ApplicationController
       @user = User.new(params[:user])
     if simple_captcha_valid?
       if @user.save
-        #skip sending a registration email, explicitly activate user and redirect to signin.
+        #skip sending a registration email, explicitly activate user, sign-in and redirect.
         #@user.register! #set status to pending
         #@user.send_activation_email!
         #flash[:notice] = "Thanks for signing up! An email has been sent to #{@user.email} with instructions on how to immediately activate your account."
         @user.activate!
         flash[:notice] = "Thanks for signing up!"
-        redirect_to root_url
+        sign_in_and_redirect_back_or_default(@user, users_path(@user))
       else
         render :action => 'new'
       end
@@ -63,13 +63,13 @@ class UsersController < ApplicationController
   def follow
     #@user = User.find(params[:id])
     current_user.follow!(@user)
-    redirect_to users_path, :notice=>"You're now following #{@user.username}"
+    redirect_to users_path, :notice=>"You're now following #{@user.username}!"
   end
 
   def unfollow
     #@user = User.find(params[:id])
     current_user.unfollow!(@user)
-    redirect_to users_path, :notice=>"You're no longer following #{@user.username}"
+    redirect_to users_path, :notice=>"You stopped following #{@user.username}."
   end
 
   def edit
@@ -80,7 +80,7 @@ class UsersController < ApplicationController
   def update
     #@user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:success] = "Profile updated."
+      flash[:success] = "Your profile has been updated!"
       redirect_to (:back)
     else
       @title = "Edit user"

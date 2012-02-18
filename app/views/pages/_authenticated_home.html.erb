@@ -12,7 +12,8 @@
 		<%= render 'shared/feed' %>
 		</div>
       </td>
-      <td class="sidebar round">
+      <div class="side_container">
+	   <td class="sidebar round">
        <div class="dash_user"><%= current_user.username %></div> 
 		<div class="dash_gravatar">
 			<%= render_user_avatar(current_user, :small) %>
@@ -81,5 +82,6 @@
       	
 			
 </td>
+</div>
     </tr>
   </table>

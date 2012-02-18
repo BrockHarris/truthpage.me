@@ -4,7 +4,7 @@ class MicropostsController < ApplicationController
   def create
     @micropost  = current_user.microposts.build(params[:micropost])
     if @micropost.save
-      flash[:success] = "Truth posted!"
+      flash[:notice] = "Your truth has been posted!"
       redirect_to(:back)
     else
       @feed_items = []
@@ -14,7 +14,7 @@ class MicropostsController < ApplicationController
  
   def destroy
     Micropost.find(params[:id]).destroy
-    flash[:success] = "your post has been removed"
+    flash[:alert] = "Your post has been removed."
     redirect_to(:back)
   end
 end
