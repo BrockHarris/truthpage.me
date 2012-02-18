@@ -385,7 +385,7 @@ padding:10px;
 	background-position: bottom;
 }
 .save_button {
-	margin-top:70px;
+	margin-top:30px;
 	margin-left:10%;
 }
 .settings_header {
@@ -412,6 +412,30 @@ padding:10px;
 	text-align:center;
 	border-top:1px solid #aaaaaa;
 }
+.facebook_share {
+	border:none;
+	display: block;
+	width: 134px; height: 35px;
+	background-image: url('facebook_share.png');
+	background-position: top;
+	text-indent: -9999px;
+}
+.facebook_share:hover {
+	cursor:pointer;
+	background-position: bottom;
+}
+.twitter_share {
+	border:none;
+	display: block;
+	width: 134px; height: 35px;
+	background-image: url('twitter_share.png');
+	background-position: top;
+	text-indent: -9999px;
+}
+.twitter_share:hover {
+	cursor:pointer;
+	background-position: bottom;
+}
 .dashfeed_content {
 	font-size: 13pt;
 	font-family: arial;
@@ -428,6 +452,7 @@ padding:10px;
 	padding-bottom: 4px;
 	color:gray;
 }
+
 .dashfeed_header {
 	text-align:center;
 	font-weight: 100;
@@ -481,16 +506,10 @@ padding:10px;
 .home_email{
 	margin-left: 38px;
 	margin-top:30px;
-	vertical-align:top;
-
-
-	
+	vertical-align:top;	
 }
 .home_password{
 	margin-top: 5px;
-	
-	
-
 }
 .home_submit {
 	margin-left: 120px;

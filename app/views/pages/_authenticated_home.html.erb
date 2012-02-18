@@ -17,12 +17,13 @@
 		<div class="dash_gravatar">
 			<%= render_user_avatar(current_user, :small) %>
 		</div>
+		<br />
 		<%= render 'shared/stats' %>
 		<br />
 		<strong>Profile link:</strong> truthpage.me<%= link_to user_path(@user), @user %><br />
 		
 		<div id="friends">
-		      <p><%= link_to "Share on Facebook", "#", :id => "invite_fb_friends" %></p>
+		      <p><%= link_to "", "#", :id => "invite_fb_friends", :class => 'facebook_share' %></p>
 
 		      <div id="fb-root"></div>
 
