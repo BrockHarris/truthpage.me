@@ -59,7 +59,7 @@ class AuthenticationsController < ApplicationController
   private
 
   def handle_authentication_username_conflict
-    flash[:notice]="Username #{@omniauth[:info][:nickname]} is already taken, please create an alternate for your truthpage account."
+    flash.now[:notice]="Username #{@omniauth[:info][:nickname]} is already taken, please create an alternate for your truthpage account."
     #create an authorization object and store the id in session
     session[:pending_authentication_id] = Authentication.create!(:provider => @omniauth['provider'], :uid =>@omniauth['uid'])
     @user = User.new(:email=>@omniauth[:info][:email]) #create a user object for the form we're about to render.
