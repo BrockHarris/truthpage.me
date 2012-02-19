@@ -16,6 +16,7 @@ Truthpage::Application.routes.draw do
   match '/tickertest', :to=>'pages#tickertest'
   match "/auth/:provider/callback" => "authentications#create"
   match "/auth/failure" => "authentications#auth_failure"
+  match "/search", :to=> "users#index", :as=>"search" #this is the 'friends' link/path consider renaming.
   #user activation etc.
   match '/activate/:id/:activation_code', :to=>"users#activation", :as=>"activate"
   match "/assist", :to=>"users#assist", :as=>"assist"
