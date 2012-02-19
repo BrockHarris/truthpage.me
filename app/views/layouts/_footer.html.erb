@@ -1,10 +1,12 @@
 <footer>
   <nav class="round">
-    <ul>
-      <div class="footer_link">Truthpage.me © 2012  ·
-		<li><%= link_to "Terms of use", terms_path, :class => "footer_links" %></li> ·
-        <li><%= link_to "Privacy Policy", privacy_path, :class => "footer_links"  %></li> ·
-		<li><%= link_to "About", about_path, :class => "footer_links"  %></li>
+    <ul class="footer_link">
+      <div class="footer_link"> 	
+		<li><%= link_to "truthpage.me © 2012", root_path, :class => "footer_links"  %></li> ·
+		<li><%= link_to "about", about_path, :class => "footer_links"  %></li> ·
+        <li><%= link_to "privacy policy", privacy_path, :class => "footer_links"  %></li> ·
+		<li><%= link_to "legal", legal_path, :class => "footer_links"  %></li> ·
+		<li><%= link_to "terms of use", terms_path, :class => "footer_links" %></li>
       </div>
     </ul>
   </nav>

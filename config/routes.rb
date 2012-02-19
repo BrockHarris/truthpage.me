@@ -9,7 +9,7 @@ Truthpage::Application.routes.draw do
   match '/home',   :to => 'pages#home'
   match '/about',  :to => 'pages#about'
   match '/help',    :to => 'pages#help'
-  match '/feedback',    :to => 'pages#feedback'
+  match '/legal',    :to => 'pages#legal'
   match '/privacy',    :to => 'pages#privacy'
   match '/terms',    :to => 'pages#terms'
   match '/',        :to => 'pages#home'

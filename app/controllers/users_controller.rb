@@ -5,22 +5,22 @@ class UsersController < ApplicationController
   before_filter :admin_user,   :only => :destroy
   
   def index
-    @title = "All users"
+    @title = "Truthpage.me | friends"
     #@users = User.paginate(:page => params[:page])   
     @usersearch = User.search(params[:search])
     @usersearch = @usersearch - [current_user] #eliminate self from the result
-    @users = @usersearch.paginate(:page => params[:page], :per_page => 10)
+    @users = @usersearch.paginate(:page => params[:page], :per_page => 20)
   end
   
   def show
-    @microposts = Micropost.find_all_by_belongs_to_id(@user.id)
+    @microposts = Micropost.find_all_by_belongs_to_id(@user.id).paginate(:page => params[:page], :per_page => 15)
     @micropost  = current_user.microposts.build(params[:micropost])
     @title = @user.username
   end
    
   def new
     @user = User.new
-    @title = "Sign up"
+    @title = "Truthpage.me | sign up"
   end
   
   def create
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
 
   def edit
     #@user = User.find(params[:id])
-    @title = "Edit user"
+    @title = "Truthpage.me | settings"
   end
 
   def update
@@ -80,7 +80,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Your profile has been updated!"
       redirect_to (:back)
     else
-      @title = "Edit user"
+      @title = "Truthpage.me | settings"
       render 'edit'
     end
   end

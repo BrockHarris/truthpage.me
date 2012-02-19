@@ -256,8 +256,6 @@ td.main {
 	-webkit-box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.7);
 	-moz-box-shadow:    3px 3px 5px rgba(50, 50, 50, 0.7);
 	box-shadow:         3px 3px 5px rgba(50, 50, 50, 0.7);
-
-
 }
 #welcome_line p {font-size:80%;}
 #welcome_line a img.facebook{vertical-align:middle;}
@@ -839,7 +837,7 @@ font-weight:200;
 }
 .signin_font1 {
 	font-size: 20pt;
-	margin-top: 20px;
+	margin-top: 30px;
 	margin-left: 10px;
 	margin-bottom: 5px;
 	font-weight:500;
@@ -849,7 +847,7 @@ font-weight:200;
 }
 .signin_font2 {
 	font-size: 20pt;
-	margin-top: 20px;
+	margin-top: 80px;
 	margin-left: 10px;
 	margin-bottom: 5px;
 	font-weight:500;
@@ -859,18 +857,18 @@ font-weight:200;
 }
 .ticker_header{
 	float:right;
-	margin-top:-460px;
+	margin-top:-430px;
 	margin-right:150px;
 	font-size: 17pt;
 	font-family: Comic Sans MS;
 }
 #vertical-ticker{
-    margin-top:-420px;
+  margin-top:-395px;
 	margin-left: 350px;
 	height:550px;
 	width: 450px;
   overflow:hidden;
-  -webkit-box-shadow:0 1px 3px rgba(0,0,0, .4);
+  box-shadow: 0 0 6px 1px #999;
 }
 
 #vertical-ticker li{
@@ -881,7 +879,7 @@ font-weight:200;
   display:block;
   background:#efefef;
   color:gray;
-  border-bottom:1px solid #ddd;
+  border-bottom:2px solid #ddd;
 	border-top:1px solid #ddd;
   text-align:left;
   font-size:15px;
@@ -924,12 +922,13 @@ input.readonly{background:#ccc;}
 }
 .tpcloud {
 	margin-top: 20px;
+	margin-left:210px;
 }
 .home_container {
 	margin-left:40px;
 }
 .signup_link {
-	font-size:12pt;
+	font-size:14pt;
 	margin-top:5px;
 	margin-left:7px;
 }
@@ -938,7 +937,8 @@ input.readonly{background:#ccc;}
 	margin-bottom: -20px;
 	margin-top:10px;
 }
-
-
-
+.signup_condition {
+	font-size:8pt;
+	color:gray;
+}
 

@@ -41,7 +41,8 @@
 
 <div class="signin_font2">Sign up:</div>
 	<%= render :partial=>"authentications/services" %>
-   <div class="signup_link">
+<div class="signup_condition">by clicking sign up you agree to our <%= link_to "terms of use", terms_path, :class => "footer_links" %>.</div> 
+<div class="signup_link">
     or <%= link_to "sign up here", signup_path%>.
 </div>    
 </p>
