@@ -6,8 +6,8 @@
         next        :   '#ticker-next',
         previous    :   '#ticker-previous',
         stop        :   '#stop',
-        start       :   '#start',
-		direction   :   'up'
+		start       :   '#start',
+		direction   :   'up',
         });
     });
   </script>
@@ -20,6 +20,9 @@
  <div id="welcome_line">
 	Welcome to truthpage.me!
  </div>
+
+<%= image_tag "tpcloud.png", :class => "tpcloud" %>
+
 <br/>
 <div class="signin_font1">Sign in:</div>
 <%= form_tag sessions_path do %>
@@ -36,14 +39,13 @@
   </div>
 <% end %>
 
-<p>Don't have a truthpage yet? <br />
-    Sign up with your Facebook account:
+<div class="signin_font2">Sign up:</div>
 	<%= render :partial=>"authentications/services" %>
     <br/> 
-    or <%= link_to "sign up here", signup_path %> and start posting truths!
+    or <%= link_to "", signup_path, :class => "signup_button"%>
     </p>
 
-	
+<div class="ticker_header">truths shared so far...</div>	
   <ul id="vertical-ticker" style="overflow-x: hidden; overflow-y: hidden; ">
     <% for mp in Micropost.all.take(50) do %>  
       <li><%= render :partial=>"microposts/ticker_micropost", :locals=>{:micropost=>mp} %></li>

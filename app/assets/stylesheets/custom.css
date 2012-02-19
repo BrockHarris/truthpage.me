@@ -559,17 +559,17 @@ padding:10px;
 }
 
 .signup_button {
-	background:url('signupbutton_down.jpg');
-	
-	height: 40px;
-	width: 115px;
+	margin-left: 40px;
+	border:none;
+	display: block;
+	width: 106px; height: 34px;
+	background-image: url('signup_button.png');
+	background-position: top;
+	text-indent: -9999px;
 }
 .signup_button:hover {
-	background:url('signupbutton_up.jpg');
-	border: none;
-	height: 40px;
-	width: 115px;
 	cursor:pointer;
+	background-position: bottom;
 }
 
 .globalfeed {
@@ -788,17 +788,33 @@ font-weight:200;
 }
 .signin_font1 {
 	font-size: 20pt;
-	margin-top: 40px;
+	margin-top: 20px;
 	margin-left: 10px;
 	margin-bottom: 5px;
 	font-weight:500;
 	color: #115cb8;
 	text-shadow: 1px 1px 1px gray;
 	filter: dropshadow(color=gray, offx=1, offy=1);
-	
+}
+.signin_font2 {
+	font-size: 20pt;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+	font-weight:500;
+	color: #115cb8;
+	text-shadow: 1px 1px 1px gray;
+	filter: dropshadow(color=gray, offx=1, offy=1);
+}
+.ticker_header{
+	float:right;
+	margin-top:-480px;
+	margin-right:110px;
+	font-size: 17pt;
+	font-family: Comic Sans MS;
 }
 #vertical-ticker{
-    margin-top:-380px;
+    margin-top:-440px;
 	margin-left: 450px;
 	height:450px;
 	width: 350px;
@@ -854,4 +870,7 @@ font-weight:200;
 input.readonly{background:#ccc;}
 .gspacer {
 	margin-bottom:10px;
+}
+.tpcloud {
+	margin-top: 20px;
 }

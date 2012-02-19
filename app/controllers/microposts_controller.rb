@@ -4,7 +4,7 @@ class MicropostsController < ApplicationController
   def create
     @micropost  = current_user.microposts.build(params[:micropost])
     if @micropost.save
-      flash[:notice] = "Your truth has been posted!"
+      flash[:notice] = "Your truth has been sent!"
       redirect_to(:back)
     else
       @feed_items = []

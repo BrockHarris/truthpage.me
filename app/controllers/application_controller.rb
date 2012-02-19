@@ -22,10 +22,10 @@ class ApplicationController < ActionController::Base
     session[:return_to] = nil
   end
 
-  def login_required(msg=MESSAGE_MUST_BE_LOGGED_IN)
+  def login_required
     unless current_user
       store_location
-      flash[:notice] = msg
+      flash[:notice] = "You need to sign in first!"
       redirect_to signin_url
       return false
     end
