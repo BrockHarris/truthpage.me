@@ -39,7 +39,7 @@
 		          $("#invite_fb_friends").click(function() {
 		            FB.init({ 
 		               appId:'186414394781001', 
-		               channelUrl : '//localhost:3000/channel.html', // Channel File
+		               channelUrl : '//www.truthpage.me/channel.html', // Channel File
 				      status     : true, // check login status
 				      cookie     : true, // enable cookies to allow the server to access the session
 				      xfbml      : true  // parse XFBML
@@ -51,10 +51,10 @@
 					   message: 'message here',
 					   name: 'truth is?',
 					   caption: 'post one on my truthpage!',
-					   link: 'http://www.truthpage.me/',
-					   picture: 'http://wwww.truthpage.me/app/assets/images/tp-logo.png',
+					   link: '<%= user_url(current_user) %>',
+					   picture: 'http://www.truthpage.me/app/assets/images/tp-logo.png',
 					   actions: [
-					        { name: 'truthpage.me', link: 'http://www.truthpage.me/' }
+					        { name: 'truthpage.me', link: 'http://www.truthpage.me' }
 					   ],
 					  user_message_prompt: 'Share a truth status'
 					  },
