@@ -559,7 +559,6 @@ padding:10px;
 }
 
 .signup_button {
-	margin-left: 40px;
 	border:none;
 	display: block;
 	width: 106px; height: 34px;
@@ -873,4 +872,12 @@ input.readonly{background:#ccc;}
 }
 .tpcloud {
 	margin-top: 20px;
+}
+.home_container {
+	margin-left:40px;
+}
+.signup_link {
+	font-size:12pt;
+	margin-top:5px;
+	margin-left:7px;
 }
