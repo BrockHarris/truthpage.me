@@ -1,4 +1,5 @@
-
+<strong>Sign in with Facebook:</strong>
+<div class="gspacer"></div>
 <%= render :partial=>"authentications/services" %>
 <div style="clear:both"></div>
 <p>
@@ -15,6 +16,7 @@
     <%= label_tag :password %><br />
     <%= password_field_tag :password, "", :class => "formfield" %>
   </div>
-  <div class="actions"><%= submit_tag "Log in", :class=>'login' %></div>
-  <div><%= link_to "Forgot your Password?", assist_url, :id=>"forgot-password" %></div>
+<%= link_to "Forgot your Password?", assist_url, :id=>"forgot-password", :class =>"forgot_password" %> 
+<div class="actions"><%= submit_tag "", :class=>'signin_button' %></div>
+  
 <% end %>

@@ -198,12 +198,34 @@ td.main {
 #welcome_line{
 	margin-left: 10%;
 	margin-right: 10%;
+	margin-bottom:10px;
 	text-align:center;
-	font-family: centuri schoolbook;
+	vertical-align:middle;
+	font-family: helvetica;
 	font-size: 24pt;
 	font-style: bold;
-	color:#000033;
-	text-shadow: 0 0 10px white;
+	color:white;
+	height: 50px;
+	text-shadow: 1px 1px 1px #404040;
+	filter: dropshadow(color=#404040, offx=1, offy=1);
+	padding-top: 10px;
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 1px solid #2769A3;
+	background: rgb(107,157,219); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(107,157,219,1) 0%, rgba(35,83,138,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(107,157,219,1)), color-stop(100%,rgba(35,83,138,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b9ddb', endColorstr='#23538a',GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.7);
+	-moz-box-shadow:    3px 3px 5px rgba(50, 50, 50, 0.7);
+	box-shadow:         3px 3px 5px rgba(50, 50, 50, 0.7);
+
+
 }
 #welcome_line p {font-size:80%;}
 #welcome_line a img.facebook{vertical-align:middle;}
@@ -358,8 +380,10 @@ padding:10px;
 	border: 1px solid #aaaaaa;
 }
 .profile_name {
-	font-size:20pt;
-	
+	font-size:20pt;	
+}
+.profile_link {
+	font-size: 11pt;
 }
 .change_pic {
 	float:left;
@@ -477,9 +501,6 @@ padding:10px;
 	margin-top:-12px;
 	float:left;
 }
-.side_container {
-	width:70px;
-}
 .micro_header {
 	font-size:13pt;
 	border-bottom:1px solid #cccccc;
@@ -519,17 +540,22 @@ padding:10px;
 	
 }
 .signin_button {
-	background:url('signinbutton_down.jpg');
-	border: none;
-	height: 40px;
-	width: 115px;
+	margin-left: 40px;
+	border:none;
+	display: block;
+	width: 106px; height: 34px;
+	background-image: url('signin_button.png');
+	background-position: top;
+	text-indent: -9999px;
 }
 .signin_button:hover {
-	background:url('signinbutton_up.jpg');
-	border: none;
-	height: 40px;
-	width: 115px;
 	cursor:pointer;
+	background-position: bottom;
+}
+.forgot_password {
+	vertical-align:top;
+	font-size: 10pt;
+	margin-bottom:10px;
 }
 
 .signup_button {
@@ -749,33 +775,62 @@ font-weight:200;
 }
 
 .auth_provider {
-  float: left;
-  text-decoration: none;
-  margin-right: 20px;
-  text-align: center;
-  margin-bottom: 10px;
+	border:none;
+	display: block;
+	width: 210px; height: 32px;
+	background-image: url('fb_connect.png');
+	background-position: top;
+	text-indent: -9999px;
 }
-
+.auth_provider:hover {
+	cursor:pointer;
+	background-position: bottom;
+}
+.signin_font1 {
+	font-size: 20pt;
+	margin-top: 40px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+	font-weight:500;
+	color: #115cb8;
+	text-shadow: 1px 1px 1px gray;
+	filter: dropshadow(color=gray, offx=1, offy=1);
+	
+}
 #vertical-ticker{
-  height:275px;
+    margin-top:-380px;
+	margin-left: 450px;
+	height:450px;
+	width: 350px;
   overflow:hidden;
-  margin:0; padding:0;
   -webkit-box-shadow:0 1px 3px rgba(0,0,0, .4);
 }
 
 #vertical-ticker li{
-  height:55px;
+	margin-left:-40px;
+	height:55px;
+	width:400px;
+	overflow:hidden;
   display:block;
   background:#efefef;
-  color:#333;
+  color:gray;
   border-bottom:1px solid #ddd;
-  text-align:center;
+	border-top:1px solid #ddd;
+  text-align:left;
   font-size:15px;
   font-weight:normal;
   font-family: Helvetica Neue, times, serif;
 }
-#vertical-ticker li img{vertical-align:middle;}
-p#ticker-control{font-size:12px; width:165px; margin:10px auto;}
+#vertical-ticker li img {
+	vertical-align:top;
+	margin-top:3px;
+	}
+.ticker_content {
+	vertical-align:-90%;
+	color:black;
+	margin-left: -220px;
+	font-size:13px;
+}	
 
 #flash {
   padding: 5px 8px;
@@ -797,3 +852,6 @@ p#ticker-control{font-size:12px; width:165px; margin:10px auto;}
 }
 
 input.readonly{background:#ccc;}
+.gspacer {
+	margin-bottom:10px;
+}

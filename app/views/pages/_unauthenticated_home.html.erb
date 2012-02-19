@@ -2,11 +2,12 @@
   <script type="text/javascript">
     $(function(){
       $('#vertical-ticker').totemticker({
-        row_height  :   '55px',
+		row_height  :   '55px',
         next        :   '#ticker-next',
         previous    :   '#ticker-previous',
         stop        :   '#stop',
         start       :   '#start',
+		direction   :   'up'
         });
     });
   </script>
@@ -17,23 +18,40 @@
 
 
  <div id="welcome_line">
-	Welcome to truthpage.me, a fun and simple way to share truths!
-  <p>Don't have a truthpage yet? <br />
-    Sign in with 
-    <a href="/auth/facebook">
-      <%= image_tag "facebook_64.png", :size => "64x64", :alt => "Facebook", :class=>"facebook" %>
-    </a>
-    <br/> 
-    or <%= link_to "get your truthpage here", signup_path %> and start posting truths!
-    </p> 
-</div>
+	Welcome to truthpage.me!
+ </div>
+<br/>
+<div class="signin_font1">Sign in:</div>
+<%= form_tag sessions_path do %>
+  <div class="field">
+    <%= label_tag :login, "Username or Email" %><br />
+    <%= text_field_tag :login, params[:login], :class => "formfield" %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password, "", :class => "formfield" %>
+  </div>
+  <div class="actions">
+   <%= submit_tag "", :class=>'signin_button' %>
+  </div>
+<% end %>
 
+<p>Don't have a truthpage yet? <br />
+    Sign up with your Facebook account:
+	<%= render :partial=>"authentications/services" %>
+    <br/> 
+    or <%= link_to "sign up here", signup_path %> and start posting truths!
+    </p>
+
+	
   <ul id="vertical-ticker" style="overflow-x: hidden; overflow-y: hidden; ">
     <% for mp in Micropost.all.take(50) do %>  
-      <li><%= render :partial=>"microposts/micropost", :locals=>{:micropost=>mp} %></li>
+      <li><%= render :partial=>"microposts/ticker_micropost", :locals=>{:micropost=>mp} %></li>
     <% end %>
   </ul>
-  <p id="ticker-control" class="centered">[&nbsp;<a href="#" id="ticker-previous">Previous</a> / <a href="#" id="ticker-next">Next</a> / <a id="stop" href="#">Stop</a> / <a id="start" href="#">Start</a>&nbsp;]</p>
+
+
+
 
   <div class="fblike">
 

@@ -17,9 +17,18 @@
     <%= f.label :password_confirmation, "Confirm Password" %><br />
     <%= f.password_field :password_confirmation, :class =>"formfield" %>
   </div>  
-
-	<%= show_simple_captcha :label => "(human authentication)" %>
+ <% if current_user %>
+  <div class="settings_fields">
+	<%= f.label "change profile picture" %><br />
+	<%= f.file_field :photo %>
+  </div>
+  <div class="save_button">
+    <%= f.submit '', :class => "savesettings"%>
+  </div>
+ <% else %>
+  <%= show_simple_captcha :image_style => 'simply_blue', :label => "(type the words in the image)" %>
   <div class="save_button">
     <%= f.submit 'signup'%>
   </div>
+<% end %>
 <% end %>

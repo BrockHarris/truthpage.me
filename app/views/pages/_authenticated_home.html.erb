@@ -12,7 +12,7 @@
 		<%= render 'shared/feed' %>
 		</div>
       </td>
-      <div class="side_container">
+      
 	   <td class="sidebar round">
        <div class="dash_user"><%= current_user.username %></div> 
 		<div class="dash_gravatar">
@@ -21,10 +21,14 @@
 		<br />
 		<%= render 'shared/stats' %>
 		<br />
-		<strong>Profile link:</strong> truthpage.me<%= link_to user_path(@user), @user %><br />
-		
+		<strong>Profile link:</strong>
+		<div class="profile_link">
+		 truthpage.me<%= link_to user_path(@user), @user %><br />
+		</div>
+		</br>
+		<strong>Get truths via:</strong>
 		<div id="friends">
-		      <p><%= link_to "", "#", :id => "invite_fb_friends", :class => 'facebook_share' %></p>
+		      <%= link_to "", "#", :id => "invite_fb_friends", :class => 'facebook_share' %>
 
 		      <div id="fb-root"></div>
 
@@ -68,7 +72,7 @@
 		      </script>
 		    </div>
 		
-		
+		or
 		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="truth is? leave one on my truthpage!" data-size="large" data-count="none">Tweet</a>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 		</script>
@@ -82,6 +86,5 @@
       	
 			
 </td>
-</div>
     </tr>
   </table>
