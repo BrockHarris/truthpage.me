@@ -13,7 +13,7 @@
     </td>
     <td class="sidebar round">
       <strong>Truths shared:</strong> <%= @user.microposts.count %> <br/>
-	      <%= link_to "Find friends", "/users?utf8=✓&search=" , :class =>"headerlink"%> <p/>
+	      <%= link_to "Find friends", search_url , :class =>"headerlink"%> <p/>
       <%= render 'shared/stats' %>
       <% unless @users.empty? %>
         <% @users.each do |user| %>
