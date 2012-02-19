@@ -1,8 +1,9 @@
-<table summary="Information about following/followers">
+<table summary="following/followers">
   <tr>
     <td class="main">
-      <h1><%= @title %></h1>
-      
+    <div class="dashfeed_header">  
+	<strong><%= @user.username %></strong><%= @title %>
+      </div>
       <% unless @users.empty? %>
         <ul class="users">
           <%= render @users %>
@@ -11,9 +12,8 @@
       <% end %>
     </td>
     <td class="sidebar round">
-      <strong>Name</strong> <%= @user.username %><br />
-      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-      <strong>Microposts</strong> <%= @user.microposts.count %>
+      <strong>Truths shared:</strong> <%= @user.microposts.count %> <br/>
+	      <%= link_to "Find friends", "/users?utf8=✓&search=" , :class =>"headerlink"%> <p/>
       <%= render 'shared/stats' %>
       <% unless @users.empty? %>
         <% @users.each do |user| %>

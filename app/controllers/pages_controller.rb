@@ -26,8 +26,8 @@ class PagesController < ApplicationController
     @title = "terms & conditions"
   end
   
-  def help
-    @title = "Help"
+  def about
+    @title = "about"
   end
 
 end

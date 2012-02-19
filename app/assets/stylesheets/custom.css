@@ -1,9 +1,41 @@
+
+.fhead {
+	font-size: 35pt;
+	font-family: helvetica;
+	font-weight: 400;
+	text-align:center;
+}
+.fsub	{
+	font-size: 16pt;
+	font-family: helvetica;
+	font-weight: 300;
+	text-align:center;
+}
+.fbody {
+	font-size: 12pt;
+	font-family: times;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.fbody2 {
+	font-size: 12pt;
+	font-family: arial;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align:center;
+}
+
 .access_error {
 	background-color: red;
 	border:1px solid gray;
 	height: 30px;
 	width: 300px;
 	
+}
+.footer_links {
+	font-family:helvetica;
+	font-size:11pt;
+	font-weight:400;
 }
 .container {
 	margin-left:auto;
@@ -906,3 +938,7 @@ input.readonly{background:#ccc;}
 	margin-bottom: -20px;
 	margin-top:10px;
 }
+
+
+
+

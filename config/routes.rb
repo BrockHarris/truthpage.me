@@ -7,6 +7,7 @@ Truthpage::Application.routes.draw do
   match '/signup', :to => 'users#new'
   match '/contact', :to => 'pages#contact'
   match '/home',   :to => 'pages#home'
+  match '/about',  :to => 'pages#about'
   match '/help',    :to => 'pages#help'
   match '/feedback',    :to => 'pages#feedback'
   match '/privacy',    :to => 'pages#privacy'
