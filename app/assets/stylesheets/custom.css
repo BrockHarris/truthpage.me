@@ -478,14 +478,34 @@ padding:10px;
 }
 
 .dashfeed_header {
+	margin-top:-10px;
+	margin-bottom:10px;
 	text-align:center;
-	font-weight: 100;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	font-size:22pt;
-	color:#002233;
-	border-bottom:1px solid #aaaaaa;
-	border-top:1px solid #aaaaaa;
-	background-color: white;
+	vertical-align:middle;
+	font-family: helvetica;
+	font-size: 24pt;
+	font-style: bold;
+	color:white;
+	height: 50px;
+	text-shadow: 1px 1px 1px #404040;
+	filter: dropshadow(color=#404040, offx=1, offy=1);
+	padding-top: 5px;
+	padding-bottom:-5px;
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 1px solid #2769A3;
+	background: rgb(107,157,219); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(107,157,219,1) 0%, rgba(35,83,138,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(107,157,219,1)), color-stop(100%,rgba(35,83,138,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b9ddb', endColorstr='#23538a',GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.7);
+	-moz-box-shadow:    3px 3px 5px rgba(50, 50, 50, 0.7);
+	box-shadow:         3px 3px 5px rgba(50, 50, 50, 0.7);
 }
 .sidefeed {
 	border-bottom: 1px solid #0099cc;
@@ -807,16 +827,16 @@ font-weight:200;
 }
 .ticker_header{
 	float:right;
-	margin-top:-480px;
-	margin-right:110px;
+	margin-top:-460px;
+	margin-right:150px;
 	font-size: 17pt;
 	font-family: Comic Sans MS;
 }
 #vertical-ticker{
-    margin-top:-440px;
-	margin-left: 450px;
-	height:450px;
-	width: 350px;
+    margin-top:-420px;
+	margin-left: 350px;
+	height:550px;
+	width: 450px;
   overflow:hidden;
   -webkit-box-shadow:0 1px 3px rgba(0,0,0, .4);
 }
@@ -824,7 +844,7 @@ font-weight:200;
 #vertical-ticker li{
 	margin-left:-40px;
 	height:55px;
-	width:400px;
+	width:500px;
 	overflow:hidden;
   display:block;
   background:#efefef;
@@ -880,4 +900,9 @@ input.readonly{background:#ccc;}
 	font-size:12pt;
 	margin-top:5px;
 	margin-left:7px;
+}
+.captcha_holder {
+	margin-left: 80px;
+	margin-bottom: -20px;
+	margin-top:10px;
 }

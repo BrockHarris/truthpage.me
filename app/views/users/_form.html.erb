@@ -26,9 +26,11 @@
     <%= f.submit '', :class => "savesettings"%>
   </div>
  <% else %>
-  <%= show_simple_captcha :image_style => 'simply_blue', :label => "(type the words in the image)" %>
+  <div class="captcha_holder">
+	<%= show_simple_captcha :image_style => 'simply_blue', :label => "(type the words in the image)" %>
+  </div>
   <div class="save_button">
-    <%= f.submit 'signup'%>
+    <%= f.submit '', :class => "signup_button"%>
   </div>
 <% end %>
 <% end %>
