@@ -25,13 +25,7 @@ Truthpage::Application.routes.draw do
   match "/welcome_user/:id", :to=>"users#welcome", :as=>"welcome_user"
 
   match "complete_session_authentication_path", :to=>"authentications#complete_session_authentication", :as=>:complete_session_authentication
-  
-  match ':id', :as => :username, 
-                    :via => :get, 
-                    :controller => :users, 
-                    :action => :show
-                  
-                    
+               
   resources :microposts
   resources :users do
       member do
