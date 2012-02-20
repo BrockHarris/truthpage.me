@@ -891,10 +891,19 @@ font-weight:200;
 	margin-top:3px;
 	}
 .ticker_content {
-	vertical-align:-90%;
+	vertical-align:middle;
 	color:black;
-	margin-left: -220px;
+	margin-left: 10px;
+	float: left;
 	font-size:13px;
+}
+.ticker_user {
+	float: left;
+	margin-left: 5px;
+
+}
+.ticker_photo {
+	float:left;
 }	
 
 #flash {

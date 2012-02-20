@@ -1,11 +1,10 @@
 <tr>
-  <td class="gravatar">
-    <%= render_user_avatar(micropost.user, :thumb) %>
-  </td>
-  <td class="micropost">
-    <span class="user">
-      <%= link_to micropost.user.username, micropost.user %> <italic>shared with a friend:</italic>
-    </span>
-	<span class="ticker_content">truth is <%= micropost.content %></span>
+  <td>
+	<span class="ticker_photo"><%= render_user_avatar(micropost.user, :thumb) %></span>
+	<span class="ticker_user">
+	<%= link_to micropost.user.username, micropost.user %> shared with a friend:
+	</span>
+	  <br/>
+    <span class="ticker_content">truth is <%= micropost.content %></span> 
   </td>
 </tr>
