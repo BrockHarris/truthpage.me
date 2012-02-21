@@ -1,4 +1,4 @@
-require 'rack/no-www'
+require 'rack/no_www'
 require 'will_paginate/array'
 require File.expand_path('../boot', __FILE__)
 require 'rails/all'
