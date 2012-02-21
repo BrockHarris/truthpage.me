@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @title = "Truthpage.me"
-    @globalfeed_items = Micropost.all #TOFIX: This is going to be a BAD thing if there are millions of posts.
+    @globalfeed_items = Micropost.limit(50) 
     if current_user
       @micropost = Micropost.new
       @feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 20)

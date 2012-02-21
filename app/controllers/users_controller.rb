@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_filter :correct_user, :only => [:edit, :update, :destroy]
   before_filter :find_user, :only=>[:show, :following, :followers, :follow, :unfollow, :edit, :update, :destroy]
   before_filter :admin_user,   :only => :destroy
+
   
   def index
     @title = "Truthpage.me | friends"
@@ -84,12 +85,12 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-
+  
   def destroy
-    #User.find(params[:id]).destroy
-    User.destroy(@user)
-    flash[:success] = "removed truthpage user."
-    redirect_to users_path
+    User.find(@user).destroy
+    @user = User.find_by_username(params[:id])
+    flash[:success] = "Removed truthpage user."
+    redirect_to(:back)
   end
 
   # If the request's HTTP method was +post+ and a parameter named +email+ is
@@ -184,7 +185,6 @@ class UsersController < ApplicationController
     end
   end
 
-
   #a hard link to activate a user.
   def activate
     @user.activate! if @user.pending?
@@ -192,7 +192,7 @@ class UsersController < ApplicationController
   end
 
   private
-  
+
   def admin_user
         redirect_to(root_path) if current_user = current_user.admin
   end

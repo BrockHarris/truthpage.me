@@ -1,3 +1,10 @@
+
+<h1>Truthpage | Admin </h1>
+<p/>
+<strong> Registered users count: </strong><%= @users.count %>
+<p/>
+<strong> Posts shared site-wide: </strong><%= @microposts.count %>
+<p/>
 <%= will_paginate(@users) %>
 <table>
   <thead>

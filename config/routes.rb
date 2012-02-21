@@ -10,12 +10,12 @@ Truthpage::Application.routes.draw do
   match '/legal',    :to => 'pages#legal'
   match '/privacy',    :to => 'pages#privacy'
   match '/terms',    :to => 'pages#terms'
+  match '/admin', :to => 'admin/users#index'
   match '/',        :to => 'pages#home'
   match '/tickertest', :to=>'pages#tickertest'
   match "/auth/:provider/callback" => "authentications#create"
   match "/auth/failure" => "authentications#auth_failure"
-  match "/search", :to=> "users#index", :as=>"search" #this is the 'friends' link/path consider renaming.
-  #user activation etc.
+  match "/search", :to=> "users#index", :as=>"search" 
   match '/activate/:id/:activation_code', :to=>"users#activation", :as=>"activate"
   match "/assist", :to=>"users#assist", :as=>"assist"
   match "/reset/:id/:reset_code", :to=>"users#reset", :as=>"reset"
