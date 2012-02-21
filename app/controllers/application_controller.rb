@@ -1,14 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :check_uri
   include SimpleCaptcha::ControllerHelpers
   helper :all 
   helper_method :current_user
-  
-  def check_uri
-      redirect_to request.protocol + "www." + request.host_with_port + request.request_uri if !/^www/.match(request.host)
-  end
-  
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
@@ -46,4 +41,7 @@ class ApplicationController < ActionController::Base
     access_denied unless current_user.try(:admin)
   end
   
+  def admin_logged_in?
+    access_denied unless current_user.try(:admin)
+  end
 end
