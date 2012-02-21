@@ -23,7 +23,7 @@
 
 <br/>
 <div class="home_container">
-<div class="signin_font1">Sign in:</div>
+<div class="signin_font1">Sign in</div>
 <%= form_tag sessions_path do %>
   <div class="field">
     <%= label_tag :login, "Username or Email" %><br />
@@ -38,7 +38,7 @@
   </div>
 <% end %>
 
-<div class="signin_font2">Sign up:</div>
+<div class="signin_font2">Sign up</div>
 	<%= render :partial=>"authentications/services" %>
 <div class="signup_condition">by clicking sign up you agree to our <%= link_to "terms of use", terms_path, :class => "footer_links" %>.</div> 
 <div class="signup_link">

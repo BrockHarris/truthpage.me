@@ -705,6 +705,7 @@ h1.micropost {
 
 table.microposts {
   margin-top: 1em;
+font-size: 16px;
 }
 
 table.microposts tr {
@@ -838,7 +839,6 @@ font-weight:200;
 .signin_font1 {
 	font-size: 20pt;
 	margin-top: 30px;
-	margin-left: 10px;
 	margin-bottom: 5px;
 	font-weight:500;
 	color: #115cb8;
@@ -848,7 +848,6 @@ font-weight:200;
 .signin_font2 {
 	font-size: 20pt;
 	margin-top: 80px;
-	margin-left: 10px;
 	margin-bottom: 5px;
 	font-weight:500;
 	color: #115cb8;
@@ -891,7 +890,8 @@ font-weight:200;
 	margin-top:3px;
 	}
 .ticker_content {
-	vertical-align:middle;
+	vertical-align:top;
+	overflow:hidden;
 	color:black;
 	margin-left: 10px;
 	float: left;
@@ -900,10 +900,12 @@ font-weight:200;
 .ticker_user {
 	float: left;
 	margin-left: 5px;
+	overflow:hidden;
 
 }
 .ticker_photo {
 	float:left;
+	margin-left: 4px;
 }	
 
 #flash {
@@ -931,7 +933,7 @@ input.readonly{background:#ccc;}
 }
 .tpcloud {
 	margin-top: 20px;
-	margin-left:210px;
+	margin-left:200px;
 }
 .home_container {
 	margin-left:40px;
