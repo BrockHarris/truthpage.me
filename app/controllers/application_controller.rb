@@ -41,7 +41,4 @@ class ApplicationController < ActionController::Base
     access_denied unless current_user.try(:admin)
   end
   
-  def admin_logged_in?
-    access_denied unless current_user.try(:admin)
-  end
 end
