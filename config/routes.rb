@@ -1,11 +1,5 @@
 Truthpage::Application.routes.draw do 
   
-  constraints(:host => "www.truthpage.me") do
-    match "(*x)" => redirect { |params, request|
-      URI.parse(request.url).tap { |x| x.host = "truthpage.me" }.to_s
-    }
-  end
-
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   match '/signup', :to => 'users#new'

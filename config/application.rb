@@ -10,7 +10,6 @@ end
 
 module Truthpage
   class Application < Rails::Application
-    config.force_ssl = true
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
     config.assets.enabled = true
