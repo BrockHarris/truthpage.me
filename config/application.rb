@@ -1,4 +1,3 @@
-require 'rack/no_www'
 require 'will_paginate/array'
 require File.expand_path('../boot', __FILE__)
 require 'rails/all'
@@ -15,8 +14,7 @@ module Truthpage
     config.assets.enabled = true
     config.assets.precompile += ['admin_data.css', 'admin_data.js']
     config.assets.version = '1.0'
-    if Rails.env.production?
-          config.middleware.insert_before Rack::Lock, Rack::NoWWW
-    end
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.middleware.use "NoWww"
   end
 end

@@ -1,17 +1,21 @@
-class NoWWW
+class NoWww
 
-  STARTS_WITH_WWW = /^www\./i
-  
   def initialize(app)
     @app = app
   end
-  
+
   def call(env)
-    if env['HTTP_HOST'] =~ STARTS_WITH_WWW
-      [301, { 'Location' => Rack::Request.new(env).url.sub(/www\./i, '') }, ['Redirecting...']]
+
+    request = Rack::Request.new(env)
+
+    if request.host.starts_with?("www.")
+      [301, {"Location" => request.url.sub("//www.", "//")}, self]
     else
       @app.call(env)
     end
   end
-  
+
+  def each(&block)
+  end
+
 end
