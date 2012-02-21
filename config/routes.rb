@@ -1,13 +1,9 @@
 Truthpage::Application.routes.draw do 
   
-  redirect_proc = Proc.new { redirect { |params, request|
-      URI.parse(request.url).tap { |x| x.host = "www.truthpage.me"; x.scheme = "https" }.to_s
-    } }
-    constraints(:host => "truthpage.me") do
-      match "(*x)" => redirect_proc.call
-    end
-    constraints(:scheme => "http") do
-      match "(*x)" => redirect_proc.call
+  constraints(:host => "www.truthpage.me") do
+    match "(*x)" => redirect { |params, request|
+      URI.parse(request.url).tap { |x| x.host = "truthpage.me" }.to_s
+    }
   end
 
   match '/signin',  :to => 'sessions#new'
