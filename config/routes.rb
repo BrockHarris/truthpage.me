@@ -3,7 +3,7 @@ Truthpage::Application.routes.draw do
   redirect_proc = Proc.new { redirect { |params, request|
       URI.parse(request.url).tap { |x| x.host = "www.truthpage.me"; x.scheme = "https" }.to_s
     } }
-    constraints(:host => "example.net") do
+    constraints(:host => "truthpage.me") do
       match "(*x)" => redirect_proc.call
     end
     constraints(:scheme => "http") do
