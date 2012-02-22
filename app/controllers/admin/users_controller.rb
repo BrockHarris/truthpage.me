@@ -1,4 +1,5 @@
 class Admin::UsersController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   before_filter :admin_login_required
   before_filter :find_user, :except=>[:index]
 

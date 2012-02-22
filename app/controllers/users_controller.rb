@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   before_filter :login_required, :only => [:index, :show, :edit, :update, :destroy]
   before_filter :correct_user, :only => [:edit, :update, :destroy]
   before_filter :find_user, :only=>[:show, :following, :followers, :follow, :unfollow, :edit, :update, :destroy]

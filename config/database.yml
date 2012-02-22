@@ -23,5 +23,5 @@ production:
   database: production  
   username: root
   password: truthpage1
-  host: 127.0.0.1
+
 

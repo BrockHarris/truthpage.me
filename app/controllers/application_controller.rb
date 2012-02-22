@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include SimpleCaptcha::ControllerHelpers
   helper :all 
   helper_method :current_user
+  skip_before_filter :verify_authenticity_token
   
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

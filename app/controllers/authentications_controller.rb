@@ -1,4 +1,5 @@
 class AuthenticationsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   before_filter :login_required, :only=>[:destroy]
   
   def index
