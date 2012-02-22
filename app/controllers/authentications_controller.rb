@@ -73,10 +73,11 @@ class AuthenticationsController < ApplicationController
   end
 
   def handle_new_user_creation_through_authentication
-    user = User.new(:mode=>"service", :email=>@omniauth['info']['email'], :username=>@omniauth['info']['nickname'] || @omniauth['info']['name'])
-    user.authentications.build(:provider => @omniauth ['provider'], :uid => @omniauth['uid'])
-    user.save!
-    sign_in_and_redirect_back_or_default(user, user_path(user))
+      username = @omniauth['info']['nickname'] || @omniauth['info']['name']
+      user = User.new(:mode=>"service", :email=>@omniauth['info']['email'], :username=>username.gsub(/\W/,''))
+      user.authentications.build(:provider => @omniauth ['provider'], :uid => @omniauth['uid'])
+      user.save!
+      sign_in_and_redirect_back_or_default(user, user_path(user))
   end
 
 end
