@@ -21,7 +21,7 @@
 <div class="profile_email">
 	(<%= @user.email %>)
 </div>
-
+<div class="profile_follow"><%= render_follow_links(@user) %></div>
 
 <table class="profile" summary="Profile information">
 	<tr>
@@ -37,9 +37,8 @@
 			<div class="profile_gravatar">	
 				<%= render_user_avatar(@user, :small) %>
 			</div>  
-			<div class="profile_follow"><%= render_follow_links(@user) %></div>
-			<%= render 'shared/stats' %>
 			
+			<%= render 'shared/stats' %>
 			<strong>Truths shared:</strong> <%= @user.microposts.count %>
 		</td>
 	</tr>
