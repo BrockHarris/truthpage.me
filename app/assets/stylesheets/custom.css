@@ -844,7 +844,7 @@ font-weight:200;
 }
 .signin_font1 {
 	font-size: 20pt;
-	margin-top: 30px;
+	margin-top: 20px;
 	margin-bottom: 5px;
 	font-weight:500;
 	color: #115cb8;
@@ -853,7 +853,7 @@ font-weight:200;
 }
 .signin_font2 {
 	font-size: 20pt;
-	margin-top: 80px;
+	margin-top: 60px;
 	margin-bottom: 5px;
 	font-weight:500;
 	color: #115cb8;
@@ -938,8 +938,9 @@ input.readonly{background:#ccc;}
 	margin-bottom:10px;
 }
 .tpcloud {
-	margin-top: 20px;
-	margin-left:200px;
+	margin-top: -40px;
+	margin-left:310px;
+	margin-bottom:20px;
 }
 .home_container {
 	margin-left:40px;
@@ -958,4 +959,9 @@ input.readonly{background:#ccc;}
 	font-size:8pt;
 	color:gray;
 }
-
+.facepile {
+	padding-top:20px;
+	padding-bottom:10px;
+	float:left;
+	margin-left:35px;
+}

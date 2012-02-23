@@ -14,12 +14,24 @@
     });
   </script>
 <% end %>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=186414394781001";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 
  <div id="welcome_line">
 	Welcome to truthpage.me!
  </div>
 
+<div class="facepile">
+<div class="fb-facepile" data-href="http://truthpage.me" data-size="small" data-max-rows="5" data-width="250"></div>
 <%= image_tag "tpcloud.png", :class => "tpcloud" %>
+</div>
 
 <br/>
 <div class="home_container">
