@@ -461,6 +461,12 @@ padding:10px;
 	font-style:italic;
 	color:gray;
 }
+.profile_follow {
+	vertical-align:bottom;
+	margin-top:40px;
+	margin-left:50px;
+	float:left;
+}
 .profile_gravatar {
 	margin-bottom:15px;
 	text-align:center;
