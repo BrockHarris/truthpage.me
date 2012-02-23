@@ -10,6 +10,7 @@ Truthpage::Application.routes.draw do
   match '/legal',    :to => 'pages#legal'
   match '/privacy',    :to => 'pages#privacy'
   match '/terms',    :to => 'pages#terms'
+  match '/help',    :to => 'pages#help'
   match '/admin', :to => 'admin/users#index'
   match '/',        :to => 'pages#home'
   match '/tickertest', :to=>'pages#tickertest'

@@ -5,8 +5,9 @@
 		<li><%= link_to "truthpage.me © 2012", root_path, :class => "footer_links"  %></li> ·
 		<li><%= link_to "about", about_path, :class => "footer_links"  %></li> ·
         <li><%= link_to "privacy policy", privacy_path, :class => "footer_links"  %></li> ·
+		<li><%= link_to "terms of use", terms_path, :class => "footer_links" %></li> ·
 		<li><%= link_to "legal", legal_path, :class => "footer_links"  %></li> ·
-		<li><%= link_to "terms of use", terms_path, :class => "footer_links" %></li>
+		<li><%= link_to "help", help_path, :class => "footer_links"  %></li>
 		  <% if current_user.try(:admin?) %> · 
 		<li><%= link_to "admin", admin_path, :class => "footer_links" %></li>
           <% end %>

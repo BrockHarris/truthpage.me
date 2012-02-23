@@ -22,6 +22,10 @@ skip_before_filter :verify_authenticity_token
     @title = "Truthpage.me | terms of use"
   end
   
+  def help
+    @title = "Truthpage.me | help"
+  end
+  
   def about
     @title = "Truthpage.me | about"
   end
