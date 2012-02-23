@@ -21,7 +21,7 @@
     <tr>
 	  <td><%= user.id %><td>
       <td><%= user.email %></td>
-      <td><%= user.username %></td>
+      <td><%= link_to user.username, user %></td> 
       <td><%= user.admin.to_yn %></td>
       <td><%= button_to "Delete", admin_user_path(user), :method=>:delete, :confirm=>"Are you sure?" if user.id != current_user.id %></td>
     <tr>
