@@ -9,7 +9,8 @@ class MicropostsController < ApplicationController
       redirect_to(:back)
     else
       @feed_items = []
-      render 'pages/home'
+      flash[:alert] = "You haven't written anything!"
+      redirect_to(:back)
     end
   end
  

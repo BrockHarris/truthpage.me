@@ -24,6 +24,6 @@ class Admin::UsersController < ApplicationController
   private
  
   def find_user
-     @user = User.find_by_username(params[:id, :order => 'id DESC'])
+     @user = User.find_by_username(params[:id])
    end
 end
