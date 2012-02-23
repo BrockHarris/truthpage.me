@@ -12,7 +12,7 @@
       <div class="headerlink_place">
         <% if current_user %>
           <li><%= link_to "Home", root_path, :class =>"headerlink" %></li> | 
-		  <li><%= link_to "Friends", search_url , :class =>"headerlink"%></li> |
+		  <li><%= link_to "Search", search_url , :class =>"headerlink"%></li> |
           <li><%= link_to "Profile", current_user, :class =>"headerlink" %></li> |
           <li><%= link_to "Settings", edit_user_path(current_user), :class =>"headerlink" %></li> |
         <% end %>
