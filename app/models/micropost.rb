@@ -4,7 +4,7 @@ class Micropost < ActiveRecord::Base
   belongs_to :user
   belongs_to :target_user, :class_name=>"User", :foreign_key=>"belongs_to_id"
   
-  validates :content, :presence => true, :length => { :maximum => 240 }
+  validates :content, :presence => true, :length => { :maximum => 300 }
   validates :user_id, :presence => true
   
   default_scope :order => 'microposts.created_at DESC'

@@ -1,17 +1,28 @@
+<script type="text/javascript">
+  $(function(){
+    $('#counter').jqEasyCounter({
+		'maxChars': 300,
+	    'maxCharsWarning': 270,
+	    'msgFontSize': '15px',
+	    'msgFontColor': '#006699',
+	    'msgFontFamily': 'helvetica',
+	    'msgTextAlign': 'left',
+	    'msgWarningColor': '#000',
+	    'msgAppendMethod': 'insertAfter'
+      });
+  });
+</script>
+
 <%= form_for @micropost do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
 truth is...  
-<div class="field">
-
-	<%= f.text_area :content %>
+  <div class="field" >
+	<%= f.text_area :content, :maxlength=>"300", :id =>"counter" %>
   </div>
   <div class=field>
 	<%= f.hidden_field :belongs_to_id, :value => @user.id %>
-	
-	</div>
-
-
-    <div class ="share_placement"><%= f.submit '', :class => 'submitpost'%></div>
+  </div>
+<div class ="share_placement"><%= f.submit '', :class => 'submitpost'%></div>
 
 <% end %>
 
