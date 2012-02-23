@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   before_filter :find_user, :except=>[:index]
 
   def index
-    @users = User.all.paginate(:page => params[:page], :per_page => 40)
+    @users = User.all.paginate(:order => 'id DESC', :page => params[:page], :per_page => 40)
     @microposts  = Micropost.all
     
   end
