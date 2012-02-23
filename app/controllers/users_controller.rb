@@ -61,15 +61,13 @@ class UsersController < ApplicationController
   end
 
   def follow
-    #@user = User.find(params[:id])
     current_user.follow!(@user)
-    redirect_to users_path, :notice=>"You're now following #{@user.username}!"
+    redirect_to :back, :notice=>"You're now following #{@user.username}!"
   end
 
   def unfollow
-    #@user = User.find(params[:id])
     current_user.unfollow!(@user)
-    redirect_to users_path, :notice=>"You stopped following #{@user.username}."
+    redirect_to :back, :notice=>"You stopped following #{@user.username}."
   end
 
   def edit
