@@ -1,3 +1,17 @@
+<script type="text/javascript">
+  $(function(){
+    $('#counter').jqEasyCounter({
+		'maxChars': 300,
+	    'maxCharsWarning': 270,
+	    'msgFontSize': '15px',
+	    'msgFontColor': '#006699',
+	    'msgFontFamily': 'helvetica',
+	    'msgTextAlign': 'left',
+	    'msgWarningColor': '#000',
+	    'msgAppendMethod': 'insertAfter'
+      });
+  });
+</script>
 
 <div class="profile_name">
 	<%= @user.username %>
