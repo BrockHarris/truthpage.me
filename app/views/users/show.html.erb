@@ -1,8 +1,9 @@
+<%= content_for :head do %>
 <script type="text/javascript">
   $(function(){
     $('#counter').jqEasyCounter({
-		'maxChars': 300,
-	    'maxCharsWarning': 270,
+		'maxChars': 250,
+	    'maxCharsWarning': 220,
 	    'msgFontSize': '15px',
 	    'msgFontColor': '#006699',
 	    'msgFontFamily': 'helvetica',
@@ -12,6 +13,7 @@
       });
   });
 </script>
+<% end %>
 
 <div class="profile_name">
 	<%= @user.username %>
