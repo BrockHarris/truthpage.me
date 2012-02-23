@@ -37,6 +37,7 @@
 			<div class="profile_gravatar">	
 				<%= render_user_avatar(@user, :small) %>
 			</div>  
+			
 			<%= render 'shared/stats' %>
 			<strong>Truths shared:</strong> <%= @user.microposts.count %>
 		</td>

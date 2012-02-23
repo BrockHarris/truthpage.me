@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @microposts = Micropost.find_all_by_belongs_to_id(@user.id).paginate(:page => params[:page], :per_page => 15)
     @micropost  = current_user.microposts.build(params[:micropost])
     @title = @user.username
+    @user = User.find_by_username(params[:id])
   end
    
   def new

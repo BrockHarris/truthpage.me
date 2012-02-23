@@ -10,7 +10,7 @@ class AuthenticationsController < ApplicationController
     @omniauth = request.env["omniauth.auth"]
     authentication = Authentication.where(:provider=>@omniauth['provider'],:uid=>@omniauth['uid']).where("user_id IS NOT NULL").first
     if authentication
-      flash[:notice] = "Welcome to truthpage.me! We reccomend using Google Chrome or Safari for this site."
+      flash[:notice] = "Welcome to truthpage.me! We recommend using Google Chrome or Safari for this site."
       sign_in_and_redirect_back_or_default(authentication.user, user_path(authentication.user))
     elsif current_user
       #the user is logged in and trying to add another authentication (we don't support this...yet.)

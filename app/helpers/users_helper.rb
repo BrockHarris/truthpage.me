@@ -18,6 +18,6 @@ module UsersHelper
   end
 
   def unfollow_link(user, opts={})
-    button_to "stop following", unfollow_user_path(user), :class => 'unfollow_button'
+    button_to "", unfollow_user_path(user), :class => 'unfollow_button'
   end
 end
