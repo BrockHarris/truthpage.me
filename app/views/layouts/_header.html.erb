@@ -1,7 +1,7 @@
 
 <header>
   <div class="header_text">     
-    truthpage.me
+    <%= link_to "truthpage.me", root_path %>
   </div>     
 
   <% if current_user %>
@@ -13,7 +13,7 @@
         <% if current_user %>
           <li><%= link_to "Home", root_path, :class =>"headerlink" %></li> | 
 		  <li><%= link_to "Search", search_url , :class =>"headerlink"%></li> |
-          <li><%= link_to "Profile", current_user, :class =>"headerlink" %></li> |
+          <li><%= link_to "Profile", profile_path, :class =>"headerlink" %></li> |
           <li><%= link_to "Settings", edit_user_path(current_user), :class =>"headerlink" %></li> |
         <% end %>
 

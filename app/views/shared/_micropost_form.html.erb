@@ -1,3 +1,6 @@
+<% if  current_user %>
+test
+<% else %>
 <%= form_for @micropost do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   truth is...  
@@ -8,4 +11,5 @@
   	<%= f.hidden_field :belongs_to_id, :value => @user.id %>	
   </div>
   <div class ="share_placement"><%= f.submit '', :class => 'submitpost'%></div>
+<% end %>
 <% end %>

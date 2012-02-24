@@ -15,24 +15,16 @@
 </script>
 <% end %>
 
-<div class="profile_name">
-	<%= @user.username %>
+<div class="name_container">
+	<div class="profile_name"> <%= @user.username %> </div>
+	<div class="profile_email">	(<%= @user.email %>)</div>
 </div>
-<div class="profile_email">
-	(<%= @user.email %>)
-</div>
+
 <div class="profile_follow"><%= render_follow_links(@user) %></div>
 
 <table class="profile" summary="Profile information">
 	<tr>
-		<td class="main">
-			<% if current_user %>
-			<%= render 'microposts/form' %>
-			<% end %>
-			<table class="microposts" summary="User microposts">
-				<%= render @microposts %>
-			</table>
-		</td>
+		
 		<td class="sidebar round">
 			<div class="profile_gravatar">	
 				<%= render_user_avatar(@user, :small) %>
@@ -40,6 +32,14 @@
 			
 			<%= render 'shared/stats' %>
 			<strong>Truths shared:</strong> <%= @user.microposts.count %>
+		</td>
+		<td class="main">
+			<% if current_user %>
+			<%= render 'microposts/form' %>
+			<% end %>
+			<table class="microposts" summary="User microposts">
+				<%= render @microposts  %>
+			</table>
 		</td>
 	</tr>
 </table>

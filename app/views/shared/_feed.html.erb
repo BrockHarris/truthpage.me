@@ -1,4 +1,12 @@
-<% unless @feed_items.empty? %>
+<% if @feed_items.empty? %>
+<div class="align-text">
+This is where you can see what truths your friends are sharing,<br/>
+(it's empty because you aren't following anyone)
+<p/>
+You can <%= link_to "search", search_url , :class =>"headerlink"%> for friends, or  <%= link_to " invite friends from facebook", "#", :id => "invite_fb_friends"%>!
+</div>
+ 
+<% else %>
   <table class="microposts" summary="User microposts">
     <%= render :partial => 'shared/feed_item', :collection => @feed_items %>
   </table>

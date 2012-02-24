@@ -24,3 +24,7 @@ skip_before_filter :verify_authenticity_token
 
 end
 
+def sign_in_and_redirect_back_or_default(user, url=request.url)
+    session[:user_id] = user.id
+    redirect_back_or_default(url)
+end
