@@ -27,7 +27,14 @@ class User < ActiveRecord::Base
   
   attr_accessor :password, :mode
 
-  before_save :prepare_password                  
+  before_save :prepare_password
+
+  default_scope where("users.deleted_at IS NULL")
+  
+  def destroy
+   update_attribute(:deleted_at, Time.now.utc)
+   run_callbacks(:destroy) #explicitly run the destroy callbacks to set dependents attribute
+  end                  
   
   def service_mode?
     mode=="service"

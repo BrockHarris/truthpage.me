@@ -12,6 +12,12 @@ class Micropost < ActiveRecord::Base
   # Return microposts from the users being followed by the given user.
   
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
+
+  default_scope where("microposts.deleted_at IS NULL")
+  
+  def destroy
+    update_attribute(:deleted_at, Time.now.utc)
+  end
   
   private
 

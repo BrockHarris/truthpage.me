@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_filter :verify_authenticity_token
-  before_filter :login_required, :only => [:index, :show, :edit, :update, :destroy]
+  before_filter :login_required, :only => [:index, :edit, :update, :destroy]
   before_filter :correct_user, :only => [:edit, :update, :destroy]
   before_filter :find_user, :only=>[:show, :following, :followers, :follow, :unfollow, :edit, :update, :destroy]
   before_filter :admin_user,   :only => :destroy
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   
   def show
     @microposts = Micropost.find_all_by_belongs_to_id(@user.id).paginate(:page => params[:page], :per_page => 15)
-    @micropost  = current_user.microposts.build(params[:micropost])
+    @micropost  = @user.microposts.build(params[:micropost])
     @title = @user.username
     @user = User.find_by_username(params[:id])
   end
