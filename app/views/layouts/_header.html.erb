@@ -3,28 +3,33 @@
   <div class="header_text">     
     <%= link_to "truthpage.me", root_path %>
   </div>     
-
-  <% if current_user %>
+<% if current_user %>
     <div class="welcome_user">Welcome, <%= current_user.username %>!</div>   
   <% end %>
   <nav class="round">
     <ul>
       <div class="headerlink_place">
-        <% if current_user %>
-          <li><%= link_to "Home", root_path, :class =>"headerlink" %></li> | 
-		  <li><%= link_to "Search", search_url , :class =>"headerlink"%></li> |
-          <li><%= link_to "Profile", profile_path, :class =>"headerlink" %></li> |
-          <li><%= link_to "Settings", edit_user_path(current_user), :class =>"headerlink" %></li> |
+        
+		<% if current_user %>
+          <li><%= link_to "Home", root_path, :class =>"footer_links" %></li> | 
+		  <li><%= link_to "Search", search_url , :class =>"footer_links"%></li> |
+          <li><%= link_to "Profile", profile_path, :class =>"footer_links" %></li> |
+          <li><%= link_to "Settings", edit_user_path(current_user), :class =>"footer_links" %></li> |
         <% end %>
 
         <% if current_user %> 
-          <li><%= link_to "Signout", signout_path, :class =>"headerlink", :method => :delete %></li>
+          <li><%= link_to "Signout", signout_path, :class =>"footer_links", :method => :delete %></li>
         <% else %>
-          <li><%= link_to "Home", root_path, :class =>"headerlink" %></li> | 
-          <li><%= link_to "Sign in", signin_path, :class =>"headerlink" %></li> | <li><%= link_to "Sign up", signup_path, :class =>"headerlink" %></li>
+          <li><%= link_to "Home", root_path, :class =>"footer_links" %></li> | 
+          <li><%= link_to "Sign in", signin_path, :class =>"footer_links" %></li> | 
+		  <li><%= link_to "Sign up", signup_path, :class =>"footer_links" %></li>
         <% end %>
       </div>
-
     </ul>
   </nav>
 </header>
+<% if current_user %>
+<div class="header_pic">
+<%= render_user_avatar(current_user, :thumb) %>
+</div>
+<% end %>

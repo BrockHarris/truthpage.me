@@ -1,6 +1,6 @@
 require 'active_support/secure_random'
 class User < ActiveRecord::Base
-  
+
   has_many :authentications, :dependent=>:destroy
   has_many :identities, :through=>:authentications
   has_many :microposts, :dependent => :destroy
