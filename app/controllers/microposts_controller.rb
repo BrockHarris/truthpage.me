@@ -1,11 +1,11 @@
 class MicropostsController < ApplicationController
   skip_before_filter :verify_authenticity_token
-  before_filter :login_required
-  
+
   def create
-    @micropost  = current_user.microposts.build(params[:micropost])
+    @micropost = current_user.microposts.build(params[:micropost])
+    @user = User.find_by_username(params[:id])
     if @micropost.save
-      MicropostMailer.new_post_email(@user).deliver
+      MicropostMailer.post_email(@user).deliver
       flash[:notice] = "Your truth has been sent!"
       redirect_to(:back)
     else

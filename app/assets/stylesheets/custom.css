@@ -42,7 +42,7 @@
 .container {
 	margin-left:auto;
 	margin-right:auto; 
-width: 1000px;
+width: 900px;
 }
 
 body {
@@ -405,16 +405,13 @@ padding:10px;
 	background-image: url("banner.png");
 }
 .name_container {
-	
 	width: 300px;
 	background: #004F77;
 	border-radius: 6px; 
 	border-bottom: 1px solid #0072AC;
 	-moz-border-radius: 6px; 
 	-webkit-border-radius: 6px;
-	-webkit-box-shadow: inset 0px 1px 1px 1px #003753;
-	-moz-box-shadow: inset 0px 1px 1px 1px #003753;
-	box-shadow: inset 0px 1px 1px 1px #003753;
+
 }
 .profile_name {
 	font-size:20pt;
@@ -444,6 +441,15 @@ padding:10px;
 .settings_fields{
 	margin-left:80px;
 	margin-top:20px;
+}
+.settings_blurb{
+	height: 100px;
+	margin-top:20px;
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	border: 1px solid #aaaaaa;
+	
 }
 .savesettings {
 	border:none;
@@ -802,6 +808,9 @@ form.new_micropost textarea {
 	-moz-box-shadow: inset 0px 1px 1px 1px #003753;
 	box-shadow: inset 0px 1px 1px 1px #003753;
 	outline:none;
+	-webkit-box-shadow: 0px 1px 10px 1px #ffffff;
+	-moz-box-shadow: 0px 1px 10px 1px #ffffff;
+	box-shadow: 0px 1px 10px 1px #ffffff;
 }
 
 

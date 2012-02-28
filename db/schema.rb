@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
+ActiveRecord::Schema.define(:version => 20120228015824) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -65,7 +65,6 @@
     t.string   "activation_code",          :limit => 100
     t.datetime "activated_at"
     t.datetime "activation_email_sent_at"
-    t.date     "dob"
     t.boolean  "admin",                                   :default => false
     t.integer  "created_by"
     t.string   "photo_file_name"
@@ -74,6 +73,7 @@
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
+    t.string   "blurb",                    :limit => nil
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

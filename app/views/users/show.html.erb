@@ -14,17 +14,19 @@
   });
 </script>
 <% end %>
-
+<div class="profile_gravatar">	
+	
+</div>
 <div class="name_container">
 	<div class="profile_name"> <%= @user.username %> </div>
+	<%= @user.blurb %>
+	<%= render_user_avatar(@user, :small) %>
 </div>
 <% if current_user %>
 <div class="profile_follow"><%= render_follow_links(@user) %></div>
 <% end %>
 
-<div class="profile_gravatar">	
-	<%= render_user_avatar(@user, :small) %>
-</div>
+
 <strong>Truths shared:</strong> <%= @user.microposts.count %>
 <%= render 'shared/stats' %>
 <%= render 'microposts/form' %>

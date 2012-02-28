@@ -18,6 +18,10 @@
 	<%= f.label "change profile picture" %><br />
 	<%= f.file_field :photo %>
   </div>
+  <div class="settings_fields" >
+	<%= f.label "Your blurb" %><br />
+	<%= f.text_area :blurb, :maxlength=>"180", :class=>"settings_blurb" %>
+  </div>
   <div class="save_button">
     <%= f.submit '', :class => "savesettings"%>
   </div>

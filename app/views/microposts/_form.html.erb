@@ -1,12 +1,11 @@
-
-
 <%= form_for @micropost do |f| %>
+
   <%= render 'shared/error_messages', :object => f.object %>
 truth is...  
   <div class="field" >
 	<%= f.text_area :content, :maxlength=>"240", :id =>"counter" %>
   </div>
-  <div class=field>
+  <div class="field">
 	<%= f.hidden_field :belongs_to_id, :value => @user.id %>
   </div>
 <div class ="share_placement"><%= f.submit '', :class => 'submitpost'%></div>
