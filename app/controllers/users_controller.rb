@@ -19,6 +19,8 @@ class UsersController < ApplicationController
     @micropost  = @user.microposts.build(params[:micropost])
     @title = @user.username
     @user = User.find_by_username(params[:id])
+    @followers = @user.followers.paginate(:page => params[:page])
+    @following = @user.following.paginate(:page => params[:page])
   end
   
   def profile
