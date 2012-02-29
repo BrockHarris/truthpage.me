@@ -9,8 +9,9 @@
 	<%= f.hidden_field :belongs_to_id, :value => @user.id %>
   </div>
 
-<%= check_box_tag :anon, 'yes', true %>
-<%= f.label "anonymous" %>
+	<%= f.check_box :anon, {}, true, false %>
+	<%= f.label "anonymous" %>
+
 <div class ="share_placement"><%= f.submit '', :class => 'submitpost'%></div>
 
 <% end %>

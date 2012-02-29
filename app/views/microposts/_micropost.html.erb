@@ -1,10 +1,18 @@
 <tr>
   <td class="gravatar">
-    <%= render_user_avatar(micropost.user, :thumb) %>
+    <% if micropost.try(:anon?) %>
+	<%= image_tag("genericpic-thumb.jpg") %>
+	<% else %>
+	 <%= render_user_avatar(micropost.user, :thumb) %>
+	<% end %>
   </td>
   <td class="micropost">
     <span class="user">
+	 <% if micropost.try(:anon?) %>
+	  Anonymous said:
+	 <% else %>
       <%= link_to micropost.user.username, micropost.user %> said:
+	 <% end %>
     </span>
     <span class="content"> <%= micropost.content %></span>
     <span class="timestamp">

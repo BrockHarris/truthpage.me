@@ -13,14 +13,9 @@
       });
   });
 </script>
-<script type = "text/javascript">
-$(document).ready(function(){
- $("a.fancybox").fancybox({'type': 'image'});
-});
-</script>
+
 <% end %>
 
-<%=link_to(image_tag "truth-is.png", :class=>"fancybox") %>
 
 <div class="name_container">
 	<div class="profile_name"> <%= @user.username %> </div>
