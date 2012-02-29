@@ -13,7 +13,7 @@
 		<% if current_user %>
           <li><%= link_to "Home", root_path, :class =>"footer_links" %></li> | 
 		  <li><%= link_to "Search", search_url , :class =>"footer_links"%></li> |
-          <li><%= link_to "Profile", profile_path, :class =>"footer_links" %></li> |
+          <li><%= link_to "Profile", user_path(current_user), :class =>"footer_links" %></li> |
           <li><%= link_to "Settings", edit_user_path(current_user), :class =>"footer_links" %></li> |
         <% end %>
 

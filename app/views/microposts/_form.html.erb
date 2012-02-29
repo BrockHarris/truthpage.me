@@ -8,10 +8,10 @@
   <div class="field">
 	<%= f.hidden_field :belongs_to_id, :value => @user.id %>
   </div>
-
+<div class="anon_button">
 	<%= f.check_box :anon, {}, true, false %>
-	<%= f.label "anonymous" %>
-
+	<%= f.label "share anonymously" %>
+</div>
 <div class ="share_placement"><%= f.submit '', :class => 'submitpost'%></div>
 
 <% end %>

@@ -43,19 +43,28 @@
 <div class="truthform_place">
 <%= render 'microposts/form' %>
 </div>
-<strong>Following (<%= @user.following.count %>):</strong>
+<div class="profile_side">
+	<div class="profile_following-h">
+<strong>following (<%= @user.following.count %>):</strong>
+</div>
+<div class="profile_following">
  <% unless @following.empty? %>
     <% @following.each do |user| %>
-	      <%= render_user_avatar(user, :thumb) %>
+	      <%= link_to render_user_avatar(user, :thumb), user %>
     <% end %>
   <% end %>
-
+</div>
+<div class="profile_following-h">
 <strong>followers (<%= @user.followers.count %>):</strong> 
+</div>
+<div class="profile_followers">
 <% unless @followers.empty? %>
     <% @followers.each do |user| %>
-	      <%= render_user_avatar(user, :thumb) %>
+	      <%= link_to render_user_avatar(user, :thumb), user %>
     <% end %>
   <% end %>
+</div>
+</div>
 
 <table class="microposts" summary="User microposts">
 	<%= render @microposts  %>

@@ -429,6 +429,15 @@ padding:10px;
 	color:white;
 	border-bottom: 1px gray solid;	
 }
+.anon_button{
+	color:white;
+	font-family:helvetica;
+	font-size:12pt;
+	text-transform: lowercase;
+	margin-top:-30px;
+	padding-bottom:50px;
+	margin-left:225px;
+}
 .post_counter {
 	margin-left:250px;
 	margin-top:px;
@@ -439,6 +448,21 @@ padding:10px;
 	color:gray;
 	padding-top:5px;
 	margin-left:250px;
+}
+.profile_side {
+	float:right;
+	width:250px;
+}
+.profile_following-h {
+	
+}
+.profile_following {
+	float:right;
+	width:200px;
+}
+.profile_followers {
+	float:right;
+	width:200px;
 }
 .profile_link {
 	font-size: 11pt;
