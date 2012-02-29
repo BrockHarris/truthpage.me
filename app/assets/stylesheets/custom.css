@@ -419,6 +419,7 @@ padding:10px;
 .profile_avatar {
 	margin-top:px;
 	margin-left:10px;
+	border:1px gray solid;
 }
 .profile_name {
 	font-size:24pt;
