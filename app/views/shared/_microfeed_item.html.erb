@@ -1,10 +1,11 @@
-<tr>
-  
+<% if microfeed_item.try(:anon?) %>
+<% else %>
+<tr>  
   <td class="sidefeed">
-    
-    <span class="microfeed_content"> - truth is <%= microfeed_item.content %></span>
+    <span class="microfeed_content"> - <%= microfeed_item.content %></span>
     <span class="micro_timestamp">
       <%= render_smallfeed_stamp(microfeed_item) %>
     </span>
   </td>
 </tr>
+<% end %>

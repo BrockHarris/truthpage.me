@@ -1,8 +1,18 @@
 <tr>
   <td>
-	<span class="ticker_photo"><%= render_user_avatar(micropost.user, :thumb) %></span>
+	<span class="ticker_photo">
+	<% if micropost.try(:anon?) %>
+	<%= image_tag("genericpic-thumb.jpg") %>
+	<% else %>
+	 <%= render_user_avatar(micropost.user, :thumb) %>
+	<% end %>
+	</span>
 	<span class="ticker_user">
-	<%= link_to micropost.user.username, micropost.user %> shared with a friend:
+	<% if micropost.try(:anon?) %>
+	  Anonymous said:
+	 <% else %>
+      <%= link_to micropost.user.username, micropost.user %> said:
+	 <% end %>
 	</span>
 	  <br/>
     <span class="ticker_content">truth is <%= micropost.content %></span> 

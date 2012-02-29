@@ -9,7 +9,7 @@
   <td class="micropost">
     <span class="user">
 	 <% if micropost.try(:anon?) %>
-	  Anonymous said:
+	  anonymous said:
 	 <% else %>
       <%= link_to micropost.user.username, micropost.user %> said:
 	 <% end %>

@@ -1,7 +1,11 @@
 
 <tr>
   <td class="gravatar">
+	 <% if feed_item.try(:anon?) %>
+	<%= image_tag("genericpic-thumb.jpg") %>
+	<% else %>
 	 <%= render_user_avatar(feed_item.user, :thumb) %>
+	<% end %>
   </td>
   <td class="micropost">
     <div class="feed_timestamp">
