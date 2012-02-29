@@ -4,9 +4,9 @@
   </td>
   <td class="micropost">
     <span class="user">
-      <%= link_to micropost.user.username, micropost.user %>
+      <%= link_to micropost.user.username, micropost.user %> said:
     </span>
-    <span class="content">truth is <%= micropost.content %></span>
+    <span class="content"> <%= micropost.content %></span>
     <span class="timestamp">
       Shared <%= time_ago_in_words(micropost.created_at) %> ago.
     </span>
