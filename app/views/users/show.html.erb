@@ -62,7 +62,7 @@ $(function() {
 </div>
 <div class="profile_side">
 	<div class="profile_following-h">
-<strong>following (<%= @user.following.count %>):</strong>
+Following (<%= @user.following.count %>):
 </div>
 <div class="profile_following">
  <% unless @following.empty? %>
@@ -72,7 +72,7 @@ $(function() {
   <% end %>
 </div>
 <div class="profile_following-h">
-<strong>followers (<%= @user.followers.count %>):</strong> 
+Followers (<%= @user.followers.count %>):
 </div>
 <div class="profile_followers">
 <% unless @followers.empty? %>
@@ -82,7 +82,9 @@ $(function() {
   <% end %>
 </div>
 </div>
-
+<div class="feedbox_header">
+	<div class="feedbox_text">truths about <%= @user.username %></div>
+</div>
 <table class="microposts" summary="User microposts">
 	<%= render @microposts  %>
 </table>

@@ -81,7 +81,6 @@ section {
 font-family: sans-serif;
 font-style: black;
   padding: 20px;
-  background: #fff;
 border: 1px solid #999999;
 background-color: #006698;
 -moz-box-shadow: 0 0 6px 2px #888;
@@ -103,18 +102,18 @@ section h1 {
 /* Links */
 
 a {
-  color: gray;
+  color: #005588;
   text-decoration: none;
 
 }
 
 a:hover {
-  color: gray;
+  color: #005588;
   text-decoration: bold;
 }
 
 a:visited {
-  color: gray;
+  color: #005588;
 }
 .welcome_user {
 	color: #333333;
@@ -420,6 +419,7 @@ padding:10px;
 	margin-top:px;
 	margin-left:10px;
 	border:1px gray solid;
+	margin-bottom:-5px;
 }
 .profile_name {
 	font-size:24pt;
@@ -431,9 +431,10 @@ padding:10px;
 	border-bottom: 1px gray solid;	
 }
 .anon_button{
-	color:white;
+	color:#eeeeee;
 	font-family:helvetica;
 	font-size:12pt;
+	font-weight:200;
 	text-transform: lowercase;
 	margin-top:-30px;
 	padding-bottom:50px;
@@ -450,24 +451,114 @@ padding:10px;
 	padding-top:5px;
 	margin-left:250px;
 }
+.feedbox_header {
+	margin-left:10px;
+	margin-bottom:-34px;
+	width:600px;
+	background:#004B71;
+	border-radius: 6px; 
+	border-top: 1px solid #007AB7;
+	-moz-border-radius: 6px; 
+	-webkit-border-radius: 6px;
+}
+.feedbox_text {
+	color:#EEEEEE;
+	font-size:22pt;
+	padding-left:15px;
+	padding-top:5px;
+	border-bottom: 1px solid #007AB7;
+}
 .profile_side {
 	float:right;
-	width:250px;
+	width:230px;
+	padding-right:10px;
+	
 }
 .profile_following-h {
-	
+	color:#EEEEEE;
+	margin-bottom:5px;
+	margin-left:15px;
 }
 .profile_following {
 	float:right;
-	width:200px;
+	width:215px;
+	padding:7px;
+	margin-bottom:20px;
+	background:#004365;
+	border-radius: 6px;
+	border-bottom: 1px solid #0072AC;
+	border-top: 1px solid #00314A;
 }
 .profile_followers {
 	float:right;
-	width:200px;
+	width:215px;
+	padding:7px;
+	margin-bottom:20px;
+	background:#004365;
+	border-radius: 6px;
+	border-bottom: 1px solid #0072AC;
+	border-top: 1px solid #00314A;
 }
 .profile_link {
 	font-size: 11pt;
 }
+h1.micropost {
+  margin-bottom: 0.3em;
+}
+												
+table.microposts {
+	width: 600px;
+	margin-left:10px;
+	padding-left:20px;
+	padding-top:50px;
+	padding-bottom:15px;
+	background:#004B71;
+	border-radius: 6px; 
+	border-bottom: 1px solid #007AB7;
+	-moz-border-radius: 6px; 
+	-webkit-border-radius: 6px;
+}
+
+table.microposts tr {
+  height: 80px;
+}
+
+.micropost_pic {
+	float:left;
+	padding:10px;
+
+	padding-right:10px;
+	border-right:1px gray solid;
+}
+.micropost_header {
+	color:gray;
+	font-size:12pt;
+	padding-bottom:5px;
+	padding-left:5px;
+}
+.micropost_content {
+	padding-left:5px;
+}
+table.microposts tr td.micropost {
+  font-size:11pt;
+	vertical-align: top;
+	width: 550px;
+	background:white;
+	margin-top:10px;
+	webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-top: 1px solid #0081C2;
+}
+
+.micropost_time {
+	float:right;
+  font-size: 65%;
+  color: #666;
+  padding-left:5px;
+	margin-right:5px;
+}
+
 .change_pic {
 	float:left;
 	margin-left:66%;
@@ -761,46 +852,6 @@ color: #333333;
   list-style: none;
 color: #333333;
 }
-h1.micropost {
-  margin-bottom: 0.3em;
-}
-												
-table.microposts {
-	font-size: 16px;
-	padding:20px;
-	width: 600px;
-	margin-left:20px;
-	background: #DBDBDB;
-	-webkit-box-shadow: 0px 1px 3px 1px #333;
-	-moz-box-shadow: 0px 1px 3px 1px #333;
-	box-shadow: 0px 1px 3px 1px #333;
-}
-
-table.microposts tr {
-  height: 70px;
-	
-
-}
-
-table.microposts tr td.gravatar {
-  border-top: 1px solid gray;
-  vertical-align: top;
-  width: 50px;
-}
-
-table.microposts tr td.micropost {
-  border-top: 1px solid gray;
-  vertical-align: top;
-  padding-top: 10px;
-width: 90%;
-}
-
-table.microposts tr td.micropost span.timestamp {
-vertical-align: bottom; 
- display: block;
-  font-size: 65%;
-  color: #666;
-}
 
 div.user_info img {
   padding-right: 0.1em;
@@ -811,14 +862,12 @@ div.user_info a {
 }
 
 div.user_info span.user_name {
-
-vertical-align:top;  
-position: absolute;
-
+	vertical-align:top;
+	position:absolute;  
 }
 
 div.user_info span.microposts {
-  font-size: 80%;
+  font-size:14pt;
 }
 
 form.new_micropost {

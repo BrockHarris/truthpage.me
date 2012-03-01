@@ -1,23 +1,24 @@
 <tr>
-  <td class="gravatar">
-    <% if micropost.try(:anon?) %>
-	<%= image_tag("genericpic-thumb.jpg") %>
-	<% else %>
-	 <%= render_user_avatar(micropost.user, :thumb) %>
-	<% end %>
-  </td>
   <td class="micropost">
-    <span class="user">
+	 <span class="micropost_pic">
+	<% if micropost.try(:anon?) %>
+		<%= image_tag("genericpic-thumb.jpg") %>
+		<% else %>
+		 <%= render_user_avatar(micropost.user, :thumb) %>
+		<% end %>
+		</span>
+    <span class="micropost_header">
 	 <% if micropost.try(:anon?) %>
 	  anonymous said:
 	 <% else %>
       <%= link_to micropost.user.username, micropost.user %> said:
 	 <% end %>
     </span>
-    <span class="content"> <%= micropost.content %></span>
-    <span class="timestamp">
-      Shared <%= time_ago_in_words(micropost.created_at) %> ago.
+	<span class="micropost_time">
+      <%= time_ago_in_words(micropost.created_at) %> ago.
     </span>
+	<br/>
+    <span class="micropost_content"> <%= micropost.content %></span>
   </td>
   <% if current_user = (micropost.user) %>
     <td> 
