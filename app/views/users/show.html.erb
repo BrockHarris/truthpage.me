@@ -1,5 +1,5 @@
 <%= content_for :head do %>
-<script type="text/javascript">
+ <script type="text/javascript">
   $(function(){
     $('#counter').jqEasyCounter({
 		'maxChars': 180,
@@ -12,60 +12,55 @@
 	    'msgAppendMethod': 'insertAfter'
       });
   });
-</script>
+ </script>
 <% end %>
-
-
-
 
 <div class="name_container">
 	<div class="profile_name"> <%= @user.username %> </div>
-	<div class="profile_avatar">	
-	<%= render_user_avatar(@user, :small) %>	
+	<div class="profile_avatar"> 
+		<%= render_user_avatar(@user, :small) %>	
 	</div>
-	
-	<div class="profile_blurb"><%= @user.blurb %></div>
-	
-	
+	<div class="profile_blurb"> <%= @user.blurb %> </div>	
 </div>
 
 <% if current_user %>
-<div class="profile_follow"><%= render_follow_links(@user) %></div>
+	<div class="profile_follow"><%= render_follow_links(@user) %></div>
 <% end %>
-
-
 
 <%= image_tag "truth-is.png", :class => "truth-is" %>
 
 <div class="truthform_place">
-<%= render 'microposts/form' %>
+	<%= render 'microposts/form' %>
 </div>
 <div class="profile_side">
 	<div class="profile_following-h">
-Following (<%= @user.following.count %>):
-</div>
-<div class="profile_following">
- <% unless @following.empty? %>
-    <% @following.each do |user| %>
-	      <%= link_to render_user_avatar(user, :thumb), user %>
+		Following (<%= @user.following.count %>):
+	</div>
+	<div class="profile_following">
+ 		<% unless @following.empty? %>
+    	<% @following.each do |user| %>
+	  	<%= link_to render_user_avatar(user, :thumb), user %>
     <% end %>
   <% end %>
 </div>
+
 <div class="profile_following-h">
-Followers (<%= @user.followers.count %>):
-</div>
-<div class="profile_followers">
-<% unless @followers.empty? %>
+	Followers (<%= @user.followers.count %>):
+	</div>
+	<div class="profile_followers">
+		<% unless @followers.empty? %>
     <% @followers.each do |user| %>
-	      <%= link_to render_user_avatar(user, :thumb), user %>
+	   <%= link_to render_user_avatar(user, :thumb), user %>
     <% end %>
-  <% end %>
+  	<% end %>
+	</div>
 </div>
-</div>
+
 <div class="feedbox_header">
 	<div class="feedbox_text">Truths about <%= @user.username %></div>
 </div>
 <table class="microposts" summary="User microposts">
 	<%= render @microposts  %>
 </table>
+
 <%= will_paginate @microposts %>

@@ -1,20 +1,22 @@
 <tr>
-  <td>
-	<span class="ticker_photo">
-	<% if micropost.try(:anon?) %>
-	<%= image_tag("genericpic-thumb.jpg") %>
-	<% else %>
-	 <%= render_user_avatar(micropost.user, :thumb) %>
-	<% end %>
-	</span>
-	<span class="ticker_user">
-	<% if micropost.try(:anon?) %>
-	  Anonymous said:
-	 <% else %>
-      <%= link_to micropost.user.username, micropost.user %> said:
-	 <% end %>
-	</span>
-	  <br/>
-    <span class="ticker_content">truth is <%= micropost.content %></span> 
+  <td class="micropost">
+	  <span class="micropost_pic">
+			<% if micropost.try(:anon?) %>
+				<%= image_tag("genericpic-thumb.jpg") %>
+			<% else %>
+		 		<%= render_user_avatar(micropost.user, :thumb) %>
+			<% end %>
+		</span>
+    <span class="micropost_header">
+	 		<% if micropost.try(:anon?) %>
+	  		anonymously shared with <%= micropost.target_user.username%>
+	 		<% else %>
+      	<%= render_feed_stamp(micropost) %>
+	 		<% end %>
+    </span>
+			<br/>
+    <span class="micropost_content"> 
+    	<%= micropost.content %>
+    </span>
   </td>
-</tr>
+  </tr>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_filter :verify_authenticity_token
+  
   before_filter :login_required, :only => [:index, :edit, :update, :destroy]
   before_filter :correct_user, :only => [:edit, :update, :destroy]
   before_filter :find_user, :only=>[:show, :following, :followers, :follow, :unfollow, :edit, :update, :destroy]
@@ -7,8 +8,7 @@ class UsersController < ApplicationController
 
   
   def index
-    @title = "Truthpage.me | friends"
-    #@users = User.paginate(:page => params[:page])   
+    @title = "Truthpage.me | friends"   
     @usersearch = User.order('username ASC').search(params[:search])
     @usersearch = @usersearch - [current_user] #eliminate self from the result
     @users = @usersearch.paginate(:page => params[:page], :per_page => 20)
@@ -39,10 +39,6 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if simple_captcha_valid?
       if @user.save
-        #skip sending a registration email, explicitly activate user, sign-in and redirect.
-        #@user.register! #set status to pending
-        #@user.send_activation_email!
-        #flash[:notice] = "Thanks for signing up! An email has been sent to #{@user.email} with instructions on how to immediately activate your account."
         @user.activate!
         flash[:notice] = "Thanks for signing up!"
         sign_in_and_redirect_back_or_default(@user, users_path(@user))
@@ -57,14 +53,12 @@ class UsersController < ApplicationController
 
   def following
     @title = " is following"
-    #@user = User.find(params[:id])
     @users = @user.following.paginate(:page => params[:page])
     render 'show_follow'
   end
 
   def followers
     @title = "'s followers"
-    #@user = User.find(params[:id])
     @users = @user.followers.paginate(:page => params[:page])
     render 'show_follow'
   end
@@ -80,12 +74,10 @@ class UsersController < ApplicationController
   end
 
   def edit
-    #@user = User.find(params[:id])
     @title = "Truthpage.me | settings"
   end
 
   def update
-    #@user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       flash[:notice] = "Your profile has been updated!"
       redirect_to (:back)
@@ -102,9 +94,6 @@ class UsersController < ApplicationController
     redirect_to(:back)
   end
 
-  # If the request's HTTP method was +post+ and a parameter named +email+ is
-  # submitted, looks up the corresponding user and, if found, sends a password
-  # reset email.
   def welcome
     if @user.nil? || (!@user.active? && !@user.pending?)
       flash.now[:error] = "This user is no longer available for this operation."
@@ -115,10 +104,6 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-
-  # Activates the user if the user's state is pending and the correct
-  # activation code is submitted as a parameter named +activation_code+.
-  # The request is redirected in all cases.
   def activation
     #logout_keeping_session!
     @user = User.find_by_id(params[:id])
