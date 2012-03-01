@@ -1,3 +1,4 @@
+/*************  footer/terms/about/etc.. pages **********/
 .align-text {
 	text-align:center;
 }
@@ -27,18 +28,14 @@
 	text-align:center;
 }
 
-.access_error {
-	background-color: red;
-	border:1px solid gray;
-	height: 30px;
-	width: 300px;
-	
-}
 .footer_links {
 	font-family:helvetica;
 	font-size:11pt;
 	font-weight:400;
 }
+
+/*************  CSS for general layout **********/
+
 .container {
 	margin-left:auto;
 	margin-right:auto; 
@@ -88,18 +85,7 @@ background-color: #006698;
 box-shadow: 0 0 6px 1px #999;
 }
 
-.fblike {
-	width: 50%;
-
-	margin-bottom: -20px;
-	margin-top: 30px;
-}
-
-section h1 {
-  font-size: 200%;
-}
-
-/* Links */
+/*************  Style link options  **********/
 
 a {
   color: #005588;
@@ -167,14 +153,6 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Sign up button */
-
-a.signup_button {
-  margin-top: -35px;
-	margin-left: 60px;
-  display: block;
-  text-align: center;
-}
 
 /* Round corners */
 
@@ -197,7 +175,84 @@ footer nav {
   float: none;
 }
 
-/* User show page */
+/* UnauthenticHome page */
+
+.fblike {
+	width: 50%;
+	margin-bottom: -20px;
+	margin-top: 30px;
+}
+.signin_font1 {
+	font-size: 20pt;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	font-weight:500;
+	color: #115cb8;
+	text-shadow: 1px 1px 1px gray;
+	filter: dropshadow(color=gray, offx=1, offy=1);
+}
+.signin_font2 {
+	font-size: 20pt;
+	margin-top: 60px;
+	margin-bottom: 5px;
+	font-weight:500;
+	color: #115cb8;
+	text-shadow: 1px 1px 1px gray;
+	filter: dropshadow(color=gray, offx=1, offy=1);
+}
+.ticker_header{
+	float:right;
+	margin-top:-430px;
+	margin-right:150px;
+	font-size: 17pt;
+	font-family: Comic Sans MS;
+}
+#vertical-ticker{
+  margin-top:-395px;
+	margin-left: 350px;
+	height:550px;
+	width: 450px;
+  overflow:hidden;
+  box-shadow: 0 0 6px 1px #999;
+}
+
+#vertical-ticker li{
+	margin-left:-40px;
+	height:55px;
+	width:500px;
+	overflow:hidden;
+  display:block;
+  background:#efefef;
+  color:gray;
+  border-bottom:2px solid #ddd;
+	border-top:1px solid #ddd;
+  text-align:left;
+  font-size:15px;
+  font-weight:normal;
+  font-family: Helvetica Neue, times, serif;
+}
+#vertical-ticker li img {
+	vertical-align:top;
+	margin-top:3px;
+	}
+.ticker_content {
+	vertical-align:top;
+	overflow:hidden;
+	color:black;
+	margin-left: 10px;
+	float: left;
+	font-size:13px;
+}
+.ticker_user {
+	float: left;
+	margin-left: 5px;
+	overflow:hidden;
+
+}
+.ticker_photo {
+	float:left;
+	margin-left: 4px;
+}	
 
 table.profile {
   width: 100%;
@@ -319,7 +374,7 @@ margin-left: 400px;
 .submitpost {
 	border:none;
 	display: block;
-	margin-left: 230px;
+	margin-left: 220px;
 	width: 155px; height: 50px;
 	background-image: url('share_button.png');
 	background-position: top;
@@ -390,6 +445,9 @@ padding:10px;
 	-webkit-border-radius: 5px;
 	border: 1px solid #aaaaaa;
 }
+
+/************* (profile) User Show page **********/
+
 .share_url {
 	padding-top:30px;
 	padding-left:20px;
@@ -404,31 +462,34 @@ padding:10px;
 	background-image: url("banner.png");
 }
 .name_container {
-	width: 500px;
+	width: 550px;
+	height: 220px;
 	margin-left:auto;
 	margin-right:auto;
-	background: #004F77;
+	background:#005580;
 	border-radius: 6px; 
-	border-bottom: 1px solid #0072AC;
-	border-top: 1px solid #00314A;
-	-moz-border-radius: 6px; 
-	-webkit-border-radius: 6px;
+	-moz-border-radius: 0px 18px 18px 18px; 
+	-webkit-border-radius: 0px 18px 18px 18px;
+	-webkit-box-shadow: 2px 2px 5px 2px #333;
+	-moz-box-shadow: 2px 2px 5px 2px #333;
+	box-shadow: 2px 2px 5px 2px #333;
 
 }
 .profile_avatar {
-	margin-top:px;
 	margin-left:10px;
-	border:1px gray solid;
+	float:left;
 	margin-bottom:-5px;
+	border-top: 1px solid #00314A;
 }
 .profile_name {
 	font-size:24pt;
+	font-family:Comic Sans MS;
 	margin-left:10px;
 	padding-top: 3px;
-	width:480px;
+	width:530px;
 	text-align:left;
 	color:white;
-	border-bottom: 1px gray solid;	
+	border-bottom: 1px #0072AC solid;	
 }
 .anon_button{
 	color:#eeeeee;
@@ -436,20 +497,62 @@ padding:10px;
 	font-size:12pt;
 	font-weight:200;
 	text-transform: lowercase;
-	margin-top:-30px;
-	padding-bottom:50px;
-	margin-left:225px;
+	margin-top:-40px;
+	padding-bottom:40px;
+	margin-left:215px;
 }
 .post_counter {
 	margin-left:250px;
-	margin-top:px;
+	margin-bottom:-50px;
+	color:#DBDBDB;
+	font-family:Comic Sans MS;
+	margin-left:50px;
+	text-align:center;
 }
 .profile_blurb {
 	font-size:12pt;
-	font-style:italic;
-	color:gray;
-	padding-top:5px;
-	margin-left:250px;
+	font-weight:200;
+	text-align:center;
+	color:#DBDBDB;
+	margin-top:5px;
+	margin-left:15px;
+	margin-right:10px;
+	padding-bottom:10px;
+}
+form.new_micropost {
+  margin-bottom: 2em;
+}
+
+form.new_micropost textarea {
+	width: 600px; 
+	max-width: 600px; 
+	height: 50px;
+	max-height:50px;
+	font-size: 14pt;
+	font-weight:100;
+	font-family:helvetica;
+	color: white;
+	border:none;
+	padding:5px;
+  margin-bottom:5px;
+	background: #004F77;
+	border-radius: 6px; 
+	border-bottom: 1px solid #0090D9;
+	border-top: 1px solid #00314A;
+	-moz-border-radius: 6px; 
+	-webkit-border-radius: 6px;
+
+	outline:none;
+	-webkit-box-shadow: 0px 1px 20px 1px #0093DD;
+	-moz-box-shadow: 0px 1px 20px 1px #0093DD;
+	box-shadow: 0px 1px 20px 1px #0093DD;
+}
+.truthform_place {
+	margin-left:120px;
+}
+.truth-is {
+	padding:15px;
+	margin-left: 270px;
 }
 .feedbox_header {
 	margin-left:10px;
@@ -464,7 +567,8 @@ padding:10px;
 .feedbox_text {
 	color:#EEEEEE;
 	font-size:22pt;
-	padding-left:15px;
+	font-weight:200;
+	text-align:center;
 	padding-top:5px;
 	border-bottom: 1px solid #007AB7;
 }
@@ -559,6 +663,8 @@ table.microposts tr td.micropost {
 	margin-right:5px;
 }
 
+/************* profile settings page **********/
+
 .change_pic {
 	float:left;
 	margin-left:66%;
@@ -577,7 +683,6 @@ table.microposts tr td.micropost {
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
 	border: 1px solid #aaaaaa;
-	
 }
 .savesettings {
 	border:none;
@@ -617,11 +722,9 @@ table.microposts tr td.micropost {
 	margin-left:20px;
 	float:left;
 }
-.profile_gravatar {
-	margin-bottom:15px;
-	text-align:center;
-	
-}
+
+/************* AuthHome **********/
+
 .facebook_share {
 	border:none;
 	display: block;
@@ -706,6 +809,9 @@ table.microposts tr td.micropost {
 	margin-top:-12px;
 	float:left;
 }
+
+/*   for side column feed on auth_home */
+
 .micro_header {
 	font-size:13pt;
 	border-bottom:1px solid #cccccc;
@@ -732,6 +838,9 @@ table.microposts tr td.micropost {
 	text-align:center;
 	color: gray;
 }
+
+/************* Unauthenticated Home **********/
+
 .home_email{
 	margin-left: 38px;
 	margin-top:30px;
@@ -801,7 +910,15 @@ div.field, div.actions {
   margin-bottom: 20px;
 }
 
+/************* CSS for notices and messages **********/
 
+.access_error {
+	background-color: red;
+	border:1px solid gray;
+	height: 30px;
+	width: 300px;
+	
+}
 .field_with_errors {
   margin-top: 10px;
   padding: 2px;
@@ -843,6 +960,8 @@ div.field, div.actions {
   list-style: square;
 }
 
+/************* CSS for links throughout site **********/
+
 ul.users {
   margin-top: 1em;
 color: #333333;
@@ -853,60 +972,8 @@ color: #333333;
 color: #333333;
 }
 
-div.user_info img {
-  padding-right: 0.1em;
-}
+/************* CSS for authentication services **********/
 
-div.user_info a {
-  text-decoration: none;
-}
-
-div.user_info span.user_name {
-	vertical-align:top;
-	position:absolute;  
-}
-
-div.user_info span.microposts {
-  font-size:14pt;
-}
-
-form.new_micropost {
-  margin-bottom: 2em;
-}
-
-form.new_micropost textarea {
-	width: 600px; 
-	max-width: 600px; 
-	height: 50px;
-	max-height:50px;
-	font-size: 14pt;
-	font-weight:100;
-	font-family:helvetica;
-	color: white;
-	border:none;
-	padding:5px;
-  margin-bottom:5px;
-	background: #004F77;
-	border-radius: 6px; 
-	border-bottom: 1px solid #0090D9;
-	border-top: 1px solid #00314A;
-	-moz-border-radius: 6px; 
-	-webkit-border-radius: 6px;
-	-webkit-box-shadow: inset 0px 1px 1px 1px #003753;
-	-moz-box-shadow: inset 0px 1px 1px 1px #003753;
-	box-shadow: inset 0px 1px 1px 1px #003753;
-	outline:none;
-	-webkit-box-shadow: 0px 1px 20px 1px #0093DD;
-	-moz-box-shadow: 0px 1px 20px 1px #0093DD;
-	box-shadow: 0px 1px 20px 1px #0093DD;
-}
-.truthform_place {
-	margin-left:120px;
-}
-.truth-is {
-	padding:15px;
-	margin-left: 270px;
-}
 .authentications {
   margin-bottom: 30px;
 }
@@ -973,77 +1040,6 @@ form.new_micropost textarea {
 	cursor:pointer;
 	background-position: bottom;
 }
-.signin_font1 {
-	font-size: 20pt;
-	margin-top: 20px;
-	margin-bottom: 5px;
-	font-weight:500;
-	color: #115cb8;
-	text-shadow: 1px 1px 1px gray;
-	filter: dropshadow(color=gray, offx=1, offy=1);
-}
-.signin_font2 {
-	font-size: 20pt;
-	margin-top: 60px;
-	margin-bottom: 5px;
-	font-weight:500;
-	color: #115cb8;
-	text-shadow: 1px 1px 1px gray;
-	filter: dropshadow(color=gray, offx=1, offy=1);
-}
-.ticker_header{
-	float:right;
-	margin-top:-430px;
-	margin-right:150px;
-	font-size: 17pt;
-	font-family: Comic Sans MS;
-}
-#vertical-ticker{
-  margin-top:-395px;
-	margin-left: 350px;
-	height:550px;
-	width: 450px;
-  overflow:hidden;
-  box-shadow: 0 0 6px 1px #999;
-}
-
-#vertical-ticker li{
-	margin-left:-40px;
-	height:55px;
-	width:500px;
-	overflow:hidden;
-  display:block;
-  background:#efefef;
-  color:gray;
-  border-bottom:2px solid #ddd;
-	border-top:1px solid #ddd;
-  text-align:left;
-  font-size:15px;
-  font-weight:normal;
-  font-family: Helvetica Neue, times, serif;
-}
-#vertical-ticker li img {
-	vertical-align:top;
-	margin-top:3px;
-	}
-.ticker_content {
-	vertical-align:top;
-	overflow:hidden;
-	color:black;
-	margin-left: 10px;
-	float: left;
-	font-size:13px;
-}
-.ticker_user {
-	float: left;
-	margin-left: 5px;
-	overflow:hidden;
-
-}
-.ticker_photo {
-	float:left;
-	margin-left: 4px;
-}	
 
 #flash {
   padding: 5px 8px;

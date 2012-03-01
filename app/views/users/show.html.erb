@@ -39,16 +39,12 @@ $(function() {
 	<div class="profile_avatar">	
 	<%= render_user_avatar(@user, :small) %>	
 	</div>
-	<div class="post_counter">	
-	<strong>Truths shared:</strong> <%= @user.microposts.count %> <br/>
-	</div>
+	
 	<div class="profile_blurb"><%= @user.blurb %></div>
 	
 	
-	
-	
-	
 </div>
+
 <% if current_user %>
 <div class="profile_follow"><%= render_follow_links(@user) %></div>
 <% end %>
@@ -83,7 +79,7 @@ Followers (<%= @user.followers.count %>):
 </div>
 </div>
 <div class="feedbox_header">
-	<div class="feedbox_text">truths about <%= @user.username %></div>
+	<div class="feedbox_text">Truths about <%= @user.username %></div>
 </div>
 <table class="microposts" summary="User microposts">
 	<%= render @microposts  %>
