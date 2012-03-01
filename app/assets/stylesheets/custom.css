@@ -1,3 +1,4 @@
+/*************  footer/terms/about/etc.. pages **********/
 .align-text {
 	text-align:center;
 }
@@ -27,18 +28,14 @@
 	text-align:center;
 }
 
-.access_error {
-	background-color: red;
-	border:1px solid gray;
-	height: 30px;
-	width: 300px;
-	
-}
 .footer_links {
 	font-family:helvetica;
 	font-size:11pt;
 	font-weight:400;
 }
+
+/*************  CSS for general layout **********/
+
 .container {
 	margin-left:auto;
 	margin-right:auto; 
@@ -88,18 +85,7 @@ background-color: #006698;
 box-shadow: 0 0 6px 1px #999;
 }
 
-.fblike {
-	width: 50%;
-
-	margin-bottom: -20px;
-	margin-top: 30px;
-}
-
-section h1 {
-  font-size: 200%;
-}
-
-/* Links */
+/*************  Style link options  **********/
 
 a {
   color: #005588;
@@ -167,14 +153,6 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Sign up button */
-
-a.signup_button {
-  margin-top: -35px;
-	margin-left: 60px;
-  display: block;
-  text-align: center;
-}
 
 /* Round corners */
 
@@ -197,49 +175,8 @@ footer nav {
   float: none;
 }
 
-/* User show page */
+/*************** Stuff for Authenticated users *************/
 
-table.profile {
-  width: 100%;
-  margin-bottom: 0;
-}
-
-td.main {
-  width: 70%;
-  padding: 1em;
-}
-#welcome_line{
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-bottom:10px;
-	text-align:center;
-	vertical-align:middle;
-	font-family: helvetica;
-	font-size: 24pt;
-	font-style: bold;
-	color:white;
-	height: 50px;
-	text-shadow: 1px 1px 1px #404040;
-	filter: dropshadow(color=#404040, offx=1, offy=1);
-	padding-top: 10px;
-	border-radius: 5px; 
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px; 
-	border: 1px solid #2769A3;
-	background: rgb(107,157,219); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(107,157,219,1) 0%, rgba(35,83,138,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(107,157,219,1)), color-stop(100%,rgba(35,83,138,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* IE10+ */
-	background: linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b9ddb', endColorstr='#23538a',GradientType=0 ); /* IE6-9 */
-	-webkit-box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.7);
-	-moz-box-shadow:    3px 3px 5px rgba(50, 50, 50, 0.7);
-	box-shadow:         3px 3px 5px rgba(50, 50, 50, 0.7);
-}
-#welcome_line p {font-size:80%;}
-#welcome_line a img.facebook{vertical-align:middle;}
 
 .stat_spacer {
 	margin-top:10px;
@@ -319,7 +256,7 @@ margin-left: 400px;
 .submitpost {
 	border:none;
 	display: block;
-	margin-left: 230px;
+	margin-left: 220px;
 	width: 155px; height: 50px;
 	background-image: url('share_button.png');
 	background-position: top;
@@ -380,16 +317,39 @@ padding:10px;
 	margin-bottom:10px;
 	width: 400px;
 }
+
+/************* CSS for all forms **********/
+
+.formlabel {
+	color:#EEE;
+	font-size:12pt;
+	padding-bottom:5px;
+	margin-left:5px;
+}
 .formfield {
 	font-size: 12pt;
 	color: #444444;
 	width: 230px;
 	height: 27px;
-	border-radius: 5px; 
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
-	border: 1px solid #aaaaaa;
+	font-size: 14pt;
+	font-weight:100;
+	font-family:helvetica;
+	color: white;
+	border:none;
+	background: #004F77;
+	outline:none;
+	-webkit-box-shadow: 0px 1px 15px 1px #0093DD;
+	-moz-box-shadow: 0px 1px 15px 1px #0093DD;
+	box-shadow: 0px 1px 15px 1px #0093DD;
+	border-radius: 6px; 
+	border-bottom: 1px solid #0090D9;
+	border-top: 1px solid #00314A;
+	-moz-border-radius: 6px; 
+	-webkit-border-radius: 6px;
 }
+
+/************* (profile) User Show page **********/
+
 .share_url {
 	padding-top:30px;
 	padding-left:20px;
@@ -404,52 +364,94 @@ padding:10px;
 	background-image: url("banner.png");
 }
 .name_container {
-	width: 500px;
+	width: 550px;
+	height: 225px;
 	margin-left:auto;
 	margin-right:auto;
-	background: #004F77;
+	background:#DBDBDB;
 	border-radius: 6px; 
-	border-bottom: 1px solid #0072AC;
-	border-top: 1px solid #00314A;
-	-moz-border-radius: 6px; 
-	-webkit-border-radius: 6px;
+	-moz-border-radius: 0px 18px 18px 18px; 
+	-webkit-border-radius: 0px 18px 18px 18px;
 
 }
 .profile_avatar {
-	margin-top:px;
 	margin-left:10px;
-	border:1px gray solid;
+	float:left;
 	margin-bottom:-5px;
+	padding-right: 10px;
 }
 .profile_name {
 	font-size:24pt;
+	font-family:Comic Sans MS;
 	margin-left:10px;
 	padding-top: 3px;
-	width:480px;
+	width:530px;
 	text-align:left;
-	color:white;
-	border-bottom: 1px gray solid;	
+	color:#333;
+	border-bottom: 1px #0072AC solid;	
 }
 .anon_button{
-	color:#eeeeee;
+	color:#EEE;
 	font-family:helvetica;
 	font-size:12pt;
 	font-weight:200;
 	text-transform: lowercase;
 	margin-top:-30px;
-	padding-bottom:50px;
-	margin-left:225px;
+	padding-bottom:40px;
+	margin-left:215px;
 }
 .post_counter {
 	margin-left:250px;
-	margin-top:px;
+	margin-bottom:-50px;
+	color:#DBDBDB;
+	font-family:Comic Sans MS;
+	margin-left:50px;
+	text-align:center;
 }
 .profile_blurb {
 	font-size:12pt;
-	font-style:italic;
-	color:gray;
-	padding-top:5px;
-	margin-left:250px;
+	font-weight:200;
+	text-align:left;
+	color:#333;
+	margin-top:5px;
+	margin-left:15px;
+	margin-right:10px;
+	padding-bottom:10px;
+}
+form.new_micropost {
+  margin-bottom: 2em;
+}
+
+form.new_micropost textarea {
+	width: 600px; 
+	max-width: 600px; 
+	height: 50px;
+	max-height:50px;
+	font-size: 14pt;
+	font-weight:100;
+	font-family:helvetica;
+	color: white;
+	border:none;
+	padding:5px;
+  margin-bottom:5px;
+	background: #004F77;
+	border-radius: 6px; 
+	border-bottom: 1px solid #0090D9;
+	border-top: 1px solid #00314A;
+	-moz-border-radius: 6px; 
+	-webkit-border-radius: 6px;
+
+	outline:none;
+	-webkit-box-shadow: 0px 1px 20px 1px #0093DD;
+	-moz-box-shadow: 0px 1px 20px 1px #0093DD;
+	box-shadow: 0px 1px 20px 1px #0093DD;
+}
+.truthform_place {
+	margin-left:120px;
+}
+.truth-is {
+	padding:15px;
+	margin-left: 270px;
 }
 .feedbox_header {
 	margin-left:10px;
@@ -464,7 +466,8 @@ padding:10px;
 .feedbox_text {
 	color:#EEEEEE;
 	font-size:22pt;
-	padding-left:15px;
+	font-weight:200;
+	text-align:center;
 	padding-top:5px;
 	border-bottom: 1px solid #007AB7;
 }
@@ -559,6 +562,8 @@ table.microposts tr td.micropost {
 	margin-right:5px;
 }
 
+/************* profile settings page **********/
+
 .change_pic {
 	float:left;
 	margin-left:66%;
@@ -577,7 +582,6 @@ table.microposts tr td.micropost {
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
 	border: 1px solid #aaaaaa;
-	
 }
 .savesettings {
 	border:none;
@@ -617,11 +621,9 @@ table.microposts tr td.micropost {
 	margin-left:20px;
 	float:left;
 }
-.profile_gravatar {
-	margin-bottom:15px;
-	text-align:center;
-	
-}
+
+/************* AuthHome **********/
+
 .facebook_share {
 	border:none;
 	display: block;
@@ -706,6 +708,9 @@ table.microposts tr td.micropost {
 	margin-top:-12px;
 	float:left;
 }
+
+/***************  for side column feed on auth_home **************/
+
 .micro_header {
 	font-size:13pt;
 	border-bottom:1px solid #cccccc;
@@ -732,246 +737,13 @@ table.microposts tr td.micropost {
 	text-align:center;
 	color: gray;
 }
-.home_email{
-	margin-left: 38px;
-	margin-top:30px;
-	vertical-align:top;	
-}
-.home_password{
-	margin-top: 5px;
-}
-.home_submit {
-	margin-left: 120px;
-	
-}
-.signin_button {
-	margin-left: 40px;
-	border:none;
-	display: block;
-	width: 106px; height: 34px;
-	background-image: url('signin_button.png');
-	background-position: top;
-	text-indent: -9999px;
-}
-.signin_button:hover {
-	cursor:pointer;
-	background-position: bottom;
-}
-.forgot_password {
-	vertical-align:top;
-	font-size: 10pt;
-	margin-bottom:10px;
-}
 
-.signup_button {
-	border:none;
-	display: block;
-	width: 106px; height: 34px;
-	background-image: url('signup_button.png');
-	background-position: top;
-	text-indent: -9999px;
-}
-.signup_button:hover {
-	cursor:pointer;
-	background-position: bottom;
-}
+/************* Unauthenticated Home **********/
 
-.globalfeed {
-	width: 90%;
-	border: solid gray;
-	border-width: 1px;
-	padding-left: 15px;
-	margin-left: 15%;
-	margin-right: 20%;
-}
-td.sidebar {
-  width: 30%;
-  padding: 1em;
-  background: #004F77;
-	border: 1px gray solid;
-}
-
-.profile img.gravatar {
-  border: 1px solid #999;
-  margin-bottom: -15px;
-}
-
-
-div.field, div.actions {
-  margin-bottom: 20px;
-}
-
-
-.field_with_errors {
-  margin-top: 10px;
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-.field_with_errors label {
-  color: #fff;
-}
-
-#error_explanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#error_explanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
-ul.users {
-  margin-top: 1em;
-color: #333333;
-}
-
-.users li {
-  list-style: none;
-color: #333333;
-}
-
-div.user_info img {
-  padding-right: 0.1em;
-}
-
-div.user_info a {
-  text-decoration: none;
-}
-
-div.user_info span.user_name {
-	vertical-align:top;
-	position:absolute;  
-}
-
-div.user_info span.microposts {
-  font-size:14pt;
-}
-
-form.new_micropost {
-  margin-bottom: 2em;
-}
-
-form.new_micropost textarea {
-	width: 600px; 
-	max-width: 600px; 
-	height: 50px;
-	max-height:50px;
-	font-size: 14pt;
-	font-weight:100;
-	font-family:helvetica;
-	color: white;
-	border:none;
-	padding:5px;
-  margin-bottom:5px;
-	background: #004F77;
-	border-radius: 6px; 
-	border-bottom: 1px solid #0090D9;
-	border-top: 1px solid #00314A;
-	-moz-border-radius: 6px; 
-	-webkit-border-radius: 6px;
-	-webkit-box-shadow: inset 0px 1px 1px 1px #003753;
-	-moz-box-shadow: inset 0px 1px 1px 1px #003753;
-	box-shadow: inset 0px 1px 1px 1px #003753;
-	outline:none;
-	-webkit-box-shadow: 0px 1px 20px 1px #0093DD;
-	-moz-box-shadow: 0px 1px 20px 1px #0093DD;
-	box-shadow: 0px 1px 20px 1px #0093DD;
-}
-.truthform_place {
-	margin-left:120px;
-}
-.truth-is {
-	padding:15px;
-	margin-left: 270px;
-}
-.authentications {
-  margin-bottom: 30px;
-}
-
-.authentication {
-  float: left;
-  background-color: #EEE;
-  border: solid 1px #999;
-  padding: 5px 10px;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  position: relative;
-  margin-right: 10px;
-}
-
-.authentication .remove {
-  text-decoration: none;
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  color: #333;
-  padding: 2px 4px;
-  font-size: 10px;
-}
-
-.authentication .remove:hover {
-  color: #FFF;
-  background-color: #777;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-}
-
-.authentication img {
-  float: left;
-}
-
-.authentication .provider, .authentication .uid {
-  margin-left: 38px;
-  margin-right: 20px;
-}
-
-.authentication .provider {
-  font-weight: bold;
-}
-
-.authentication .uid {
-  color: #666;
-  font-size: 11px;
-}
-
-.auth_provider img {
-  display: block;
-}
-
-.auth_provider {
-	border:none;
-	display: block;
-	width: 210px; height: 32px;
-	background-image: url('fb_connect.png');
-	background-position: top;
-	text-indent: -9999px;
-}
-.auth_provider:hover {
-	cursor:pointer;
-	background-position: bottom;
+.fblike {
+	width: 50%;
+	margin-bottom: -20px;
+	margin-top: 30px;
 }
 .signin_font1 {
 	font-size: 20pt;
@@ -1044,6 +816,248 @@ form.new_micropost textarea {
 	float:left;
 	margin-left: 4px;
 }	
+
+table.profile {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+td.main {
+  width: 70%;
+  padding: 1em;
+}
+#welcome_line{
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom:10px;
+	text-align:center;
+	vertical-align:middle;
+	font-family: helvetica;
+	font-size: 24pt;
+	font-style: bold;
+	color:white;
+	height: 50px;
+	text-shadow: 1px 1px 1px #404040;
+	filter: dropshadow(color=#404040, offx=1, offy=1);
+	padding-top: 10px;
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 1px solid #2769A3;
+	background: rgb(107,157,219); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(107,157,219,1) 0%, rgba(35,83,138,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(107,157,219,1)), color-stop(100%,rgba(35,83,138,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b9ddb', endColorstr='#23538a',GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.7);
+	-moz-box-shadow:    3px 3px 5px rgba(50, 50, 50, 0.7);
+	box-shadow:         3px 3px 5px rgba(50, 50, 50, 0.7);
+}
+#welcome_line p {font-size:80%;}
+#welcome_line a img.facebook{vertical-align:middle;}
+
+.home_email{
+	margin-left: 38px;
+	margin-top:30px;
+	vertical-align:top;	
+}
+.home_password{
+	margin-top: 5px;
+}
+.home_submit {
+	margin-left: 120px;
+	
+}
+.signin_button {
+	margin-left: 40px;
+	border:none;
+	display: block;
+	width: 106px; height: 34px;
+	background-image: url('signin_button.png');
+	background-position: top;
+	text-indent: -9999px;
+}
+.signin_button:hover {
+	cursor:pointer;
+	background-position: bottom;
+}
+.forgot_password {
+	vertical-align:top;
+	font-size: 10pt;
+	margin-bottom:10px;
+}
+
+.signup_button {
+	border:none;
+	display: block;
+	width: 106px; height: 34px;
+	background-image: url('signup_button.png');
+	background-position: top;
+	text-indent: -9999px;
+}
+.signup_button:hover {
+	cursor:pointer;
+	background-position: bottom;
+}
+
+.globalfeed {
+	width: 90%;
+	border: solid gray;
+	border-width: 1px;
+	padding-left: 15px;
+	margin-left: 15%;
+	margin-right: 20%;
+}
+td.sidebar {
+  width: 30%;
+  padding: 1em;
+  background: #004F77;
+	border: 1px gray solid;
+}
+
+.profile img.gravatar {
+  border: 1px solid #999;
+  margin-bottom: -15px;
+}
+
+
+div.field, div.actions {
+  margin-bottom: 20px;
+}
+
+/************* CSS for notices and messages **********/
+
+.access_error {
+	background-color: red;
+	border:1px solid gray;
+	height: 30px;
+	width: 300px;
+	
+}
+.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+.field_with_errors label {
+  color: #fff;
+}
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/************* CSS for links throughout site **********/
+
+ul.users {
+  margin-top: 1em;
+color: #333333;
+}
+
+.users li {
+  list-style: none;
+color: #333333;
+}
+
+/************* CSS for authentication services **********/
+
+.authentications {
+  margin-bottom: 30px;
+}
+
+.authentication {
+  float: left;
+  background-color: #EEE;
+  border: solid 1px #999;
+  padding: 5px 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.authentication .remove {
+  text-decoration: none;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #333;
+  padding: 2px 4px;
+  font-size: 10px;
+}
+
+.authentication .remove:hover {
+  color: #FFF;
+  background-color: #777;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+.authentication img {
+  float: left;
+}
+
+.authentication .provider, .authentication .uid {
+  margin-left: 38px;
+  margin-right: 20px;
+}
+
+.authentication .provider {
+  font-weight: bold;
+}
+
+.authentication .uid {
+  color: #666;
+  font-size: 11px;
+}
+
+.auth_provider img {
+  display: block;
+}
+
+.auth_provider {
+	border:none;
+	display: block;
+	width: 210px; height: 32px;
+	background-image: url('fb_connect.png');
+	background-position: top;
+	text-indent: -9999px;
+}
+.auth_provider:hover {
+	cursor:pointer;
+	background-position: bottom;
+}
 
 #flash {
   padding: 5px 8px;
