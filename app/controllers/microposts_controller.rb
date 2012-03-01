@@ -6,7 +6,6 @@ class MicropostsController < ApplicationController
      @micropost = current_user.microposts.build(params[:micropost])
      @user = User.find_by_username(params[:id])
      if @micropost.save
-       #MicropostMailer.post_email(@user).deliver
        flash[:notice] = "Your truth has been sent!"
        redirect_to(:back)
      else
@@ -14,6 +13,10 @@ class MicropostsController < ApplicationController
        flash[:alert] = "You haven't written anything!"
        redirect_to(:back)
      end
+   else
+     @micropost.save
+     # MicropostMailer will send out the email upon Micropost creation.
+     MicropostMailer.micropost_email(@user).deliver
    end
  
   def destroy
