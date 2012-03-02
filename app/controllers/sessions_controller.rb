@@ -9,7 +9,7 @@ skip_before_filter :verify_authenticity_token
     if user
       session[:user_id] = user.id
       flash[:notice] = "Welcome back!"
-      redirect_back_or_default(root_url)
+      redirect_back_or_default(current_user)
     else
       flash.now[:error] = "There was a problem with your email or password"
       render :action => 'new'

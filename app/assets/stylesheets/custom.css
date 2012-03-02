@@ -39,7 +39,7 @@
 .container {
 	margin-left:auto;
 	margin-right:auto; 
-width: 900px;
+width: 840px;
 }
 
 body {
@@ -49,11 +49,8 @@ body {
 header {
 padding-top: 20px;
 color: gray;
-
 height:50px;
 padding: 0.25em;
-
-
 }
 .header_text {
 	font-weight:400;
@@ -440,21 +437,19 @@ form.new_micropost textarea {
 	border-top: 1px solid #00314A;
 	-moz-border-radius: 6px; 
 	-webkit-border-radius: 6px;
-
 	outline:none;
 	-webkit-box-shadow: 0px 1px 20px 1px #0093DD;
 	-moz-box-shadow: 0px 1px 20px 1px #0093DD;
 	box-shadow: 0px 1px 20px 1px #0093DD;
 }
 .truthform_place {
-	margin-left:120px;
+	margin-left:90px;
 }
 .truth-is {
 	padding:15px;
-	margin-left: 270px;
+	margin-left: 260px;
 }
 .feedbox_header {
-	margin-left:10px;
 	margin-bottom:-34px;
 	width:600px;
 	background:#004B71;
@@ -473,18 +468,16 @@ form.new_micropost textarea {
 }
 .profile_side {
 	float:right;
-	width:230px;
-	padding-right:10px;
-	
+	margin-left:-5px;	
 }
 .profile_following-h {
 	color:#EEEEEE;
 	margin-bottom:5px;
-	margin-left:15px;
+	margin-left:10px;
 }
 .profile_following {
 	float:right;
-	width:215px;
+	width:165px;
 	padding:7px;
 	margin-bottom:20px;
 	background:#004365;
@@ -494,7 +487,7 @@ form.new_micropost textarea {
 }
 .profile_followers {
 	float:right;
-	width:215px;
+	width:165px;
 	padding:7px;
 	margin-bottom:20px;
 	background:#004365;
@@ -511,7 +504,6 @@ h1.micropost {
 												
 table.microposts {
 	width: 600px;
-	margin-left:10px;
 	padding-left:20px;
 	padding-top:50px;
 	padding-bottom:15px;
@@ -745,12 +737,21 @@ table.microposts tr td.micropost {
 	margin-bottom: -20px;
 	margin-top: 30px;
 }
+.signin_container1 {
+	float:left;
+	margin-left:50px;
+}
+.signin_container2 {
+	float:right;
+	margin-right:100px;
+	margin-top:-40px;
+}
 .signin_font1 {
 	font-size: 20pt;
 	margin-top: 20px;
 	margin-bottom: 5px;
 	font-weight:500;
-	color: #115cb8;
+	color: #EEE;
 	text-shadow: 1px 1px 1px gray;
 	filter: dropshadow(color=gray, offx=1, offy=1);
 }
@@ -759,43 +760,54 @@ table.microposts tr td.micropost {
 	margin-top: 60px;
 	margin-bottom: 5px;
 	font-weight:500;
-	color: #115cb8;
+	color: #EEE;
 	text-shadow: 1px 1px 1px gray;
 	filter: dropshadow(color=gray, offx=1, offy=1);
 }
 .ticker_header{
-	float:right;
-	margin-top:-430px;
-	margin-right:150px;
+	float:left;
+	margin-top:120px;
+	margin-bottom:10px;
 	font-size: 17pt;
 	font-family: Comic Sans MS;
+	color:#EEE;
 }
+
 #vertical-ticker{
-  margin-top:-395px;
-	margin-left: 350px;
+	float:left;
+	margin-left: 130px;
 	height:550px;
-	width: 450px;
+	width: 560px;
   overflow:hidden;
-  box-shadow: 0 0 6px 1px #999;
+  box-shadow: 0 0 6px 2px #999;
+	background:#004B71;
+	border-radius: 6px; 
+	border-bottom: 1px solid #EEE;
+	-moz-border-radius: 6px; 
+	-webkit-border-radius: 6px;
 }
 
 #vertical-ticker li{
+	float:left;
 	margin-left:-40px;
-	height:55px;
-	width:500px;
+	height:80px;
+	width:600px;
 	overflow:hidden;
   display:block;
   background:#efefef;
-  color:gray;
-  border-bottom:2px solid #ddd;
+  color:#000;
 	border-top:1px solid #ddd;
   text-align:left;
-  font-size:15px;
+  font-size:13px;
   font-weight:normal;
   font-family: Helvetica Neue, times, serif;
+  webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-bottom: 1px solid #0081C2;
 }
 #vertical-ticker li img {
-	vertical-align:top;
+	vertical-align:middle;
 	margin-top:3px;
 	}
 .ticker_content {
@@ -809,6 +821,7 @@ table.microposts tr td.micropost {
 .ticker_user {
 	float: left;
 	margin-left: 5px;
+	font-size:14px;
 	overflow:hidden;
 
 }
@@ -903,14 +916,7 @@ td.main {
 	background-position: bottom;
 }
 
-.globalfeed {
-	width: 90%;
-	border: solid gray;
-	border-width: 1px;
-	padding-left: 15px;
-	margin-left: 15%;
-	margin-right: 20%;
-}
+
 td.sidebar {
   width: 30%;
   padding: 1em;
@@ -1086,9 +1092,6 @@ input.readonly{background:#ccc;}
 	margin-top: -40px;
 	margin-left:310px;
 	margin-bottom:20px;
-}
-.home_container {
-	margin-left:40px;
 }
 .signup_link {
 	font-size:14pt;

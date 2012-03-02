@@ -13,8 +13,6 @@
         });
     });
   </script>
-
-
 <% end %>
 
 <div id="fb-root"></div>
@@ -24,58 +22,50 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=186414394781001";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+  }(document, 'script', 'facebook-jssdk'));
 </script>
 
- <div id="welcome_line">
+<div id="welcome_line">
 	Describe your friends with a truth!
- </div>
-
-<div class="facepile">
-<div class="fb-facepile" data-href="http://truthpage.me" data-size="small" data-max-rows="5" data-width="250"></div>
-<%= image_tag "tpcloud.png", :class => "tpcloud" %>
 </div>
 
-<br/>
-<div class="home_container">
-	
-	
-	
-<div class="signin_font1">Sign in</div>
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <div class="formlabel"> Username or Email </div>
-    <%= text_field_tag :login, params[:login], :class => "formfield" %>
-  </div>
-  <div class="field">
-    <div class="formlabel"> Password </div>
-    <%= password_field_tag :password, "", :class => "formfield" %>
-  </div>
-  <div class="actions">
-   <%= submit_tag "", :class=>'signin_button' %>
-  </div>
-<% end %>
+<div class="signin_container1">
+  <div class="signin_font1">Sign in</div>
+  <%= form_tag sessions_path do %>
+    <div class="field">
+      <div class="formlabel"> Username or Email </div>
+      <%= text_field_tag :login, params[:login], :class => "formfield" %>
+    </div>
+    <div class="field">
+      <div class="formlabel"> Password </div>
+      <%= password_field_tag :password, "", :class => "formfield" %>
+    </div>
+    <div class="actions">
+      <%= submit_tag "", :class=>'signin_button' %>
+    </div>
+  <% end %>
+</div>
 
-<div class="signin_font2">Sign up</div>
-	<%= render :partial=>"authentications/services" %>
-<div class="signup_condition">by clicking sign up you agree to our <%= link_to "terms of use", terms_path, :class => "footer_links" %>.</div> 
-<div class="signup_link">
+<div class="signin_container2">
+  <div class="signin_font2">Sign up</div>
+	 <%= render :partial=>"authentications/services" %>
+  <div class="signup_condition">
+    by clicking sign up you agree to our <%= link_to "terms of use", terms_path, :class => "footer_links" %>.
+  </div> 
+  <div class="signup_link">
     or <%= link_to "sign up here", signup_path%>.
-</div>    
-</p>
+  </div>    
+  </p>
 </div>
+
 <div class="ticker_header">truths shared so far...</div>	
-  <ul id="vertical-ticker" style="overflow-x: hidden; overflow-y: hidden; ">
-    <% for mp in Micropost.all.take(50) do %>  
-      <li><%= render :partial=>"microposts/ticker_micropost", :locals=>{:micropost=>mp} %></li>
-    <% end %>
-  </ul>
+<ul id="vertical-ticker" style="overflow-x: hidden; overflow-y: hidden; ">
+  <% for mp in Micropost.all.take(50) do %>  
+    <li><%= render :partial=>"microposts/ticker_micropost", :locals=>{:micropost=>mp} %></li>
+  <% end %>
+</ul>
 
-
-
-
-  <div class="fblike">
-
+<div class="fblike">
   <g:plusone annotation="inline"></g:plusone>
 
   <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Join truthpage.me and share the truth with your friends" data-hashtags="truthpage.me">Tweet</a>
@@ -84,5 +74,6 @@
 
   <a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
 
-  <div class="fb-like" data-href="http://truthpage.me" data-send="true" data-width="450" data-show-faces="false" data-action="recommend" data-font="tahoma"> </div>
+  <div class="fb-like" data-href="http://truthpage.me" data-send="true" data-width="450" data-show-faces="false" data-action="recommend" data-font="tahoma"> 
   </div>
+</div>
