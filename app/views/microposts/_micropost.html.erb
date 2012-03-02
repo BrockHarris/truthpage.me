@@ -1,30 +1,30 @@
 <tr>
   <td class="micropost">
-	 <span class="micropost_pic">
-	<% if micropost.try(:anon?) %>
-		<%= image_tag("genericpic-thumb.jpg") %>
-		<% else %>
-		 <%= render_user_avatar(micropost.user, :thumb) %>
-		<% end %>
+	  <span class="micropost_pic">
+	    <% if micropost.try(:anon?) %>
+		    <%= image_tag("genericpic-thumb.jpg") %>
+		  <% else %>
+		    <%= render_user_avatar(micropost.user, :thumb) %>
+		  <% end %>
 		</span>
     <span class="micropost_header">
-	 <% if micropost.try(:anon?) %>
-	  anonymous said:
-	 <% else %>
-      <%= link_to micropost.user.username, micropost.user %> said:
-	 <% end %>
+	    <% if micropost.try(:anon?) %>
+	      anonymous said:
+	    <% else %>
+        <%= link_to micropost.user.username, micropost.user %> said:
+	    <% end %>
     </span>
-	<span class="micropost_time">
+	  <span class="micropost_time">
       <%= time_ago_in_words(micropost.created_at) %> ago.
     </span>
-	<br/>
+	    <br/>
     <span class="micropost_content"> <%= micropost.content %></span>
   </td>
-  <% if current_user = (micropost.user) %>
-    <td> 
-      <div class="delete_link_place">   
-        <%= render_micropost_delete(micropost) %>
-      </div>
-    </td>
-  <% end %>
+    <% if current_user = (micropost.user) %>
+      <td> 
+        <div class="delete_link_place">   
+          <%= render_micropost_delete(micropost) %>
+        </div>
+      </td>
+    <% end %>
 </tr>

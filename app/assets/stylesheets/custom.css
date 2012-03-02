@@ -324,6 +324,8 @@ padding:10px;
 	margin-left:5px;
 }
 .formfield {
+	padding-left:5px;
+	padding-bottom:2px;
 	font-size: 12pt;
 	color: #444444;
 	width: 230px;
@@ -567,13 +569,26 @@ table.microposts tr td.micropost {
 	margin-left:80px;
 	margin-top:20px;
 }
+
 .settings_blurb{
-	height: 100px;
-	margin-top:20px;
+	padding-left:5px;
+	padding-bottom:2px;
+	height: 120px;
+	background: #004F77;
+	font-size: 12pt;
+	width: 230px;
+	font-family:helvetica;
+	color: #EEE;
+	border:none;
+	border-bottom: 1px solid #0090D9;
+	border-top: 1px solid #00314A;
+	outline:none;
+	-webkit-box-shadow: 0px 1px 15px 1px #0093DD;
+	-moz-box-shadow: 0px 1px 15px 1px #0093DD;
+	box-shadow: 0px 1px 15px 1px #0093DD;
 	border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
-	border: 1px solid #aaaaaa;
 }
 .savesettings {
 	border:none;
