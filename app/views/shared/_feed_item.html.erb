@@ -1,18 +1,23 @@
 
 <tr>
-  <td class="gravatar">
-	 <% if feed_item.try(:anon?) %>
-	<%= image_tag("genericpic-thumb.jpg") %>
-	<% else %>
-	 <%= render_user_avatar(feed_item.user, :thumb) %>
-	<% end %>
-  </td>
   <td class="micropost">
-    <div class="feed_timestamp">
-      <%= render_feed_stamp(feed_item) %>
-    </div>
-    <span class="dashfeed_content">truth is <%= feed_item.content %></div>
-    
+    <span class="micropost_pic">
+	    <% if feed_item.try(:anon?) %>
+	      <%= image_tag("genericpic-thumb.jpg") %>
+	    <% else %>
+	      <%= render_user_avatar(feed_item.user, :thumb) %>
+	    <% end %>
+    </span>
+    <span class="micropost_header">
+      <% if feed_item.try(:anon?) %>
+        anonymously shared with <%= feed_item.target_user.username%>
+      <% else %>
+        <%= render_feed_stamp(feed_item) %>
+      <% end %>
+    </span>
+      <br/>
+    <span class="micropost_content"> 
+      <%= feed_item.content %>
+    </span>
   </td>
-  
 </tr>

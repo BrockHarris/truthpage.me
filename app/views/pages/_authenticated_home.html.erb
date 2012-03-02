@@ -1,38 +1,40 @@
-
-  <table class="front" summary="for authenticated users">
-    <tr>
-      <td class="main">
-
-		<div class="micropost">
-		<div class="dashfeed_header">Live feed </div>
+<table class="front" summary="for authenticated users">
+  <tr>
+    <td class="main">
+			<div class="micropost">
+				<div class="dashfeed_header">
+					Live feed 
+				</div>
 			</div>
-        <div class="microfeed_spacer">...</div>
-		<div class="dashfeed_content">
-		<%= render 'shared/feed' %>
-		</div>
-      </td>
-      
-	   <td class="sidebar round">
-       <div class="dash_user"><%= current_user.username %></div> 
-		<div class="dash_gravatar">
-			<%= render_user_avatar(current_user, :small) %>
-		</div>
-		<br />
-		<%= render 'shared/stats' %>
-		<br />
-		<strong>Profile link:</strong>
-		<div class="profile_link">
-		 truthpage.me<%= link_to user_path(@user), @user %><br />
-		</div>
-		</br>
-		<strong>Get truths via:</strong>
-		<div id="friends">
-		      <%= link_to "", "#", :id => "invite_fb_friends", :class => 'facebook_share' %>
-
-		      <div id="fb-root"></div>
-
-		      <script src="http://connect.facebook.net/en_US/all.js"></script>
-
+      <div class="microfeed_spacer">
+        ...
+      </div>
+			<div class="dashfeed_content">
+				<%= render 'shared/feed' %>
+			</div>
+    </td>
+    
+    <td class="sidebar round">
+      <div class="dash_user">
+     		<%= current_user.username %>
+     	</div> 
+			<div class="dash_gravatar">
+				<%= render_user_avatar(current_user, :small) %>
+			</div>
+				<br />
+			<%= render 'shared/stats' %>
+				<br />
+			<strong>Profile link:</strong>
+			<div class="profile_link">
+		 		truthpage.me<%= link_to user_path(@user), @user %><br />
+			</div>
+				</br>
+			<strong>Get truths via:</strong>
+			<div id="friends">
+		    <%= link_to "", "#", :id => "invite_fb_friends", :class => 'facebook_share' %>
+					
+				<div id="fb-root"></div>
+					<script src="http://connect.facebook.net/en_US/all.js"></script>
 		      <script>
 		        $(function(){
 
@@ -70,21 +72,22 @@
 		          });
 		        });
 		      </script>
-		    </div>
-		
-		or
-		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Join truthpage.me and share the truth with your friends" data-size="large" data-count="none">Tweet</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-		</script>
-		
-		<p/>
-		<div class="micro_header"><strong>Recently shared:</strong></div>
-		<div class="microfeed_spacer">...</div>
-		<%= render 'shared/microfeed' %>
-          
-        <div class="stat_spacer">You've shared <%= pluralize(current_user.microposts.count, "truth") %> so far!</div>
-      	
-			
-</td>
-    </tr>
-  </table>
+		  </div>
+				or
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Join truthpage.me and share the truth with your friends" data-size="large" data-count="none">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+			</script>
+				<p/>
+			<div class="micro_header">
+				<strong>Recently shared:</strong>
+			</div>
+			<div class="microfeed_spacer">
+				...	
+			</div>
+				<%= render 'shared/microfeed' %>
+      <div class="stat_spacer">
+      	You've shared <%= pluralize(current_user.microposts.count, "truth") %> so far!
+      </div>
+		</td>
+  </tr>
+</table>

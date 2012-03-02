@@ -12,19 +12,40 @@
 	    'msgAppendMethod': 'insertAfter'
       });
   });
- </script>
+	</script>
+	<script type="text/javascript">
+ 		$(document).ready(function() {
+
+  	$("a.iframe").fancybox({
+    	'transitionIn'    :    'elastic',
+    	'transitionOut'    :    'elastic',
+    	'speedIn'        :    400,
+    	'speedOut'        :    200,
+    	'overlayShow'    :    false
+  	});
+  $("a.iframe_defaults").fancybox();
+		});
+	</script>
 <% end %>
 
+<%= link_to "View a page as a popup", privacy_path, :class => 'iframe' %>
+
 <div class="name_container">
-	<div class="profile_name"> <%= @user.username %> </div>
+	<div class="profile_name"> 
+		<%= @user.username %> 
+	</div>
 	<div class="profile_avatar"> 
 		<%= render_user_avatar(@user, :small) %>	
 	</div>
-	<div class="profile_blurb"> <%= @user.blurb %> </div>	
+	<div class="profile_blurb"> 
+		<%= @user.blurb %> 
+	</div>	
 </div>
 
 <% if current_user %>
-	<div class="profile_follow"><%= render_follow_links(@user) %></div>
+	<div class="profile_follow">
+		<%= render_follow_links(@user) %>
+	</div>
 <% end %>
 
 <%= image_tag "truth-is.png", :class => "truth-is" %>
@@ -39,25 +60,27 @@
 	<div class="profile_following">
  		<% unless @following.empty? %>
     	<% @following.each do |user| %>
-	  	<%= link_to render_user_avatar(user, :thumb), user %>
-    <% end %>
-  <% end %>
-</div>
+	  		<%= link_to render_user_avatar(user, :thumb), user %>
+    	<% end %>
+  	<% end %>
+	</div>
 
-<div class="profile_following-h">
-	Followers (<%= @user.followers.count %>):
+	<div class="profile_following-h">
+		Followers (<%= @user.followers.count %>):
 	</div>
 	<div class="profile_followers">
 		<% unless @followers.empty? %>
-    <% @followers.each do |user| %>
-	   <%= link_to render_user_avatar(user, :thumb), user %>
-    <% end %>
+    	<% @followers.each do |user| %>
+	   		<%= link_to render_user_avatar(user, :thumb), user %>
+    	<% end %>
   	<% end %>
 	</div>
 </div>
 
 <div class="feedbox_header">
-	<div class="feedbox_text">Truths about <%= @user.username %></div>
+	<div class="feedbox_text">
+		Truths about <%= @user.username %>
+	</div>
 </div>
 <table class="microposts" summary="User microposts">
 	<%= render @microposts  %>
