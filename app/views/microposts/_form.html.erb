@@ -13,14 +13,12 @@
 		<%= f.label "share anonymously" %>
 	</div>
 
-	<% if current_user %>
-		<div class ="share_placement">
-			<%= f.submit '', :class => 'submitpost'%>
-		</div>
-	<% else %>
-		<div class ="share_placement">
-			<%= link_to "Sign in to post!", privacy_path, :class => 'iframe' %>
-		</div>
-	<% end %>
+  <div class ="share_placement">
+  	<% if current_user %>
+  		<%= f.submit '', :class => 'submitpost'%>
+  	<% else %>
+  		<%= link_to "Sign in to post!", privacy_path, :class => 'authenticate' %>
+  	<% end %>
+  </div>
 <% end %>
 
