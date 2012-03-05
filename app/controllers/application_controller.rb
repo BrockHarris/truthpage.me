@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  skip_before_filter :verify_authenticity_token
+  #skip_before_filter :verify_authenticity_token
   include SimpleCaptcha::ControllerHelpers
   helper :all 
   helper_method :current_user
@@ -45,4 +45,16 @@ class ApplicationController < ActionController::Base
   def admin_logged_in?
     access_denied unless current_user.try(:admin)
   end
+
+  #if there's a pending micropost in session and there's a current_user, create and return it. 
+  def handle_pending_micropost
+    micropost = nil
+    if current_user && session[:pending_micropost].present?
+      micropost = current_user.microposts.build(session[:pending_micropost])
+      micropost.save!
+      session[:pending_micropost] = nil
+    end
+    micropost
+  end
+
 end

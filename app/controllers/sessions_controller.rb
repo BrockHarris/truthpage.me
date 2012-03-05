@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-skip_before_filter :verify_authenticity_token
+#skip_before_filter :verify_authenticity_token
 
   def new
     redirect_to root_url if current_user
@@ -15,22 +15,27 @@ skip_before_filter :verify_authenticity_token
     if user
       session[:user_id] = user.id
       flash[:notice] = "Welcome back!"
-      redirect_back_or_default(current_user)
+      if micropost = handle_pending_micropost
+        flash[:notice] << "<br/>Truth posted!".html_safe
+        redirect_to micropost.target_user
+      else
+        redirect_back_or_default(current_user)
+      end
     else
       flash.now[:error] = "There was a problem with your email or password"
       render :action => 'new'
     end
   end
-  
+
   def destroy
     session[:user_id] = nil
     flash[:notice] = "You've been signed out, come back soon!"
     redirect_to root_url
   end
 
-end
-
-def sign_in_and_redirect_back_or_default(user, url=request.url)
+  def sign_in_and_redirect_back_or_default(user, url=request.url)
     session[:user_id] = user.id
     redirect_back_or_default(url)
+  end
+
 end

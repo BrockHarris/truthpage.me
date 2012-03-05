@@ -11,6 +11,9 @@
 	    'msgWarningColor': 'red',
 	    'msgAppendMethod': 'insertAfter'
       });
+    $("#authenticate").click(function(){
+      $.post('/microposts/create_pending', $("#new_micropost").serialize());
+    });
     $("#authenticate").fancybox({
       'transitionIn'    :    'elastic',
       'transitionOut'    :    'elastic',
