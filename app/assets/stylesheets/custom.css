@@ -46,17 +46,19 @@ body {
   background-color: #F2F2F2;
 }
 
+/** header **/
+
 header {
-padding-top: 20px;
-color: gray;
-height:50px;
-padding: 0.25em;
+padding-top: 22px;
+color: white;
+height:30px;
+padding: 0.5em;
 }
 .header_text {
 	font-weight:400;
 	font-size: 38pt;
-  font-family: helvetica;
-  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
+  font-family: bookman;
+  text-shadow: rgba(0,0,0,0.3) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
 	
  cursor:pointer;
 }
