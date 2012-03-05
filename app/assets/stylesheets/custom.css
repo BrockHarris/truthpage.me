@@ -347,6 +347,16 @@ padding:10px;
 	-webkit-border-radius: 6px;
 }
 
+/************* Styles for fancybox **********/
+
+.fancybox_page {
+	background: #F2F2F2;
+	border-radius: 9px; 
+	-moz-border-radius: 9px; 
+	-webkit-border-radius: 9px; 
+	border: .5px solid gray;
+}
+
 /************* (profile) User Show page **********/
 
 .share_url {

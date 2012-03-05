@@ -17,7 +17,7 @@
   	<% if current_user %>
   		<%= f.submit '', :class => 'submitpost'%>
   	<% else %>
-  		<%= link_to "Sign in to post!", privacy_path, :class => 'authenticate' %>
+  		<%= link_to '', login_path, :id => 'authenticate', :class => 'submitpost' %>
   	<% end %>
   </div>
 <% end %>
