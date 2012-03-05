@@ -25,7 +25,7 @@ Truthpage::Application.routes.draw do
   match "/activate_user/:id", :to=>"users#activate", :as=>"activate_user"
   match "/welcome_user/:id", :to=>"users#welcome", :as=>"welcome_user"
   match "complete_session_authentication_path", :to=>"authentications#complete_session_authentication", :as=>:complete_session_authentication
-  match "/.:id" => "users#show"             
+             
   resources :microposts
   resources :users do
       member do
@@ -42,6 +42,11 @@ Truthpage::Application.routes.draw do
   namespace :admin do
     resources :users
   end
+
+  controller :users do
+    match ':id' => :show, :via => :get, :constraints => { :id => /[A-Za-z0-9\-\+]+/ }
+  end
+
   root :to => 'pages#home'
 
 end

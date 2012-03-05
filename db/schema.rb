@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120228200028) do
+ActiveRecord::Schema.define(:version => 20120305141022) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -79,6 +79,16 @@ ActiveRecord::Schema.define(:version => 20120228200028) do
 
   add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["username"], :name => "index_users_on_username"
+
+  create_table "vanities", :force => true do |t|
+    t.string  "name"
+    t.integer "vain_id"
+    t.string  "vain_type"
+  end
+
+  add_index "vanities", ["name"], :name => "index_vanities_on_name", :unique => true
+  add_index "vanities", ["vain_id"], :name => "index_vanities_on_vain_id"
+  add_index "vanities", ["vain_type"], :name => "index_vanities_on_vain_type"
 
   create_table "vanity_conversions", :force => true do |t|
     t.integer "vanity_experiment_id"
