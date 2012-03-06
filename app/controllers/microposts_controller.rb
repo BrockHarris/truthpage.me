@@ -23,7 +23,9 @@ class MicropostsController < ApplicationController
     if !current_user && params[:micropost][:content].present?
       session[:pending_micropost] = {:content=>params[:micropost][:content], :belongs_to_id=>params[:micropost][:belongs_to_id], :anon=>params[:micropost][:anon]}
     end
-    render :nothing=>true
+    respond_to do |wants|
+      wants.js{render :text=>"alert('#{session}')"}
+    end
   end
  
   def destroy
