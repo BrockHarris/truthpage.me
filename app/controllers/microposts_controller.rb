@@ -6,7 +6,7 @@ class MicropostsController < ApplicationController
       @micropost = current_user.microposts.build(params[:micropost])
       @user = User.find_by_username(params[:id])
     if @micropost.save
-      MicropostMailer.post_email(@user).deliver
+      #MicropostMailer.post_email(micropost.user).deliver 
       flash[:notice] = "Your truth has been sent!"
       redirect_to(:back)
     else
