@@ -52,13 +52,15 @@ header {
 padding-top: 22px;
 background: #006698;
 color: white;
-height:65px;
+height:100%;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(107,157,219,1)), color-stop(100%,rgba(35,83,138,1)));
+width: 100%;
 padding: 0.5em;
 }
 .header_text {
 	font-weight:400;
-	font-size: 38pt;
-  font-family: bookman;
+	font-size: 34pt;
+  	font-family: book antiqua;
   text-shadow: rgba(0,0,0,0.3) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
 	
  cursor:pointer;
