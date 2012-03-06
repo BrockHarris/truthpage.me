@@ -50,17 +50,20 @@ body {
 
 header {
 padding-top: 22px;
+background: #006698;
 color: white;
-height:30px;
+height:65px;
 padding: 0.5em;
+margin-top:-10px;
 }
 .header_text {
+	padding-top:10px;
 	font-weight:400;
 	font-size: 38pt;
   font-family: bookman;
   text-shadow: rgba(0,0,0,0.3) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
-	
- cursor:pointer;
+	cursor:pointer;
+	margin-top:-15px;
 }
 .header_pic{
 	float:right;
