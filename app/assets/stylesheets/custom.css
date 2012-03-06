@@ -50,8 +50,9 @@ body {
 
 header {
 padding-top: 22px;
+background: #006698;
 color: white;
-height:30px;
+height:65px;
 padding: 0.5em;
 }
 .header_text {
