@@ -13,6 +13,7 @@
       });
     $("#authenticate").click(function(){
       $.post('/microposts/create_pending', $("#new_micropost").serialize());
+      return false;
     });
     $("#authenticate").fancybox({
       'transitionIn'    :    'elastic',
@@ -21,14 +22,6 @@
       'speedOut'        :    200,
       'overlayShow'    :    true
     });
-
-    $("body").bind("ajaxSend", function(elm, xhr, s){
-       var csrf_token = $('meta[name=csrf-token]')[0].content;
-       if (s.type == "POST") {
-          xhr.setRequestHeader('X-CSRF-Token', csrf_token);
-       }
-    });
-
   });
 	</script>	
 <% end %>
