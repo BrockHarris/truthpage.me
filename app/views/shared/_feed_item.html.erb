@@ -1,4 +1,3 @@
-
 <tr>
   <td class="micropost">
     <span class="micropost_pic">
@@ -15,9 +14,19 @@
         <%= render_feed_stamp(feed_item) %>
       <% end %>
     </span>
+    <span class="micropost_time">
+      <%= time_ago_in_words(feed_item.created_at) %> ago.
+    </span>
       <br/>
     <span class="micropost_content"> 
       <%= feed_item.content %>
     </span>
   </td>
+  <% if current_user = (feed_item.user) %>
+      <td> 
+        <div class="delete_link_place">   
+          <%= render_micropost_delete(feed_item) %>
+        </div>
+      </td>
+    <% end %>
 </tr>

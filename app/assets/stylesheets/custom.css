@@ -39,7 +39,8 @@
 .container {
 	margin-left:auto;
 	margin-right:auto; 
-width: 840px;
+	width: 840px;
+	margin-top:-20px;
 }
 
 body {
@@ -48,14 +49,18 @@ body {
 
 /** header **/
 
-header {
-background: #006698;
-color: white;
-height:100%;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(107,157,219,1)), color-stop(100%,rgba(35,83,138,1)));
-width: 100%;
-padding: 0.5em;
-margin-top:-10px;
+.header_bar {
+	background: #006698;
+	color: white;
+	height:100%;
+	background: -webkit-gradient(linear, left top, left bottom, 
+							color-stop(0%,rgba(107,157,219,1)), 
+							color-stop(100%,rgba(35,83,138,1)));
+	width: 100%;
+	margin-left:0%;
+	margin-right:0%;
+	padding: 0.5em;
+	
 }
 .header_text {
 	padding-top:10px;
@@ -81,7 +86,8 @@ section {
 font-family: sans-serif;
 font-style: black;
   padding: 20px;
-border: 1px solid #999999;
+border-top: 1px solid #999999;
+border-top:none;
 background-color: #006698;
 -moz-box-shadow: 0 0 6px 2px #888;
 -webkit-box-shadow: 0 0 6px 2px#888;
@@ -671,6 +677,13 @@ table.microposts tr td.micropost {
 	cursor:pointer;
 	background-position: bottom;
 }
+.dashfeed_title {
+	color:#EEE;
+	font-size:18pt;
+	font-family:comic sans ms;
+	margin-bottom:-40px;
+	margin-left:240px;
+}
 .dashfeed_content {
 	font-size: 13pt;
 	font-family: arial;
@@ -688,39 +701,7 @@ table.microposts tr td.micropost {
 	color:gray;
 }
 
-.dashfeed_header {
-	margin-top:-10px;
-	margin-bottom:10px;
-	text-align:center;
-	vertical-align:middle;
-	font-family: helvetica;
-	font-size: 24pt;
-	font-style: bold;
-	color:white;
-	height: 50px;
-	text-shadow: 1px 1px 1px #404040;
-	filter: dropshadow(color=#404040, offx=1, offy=1);
-	padding-top: 5px;
-	padding-bottom:-5px;
-	border-radius: 5px; 
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px; 
-	border: 1px solid #2769A3;
-	background: rgb(107,157,219); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(107,157,219,1) 0%, rgba(35,83,138,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(107,157,219,1)), color-stop(100%,rgba(35,83,138,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* IE10+ */
-	background: linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b9ddb', endColorstr='#23538a',GradientType=0 ); /* IE6-9 */
-	-webkit-box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.7);
-	-moz-box-shadow:    3px 3px 5px rgba(50, 50, 50, 0.7);
-	box-shadow:         3px 3px 5px rgba(50, 50, 50, 0.7);
-}
-.sidefeed {
-	border-bottom: 1px solid #0099cc;
-}
+
 .dash_gravatar {
 	margin-top: 10px;
 	margin-bottom: 5px;
@@ -870,38 +851,7 @@ td.main {
   width: 70%;
   padding: 1em;
 }
-#welcome_line{
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-bottom:10px;
-	text-align:center;
-	vertical-align:middle;
-	font-family: helvetica;
-	font-size: 24pt;
-	font-style: bold;
-	color:white;
-	height: 50px;
-	text-shadow: 1px 1px 1px #404040;
-	filter: dropshadow(color=#404040, offx=1, offy=1);
-	padding-top: 10px;
-	border-radius: 5px; 
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px; 
-	border: 1px solid #2769A3;
-	background: rgb(107,157,219); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(107,157,219,1) 0%, rgba(35,83,138,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(107,157,219,1)), color-stop(100%,rgba(35,83,138,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* IE10+ */
-	background: linear-gradient(top, rgba(107,157,219,1) 0%,rgba(35,83,138,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b9ddb', endColorstr='#23538a',GradientType=0 ); /* IE6-9 */
-	-webkit-box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.7);
-	-moz-box-shadow:    3px 3px 5px rgba(50, 50, 50, 0.7);
-	box-shadow:         3px 3px 5px rgba(50, 50, 50, 0.7);
-}
-#welcome_line p {font-size:80%;}
-#welcome_line a img.facebook{vertical-align:middle;}
+
 
 .home_email{
 	margin-left: 38px;
@@ -919,7 +869,7 @@ td.main {
 	margin-left: 40px;
 	border:none;
 	display: block;
-	width: 106px; height: 34px;
+	width: 130px; height: 40px;
 	background-image: url('signin_button.png');
 	background-position: top;
 	text-indent: -9999px;

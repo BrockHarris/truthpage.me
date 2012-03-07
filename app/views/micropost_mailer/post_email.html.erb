@@ -4,7 +4,7 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1><%= @user.username %>, you received a new truth!</h1>
+    <h1><%= @micropost.target_user.username %>, you received a new truth!</h1>
     <p>
       The new truth says <%= @micropost.content %>.<br/>
     </p>

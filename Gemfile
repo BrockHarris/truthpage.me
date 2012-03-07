@@ -2,22 +2,27 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
+gem 'vanities'
 gem 'admin_data', '>= 1.1.16'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem "will_paginate", "~> 3.0.2"
 gem 'pg'
 gem 'json'
 gem 'omniauth'
+#gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+#gem 'omniauth-google'
 gem 'nifty-generators', '>= 0.4.0'
 gem 'jquery-rails', '>= 1.0.12'
 gem 'fancybox-rails'
+gem 'kaminari'
 gem 'paperclip'
+gem 'mysql2', '>= 0.3.6'
 gem 'aws-s3'
 gem 'aws-sdk'
+#gem 'omniauth-google-oauth2'
 gem 'nifty-generators', '>= 0.4.0'
 gem "galetahub-simple_captcha", :require => "simple_captcha"
-
 
 # Gems used only for assets and not required
 # in production environments by default.

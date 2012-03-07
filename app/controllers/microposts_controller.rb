@@ -3,11 +3,10 @@ class MicropostsController < ApplicationController
   before_filter :login_required, :except=>[:create_pending]
   
   def create
-      @micropost = current_user.microposts.build(params[:micropost])
-      @user = User.find_by_username(params[:id])
+    @micropost = current_user.microposts.build(params[:micropost])
     if @micropost.save
-      #MicropostMailer.post_email(micropost.user).deliver 
-      flash[:notice] = "Your truth has been sent!"
+      MicropostMailer.post_email(@micropost).deliver
+      flash[:notice] = "Your truth has been sent to #{@micropost.target_user.username}! " 
       redirect_to(:back)
     else
       @feed_items = []
