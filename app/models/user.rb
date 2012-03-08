@@ -1,7 +1,8 @@
 require 'active_support/secure_random'
 class User < ActiveRecord::Base
 
-  has_many :authentications, :dependent=>:destroy
+  has_many :notifications, :dependent => :destroy
+  has_many :authentications, :dependent => :destroy
   has_many :identities, :through=>:authentications
   has_many :microposts, :dependent => :destroy
   has_many :relationships, :foreign_key => "follower_id",

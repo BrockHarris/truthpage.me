@@ -38,6 +38,7 @@ Truthpage::Application.routes.draw do
         get :following, :followers
       end
   end
+  resources :notifications
   resources :authentications
   resources :sessions,   :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]

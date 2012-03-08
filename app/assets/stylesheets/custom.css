@@ -545,7 +545,6 @@ table.microposts tr {
 .micropost_pic {
 	float:left;
 	padding:10px;
-
 	padding-right:10px;
 	border-right:1px gray solid;
 }
@@ -651,6 +650,45 @@ table.microposts tr td.micropost {
 	float:left;
 }
 
+/************* Drop-down list **********/
+
+
+ul, li {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+ 
+.menu_class {
+    border:1px solid #1c1c1c;
+    margin-left:700px;
+}
+.the_menu {
+    display:none;
+    width:300px;
+    border: 1px solid #1c1c1c;
+    z-index:0;
+    position:absolute;
+		left:700px;
+		top:100px;
+}
+.the_menu li {
+    background-color: #302f2f;
+}
+ 
+.the_menu li a {
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:10px;
+    display:block;
+}
+ 
+.the_menu li a:hover {
+    padding:10px;
+    font-weight:bold;
+    color: #F00880;
+}
+
 /************* AuthHome **********/
 
 .facebook_share {
@@ -665,6 +703,13 @@ table.microposts tr td.micropost {
 	cursor:pointer;
 	background-position: bottom;
 }
+#custom-tweet-button a {
+    display: block;
+    width:50px;
+    padding: 2px 5px 2px 20px;
+    background: url('http://a4.twimg.com/images/favicon.ico') 1px center no-repeat;
+    border: 1px solid #ccc;
+}
 .twitter_share {
 	border:none;
 	display: block;
@@ -676,6 +721,20 @@ table.microposts tr td.micropost {
 .twitter_share:hover {
 	cursor:pointer;
 	background-position: bottom;
+}
+.dash_container {
+	width:100%;
+	padding:10px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:-20px;
+	margin-bottom:30px;
+	background:#004B71;
+	border-top: 1px solid #00314A;
+	border-bottom: 1px solid #0081C2;
+	border-radius: 6px; 
+	-moz-border-radius: 6px; 
+	-webkit-border-radius: 6px;
 }
 .dashfeed_title {
 	color:#EEE;
@@ -711,35 +770,6 @@ table.microposts tr td.micropost {
 .dash_user {
 	margin-top:-12px;
 	float:left;
-}
-
-/***************  for side column feed on auth_home **************/
-
-.micro_header {
-	font-size:13pt;
-	border-bottom:1px solid #cccccc;
-	color: #333333;
-	margin-bottom:-10px;
-	font-style:bold;
-}
-.micro_timestamp {
-	font-size: 12px;
-	float:left;
-	text-align: center;
-	margin-top:20px;
-	color: #004466;
-}
-.microfeed_content {
-	vertical-align:top;
-	font-size: 14px;
-		font-style:italic;
-		float:left;
-}
-.microfeed_spacer {
-	margin-top:5px;
-	margin-bottom:-12px;
-	text-align:center;
-	color: gray;
 }
 
 /************* Unauthenticated Home **********/
