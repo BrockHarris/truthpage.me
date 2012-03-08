@@ -47,7 +47,7 @@ body {
   background-color: #F2F2F2;
 }
 
-/** header **/
+/************** header *******************/
 
 .header_bar {
 	background: #006698;
@@ -56,7 +56,7 @@ body {
 	background: -webkit-gradient(linear, left top, left bottom, 
 							color-stop(0%,rgba(107,157,219,1)), 
 							color-stop(100%,rgba(35,83,138,1)));
-	width: 100%;
+	width: 823px;
 	margin-left:0%;
 	margin-right:0%;
 	padding: 0.5em;
@@ -66,15 +66,19 @@ body {
 	padding-top:10px;
 	font-weight:400;
 	font-size: 34pt;
-  	font-family: book antiqua;
+  font-family: book antiqua;
   text-shadow: rgba(0,0,0,0.3) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
 	cursor:pointer;
 	margin-top:-15px;
 }
-.header_pic{
+.welcome_user {
+	color: #333333;
+	font-size:14px;
+	text-align:right;
+	font-family:arial;
 	float:right;
+	margin-right:10px;
 }
-
 header img {
   padding: 1em;
   background: #fff;
@@ -94,6 +98,63 @@ background-color: #006698;
 box-shadow: 0 0 6px 1px #999;
 }
 
+/************* Notifications **********/
+
+.notification_container{
+	float:right;
+
+	margin-top:-20px;
+	border:1px solid yellow;
+}
+.notification {
+	width:200px;
+	height:50px;
+	border:1px solid yellow;
+	color:orange;
+	float:left;
+}
+.notification_type {
+	color:red;
+}
+.notification_time {
+	color:purple;
+}
+ul, li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+ 
+.menu_class {
+
+  float:right;
+}
+.the_menu {
+  display:none;
+  width:300px;
+  border: 1px solid #1c1c1c;
+  z-index:0;
+  position:absolute;
+	left:700px;
+	top:100px;
+}
+.the_menu li {
+  background-color: #302f2f;
+}
+ 
+.the_menu li a {
+  color:#FFFFFF;
+  text-decoration:none;
+  padding:10px;
+  display:block;
+}
+ 
+.the_menu li a:hover {
+  padding:10px;
+  font-weight:bold;
+  color: #F00880;
+}
+
 /*************  Style link options  **********/
 
 a {
@@ -110,14 +171,7 @@ a:hover {
 a:visited {
   color: #005588;
 }
-.welcome_user {
-	color: #333333;
-	font-size:14px;
-	text-align:right;
-	font-family:arial;
-	margin-top:-13px;
-	margin-right: 2%;
-}
+
 /* Navigation */
 
 .headerlink_place {
@@ -650,55 +704,6 @@ table.microposts tr td.micropost {
 	float:left;
 }
 
-/************* Drop-down list **********/
-.notification {
-	width:200px;
-	height:50px;
-	border:1px solid yellow;
-	color:orange;
-	float:left;
-}
-.notification_type {
-	color:red;
-}
-.notification_time {
-	color:purple;
-}
-ul, li {
-  margin:0;
-  padding:0;
-  list-style:none;
-}
- 
-.menu_class {
-  border:1px solid #1c1c1c;
-  margin-left:700px;
-}
-.the_menu {
-  display:none;
-  width:300px;
-  border: 1px solid #1c1c1c;
-  z-index:0;
-  position:absolute;
-	left:700px;
-	top:100px;
-}
-.the_menu li {
-  background-color: #302f2f;
-}
- 
-.the_menu li a {
-  color:#FFFFFF;
-  text-decoration:none;
-  padding:10px;
-  display:block;
-}
- 
-.the_menu li a:hover {
-  padding:10px;
-  font-weight:bold;
-  color: #F00880;
-}
 
 /************* AuthHome **********/
 
