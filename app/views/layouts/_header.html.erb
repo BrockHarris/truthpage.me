@@ -1,22 +1,18 @@
-
- <div class="header_bar">
- <div class="header_text">     
+<div class="header_bar">
+  <div class="header_text">     
     <%= link_to "truthpage.me", root_path %>
   </div>     
-  
-
-  
-  <%= image_tag "button.png", :class => "menu_class" %>
-<ul class="the_menu">
-<li><a href="#">A Website #1</a></li>
-<li><a href="#">A Website #2</a></li>
-<li><a href="#">A Link #1</a></li>
-<li><a href="#">A Link #2</a></li>
-<li><a href="#">A Website #3</a></li>
-<li><a href="#">A Website #4</a></li>
-<li><a href="#">A Link #3</a></li>
-<li><a href="#">A Link #4</a></li>
-</ul>
+   <%= image_tag "button.png", :class => "menu_class" %>
+    <ul class="the_menu">
+      <li><a href="#">A Website #1</a></li>
+      <li><a href="#">A Website #2</a></li>
+      <li><a href="#">A Link #1</a></li>
+      <li><a href="#">A Link #2</a></li>
+      <li><a href="#">A Website #3</a></li>
+      <li><a href="#">A Website #4</a></li>
+      <li><a href="#">A Link #3</a></li>
+      <li><a href="#">A Link #4</a></li>
+    </ul>
   <% if current_user %>
     <div class="welcome_user">
       <%= current_user.username %>
