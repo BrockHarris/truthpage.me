@@ -72,7 +72,7 @@ body {
 	margin-top:-15px;
 }
 .welcome_user {
-	color: #333333;
+	color: #EEE;
 	font-size:14px;
 	text-align:right;
 	font-family:arial;
@@ -102,16 +102,26 @@ box-shadow: 0 0 6px 1px #999;
 
 .notification_container{
 	float:right;
-
 	margin-top:-20px;
-	border:1px solid yellow;
+}
+.notification_bubble {
+	float:right;
+	margin-top:-2px;
+}
+.notification_counter {
+	float:right;
+	font-family:arial;
+	font-size:10pt;
+	margin-right:-15px;
+	margin-top:2px;
+
 }
 .notification {
 	width:200px;
 	height:50px;
 	border:1px solid yellow;
 	color:orange;
-	float:left;
+	float:right;
 }
 .notification_type {
 	color:red;
@@ -126,8 +136,9 @@ ul, li {
 }
  
 .menu_class {
-
-  float:right;
+	margin-left:auto;
+	margin-right:auto;
+	float:right;
 }
 .the_menu {
   display:none;

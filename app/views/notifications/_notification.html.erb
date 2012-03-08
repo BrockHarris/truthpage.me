@@ -4,7 +4,7 @@
 				there are no new requests.
 		<% else %>
 		 	<div class="notification_type"> 
-    		<%= notification.format %>
+    		new <%= notification.format %>
     	</div>
     	<div class="notification_time">
 				<%= time_ago_in_words(notification.created_at) %> ago.
