@@ -1,0 +1,14 @@
+<tr>
+  <td class="notification">
+	  <% if notification.try(:read?) %>
+				there are no new requests.
+		<% else %>
+		 	<span class="notification_type"> 
+    		<%= notification.format %>
+    	</span>
+    	<span class="notification_time"
+				<%= notification.created_at %>
+			</span>
+		<% end %>
+  </td>
+</tr>

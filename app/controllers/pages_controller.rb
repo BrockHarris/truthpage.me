@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 skip_before_filter :verify_authenticity_token
   def home
+    @notifications = Notification.where(:receiver => current_user.id).limit(5)
     @title = "Truthpage.me"
     @globalfeed_items = Micropost.limit(50) 
     if current_user

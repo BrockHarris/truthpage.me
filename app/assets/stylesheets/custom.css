@@ -651,8 +651,20 @@ table.microposts tr td.micropost {
 }
 
 /************* Drop-down list **********/
+.notification {
+	width:200px;
+	height:50px;
+	border:1px solid yellow;
+	color:orange;
+	float:left;
+}
 
-
+.notification_type {
+	color:red;
+}
+.notification_time {
+	color:purple;
+}
 ul, li {
     margin:0;
     padding:0;
