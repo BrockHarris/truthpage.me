@@ -4,17 +4,11 @@
   </div>     
    <%= image_tag "button.png", :class => "menu_class" %>
     <ul class="the_menu">
-      <li><a href="#">notification</a></li>
-      <li><a href="#">notification</a></li>
-      <li><a href="#">notification</a></li>
-      <li><a href="#">notification</a></li>
-      <li><a href="#">notification</a></li>
-      <li><a href="#">notification</a></li>
-    </ul>
 
-  <ul>
     <li><%= render @notifications %></li>
   </ul>
+
+  
 
   <% if current_user %>
     <div class="welcome_user">

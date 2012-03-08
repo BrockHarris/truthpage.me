@@ -658,7 +658,6 @@ table.microposts tr td.micropost {
 	color:orange;
 	float:left;
 }
-
 .notification_type {
 	color:red;
 }
@@ -666,39 +665,39 @@ table.microposts tr td.micropost {
 	color:purple;
 }
 ul, li {
-    margin:0;
-    padding:0;
-    list-style:none;
+  margin:0;
+  padding:0;
+  list-style:none;
 }
  
 .menu_class {
-    border:1px solid #1c1c1c;
-    margin-left:700px;
+  border:1px solid #1c1c1c;
+  margin-left:700px;
 }
 .the_menu {
-    display:none;
-    width:300px;
-    border: 1px solid #1c1c1c;
-    z-index:0;
-    position:absolute;
-		left:700px;
-		top:100px;
+  display:none;
+  width:300px;
+  border: 1px solid #1c1c1c;
+  z-index:0;
+  position:absolute;
+	left:700px;
+	top:100px;
 }
 .the_menu li {
-    background-color: #302f2f;
+  background-color: #302f2f;
 }
  
 .the_menu li a {
-    color:#FFFFFF;
-    text-decoration:none;
-    padding:10px;
-    display:block;
+  color:#FFFFFF;
+  text-decoration:none;
+  padding:10px;
+  display:block;
 }
  
 .the_menu li a:hover {
-    padding:10px;
-    font-weight:bold;
-    color: #F00880;
+  padding:10px;
+  font-weight:bold;
+  color: #F00880;
 }
 
 /************* AuthHome **********/
@@ -716,11 +715,11 @@ ul, li {
 	background-position: bottom;
 }
 #custom-tweet-button a {
-    display: block;
-    width:50px;
-    padding: 2px 5px 2px 20px;
-    background: url('http://a4.twimg.com/images/favicon.ico') 1px center no-repeat;
-    border: 1px solid #ccc;
+  display: block;
+  width:50px;
+  padding: 2px 5px 2px 20px;
+  background: url('http://a4.twimg.com/images/favicon.ico') 1px center no-repeat;
+  border: 1px solid #ccc;
 }
 .twitter_share {
 	border:none;

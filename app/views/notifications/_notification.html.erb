@@ -1,14 +1,14 @@
 <tr>
   <td class="notification">
-	  <% if notification.try(:read?) %>
+		<% if notification.try(:read?) %>
 				there are no new requests.
 		<% else %>
-		 	<span class="notification_type"> 
+		 	<div class="notification_type"> 
     		<%= notification.format %>
-    	</span>
-    	<span class="notification_time"
-				<%= notification.created_at %>
-			</span>
+    	</div>
+    	<div class="notification_time">
+				<%= time_ago_in_words(notification.created_at) %> ago.
+			</div>
 		<% end %>
   </td>
 </tr>
