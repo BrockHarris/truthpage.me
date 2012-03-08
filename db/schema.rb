@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120307233849) do
+ActiveRecord::Schema.define(:version => 20120308035023) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -42,8 +42,6 @@ ActiveRecord::Schema.define(:version => 20120307233849) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "notifications", ["receiver", "sender", "created_at"], :name => "index_notifications_on_receiver_and_sender_and_created_at"
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
