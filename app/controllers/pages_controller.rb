@@ -12,23 +12,38 @@ skip_before_filter :verify_authenticity_token
   end
   
   def legal
-    @title = "Truthpage.me | legal"
+    @title = "Truthpage.me | Legal"
+    if current_user
+      @notifications = Notification.where(:receiver => current_user.username).limit(5)
+    end
   end
 
   def privacy
-    @title = "Truthpage.me | privacy"
+    @title = "Truthpage.me | Privacy"
+    if current_user
+      @notifications = Notification.where(:receiver => current_user.username).limit(5)
+    end
   end
 
   def terms
-    @title = "Truthpage.me | terms of use"
+    @title = "Truthpage.me | Terms of use"
+    if current_user
+      @notifications = Notification.where(:receiver => current_user.username).limit(5)
+    end
   end
   
   def help
-    @title = "Truthpage.me | help"
+    @title = "Truthpage.me | Help"
+    if current_user
+      @notifications = Notification.where(:receiver => current_user.username).limit(5)
+    end
   end
   
   def about
-    @title = "Truthpage.me | about"
+    @title = "Truthpage.me | About"
+    if current_user
+      @notifications = Notification.where(:receiver => current_user.username).limit(5)
+    end
   end
 
 end

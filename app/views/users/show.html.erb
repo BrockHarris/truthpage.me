@@ -37,7 +37,9 @@
 		<%= @user.blurb %> 
 	</div>	
 		<br/>
-	<%= render 'notifications/new_notification' %>
+	<% if current_user %>
+		<%= render 'notifications/new_notification' %>
+	<% end %>
 </div>
 
 <% if current_user %>
