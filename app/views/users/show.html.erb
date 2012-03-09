@@ -26,8 +26,6 @@
 	</script>	
 <% end %>
 
-<%= render 'notifications/new_notification' %>
-
 <div class="name_container">
 	<div class="profile_name"> 
 		<%= @user.username %> 
@@ -38,6 +36,8 @@
 	<div class="profile_blurb"> 
 		<%= @user.blurb %> 
 	</div>	
+		<br/>
+	<%= render 'notifications/new_notification' %>
 </div>
 
 <% if current_user %>

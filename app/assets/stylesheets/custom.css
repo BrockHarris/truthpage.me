@@ -55,10 +55,16 @@ body {
 	-webkit-gradient(linear, left top, left bottom, 
 	color-stop(0%,rgba(107,157,219,1)), 
 	color-stop(100%,rgba(35,83,138,1)));
-	width: 100%;
+	width: 1000px;
 	height:70px;
 	margin-left:auto;
 	margin-right:auto;
+	border-radius: 0px 0px 6px 6px; 
+	-moz-border-radius: 0px 0px 6px 6px; 
+	-webkit-border-radius: 0px 0px 6px 6px; 
+	moz-box-shadow: 0 0 6px 2px #888;
+	-webkit-box-shadow: 0 0 6px 2px#888;
+	box-shadow: 0 0 6px 1px #999;
 }
 .header_text {
 	padding-top:10px;
@@ -68,11 +74,13 @@ body {
   text-shadow: rgba(0,0,0,0.3) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
 	color:#EEE;
 	margin-top:-15px;
+	margin-left:10px;
 }
 .header_text li {
 	color:#EEE;
 }
 section {
+	padding: 20px;
   margin-top: 40px;
   font-size: 120%;
 	font-family: sans-serif;
@@ -166,7 +174,7 @@ ul, li {
   width:300px;
   z-index:0;
   position:absolute;
-	left:600px;
+	left:740px;
 	top:63px;
 	border-radius: 0px 0px 6px 6px; 
 	-moz-border-radius: 0px 0px 6px 6px; 
@@ -480,8 +488,8 @@ padding:10px;
 	background-image: url("banner.png");
 }
 .name_container {
-	width: 550px;
-	height: 225px;
+	width:550px;
+	height:225px;
 	margin-left:auto;
 	margin-right:auto;
 	background:#DBDBDB;
