@@ -22,7 +22,12 @@
       </div>
     </ul>
   </nav>
-  <% if current_user %>  
+  <% if current_user %> 
+    <% if @notifications.empty? %>
+      <div class="welcome_user">
+        <%= current_user.username %>
+      </div>
+      <% else %>
     <div class="notification_container">
       <div class="notification_bubble">
         <%= image_tag "button.png", :class => "menu_class" %>
@@ -31,12 +36,16 @@
         </div>
       </div>
       <ul class="the_menu">
+      <div class="menu_header">
+        Notifications
+      </div>
         <li><%= render @notifications %></li>
       </ul>  
-      <div class="welcome_user">
+      <div class="notifications_user">
         <%= current_user.username %>
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>
 

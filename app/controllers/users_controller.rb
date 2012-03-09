@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @notification = Notification.new
     @microposts = Micropost.find_all_by_belongs_to_id(@user.id).paginate(:page => params[:page], :per_page => 15)
     @micropost  = @user.microposts.build(params[:micropost])
-    @title = @user.username
+    @title = " #{@user.username} | Profile"
     @user = User.find_by_username(params[:id])
     @followers = @user.followers.paginate(:page => params[:page])
     @following = @user.following.paginate(:page => params[:page])
@@ -76,7 +76,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @title = "Truthpage.me | settings"
+    @notifications = Notification.where(:receiver => current_user.username).limit(5)
+    @title = "#{@user.username} | Settings"
   end
 
   def update

@@ -3,7 +3,7 @@
 		<% if notification.try(:read?) %>
 		<% else%>
 		 	<div class="notification_type"> 
-    		new <%= notification.format %> from <%= link_to notification.sender, notification.sender %>
+    		<%= link_to notification.sender, notification.sender %> <%= notification.format %>'s a truth!
     	</div>
     	<div class="notification_time">
 				<%= time_ago_in_words(notification.created_at) %> ago.
