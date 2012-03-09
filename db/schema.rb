@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120308063052) do
+ActiveRecord::Schema.define(:version => 20120308215333) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(:version => 20120308063052) do
   add_index "microposts", ["user_id", "profile_id", "created_at"], :name => "index_microposts_on_user_id_and_profile_id_and_created_at"
 
   create_table "notifications", :force => true do |t|
-    t.integer  "receiver"
-    t.integer  "sender"
+    t.string   "receiver"
+    t.string   "sender"
     t.string   "format"
     t.boolean  "read",       :default => false
     t.datetime "created_at"

@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @notifications = Notification.where(:receiver => current_user.id).limit(5)
+    @notifications = Notification.where(:receiver => current_user.username).limit(5)
     @notification = Notification.new
     @microposts = Micropost.find_all_by_belongs_to_id(@user.id).paginate(:page => params[:page], :per_page => 15)
     @micropost  = @user.microposts.build(params[:micropost])

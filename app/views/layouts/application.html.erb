@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Truthpage.me</title>
+    <title><%= @title %></title>
     <%= csrf_meta_tag %>
     <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag "application", :media => "all" %>    
     <%= yield :head %>
   </head>
+  
   <body>
-    <div class="container">
-      	<%= render 'layouts/header' unless @skip_render %>
+    <%= render 'layouts/header' unless @skip_render %>
+      <div class="container">
 	      <section class="round">
-	        <% flash.each do |key, value| %>
-	          <div id="flash" class="<%= key %>"><%= value %></div>
-	        <% end %>
-	        <%= yield %>
-	      </section>
+	      <% flash.each do |key, value| %>
+	        <div id="flash" class="<%= key %>"><%= value %></div>
+	      <% end %>
+	      <%= yield %>
+	    </section>
       <%= render 'layouts/footer' unless @skip_render %>
     </div>
   </body>
