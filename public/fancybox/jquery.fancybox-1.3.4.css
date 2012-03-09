@@ -80,11 +80,10 @@
 	position: relative;
 	overflow: hidden;
 	z-index: 1102;
-	background: none;
 	border-radius: 9px; 
 	-moz-border-radius: 9px; 
 	-webkit-border-radius: 9px; 
-	border: .5px solid gray;
+	border: 1px solid gray;
 }
 
 #fancybox-hide-sel-frame {
@@ -132,6 +131,7 @@
 	height: 100%;
 	border: none;
 	display: block;
+	background: none;
 }
 
 #fancybox-left, #fancybox-right {
@@ -267,7 +267,7 @@
 	padding-bottom: 10px;
 	text-align: center;
 	color: #333;
-	background: #fff;
+	background: none;
 	position: relative;
 }
 

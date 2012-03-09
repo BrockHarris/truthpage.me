@@ -1,6 +1,6 @@
 class Micropost < ActiveRecord::Base
-  attr_accessible :content, :belongs_to_id, :anon
-  
+  attr_accessible :content, :belongs_to_id, :anon, :notification_attributes
+
   belongs_to :user
   belongs_to :target_user, :class_name=>"User", :foreign_key=>"belongs_to_id"
   

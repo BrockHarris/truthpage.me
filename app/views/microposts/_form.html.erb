@@ -1,14 +1,5 @@
 
-
-
-
 <%= form_for @micropost do |f| %>
-  
-<% fields_for @notification do |fa| %>
-   <%= f.hidden_field :receiver, :value => @user.username %>
-    <%= f.hidden_field :sender, :value => current_user.username %>
-    <%= f.hidden_field :format, :value => "posted a truth about you" %>   
-   <% end %>
   
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field" >
@@ -21,7 +12,13 @@
 		<%= f.check_box :anon, {}, true, false %>
 		<%= f.label "share anonymously" %>
 	</div>
-
+  <% if current_user %>
+  <% fields_for @notification do |fa| %>
+    <%= fa.hidden_field :receiver, :value => @user.username %>
+    <%= fa.hidden_field :sender, :value => current_user.username %>
+    <%= fa.hidden_field :format, :value => "posted a truth about you" %>   
+  <% end %>
+  <% end %>
   <div class ="share_placement">
   	<% if current_user %>
   		<%= f.submit '', :class => 'submitpost'%>

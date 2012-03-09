@@ -192,7 +192,7 @@ ul, li {
 }
  
 .the_menu li a {
-  color:black;
+  color:#315E78;
   text-decoration:none;
   text-align:center;
 
@@ -465,11 +465,17 @@ padding:10px;
 /************* Styles for fancybox **********/
 
 .fancybox_page {
-	background: #F2F2F2;
-	border-radius: 9px; 
-	-moz-border-radius: 9px; 
-	-webkit-border-radius: 9px; 
-	border: .5px solid gray;
+
+
+}
+.fancyform {
+	margin-left:15px;
+	width:250px;
+	height:30px;
+	border:1px solid #ADADAD;
+	border-radius: 6px; 
+	-moz-border-radius: 6px; 
+	-webkit-border-radius: 6px;
 }
 
 /************* (profile) User Show page **********/

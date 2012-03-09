@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
   def JSnew
     redirect_to root_url if current_user
     @skip_render = true
+    render :layout => false
   end
 
   def create
