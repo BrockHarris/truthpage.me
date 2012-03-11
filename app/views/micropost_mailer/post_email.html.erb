@@ -2,8 +2,13 @@
 <html>
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <style type="text/css" media="screen">
+      h1 { color: #f00; font-family:arial; }
+      ul { list-style: none; }
+    </style>
   </head>
   <body>
+    
     <h1><%= @micropost.target_user.username %>, you received a new truth!</h1>
     <p>
       The new truth says <%= @micropost.content %>.<br/>

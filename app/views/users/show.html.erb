@@ -33,17 +33,12 @@
 	<div class="profile_avatar"> 
 		<%= render_user_avatar(@user, :small) %>	
 	</div>
-	<p>
-	<% if current_user %>
-		<%= render 'notifications/new_notification' %>
-	<% end %>
-	</p>
 	<div class="profile_blurb"> 
 		<%= @user.blurb %> 
 	</div>	
 		<br/>
 	<% if current_user %>
-
+	<%= render 'notifications/new_notification' %>
 
 	<div class="profile_follow">
 		<%= render_follow_links(@user) %>

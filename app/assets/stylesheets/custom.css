@@ -114,7 +114,7 @@ body {
 .notification_container{
 	float:right;
 	margin-right:400px;
-	margin-top:10px;
+	margin-top:-20px;
 	padding:5px;
 }
 .notification_bubble {
@@ -294,6 +294,19 @@ footer nav {
 	text-align:center;
 	
 }
+.truth_request {
+	border:none;
+	float:right;
+	display: block;
+	width: 140px; height: 34px;
+	background-image: url('truth-request.png');
+	background-position: top;
+	text-indent: -9999px;
+}
+.truth_request:hover {
+	cursor:pointer;
+	background-position: bottom;
+}
 
 .follow_main {
 	margin-top:10px;
@@ -319,8 +332,8 @@ footer nav {
 	border:none;
 	float:right;
 	display: block;
-	width: 106px; height: 34px;
-	background-image: url('followbutton.jpg');
+	width: 140px; height: 34px;
+	background-image: url('followbutton.png');
 	background-position: top;
 	text-indent: -9999px;
 }
