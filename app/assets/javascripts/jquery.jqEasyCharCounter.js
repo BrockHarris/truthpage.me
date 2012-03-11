@@ -23,7 +23,7 @@ $.fn.extend({
                     maxChars: 100,
 					maxCharsWarning: 80,
 					msgFontSize: '12px',
-					msgFontColor: '#000000',
+					msgFontColor: '#005588',
 					msgFontFamily: 'Arial',
 					msgTextAlign: 'right',
 					msgWarningColor: '#F00',

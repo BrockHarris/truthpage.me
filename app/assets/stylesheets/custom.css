@@ -42,9 +42,16 @@
 	width: 840px;
 	margin-top:-20px;
 }
+section {
+  margin-top: 40px;
+  font-size: 120%;
+	font-family: sans-serif;
+	font-style: black;
 
+	background-color: #E8E8E8;	
+}
 body {
-  background-color: #F2F2F2;
+  background-color: #E8E8E8;
 }
 
 /************** header *******************/
@@ -69,28 +76,17 @@ body {
 .header_text {
 	padding-top:10px;
 	font-weight:400;
-	font-size: 34pt;
+	font-size: 32pt;
   font-family: book antiqua;
   text-shadow: rgba(0,0,0,0.3) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
 	color:#EEE;
 	margin-top:-15px;
-	margin-left:10px;
+	margin-left:15px;
 }
 .header_text li {
 	color:#EEE;
 }
-section {
-	padding: 20px;
-  margin-top: 40px;
-  font-size: 120%;
-	font-family: sans-serif;
-	font-style: black;
-	border-top:none;
-	background-color: #006698;
-	moz-box-shadow: 0 0 6px 2px #888;
-	-webkit-box-shadow: 0 0 6px 2px#888;
-	box-shadow: 0 0 6px 1px #999;
-}
+
 .welcome_user {
 	color: #EEE;
 	font-size:14px;
@@ -179,9 +175,6 @@ ul, li {
 	border-radius: 0px 0px 6px 6px; 
 	-moz-border-radius: 0px 0px 6px 6px; 
 	-webkit-border-radius: 0px 0px 6px 6px; 
-	border-left: 1px solid #02499C;
-	border-right: 1px solid #02499C;
-	border-bottom: 1px solid #02499C;
 	box-shadow:0px 6px 13px #323133;
 
 }
@@ -296,16 +289,7 @@ footer nav {
 	text-align:center;
 	
 }
-.delete_link {
-	
-	margin-bottom:-30px;
-	margin-left:-40px;
-	font-size:12px;
-	margin-top:50px;
-}
-.delete_link_place {
-	margin-top:50px;
-}
+
 .follow_main {
 	margin-top:10px;
 	margin-bottom:5px;
@@ -465,17 +449,20 @@ padding:10px;
 /************* Styles for fancybox **********/
 
 .fancybox_page {
-
+	font-family:helvetica;
 
 }
 .fancyform {
 	margin-left:15px;
 	width:250px;
 	height:30px;
+	outline:none;
 	border:1px solid #ADADAD;
-	border-radius: 6px; 
-	-moz-border-radius: 6px; 
-	-webkit-border-radius: 6px;
+
+	border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px;
+
 }
 
 /************* (profile) User Show page **********/
@@ -494,44 +481,38 @@ padding:10px;
 	background-image: url("banner.png");
 }
 .name_container {
-	width:550px;
-	height:225px;
-	margin-left:auto;
-	margin-right:auto;
-	background:#DBDBDB;
-	border-radius: 6px; 
-	-moz-border-radius: 0px 18px 18px 18px; 
-	-webkit-border-radius: 0px 18px 18px 18px;
+	width:250px;
+	float:left;
+	background:white;
+	-webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.9);
 
 }
 .profile_avatar {
-	margin-left:10px;
-	float:left;
-	margin-bottom:-5px;
-	padding-right: 10px;
+	margin-top:-5px;
+	padding:15px;
 }
 .profile_name {
 	font-size:24pt;
-	font-family:Comic Sans MS;
+	font-family:Helvetica;
 	margin-left:10px;
 	padding-top: 3px;
-	width:530px;
 	text-align:left;
 	color:#333;
-	border-bottom: 1px #0072AC solid;	
 }
 .anon_button{
-	color:#EEE;
+	color:#666;
 	font-family:helvetica;
-	font-size:12pt;
+	font-size:11pt;
 	font-weight:200;
 	text-transform: lowercase;
 	margin-top:-30px;
 	padding-bottom:40px;
-	margin-left:215px;
+	margin-left:200px;
 }
 .post_counter {
-	margin-left:250px;
+	margin-left:10px;
 	margin-bottom:-50px;
 	color:#DBDBDB;
 	font-family:Comic Sans MS;
@@ -539,116 +520,120 @@ padding:10px;
 	text-align:center;
 }
 .profile_blurb {
-	font-size:12pt;
+	font-size:11pt;
 	font-weight:200;
 	text-align:left;
 	color:#333;
-	margin-top:5px;
 	margin-left:15px;
 	margin-right:10px;
 	padding-bottom:10px;
 }
+.right_container {
+	vertical-align:top;
+}
+.newpost_container {
+	vertical-align:top;
+	width:570px;
+	float:right;
+	background:white;
+	-webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.9);
+}
+
 form.new_micropost {
   margin-bottom: 2em;
 }
 
 form.new_micropost textarea {
-	width: 600px; 
-	max-width: 600px; 
+	width: 450px; 
 	height: 50px;
 	max-height:50px;
 	font-size: 14pt;
 	font-weight:100;
-	font-family:helvetica;
-	color: white;
+	font-family:arial;
+	color: #666;
 	border:none;
 	padding:5px;
+	margin-top:10px;
   margin-bottom:5px;
-	background: #004F77;
+  margin-left:50px;
+	border: 1px solid #CCC;
 	border-radius: 6px; 
-	border-bottom: 1px solid #0090D9;
-	border-top: 1px solid #00314A;
 	-moz-border-radius: 6px; 
 	-webkit-border-radius: 6px;
 	outline:none;
-	-webkit-box-shadow: 0px 1px 20px 1px #0093DD;
-	-moz-box-shadow: 0px 1px 20px 1px #0093DD;
-	box-shadow: 0px 1px 20px 1px #0093DD;
 }
-.truthform_place {
-	margin-left:90px;
-}
+
 .truth-is {
-	padding:15px;
-	margin-left: 260px;
-}
-.feedbox_header {
-	margin-bottom:-34px;
-	width:600px;
-	background:#004B71;
-	border-radius: 6px; 
-	border-top: 1px solid #007AB7;
-	-moz-border-radius: 6px; 
-	-webkit-border-radius: 6px;
-}
-.feedbox_text {
-	color:#EEEEEE;
-	font-size:22pt;
-	font-weight:200;
+	color:#666;
+	font-family:comic sans ms;
+	font-size:18pt;
+	padding:10px;
 	text-align:center;
-	padding-top:5px;
-	border-bottom: 1px solid #007AB7;
 }
+
 .profile_side {
-	float:right;
+	float:left;
+	padding-left:10px;
 	margin-left:-5px;	
+	width:92%;
+	overflow:hidden;
 }
 .profile_following-h {
-	color:#EEEEEE;
+	color:#666;
+	padding-top:10px;
 	margin-bottom:5px;
-	margin-left:10px;
+	text-align:center;
+	border-top:1px solid #CCC;
+}
+.followlist_name {
+	font-size:11pt;
+	padding-top:2px;
+	vertical-align:top;
 }
 .profile_following {
-	float:right;
-	width:165px;
-	padding:7px;
+	margin-left:10px;
+	padding:5px;
 	margin-bottom:20px;
-	background:#004365;
-	border-radius: 6px;
-	border-bottom: 1px solid #0072AC;
-	border-top: 1px solid #00314A;
+	overflow:hidden;
+	
 }
 .profile_followers {
-	float:right;
-	width:165px;
-	padding:7px;
+	margin-left:10px;
+	padding:5px;
 	margin-bottom:20px;
-	background:#004365;
-	border-radius: 6px;
-	border-bottom: 1px solid #0072AC;
-	border-top: 1px solid #00314A;
+	overflow:hidden;
 }
-.profile_link {
-	font-size: 11pt;
-}
+
 h1.micropost {
   margin-bottom: 0.3em;
 }
-												
+table.microposts tr td.micropost {
+	float:right;
+  font-size:11pt;
+	vertical-align: top;
+	width: 545px;
+	background:white;
+	margin-right:5px;
+	webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	moz-box-shadow: 0 0 6px 2px #888;
+	-webkit-box-shadow: 0 0 6px 2px#888;
+	box-shadow: 0 0 6px 1px #999;
+}												
 table.microposts {
-	width: 600px;
-	padding-left:20px;
-	padding-top:50px;
-	padding-bottom:15px;
-	background:#004B71;
-	border-radius: 6px; 
-	border-bottom: 1px solid #007AB7;
-	-moz-border-radius: 6px; 
-	-webkit-border-radius: 6px;
+	float:right;
+	width: 570px;
+	padding-top:5px;
+	padding-bottom:5px;
+	
 }
 
 table.microposts tr {
   height: 80px;
+
 }
 
 .micropost_pic {
@@ -666,17 +651,6 @@ table.microposts tr {
 .micropost_content {
 	padding-left:5px;
 }
-table.microposts tr td.micropost {
-  font-size:11pt;
-	vertical-align: top;
-	width: 550px;
-	background:white;
-	margin-top:10px;
-	webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	border-top: 1px solid #0081C2;
-}
 
 .micropost_time {
 	float:right;
@@ -684,6 +658,15 @@ table.microposts tr td.micropost {
   color: #666;
   padding-left:5px;
 	margin-right:5px;
+}
+.delete_link {
+	margin-bottom:-27px;
+	margin-left:-47px;
+	font-size:12px;
+	margin-top:50px;
+}
+.delete_link_place {
+	margin-top:50px;
 }
 
 /************* profile settings page **********/
@@ -762,6 +745,9 @@ table.microposts tr td.micropost {
 
 /************* AuthHome **********/
 
+.profile_link {
+	background:#EEE;
+}
 .facebook_share {
 	border:none;
 	display: block;

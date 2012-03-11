@@ -4,6 +4,7 @@ class Admin::UsersController < ApplicationController
   before_filter :find_user, :except=>[:index]
 
   def index
+    @skip_render = true
     @users = User.order('created_at DESC').all.paginate(:page => params[:page], :per_page => 40)
     @microposts  = Micropost.all
     
