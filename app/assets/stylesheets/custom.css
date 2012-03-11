@@ -83,10 +83,14 @@ body {
 	margin-top:-15px;
 	margin-left:15px;
 }
-.header_text li {
-	color:#EEE;
+.header_text li a {
+  color:#68BDFF;
+  text-decoration:none;
+  text-align:center;
 }
-
+.header_text li a:hover {
+	font-weight:bold;
+}
 .welcome_user {
 	color: #EEE;
 	font-size:14px;
@@ -109,8 +113,9 @@ body {
 }
 .notification_container{
 	float:right;
-	margin-top:-20px;
-	margin-right:20px;
+	margin-right:400px;
+	margin-top:10px;
+	padding:5px;
 }
 .notification_bubble {
 	float:right;
@@ -118,9 +123,11 @@ body {
 }
 .notification_counter {
 	float:right;
+	color: #F00880;
 	font-family:arial;
-	font-size:10pt;
-	margin-right:-15px;
+	font-size:11pt;
+	font-weight:bold;
+	margin-right:5px;
 	margin-top:2px;
 
 }
@@ -180,19 +187,15 @@ ul, li {
 }
 .the_menu li {
   background: none;
-
-
 }
  
 .the_menu li a {
   color:#315E78;
   text-decoration:none;
   text-align:center;
-
 }
  
 .the_menu li a:hover {
-
   font-weight:bold;
   color: #F00880;
 }
@@ -214,14 +217,16 @@ a:visited {
   color: #005588;
 }
 
-/* Navigation */
+/************** Navigation *****************/
 
 .headerlink_place {
 	margin-top:-15px;
 	margin-right:52%;
 	color: #333333;
 }
-
+.header_nav li a {
+	color:#EEE;
+}
 nav {
 	margin-top:-30px;
 float:right;
@@ -592,7 +597,7 @@ form.new_micropost textarea {
 	color:#666;
 	padding-top:10px;
 	margin-bottom:5px;
-	text-align:center;
+	padding-left:10px;
 	border-top:1px solid #CCC;
 }
 .followlist_name {
@@ -623,13 +628,14 @@ table.microposts tr td.micropost {
 	vertical-align: top;
 	width: 545px;
 	background:white;
+	padding-top:4px;
 	margin-right:5px;
 	webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	moz-box-shadow: 0 0 6px 2px #888;
-	-webkit-box-shadow: 0 0 6px 2px#888;
-	box-shadow: 0 0 6px 1px #999;
+	-webkit-box-shadow: 0px 1px 4px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 1px 4px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 1px 4px rgba(50, 50, 50, 0.9);
 }												
 table.microposts {
 	float:right;

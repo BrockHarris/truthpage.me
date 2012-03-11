@@ -1,10 +1,11 @@
 <div class="header_bar">
-  <div class="header_text">     
+<ul class="header_text">
+  <li>
     <%= link_to "truthpage.me", root_path %>
-  </div> 
-
+  </li>
+</ul>
   <nav class="round">
-    <ul>
+    <ul class="header_nav">
       <div class="headerlink_place">
         <% if current_user %>
           <li><%= link_to "Home", root_path, :class =>"footer_links" %></li> · 
@@ -23,10 +24,10 @@
     </ul>
   </nav>
   <% if current_user %> 
-    <% if @notifications.empty? %>
-      <div class="welcome_user">
+  <div class="welcome_user">
         <%= current_user.username %>
       </div>
+    <% if @notifications.empty? %>
       <% else %>
     <div class="notification_container">
       <div class="notification_bubble">
@@ -41,9 +42,6 @@
       </div>
         <li><%= render @notifications %></li>
       </ul>  
-      <div class="notifications_user">
-        <%= current_user.username %>
-      </div>
     </div>
     <% end %>
   <% end %>
