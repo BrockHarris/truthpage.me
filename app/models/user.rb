@@ -1,7 +1,8 @@
 require 'active_support/secure_random'
 class User < ActiveRecord::Base
 
-  has_many :notifications, :dependent => :destroy
+  has_many :sent_notifications, :foreign_key=>"sender_id", :class_name=>"Notification", :dependent => :destroy
+  has_many :received_notifications, :foreign_key=>"receiver_id", :class_name=>"Notification", :dependent => :destroy
   has_many :authentications, :dependent => :destroy
   has_many :identities, :through=>:authentications
   has_many :microposts, :dependent => :destroy

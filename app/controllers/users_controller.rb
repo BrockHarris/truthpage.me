@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   
   def show
     if current_user
-      @notifications = Notification.where(:receiver => current_user.username).limit(5)
       @notification = Notification.new
     end
     @microposts = Micropost.find_all_by_belongs_to_id(@user.id).paginate(:page => params[:page], :per_page => 15)
@@ -31,7 +30,6 @@ class UsersController < ApplicationController
     @title = current_user.username
     @microposts = Micropost.find_all_by_belongs_to_id(current_user.id).paginate(:page => params[:page], :per_page => 15)
     @micropost  = current_user.microposts.build(params[:micropost])
- 
   end
    
   def new
@@ -78,7 +76,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @notifications = Notification.where(:receiver => current_user.username).limit(5)
     @title = "Truthpage.me | Settings"
   end
 

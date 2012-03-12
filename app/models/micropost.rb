@@ -2,12 +2,14 @@ class Micropost < ActiveRecord::Base
   attr_accessible :content, :belongs_to_id, :anon, :notification_attributes
 
   belongs_to :user
-  belongs_to :target_user, :class_name=>"User", :foreign_key=>"belongs_to_id"
+  belongs_to :target_user, :class_name=>"User", :foreign_key=>"belongs_to_id" 
   
   validates :content, :presence => true, :length => { :maximum => 250 }
   validates :user_id, :presence => true
   
   default_scope :order => 'microposts.created_at DESC'
+
+  after_create :create_notification
 
   # Return microposts from the users being followed by the given user.
   
@@ -17,6 +19,10 @@ class Micropost < ActiveRecord::Base
   
   def destroy
     update_attribute(:deleted_at, Time.now.utc)
+  end
+
+  def create_notification
+    Notification.create!(:sender_id=>self.user_id, :receiver_id=>self.belongs_to_id, :format=>"New Post")
   end
   
   private

@@ -2,11 +2,16 @@ class ApplicationController < ActionController::Base
   #skip_before_filter :verify_authenticity_token
   include SimpleCaptcha::ControllerHelpers
   helper :all 
-  helper_method :current_user
+  helper_method :current_user, :notifications
   
   
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  #query the notifications for the specified user.. or default to current_user
+  def notifications(receiver=current_user, limit=5)
+    @notifications = receiver.received_notifications.limit(limit)
   end
 
   def url
