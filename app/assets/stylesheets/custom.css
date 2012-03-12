@@ -84,12 +84,12 @@ body {
 	margin-left:15px;
 }
 .header_text li a {
-  color:#68BDFF;
+  color:#2A4668;
   text-decoration:none;
   text-align:center;
 }
 .header_text li a:hover {
-	font-weight:bold;
+
 }
 .welcome_user {
 	color: #EEE;
@@ -108,27 +108,29 @@ body {
 	font-size:14px;
 	text-align:right;
 	font-family:arial;
-	float:right;
+	float:left;
 	margin-right:10px;
+	margin-top:4px;
 }
 .notification_container{
 	float:right;
-	margin-right:400px;
+	margin-right:20px;
 	margin-top:-20px;
 	padding:5px;
 }
 .notification_bubble {
 	float:right;
-	margin-top:-2px;
+	margin-top:-8px;
 }
 .notification_counter {
 	float:right;
 	color: #F00880;
 	font-family:arial;
-	font-size:11pt;
+	font-size:12pt;
 	font-weight:bold;
-	margin-right:5px;
-	margin-top:2px;
+	padding-left:15px;
+	margin-top:5px;
+	margin-right:-20px;
 
 }
 .notification {
@@ -177,7 +179,7 @@ ul, li {
   width:300px;
   z-index:0;
   position:absolute;
-	left:740px;
+	left:700px;
 	top:63px;
 	border-radius: 0px 0px 6px 6px; 
 	-moz-border-radius: 0px 0px 6px 6px; 
@@ -435,7 +437,7 @@ padding:10px;
 /************* CSS for all forms **********/
 
 .formlabel {
-	color:#EEE;
+	color:#666;
 	font-size:12pt;
 	padding-bottom:5px;
 	margin-left:5px;
@@ -485,6 +487,12 @@ padding:10px;
 
 /************* (profile) User Show page **********/
 
+.profile_noshow {
+	text-align:center;
+	font-size:11pt;
+	padding:10px;
+	margin-top:20px;
+}
 .share_url {
 	padding-top:30px;
 	padding-left:20px;
@@ -518,6 +526,13 @@ padding:10px;
 	padding-top: 3px;
 	text-align:left;
 	color:#333;
+}
+.profile_url {
+	color:#666;
+	font-style:oblique;
+	font-size:10pt;
+	overflow:hidden;
+	padding-left:15px;
 }
 .anon_button{
 	color:#666;
@@ -779,10 +794,9 @@ table.microposts tr {
 
 /************* AuthHome **********/
 
-.profile_link {
-	background:#EEE;
-}
+
 .facebook_share {
+	float:right;
 	border:none;
 	display: block;
 	width: 134px; height: 35px;
@@ -819,26 +833,23 @@ table.microposts tr {
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:-20px;
-	margin-bottom:30px;
-	background:#004B71;
-	border-top: 1px solid #00314A;
-	border-bottom: 1px solid #0081C2;
-	border-radius: 6px; 
-	-moz-border-radius: 6px; 
-	-webkit-border-radius: 6px;
+	margin-bottom:10px;
+	background:white;
+	-webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.9);
 }
 .dashfeed_title {
-	color:#EEE;
+	color:#666;
 	font-size:18pt;
 	font-family:comic sans ms;
-	margin-bottom:-40px;
-	margin-left:240px;
+	text-align:center;
 }
 .dashfeed_content {
 	font-size: 13pt;
 	font-family: arial;
 	color:#333333;
-	margin-left:px;
+	margin-left:190px;
 	vertical-align:bottom;
 	width: 500px;
 	float:left;
@@ -852,15 +863,39 @@ table.microposts tr {
 }
 
 
-.dash_gravatar {
-	margin-top: 10px;
-	margin-bottom: 5px;
+.dash_avatar {
 	float:left;
-	text-align:center;
+	padding-top:5px;
+	padding-right:10px;
 }
 .dash_user {
-	margin-top:-12px;
+	font-size:18pt;
+	margin-top:;
 	float:left;
+}
+.dash_stats {
+	float:left;
+	font-size:12pt;
+	padding:5px;
+	margin-left:5px;
+}
+.profile_link {
+	font-size:16pt;
+	font-family:arial;
+	background:#D6EBFF;
+	text-align:center;
+	padding:5px;
+	margin-bottom:5px;
+}
+.profile_sharelink {
+	font-family:comic sans ms;
+	color:#003380;
+	font-size:18pt;
+	margin-bottom:5px;
+}
+.invite_friends {
+	float:right;
+	border:1px orange solid;
 }
 
 /************* Unauthenticated Home **********/

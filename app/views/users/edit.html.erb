@@ -4,4 +4,44 @@
 
 <div class="settings_header">Profile settings</div>
 
-<%= render :partial=>"form" %>
+<%= form_for @user, :html=> { :multipart => true} do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  
+  <div class="settings_fields">
+    <div class="formlabel"> Username </div>
+    <%= f.text_field :username, :class =>"formfield" %>
+  </div>
+  <div class="settings_fields">
+    <div class="formlabel"> Email </div>
+    <%= f.text_field :email, :class =>"formfield" %>
+  </div>
+
+
+  <div class="settings_fields">
+	  <div class="formlabel"> Change Avatar </div>
+	  <%= f.file_field :photo, :class =>"formfield" %>
+   </div>
+ <div class="settings_fields" >
+    <div class="formlabel"> Edit Blurb </div>
+	 <%= f.text_area :blurb, :maxlength=>"180", :class=>"settings_blurb" %>
+  </div>
+  <div class="save_button">
+    <%= f.submit '', :class => "savesettings"%>
+  </div>
+<% end %>
+
+<%= form_for @user, :html=> { :multipart => true} do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+ 
+  <div class="settings_fields">
+    <div class="formlabel"> New Password </div>
+    <%= f.password_field :password, :class =>"formfield" %>
+  </div>
+  <div class="settings_fields">
+    <div class="formlabel"> New Password Confirmation </div>
+    <%= f.password_field :password_confirmation, :class =>"formfield" %>
+  </div>
+  <div class="save_button">
+    <%= f.submit '', :class => "savesettings"%>
+  </div>
+<% end %>

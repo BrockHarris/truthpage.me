@@ -26,71 +26,74 @@
 	</script>	
 <% end %>
 <table>
-<td class="name_container">
-	<div class="profile_name"> 
-		<%= @user.username %> 
-	</div>
-	<div class="profile_avatar"> 
-		<%= render_user_avatar(@user, :small) %>	
-	</div>
-	<div class="profile_blurb"> 
-		<%= @user.blurb %> 
-	</div>	
+	<td class="name_container">
+		<div class="profile_name"> 
+			<%= @user.username %> 
+		</div>
+		<div class="profile_url">
+		  truthpage.me/<%= current_user.username %>
+		</div>
+		<div class="profile_avatar"> 
+			<%= render_user_avatar(@user, :small) %>	
+		</div>
+		<div class="profile_blurb"> 
+			<%= @user.blurb %> 
+		</div>	
 		<br/>
-	<% if current_user %>
-	<%= render 'notifications/new_notification' %>
+		<% if current_user %>
+			<%= render 'notifications/new_notification' %>
+			<div class="profile_follow">
+				<%= render_follow_links(@user) %>
+			</div>
+			<p/>
+		<% end %>
 
-	<div class="profile_follow">
-		<%= render_follow_links(@user) %>
-	</div>
-		<p/>
-	<% end %>
+		<div class="profile_side">
+			<div class="profile_following-h">
+				Following · <%= @user.following.count %>
+			</div>
+			<div class="profile_following">
+ 				<% unless @following.empty? %>
+    			<% @following.each do |user| %>
+	  				<%= link_to render_user_avatar(user, :tiny), user %>
+	  				<%= link_to user.username, user, :class => 'followlist_name' %> 
+	  				<br/>
+    			<% end %>
+  			<% end %>
+			</div>
 
-	<div class="profile_side">
-	<div class="profile_following-h">
-		Following · <%= @user.following.count %>
-	</div>
-	<div class="profile_following">
- 		<% unless @following.empty? %>
-    	<% @following.each do |user| %>
-	  		<%= link_to render_user_avatar(user, :tiny), user %>
-	  		<%= link_to user.username, user, :class => 'followlist_name' %> 
-	  			<br/>
-    	<% end %>
-  	<% end %>
-	</div>
+			<div class="profile_following-h">
+				Followers · <%= @user.followers.count %>
+			</div>
+			<div class="profile_followers">
+				<% unless @followers.empty? %>
+    			<% @followers.each do |user| %>
+	   				<%= link_to render_user_avatar(user, :tiny), user %>
+	   				<%= link_to user.username, user, :class => 'followlist_name' %> 
+	   				<br/>
+    			<% end %>
+  			<% end %>
+			</div>
+		</div>
+	</td>
 
-	<div class="profile_following-h">
-		Followers · <%= @user.followers.count %>
-	</div>
-	<div class="profile_followers">
-		<% unless @followers.empty? %>
-    	<% @followers.each do |user| %>
-	   		<%= link_to render_user_avatar(user, :tiny), user %>
-	   		<%= link_to user.username, user, :class => 'followlist_name' %> 
-	   			<br/>
-    	<% end %>
-  	<% end %>
-	</div>
-</div>
-</td>
-
-<td class="right_container">
-<div class="newpost_container">
-<div class="truth-is">
-	<%= @user.username %>, truth is...
-</div>
-
-
-	<%= render 'microposts/form' %>
-
-</div>
-
-
-<table class="microposts" summary="User microposts">
-	<%= render @microposts  %>
-</table>
-
-<%= will_paginate @microposts %>
-</td>
+	<td class="right_container">
+		<div class="newpost_container">
+			<div class="truth-is">
+				<%= @user.username %>, truth is...
+			</div>
+			<%= render 'microposts/form' %>
+		</div>
+		<table class="microposts" summary="User microposts">
+			<% if @microposts.empty? %>
+				<td class="profile_noshow">
+					You don't have any truths yet.
+					You can <%= link_to "search", search_url , :class =>"headerlink"%> for friends, or  <%= link_to " invite friends from facebook", "#", :id => "invite_fb_friends"%>!
+				</td>
+  		<% else %>
+				<%= render @microposts  %>
+			<% end %>
+		</table>
+			<%= will_paginate @microposts %>
+	</td>
 </table>

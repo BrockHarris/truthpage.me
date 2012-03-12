@@ -1,74 +1,65 @@
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+	$(function(){
+		$("#invite_fb_friends").click(function() {
+		FB.init({ 
+		  appId:'186414394781001', 
+		  channelUrl : '//www.truthpage.me/channel.html', // Channel File
+			status     : true, // check login status
+			cookie     : true, // enable cookies to allow the server to access the session
+			xfbml      : true  // parse XFBML
+		});
+		FB.ui( {
+			method: 'feed',
+			message: 'message here',
+			name: 'truth is?',
+			caption: 'leave me a "truth is" on truthpage.me!',
+			link: '<%= user_url(current_user) %>',
+			picture: 'http://truthpage.me/tp-logo.jpg',
+			actions: [
+				{ name: 'truthpage.me', link: 'http://www.truthpage.me' }
+					],
+				user_message_prompt: 'Share a truth status'
+				},
+			function(response) {
+				if (response && response.post_id) {
+				} else {
+				}
+				}
+			);
+		});
+	});
+</script>
+		  	
 <table class="front" summary="for authenticated users">
   <tr>
     <td class="main">
     	<div class="dash_container">
-    	
-
-				<br />
-    		<div class="dash_user">
-     			<%= current_user.username %>
-     		</div> 
-				<div class="dash_gravatar">
+				<div class="profile_link">
+					<div class="profile_sharelink">
+						Share your profile:
+					</div>
+		 			http://truthpage.me/<%= current_user.username %> 
+				</div>
+				<div class="dash_avatar">
 					<%= render_user_avatar(current_user, :small) %>
 				</div>
-					<br />
+				<div class="dash_user">
+     			<%= current_user.username %>
+				</div> 
+					<br/>
+					<br/>	
 				<%= render 'shared/stats' %>
-					<br />
+					<br/>	
 				
-					</br>
-				<strong>Request truths via:</strong>
-				
-				<div id="friends">
+				<div id="invite_friends">
+					<strong>Request truths via:</strong>
 		    	<%= link_to "", "#", :id => "invite_fb_friends", :class => 'facebook_share' %>
-					
-				<div id="fb-root"></div>
-					<script src="http://connect.facebook.net/en_US/all.js"></script>
-		      <script>
-		        $(function(){
-
-		          $("#invite_fb_friends").click(function() {
-		            FB.init({ 
-		               appId:'186414394781001', 
-		               channelUrl : '//www.truthpage.me/channel.html', // Channel File
-				      status     : true, // check login status
-				      cookie     : true, // enable cookies to allow the server to access the session
-				      xfbml      : true  // parse XFBML
-		            });
-
-		            FB.ui(
-					  {
-					   method: 'feed',
-					   message: 'message here',
-					   name: 'truth is?',
-					   caption: 'leave me a "truth is" on truthpage.me!',
-					   link: '<%= user_url(current_user) %>',
-					   picture: 'http://truthpage.me/tp-logo.jpg',
-
-					   actions: [
-					        { name: 'truthpage.me', link: 'http://www.truthpage.me' }
-					   ],
-					  user_message_prompt: 'Share a truth status'
-					  },
-					  function(response) {
-					    if (response && response.post_id) {
-					     
-					    } else {
-					      
-					    }
-					  }
-					);
-		          });
-		        });
-		      </script>
-		  	</div>
-				or
-				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Join truthpage.me and share the truth with your friends" data-size="large" data-count="none">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-				</script>
-
-				<div class="profile_link">
-				<strong>Profile link:</strong>
-		 			http://truthpage.me/<%= current_user.username %> 
+						or
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Join truthpage.me and share the truth with your friends" data-size="large" data-count="none">Tweet</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+					</script>
 				</div>
 			</div>
       <div class="dashfeed_title">
