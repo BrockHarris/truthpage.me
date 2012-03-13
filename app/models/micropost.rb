@@ -22,7 +22,7 @@ class Micropost < ActiveRecord::Base
   end
 
   def create_notification
-    Notification.create!(:sender_id=>self.user_id, :receiver_id=>self.belongs_to_id, :format=>"New Post")
+    Notification.create!(:sender_id=>self.user_id, :receiver_id=>self.belongs_to_id, :format=>"posted a truth about you!")
   end
   
   private

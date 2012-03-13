@@ -41,11 +41,13 @@
 		</div>	
 		<br/>
 		<% if current_user %>
-			<%= render 'notifications/new_notification' %>
-			<div class="profile_follow">
+			<% if @user == current_user %>
+			<% else %>
 				<%= render_follow_links(@user) %>
-			</div>
-			<p/>
+					<br/>
+				<%= render 'notifications/new_notification' %>
+				<p/>
+			<% end %>
 		<% end %>
 
 		<div class="profile_side">
@@ -66,7 +68,7 @@
 				Followers · <%= @user.followers.count %>
 			</div>
 			<div class="profile_followers">
-				<% unless @followers.empty? %>
+				<% if @followers.empty? %>
     			<% @followers.each do |user| %>
 	   				<%= link_to render_user_avatar(user, :tiny), user %>
 	   				<%= link_to user.username, user, :class => 'followlist_name' %> 
@@ -79,10 +81,16 @@
 
 	<td class="right_container">
 		<div class="newpost_container">
-			<div class="truth-is">
-				<%= @user.username %>, truth is...
-			</div>
-			<%= render 'microposts/form' %>
+			<% if @user == current_user %>
+				<div class="truth-is">
+					Truths about <%= @user.username %>
+				</div>
+			<% else %>
+				<div class="truth-is">
+					<%= @user.username %>, truth is...
+				</div>
+				<%= render 'microposts/form' %>
+			<% end %>
 		</div>
 		<table class="microposts" summary="User microposts">
 			<% if @microposts.empty? %>

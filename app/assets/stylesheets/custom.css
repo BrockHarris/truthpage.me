@@ -1,4 +1,5 @@
-/*************  footer/terms/about/etc.. pages **********/
+/*************  footer/terms/about/etc.. pages  **********/
+
 .align-text {
 	text-align:center;
 }
@@ -27,14 +28,13 @@
 	margin-right: 20px;
 	text-align:center;
 }
-
 .footer_links {
 	font-family:helvetica;
 	font-size:11pt;
 	font-weight:400;
 }
 
-/*************  CSS for general layout **********/
+/*************  CSS for general layout  **********/
 
 .container {
 	margin-left:auto;
@@ -66,9 +66,9 @@ body {
 	height:70px;
 	margin-left:auto;
 	margin-right:auto;
-	border-radius: 0px 0px 6px 6px; 
-	-moz-border-radius: 0px 0px 6px 6px; 
-	-webkit-border-radius: 0px 0px 6px 6px; 
+	border-radius: 0px 0px 4px 4px; 
+	-moz-border-radius: 0px 0px 4px 4px; 
+	-webkit-border-radius: 0px 0px 4px 4px; 
 	moz-box-shadow: 0 0 6px 2px #888;
 	-webkit-box-shadow: 0 0 6px 2px#888;
 	box-shadow: 0 0 6px 1px #999;
@@ -78,7 +78,10 @@ body {
 	font-weight:400;
 	font-size: 32pt;
   font-family: book antiqua;
-  text-shadow: rgba(0,0,0,0.3) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
+  text-shadow: rgba(0,0,0,0.3) -1px 0, 
+  						 rgba(0,0,0,0.3) 0 -1px, 
+  						 rgba(255,255,255,0.5) 0 1px, 
+  						 rgba(0,0,0,0.3) -1px -2px;
 	color: #EEE;
 	margin-top:-15px;
 	margin-left:15px;
@@ -172,6 +175,9 @@ ul, li {
 	color: #254D7A;
 	font-size:16pt;
 	font-family: comic sans ms;
+	background:white;
+	margin:5px;
+	padding:3px;
 }
 .the_menu {
 	background:#E8F2FF;
@@ -181,9 +187,9 @@ ul, li {
   position:absolute;
 	left:700px;
 	top:63px;
-	border-radius: 0px 0px 6px 6px; 
-	-moz-border-radius: 0px 0px 6px 6px; 
-	-webkit-border-radius: 0px 0px 6px 6px; 
+	border-radius: 0px 0px 5px 5px; 
+	-moz-border-radius: 0px 0px 5px 5px; 
+	-webkit-border-radius: 0px 0px 5px 5px; 
 	box-shadow:0px 6px 13px #323133;
 
 }
@@ -297,51 +303,133 @@ footer nav {
 	
 }
 .truth_request {
-	border:none;
-	float:right;
-	display: block;
-	width: 140px; height: 34px;
-	background-image: url('truth-request.png');
-	background-position: top;
-	text-indent: -9999px;
+	margin-left:13%;
+	-moz-box-shadow:inset 0px 1px 0px 0px #b9ff91;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #b9ff91;
+	box-shadow:inset 0px 1px 0px 0px #b9ff91;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #85db5a), color-stop(1, #56ab35) );
+	background:-moz-linear-gradient( center top, #85db5a 5%, #56ab35 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#85db5a', endColorstr='#56ab35');
+	background-color:#85db5a;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #3ba800;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #256600;
 }
 .truth_request:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7ec75a), color-stop(1, #529633) );
+	background:-moz-linear-gradient( center top, #7ec75a 5%, #529633 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7ec75a', endColorstr='#529633');
+	background-color:#7ec75a;
 	cursor:pointer;
-	background-position: bottom;
 }
-
+.truth_request:active {
+	position:relative;
+	top:1px;
+}
 .follow_main {
 	margin-top:10px;
 	margin-bottom:5px;
 	margin-left:48px;
 }
+
+
 .unfollow_button {
-	margin-top:-45px;
-	border:none;
-	float:right;
-	display: block;
-	width: 106px; height: 34px;
-	background-image: url('unfollowbutton.jpg');
-	background-position: top;
-	text-indent: -9999px;
+	width:179px;
+	margin-left:13%;
+	float:left;
+	-moz-box-shadow:inset 0px 1px 0px 0px #f5f5f5;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f5f5f5;
+	box-shadow:inset 0px 1px 0px 0px #f5f5f5;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ebebeb), color-stop(1, #cccccc) );
+	background:-moz-linear-gradient( center top, #ebebeb 5%, #cccccc 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebebeb', endColorstr='#cccccc');
+	background-color:#ebebeb;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #bdbdbd;
+	display:inline-block;
+	color:#6b6b6b;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px -1px 1px #ffffff;
 }
 .unfollow_button:hover {
 	cursor:pointer;
-	background-position: bottom;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffe8e8;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffe8e8;
+	box-shadow:inset 0px 1px 0px 0px #ffe8e8;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffd1d1), color-stop(1, #ff9e9e) );
+	background:-moz-linear-gradient( center top, #ffd1d1 5%, #ff9e9e 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd1d1', endColorstr='#ff9e9e');
+	background-color:#ffd1d1;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #ff8585;
+	display:inline-block;
+	color:#575757;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px -1px 1px #ffffff;
 }
+.unfollow_button:active {
+	position:relative;
+	top:1px;
+}
+
+/* This imageless css button was generated by CSSButtonGenerator.com */
+
+
 .follow_button {
-	margin-top:-45px;
-	border:none;
-	float:right;
-	display: block;
-	width: 140px; height: 34px;
-	background-image: url('followbutton.png');
-	background-position: top;
-	text-indent: -9999px;
+	width:179px;
+	margin-left:13%;
+	float:left;
+	-moz-box-shadow:inset 0px 1px 0px 0px #b9ff91;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #b9ff91;
+	box-shadow:inset 0px 1px 0px 0px #b9ff91;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #85db5a), color-stop(1, #56ab35) );
+	background:-moz-linear-gradient( center top, #85db5a 5%, #56ab35 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#85db5a', endColorstr='#56ab35');
+	background-color:#85db5a;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #3ba800;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #256600;
 }
 .follow_button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7ec75a), color-stop(1, #529633) );
+	background:-moz-linear-gradient( center top, #7ec75a 5%, #529633 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7ec75a', endColorstr='#529633');
+	background-color:#7ec75a;
 	cursor:pointer;
-	background-position: bottom;
+}
+.follow_button:active {
+	position:relative;
+	top:1px;
 }
 
 .home_signin_line{
@@ -369,19 +457,41 @@ footer nav {
 .share_placement{
 	margin-top:-20px;
 }
+
 .submitpost {
-	border:none;
-	display: block;
-	margin-left: 220px;
-	width: 114px; height: 35px;
-	background-image: url('share_button.png');
-	background-position: top;
-	text-indent: -9999px;
+	margin-left:234px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #51bafc), color-stop(1, #0076d1) );
+	background:-moz-linear-gradient( center top, #51bafc 5%, #0076d1 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#51bafc', endColorstr='#0076d1');
+	background-color:#51bafc;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #005cad;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #00058a;
 }
 .submitpost:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36a2e0), color-stop(1, #0065b3) );
+	background:-moz-linear-gradient( center top, #36a2e0 5%, #0065b3 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#36a2e0', endColorstr='#0065b3');
+	background-color:#36a2e0;
 	cursor:pointer;
-	background-position: bottom;
 }
+.submitpost:active {
+	position:relative;
+	top:1px;
+}
+
 .search_header {
 	font-family: arial;
 	font-size:22px;
@@ -632,6 +742,7 @@ form.new_micropost textarea {
 	font-size:11pt;
 	padding-top:2px;
 	vertical-align:top;
+	overflow:hidden;
 }
 .profile_following {
 	margin-left:10px;
@@ -752,21 +863,42 @@ table.microposts tr {
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
 }
+
 .savesettings {
-	border:none;
-	display: block;
-	width: 126px; height: 34px;
-	background-image: url('changepicture.jpg');
-	background-position: top;
-	text-indent: -9999px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #51bafc), color-stop(1, #0076d1) );
+	background:-moz-linear-gradient( center top, #51bafc 5%, #0076d1 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#51bafc', endColorstr='#0076d1');
+	background-color:#51bafc;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #005cad;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #00058a;
 }
 .savesettings:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36a2e0), color-stop(1, #0065b3) );
+	background:-moz-linear-gradient( center top, #36a2e0 5%, #0065b3 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#36a2e0', endColorstr='#0065b3');
+	background-color:#36a2e0;
 	cursor:pointer;
-	background-position: bottom;
+}
+.savesettings:active {
+	position:relative;
+	top:1px;
 }
 .save_button {
 	margin-top:30px;
-	margin-left:10%;
+	margin-left:150px;
 }
 .settings_header {
 	font-size: 24pt;
@@ -783,14 +915,6 @@ table.microposts tr {
 	box-shadow:         4px 4px 8px rgba(50, 50, 50, 0.91);
 	
 }
-
-.profile_follow {
-	vertical-align:bottom;
-	margin-top:50px;
-	margin-left:20px;
-	float:left;
-}
-
 
 /************* AuthHome **********/
 
@@ -1041,19 +1165,37 @@ td.main {
 }
 
 .signup_button {
-	border:none;
-	display: block;
-	width: 106px; height: 34px;
-	background-image: url('signup_button.png');
-	background-position: top;
-	text-indent: -9999px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #51bafc), color-stop(1, #0076d1) );
+	background:-moz-linear-gradient( center top, #51bafc 5%, #0076d1 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#51bafc', endColorstr='#0076d1');
+	background-color:#51bafc;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #005cad;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #00058a;
 }
 .signup_button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36a2e0), color-stop(1, #0065b3) );
+	background:-moz-linear-gradient( center top, #36a2e0 5%, #0065b3 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#36a2e0', endColorstr='#0065b3');
+	background-color:#36a2e0;
 	cursor:pointer;
-	background-position: bottom;
 }
-
-
+.signup_button:active {
+	position:relative;
+	top:1px;
+}
 td.sidebar {
   width: 30%;
   padding: 1em;

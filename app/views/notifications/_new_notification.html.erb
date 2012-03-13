@@ -1,11 +1,11 @@
 
 <%= form_for @notification do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
-	  <%= f.hidden_field :receiver, :value => @user.username %>
-    <%= f.hidden_field :sender, :value => current_user.username %>
+	  <%= f.hidden_field :receiver_id, :value => @user.id %>
+    <%= f.hidden_field :sender_id, :value => current_user.id %>
     <%= f.hidden_field :format, :value => "want's a truth" %>
   	<div class ="share_placement">
-  		<%= f.submit '', :class => 'truth_request' %>
+  		<%= f.submit '+  Request a Truth', :class => 'truth_request' %>
   	</div>
 <% end %>
 

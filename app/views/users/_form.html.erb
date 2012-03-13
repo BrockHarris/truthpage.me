@@ -23,7 +23,7 @@
 	 <%= f.text_area :blurb, :maxlength=>"180", :class=>"settings_blurb" %>
   </div>
   <div class="save_button">
-    <%= f.submit '', :class => "savesettings"%>
+    <%= f.submit 'Save', :class => "savesettings"%>
   </div>
 
  <% else %>
@@ -40,7 +40,7 @@
 	<%= show_simple_captcha :image_style => 'simply_blue', :label => "(type the words in the image)" %>
   </div>
   <div class="save_button">
-    <%= f.submit '', :class => "signup_button"%>
+    <%= f.submit 'Sign up!', :class => "signup_button" %>
   </div>
   <div class="signup_condition">by clicking sign up you agree to our 
     <%= link_to "terms of use", terms_path, :class => "footer_links" %>.
@@ -62,7 +62,7 @@
     <%= f.password_field :password_confirmation, :class =>"formfield" %>
   </div>
   <div class="save_button">
-    <%= f.submit '', :class => "savesettings"%>
+    <%= f.submit 'Save', :class => "savesettings"%>
   </div>
  <% end %>
 <% end %>
