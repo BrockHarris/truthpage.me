@@ -1,9 +1,6 @@
-<div class="settingsphoto">
-<%= render_user_avatar(current_user, :small) %>
-</div>
-
-<div class="settings_header">Profile settings</div>
-
+<div class="settings_header"><%= current_user.username %>'s Settings</div>
+<table>
+<tr>
 <%= form_for @user, :html=> { :multipart => true} do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   
@@ -15,8 +12,9 @@
     <div class="formlabel"> Email </div>
     <%= f.text_field :email, :class =>"formfield" %>
   </div>
-
-
+  <div class="settingsphoto">
+		<%= render_user_avatar(current_user, :small) %>
+	</div>
   <div class="settings_fields">
 	  <div class="formlabel"> Change Avatar </div>
 	  <%= f.file_field :photo, :class =>"formfield" %>
@@ -29,7 +27,8 @@
     <%= f.submit 'Save', :class => "savesettings"%>
   </div>
 <% end %>
-
+</td>
+<td>
 <%= form_for @user, :html=> { :multipart => true} do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
  
@@ -45,3 +44,5 @@
     <%= f.submit 'Save', :class => "savesettings"%>
   </div>
 <% end %>
+</td>
+</table>

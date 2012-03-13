@@ -553,28 +553,19 @@ padding:10px;
 	margin-left:5px;
 }
 .formfield {
-	padding-left:5px;
-	padding-bottom:2px;
-	font-size: 12pt;
-	color: #444444;
-	width: 230px;
-	height: 27px;
-	font-size: 14pt;
-	font-weight:100;
-	font-family:helvetica;
-	color: white;
-	border:none;
-	background: #004F77;
-	outline:none;
-	-webkit-box-shadow: 0px 1px 15px 1px #0093DD;
-	-moz-box-shadow: 0px 1px 15px 1px #0093DD;
-	box-shadow: 0px 1px 15px 1px #0093DD;
-	border-radius: 6px; 
-	border-bottom: 1px solid #0090D9;
-	border-top: 1px solid #00314A;
-	-moz-border-radius: 6px; 
-	-webkit-border-radius: 6px;
+	padding: 0.5em;
+   line-height: 1.2em;
+   width: 230px;
+   height:24px;
+   background: #fff;
+   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc));
+   -webkit-appearance: none;
+   -webkit-box-shadow: 1px 1px 1px #fff;
+   -webkit-border-radius: 0.5em;
+   border: 1px solid #555;
+
 }
+
 
 /************* Styles for fancybox **********/
 
@@ -906,14 +897,8 @@ table.microposts tr {
 	color: #000044;
 }
 .settingsphoto{
-	float:right;
-	margin-right:100px;
+	margin-left:50px;
 	margin-top:30px;
-	clip:rect(0px,0px,10px,0px);
-	-webkit-box-shadow: 4px 4px 8px rgba(50, 50, 50, 0.91);
-	-moz-box-shadow:    4px 4px 8px rgba(50, 50, 50, 0.91);
-	box-shadow:         4px 4px 8px rgba(50, 50, 50, 0.91);
-	
 }
 
 /************* AuthHome **********/
