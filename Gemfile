@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
+gem 'client_side_validations'
 gem 'vanities'
 gem 'exceptional'
 gem 'admin_data', '>= 1.1.16'
