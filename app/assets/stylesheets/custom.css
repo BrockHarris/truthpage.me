@@ -558,14 +558,31 @@ padding:10px;
    width: 230px;
    height:24px;
    background: #fff;
-   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc));
-   -webkit-appearance: none;
-   -webkit-box-shadow: 1px 1px 1px #fff;
+   background: rgb(238,238,238); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(238,238,238,1) 1%, rgba(255,255,255,1) 85%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(238,238,238,1)), color-stop(85%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* IE10+ */
+background: linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+-webkit-box-shadow: 0px 0px 1px 1px #ccc;
+	-moz-box-shadow: 0px 0px 1px 1px #ccc;
+	box-shadow: 0px 0px 1px 1px #ccc;
    -webkit-border-radius: 0.5em;
-   border: 1px solid #555;
+   border: 1px solid #999;
 
 }
+.formfield:focus {
+	-webkit-box-shadow: 0px 0px 3px 1px #30B2D6;
+	-moz-box-shadow: 0px 0px 3px 1px #30B2D6;
+	box-shadow: 0px 0px 3px 1px #30B2D6;
+   -webkit-border-radius: 0.5em;
+   border: 1px solid #30B2D6;
+   outline: none;
 
+}
 
 /************* Styles for fancybox **********/
 
@@ -1207,15 +1224,17 @@ div.field, div.actions {
 	width: 300px;
 	
 }
+
 .field_with_errors {
-  margin-top: 10px;
-  padding: 2px;
-  background-color: red;
-  display: table;
+
+/* color around the form fields on error */
+
 }
 
 .field_with_errors label {
-  color: #fff;
+  color: red;
+  margin-left:6px;
+  font-size:10pt;
 }
 
 #error_explanation {

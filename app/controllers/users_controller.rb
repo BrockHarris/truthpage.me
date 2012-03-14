@@ -34,7 +34,7 @@ class UsersController < ApplicationController
    
   def new
     @user = User.new
-    @title = "Truthpage.me | sign up"
+    @title = "Truthpage.me | Signup"
   end
   
   def create
