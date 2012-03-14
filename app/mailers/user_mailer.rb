@@ -22,7 +22,7 @@ class UserMailer < ActionMailer::Base
       @url  = reset_url(:id => user.id, :reset_code => user.reset_code, :host => SITE_URL_HOST)
       mail(
         :to => ["#{user.email}"],
-        :subject => "Truthpage.me: Welcome.")
+        :subject => "Welcome to truthpage.me!")
     end
   end
 
