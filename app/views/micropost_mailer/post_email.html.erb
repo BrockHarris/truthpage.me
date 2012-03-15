@@ -8,13 +8,17 @@
     </style>
   </head>
   <body>
-    
-    <h1><%= @micropost.target_user.username %>, you received a new truth!</h1>
+    <h1>
+		<%= @micropost.user.username %> has sent you a new truth on truthpage.me!
+	</h1>
     <p>
-      The new truth says <%= @micropost.content %>.<br/>
+      	Click here <%= @url %> to view this new truth.<br/>
     </p>
-    <p>
-      To see this new post, go to: <%= @url %>.
-    </p>
+	<p>
+		If you do not wish to receive future emails from truthpage.me, click here <%= @unsubscribe %> to unsubscribe.
+	</p>
+	<p>
+		Be sure to send us feedback at support@truthpage.me.
+	</p>
   </body>
 </html>
