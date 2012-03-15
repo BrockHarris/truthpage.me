@@ -31,7 +31,7 @@
 			<%= @user.username %> 
 		</div>
 		<div class="profile_url">
-		  truthpage.me/<%= current_user.username %>
+		  truthpage.me/<%= @user.username %>
 		</div>
 		<div class="profile_avatar"> 
 			<%= render_user_avatar(@user, :small) %>	
@@ -57,7 +57,7 @@
 			<div class="profile_following">
  				<% unless @following.empty? %>
     			<% @following.each do |user| %>
-	  				<%= link_to render_user_avatar(user, :tiny), user %>
+	  				<%= link_to render_follow_avatar(user, :tiny), user %>
 	  				<%= link_to user.username, user, :class => 'followlist_name' %> 
 	  				<br/>
     			<% end %>
@@ -70,7 +70,7 @@
 			<div class="profile_followers">
 				<% if @followers.empty? %>
     			<% @followers.each do |user| %>
-	   				<%= link_to render_user_avatar(user, :tiny), user %>
+	   				<%= link_to render_follow_avatar(user, :tiny), user %>
 	   				<%= link_to user.username, user, :class => 'followlist_name' %> 
 	   				<br/>
     			<% end %>

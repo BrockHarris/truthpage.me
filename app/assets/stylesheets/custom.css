@@ -839,13 +839,7 @@ table.microposts tr {
 
 /************* profile settings page **********/
 
-.change_pic {
-	float:left;
-	margin-left:66%;
-	margin-top:20px;
-	color: #3B3131;
-	font-size:12pt;
-}
+
 .settings_fields{
 	margin-left:80px;
 	margin-top:20px;
@@ -913,9 +907,15 @@ table.microposts tr {
 	margin-left:50px;
 	color: #000044;
 }
-.settingsphoto{
-	margin-left:50px;
-	margin-top:30px;
+.settings_photo{
+
+
+}
+.change_avatar {
+
+
+	color: #3B3131;
+	font-size:12pt;
 }
 
 /************* AuthHome **********/

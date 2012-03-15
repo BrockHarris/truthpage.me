@@ -6,7 +6,9 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.build(params[:micropost])
     if @micropost.save
       @notification = Notification.new(params[:notification])
-      MicropostMailer.post_email(@micropost).deliver
+      if @micropost.target_user.try(:mail_subscription?)
+        MicropostMailer.post_email(@micropost).deliver
+      end
       flash[:notice] = "Your truth has been sent to #{@micropost.target_user.username}! " 
       redirect_to(:back)
     else

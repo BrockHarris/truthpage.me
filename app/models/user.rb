@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
                                      :class_name => "Relationship",
                                      :dependent => :destroy
   has_many :followers, :through => :reverse_relationships, :source => :follower
-  
   has_attached_file :photo,
                     :styles => {
                     :tiny => "25x25",
@@ -24,7 +23,7 @@ class User < ActiveRecord::Base
                     :path => "/:style/:id/:filename" 
 
   validates :username, :length=>{:minimum => 3}, :uniqueness=>true, :format=>{ :with => /^[-\w\._@]+$/i, :message => "should only contain letters, numbers, or .-_@"}
-  validates :email, :uniqueness=>true, :format=>{:with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i}
+  validates :email, :uniqueness=>true, :format=>{:with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i, :message => "we need a valid email address!"}
   validates :password, :length=>{:minimum => 4}, :on => :create, :unless=>Proc.new{|u| u.service_mode?}                
   validates_confirmation_of :password
   
