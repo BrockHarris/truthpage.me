@@ -9,13 +9,13 @@
   </head>
   <body>
     <h1>
-		<%= @micropost.user.username %> has sent you a new truth on truthpage.me!
+		<%= @mailer_sender %> sent you a new truth on truthpage.me!
 	</h1>
     <p>
       	Click here <%= @url %> to view this new truth.<br/>
     </p>
 	<p>
-		If you do not wish to receive future emails from truthpage.me, click here <%= @unsubscribe %> to unsubscribe.
+		To change your email notification settings <%= link_to "click here", @settings_url %>.
 	</p>
 	<p>
 		Be sure to send us feedback at support@truthpage.me.
