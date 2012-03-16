@@ -1,6 +1,7 @@
-<div class="settings_header"><%= current_user.username %>'s Settings</div>
+
 <table>
-<tr class="settings_column_left">
+<div class="settings_container">
+<div class="settings_header"><%= current_user.username %>'s Settings</div>
 <%= form_for @user, :html=> { :multipart => true} do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   
@@ -12,18 +13,20 @@
     <div class="formlabel"> Email </div>
     <%= f.text_field :email, :class =>"formfield" %>
   </div>
-  <div class="settings_fields">
+  <div class="settings_mail">
     <%= f.check_box :mail_subscription, {}, true, false %>
-    <%= f.label "Email notifications" %>
+    <%= f.label "Email notifications"%>
   </div>
-  <div class="settings_photo">
-		<%= render_user_avatar(current_user, :small) %>
-	</div>
-  <div class="change_avatar">
+  <div class="photo_container">
+    <div class="settings_photo">
+		  <%= render_user_avatar(current_user, :small) %>
+	  </div>
+    <div class="change_avatar">
 	  <div class="formlabel"> Change Avatar </div>
-	  <%= f.file_field :photo %>
-   </div>
- <div class="settings_fields" >
+	    <%= f.file_field :photo %>
+    </div>
+  </div>
+  <div class="settings_fields" >
     <div class="formlabel"> Edit Blurb </div>
 	 <%= f.text_area :blurb, :maxlength=>"180", :class=>"settings_blurb" %>
   </div>
@@ -31,8 +34,8 @@
     <%= f.submit 'Save', :class => "savesettings"%>
   </div>
 <% end %>
-</tr>
-<tr class="settings_column_right">
+</div>
+<div class="settings_container">
 <%= form_for @user, :html=> { :multipart => true} do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
  
@@ -48,5 +51,5 @@
     <%= f.submit 'Save', :class => "savesettings"%>
   </div>
 <% end %>
-</tr>
+</div>
 </table>
