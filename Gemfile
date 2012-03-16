@@ -7,7 +7,7 @@ gem 'vanities'
 gem 'exceptional'
 gem 'admin_data', '>= 1.1.16'
 gem 'gravatar_image_tag', '1.0.0.pre2'
-gem "will_paginate", "~> 3.0.2"
+gem "will_paginate"
 gem 'pg'
 gem 'json'
 gem 'omniauth'

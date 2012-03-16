@@ -223,4 +223,4 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   vanities
   webrat (= 0.7.1)
-  will_paginate (~> 3.0.2)
+  will_paginate
