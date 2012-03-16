@@ -104,8 +104,25 @@ body {
 	margin-top:-19px;
 }
 
-/************* Notifications **********/
+/************* Notifications ************/
 
+
+.notification_delete {
+	float:right;
+	vertical-align:top;
+	margin-top:-30px;
+	margin-right:10px;	
+	border:none;
+	display: block;
+	width: 14px; height: 14px;
+	background-image: url('delete-x.png');
+	background-position: top;
+	text-indent: -9999px;
+}
+.notification_delete:hover {
+	cursor:pointer;
+	background-position: bottom;
+}
 .notifications_user {
 	color: #EEE;
 	font-size:14px;
@@ -1395,14 +1412,7 @@ color: #333333;
 }
 
 input.readonly{background:#ccc;}
-.gspacer {
-	margin-bottom:10px;
-}
-.tpcloud {
-	margin-top: -40px;
-	margin-left:310px;
-	margin-bottom:20px;
-}
+
 .signup_link {
 	font-size:14pt;
 	margin-top:5px;
