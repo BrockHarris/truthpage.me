@@ -13,8 +13,6 @@
 				<%= time_ago_in_words(notification.created_at) %> ago.
 			</div>
 		<% end %>
-  </td>
-  <td>
-  <%= button_to "x", { :controller => 'notifications', :action => "destroy", :id => notification.id }, :method => :delete %>
-  </td>
+  		<%= button_to "x", { :controller => 'notifications', :action => "destroy", :id => notification.id }, :method => :delete, :class => "notification_delete" %>
+	</td>
 </tr>
