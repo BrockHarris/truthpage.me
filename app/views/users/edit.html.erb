@@ -1,6 +1,6 @@
 <div class="settings_header"><%= current_user.username %>'s Settings</div>
 <table>
-<tr>
+<tr class="settings_column_left">
 <%= form_for @user, :html=> { :multipart => true} do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   
@@ -32,7 +32,7 @@
   </div>
 <% end %>
 </tr>
-<tr>
+<tr class="settings_column_right">
 <%= form_for @user, :html=> { :multipart => true} do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
  

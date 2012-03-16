@@ -883,7 +883,12 @@ table.microposts tr {
 
 /************* profile settings page **********/
 
-
+.settings_column_left {
+	
+}
+.settings_column_right {
+	
+}
 .settings_fields{
 	margin-left:80px;
 	margin-top:20px;
