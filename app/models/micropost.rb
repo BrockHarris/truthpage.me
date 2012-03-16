@@ -9,7 +9,8 @@ class Micropost < ActiveRecord::Base
   
   default_scope :order => 'microposts.created_at DESC'
 
-  after_create :create_notification
+  after_create :create_notification, :unless => :anon?
+  after_create :create_anon_notification, :if => :anon?
 
   # Return microposts from the users being followed by the given user.
   
@@ -22,7 +23,11 @@ class Micropost < ActiveRecord::Base
   end
 
   def create_notification
-    Notification.create!(:sender_id=>self.user_id, :receiver_id=>self.belongs_to_id, :format=>"posted a truth about you!")
+    Notification.create!(:sender_id=>self.user_id, :receiver_id=>self.belongs_to_id, :format=>"posted a truth about you")
+  end
+
+  def create_anon_notification
+    Notification.create!(:noname=> true, :sender_id=>self.user_id, :receiver_id=>self.belongs_to_id, :format=>"posted a truth about you")
   end
   
   private

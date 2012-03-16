@@ -8,4 +8,9 @@ class NotificationsController < ApplicationController
       redirect_to(:back)
     end
   end
+  def destroy
+  	@notification = Notification.find(params[:id])
+  	Notification.find(@notification).destroy
+    redirect_to(:back)
+  end
 end

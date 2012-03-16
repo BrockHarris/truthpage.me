@@ -3,11 +3,18 @@
 		<% if notification.try(:read?) %>
 		<% else%>
 		 	<div class="notification_type"> 
-    		<%= link_to notification.sender.username, notification.sender %> <%= notification.format %>!
+		 		<% if notification.try(:noname?)%>
+		 			Someone <%= notification.format %>!
+		 		<% else %>
+    			<%= link_to notification.sender.username, notification.sender %> <%= notification.format %>!
+    		<% end %>
     	</div>
     	<div class="notification_time">
 				<%= time_ago_in_words(notification.created_at) %> ago.
 			</div>
 		<% end %>
+  </td>
+  <td>
+  <%= button_to "x", { :controller => 'notifications', :action => "destroy", :id => notification.id }, :method => :delete %>
   </td>
 </tr>

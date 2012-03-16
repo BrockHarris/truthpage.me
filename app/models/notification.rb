@@ -1,5 +1,5 @@
 class Notification < ActiveRecord::Base
-	 attr_accessible :sender_id, :receiver_id, :format, :read
+	 attr_accessible :sender_id, :receiver_id, :format, :read, :noname
    default_scope :order => 'notifications.created_at DESC'
 
    belongs_to :sender, :class_name=>"User"
