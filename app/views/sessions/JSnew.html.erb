@@ -10,15 +10,15 @@
   
 <%= form_tag sessions_path do %>
   <div class="field">
-    <div class=""> Username or Email </div>
-    <%= text_field_tag :login, params[:login], :class => "fancyform" %>
+    <div class="formlabel"> Username or Email </div>
+    <%= text_field_tag :login, params[:login], :class => "formfield" %>
   </div>
   <div class="field">
-    <div class=""> Password </div>
-    <%= password_field_tag :password, "", :class => "fancyform" %>
+    <div class="formlabel"> Password </div>
+    <%= password_field_tag :password, "", :class => "formfield" %>
   </div>
 <%= link_to "Forgot your Password?", assist_url, :id=>"forgot-password", :class =>"forgot_password" %> 
-<div class="actions"><%= submit_tag "signin", :class=>'' %></div>
+<div class="actions"><%= submit_tag "Sign in", :class=>'signin_button' %></div>
   
 <% end %>
 

@@ -9,7 +9,7 @@
 		</span>
     <span class="micropost_header">
 	    <% if micropost.try(:anon?) %>
-	      anonymous said:
+	      Someone said:
 	    <% else %>
         <%= link_to micropost.user.username, micropost.user %> said:
 	    <% end %>

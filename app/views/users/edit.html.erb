@@ -1,7 +1,7 @@
 
 <table>
 <div class="settings_container">
-<div class="settings_header"><%= current_user.username %>'s Settings</div>
+<div class="settings_header">Settings</div>
 <%= form_for @user, :html=> { :multipart => true} do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   
@@ -22,7 +22,7 @@
 		  <%= render_user_avatar(current_user, :small) %>
 	  </div>
     <div class="change_avatar">
-	  <div class="formlabel"> Change Avatar </div>
+	  <div class="formlabel"> Change your picture </div>
 	    <%= f.file_field :photo %>
     </div>
   </div>

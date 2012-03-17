@@ -95,7 +95,7 @@
 		<table class="microposts" summary="User microposts">
 			<% if @microposts.empty? %>
 				<td class="profile_noshow">
-					You don't have any truths yet.
+					<%= @user.username %> doesn't have any truths yet.
 				</td>
   		<% else %>
 				<%= render @microposts  %>

@@ -57,7 +57,7 @@ body {
 /************** header *******************/
 
 .header_bar {
-	color: white;
+	color: #EEE;
 	background: 
 	-webkit-gradient(linear, left top, left bottom, 
 	color-stop(0%,rgba(107,157,219,1)), 
@@ -234,7 +234,7 @@ a {
 }
 
 a:hover {
-  color: #005588;
+
   text-decoration: bold;
 }
 
@@ -249,7 +249,7 @@ a:visited {
 	margin-right:52%;
 	color: #333333;
 }
-.header_nav li a {
+header_nav ul li a {
 	color:#EEE;
 }
 nav {
@@ -257,17 +257,17 @@ nav {
 float:right;
   padding: 0 0.7em;
   white-space: nowrap;
-color: #333333;
+color: #EEE;
 }
 
 nav ul {
   margin: 0;
   padding: 0;
-color: #333333;
+color: #EEE;
 }
 
 nav ul li {
-  color: #333333;
+  color: #EEE;
 list-style-type: none;
   display: inline-block;
   padding: 0.2em 0;
@@ -570,6 +570,8 @@ padding:10px;
 	margin-left:5px;
 }
 .formfield {
+	color:#666;
+	font-size:11pt;
 	padding: 0.5em;
    line-height: 1.2em;
    width: 230px;
@@ -587,9 +589,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 -webkit-box-shadow: 0px 0px 1px 1px #ccc;
 	-moz-box-shadow: 0px 0px 1px 1px #ccc;
 	box-shadow: 0px 0px 1px 1px #ccc;
-  border-radius: 0.5em; 
-	-moz-border-radius: 0.5em; 
-	-webkit-border-radius: 0.5em;
+  border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px;
    border: 1px solid #999;
 
 }
@@ -597,7 +599,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 	-webkit-box-shadow: 0px 0px 3px 1px #30B2D6;
 	-moz-box-shadow: 0px 0px 3px 1px #30B2D6;
 	box-shadow: 0px 0px 3px 1px #30B2D6;
-
+	color:#333;
    border: 1px solid #30B2D6;
    outline: none;
 
@@ -607,19 +609,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 
 .fancybox_page {
 	font-family:helvetica;
-
-}
-.fancyform {
-	margin-left:15px;
-	width:250px;
-	height:30px;
-	outline:none;
-	border:1px solid #ADADAD;
-
-	border-radius: 0.5em; 
-	-moz-border-radius: 0.5em; 
-	-webkit-border-radius: 0.5em;
-
+	padding:20px;
 }
 
 /************* (profile) User Show page **********/
@@ -968,9 +958,10 @@ table.microposts tr {
 	margin-left:150px;
 }
 .settings_header {
+	color:#666;
+	font-family:comic sans ms;
 	font-size: 24pt;
-	margin-left:100px;
-	color: #000044;
+	text-align:center;
 }
 .photo_container {
 	margin-left:500px;
@@ -1220,17 +1211,37 @@ td.main {
 	
 }
 .signin_button {
-	margin-left: 40px;
-	border:none;
-	display: block;
-	width: 130px; height: 40px;
-	background-image: url('signin_button.png');
-	background-position: top;
-	text-indent: -9999px;
+	margin-left:40px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	box-shadow:inset 0px 1px 0px 0px #99d6ff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #51bafc), color-stop(1, #0076d1) );
+	background:-moz-linear-gradient( center top, #51bafc 5%, #0076d1 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#51bafc', endColorstr='#0076d1');
+	background-color:#51bafc;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #005cad;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #00058a;
 }
 .signin_button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36a2e0), color-stop(1, #0065b3) );
+	background:-moz-linear-gradient( center top, #36a2e0 5%, #0065b3 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#36a2e0', endColorstr='#0065b3');
+	background-color:#36a2e0;
 	cursor:pointer;
-	background-position: bottom;
+}
+.signin_button:active {
+	position:relative;
+	top:1px;
 }
 .forgot_password {
 	vertical-align:top;
@@ -1421,11 +1432,12 @@ color: #333333;
 }
 
 #flash {
-  padding: 5px 8px;
+	font-size:11pt;
+  padding: 10px;
   margin-left: auto;
 	margin-right:auto;
   text-align:center;
-	margin-bottom:10px;
+	margin-bottom:20px;
 	width: 70%;
 }
 
