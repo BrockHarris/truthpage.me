@@ -9,7 +9,7 @@
     </span>
     <span class="micropost_header">
       <% if feed_item.try(:anon?) %>
-        anonymously shared with <%= feed_item.target_user.username%>
+        Someone shared with <%= feed_item.target_user.username%>
       <% else %>
         <%= render_feed_stamp(feed_item) %>
       <% end %>
