@@ -9,8 +9,9 @@ class UsersController < ApplicationController
   
   def index
     @title = "Truthpage.me | Friends"   
-    @facebook_user = FbGraph::User.me(current_user.token)
-    @facebook_friends = @facebook_user.friends
+    @fb_user = FbGraph::User.me(current_user.token)
+    @facebook_friends = @fb_user.friends.map &:identifier
+    @registered_friends = User.where(:facebook_id => :identifier)
   end
   
   def show
