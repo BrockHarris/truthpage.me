@@ -8,7 +8,7 @@ class AuthenticationsController < ApplicationController
   
   def create
     @omniauth = request.env["omniauth.auth"]
-    authentication = Authentication.where(:provider=>@omniauth['provider'],:uid=>@omniauth['uid']).where("user_id IS NOT NULL").first
+    authentication = Authentication.where(:provider=>@omniauth['provider'], :token=>@omniauth['credentials']['token'],:uid=>@omniauth['uid']).where("user_id IS NOT NULL").first
     if authentication
       flash[:notice] = "logged in via facebook."
       sign_in_and_redirect_back_or_default(authentication.user, user_path(authentication.user))
@@ -62,7 +62,7 @@ class AuthenticationsController < ApplicationController
   def handle_authentication_username_conflict
     flash.now[:notice]="Username #{@omniauth[:info][:nickname]} is already taken, please create an alternate for your truthpage account."
     #create an authorization object and store the id in session
-    session[:pending_authentication_id] = Authentication.create!(:provider => @omniauth['provider'], :uid =>@omniauth['uid'])
+    session[:pending_authentication_id] = Authentication.create!(:provider => @omniauth['provider'],:token=>@omniauth['credentials']['token'], :uid =>@omniauth['uid'])
     @user = User.new(:email=>@omniauth[:info][:email]) #create a user object for the form we're about to render.
     render :action=>"incomplete_authorization"
   end
@@ -74,8 +74,8 @@ class AuthenticationsController < ApplicationController
 
   def handle_new_user_creation_through_authentication
       username = @omniauth['info']['nickname'] || @omniauth['info']['name']
-      user = User.new(:mode=>"service", :email=>@omniauth['info']['email'], :username=>username.gsub(/\W/,''))
-      user.authentications.build(:provider => @omniauth ['provider'], :uid => @omniauth['uid'])
+      user = User.new(:mode=>"service", :email=>@omniauth['info']['email'], :token=>@omniauth['credentials']['token'], :username=>username.gsub(/\W/,''))
+      user.authentications.build(:provider => @omniauth ['provider'], :uid => @omniauth['uid'], :token=>@omniauth['credentials']['token'])
       user.save!
       sign_in_and_redirect_back_or_default(user, user_path(user))
   end

@@ -8,10 +8,8 @@ class UsersController < ApplicationController
 
   
   def index
-    @title = "Truthpage.me | friends"   
-    @usersearch = User.order('username ASC').search(params[:search])
-    @usersearch = @usersearch - [current_user] #eliminate self from the result
-    @users = @usersearch.paginate(:page => params[:page], :per_page => 20)
+    @title = "Truthpage.me | Friends"   
+    @facebook_user ||= FbGraph::User.me(current_user.token) 
   end
   
   def show

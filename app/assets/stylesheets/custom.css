@@ -1,4 +1,4 @@
-/*************  footer/terms/about/etc.. pages  **********/
+s/*************  footer/terms/about/etc.. pages  **********/
 
 .align-text {
 	text-align:center;
@@ -637,9 +637,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 	width:250px;
 	float:left;
 	background:white;
-	-webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.9);
+	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 
 }
 .profile_avatar {
@@ -696,9 +696,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 	width:570px;
 	float:right;
 	background:white;
-	-webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.9);
+	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 }
 
 form.new_micropost {
@@ -814,9 +814,9 @@ table.microposts tr td.micropost {
 	webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	-webkit-box-shadow: 0px 1px 4px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 1px 4px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 1px 4px rgba(50, 50, 50, 0.9);
+	-webkit-box-shadow: 0px 1px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 1px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 1px 3px rgba(50, 50, 50, 0.9);
 }												
 table.microposts {
 	float:right;
@@ -878,9 +878,9 @@ table.microposts tr {
 	padding:10px;
 	padding-bottom:20px;
 	background:white;
-	-webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.9);
+	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 }
 .settings_fields{
 	margin-left:80px;
@@ -1024,9 +1024,9 @@ table.microposts tr {
 	margin-top:-20px;
 	margin-bottom:10px;
 	background:white;
-	-webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 0px 5px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.9);
+	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 }
 .dashfeed_title {
 	color:#666;

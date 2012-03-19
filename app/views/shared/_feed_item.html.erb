@@ -23,10 +23,10 @@
     </span>
   </td>
   <% if current_user = (feed_item.user) %>
-      <td> 
-        <div class="delete_link_place">   
-          <%= render_micropost_delete(feed_item) %>
-        </div>
-      </td>
-    <% end %>
+    <td> 
+      <div class="delete_link_place">   
+        <%= render_micropost_delete(feed_item) %>
+      </div>
+    </td>
+  <% end %>
 </tr>

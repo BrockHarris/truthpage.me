@@ -1,6 +1,7 @@
 require 'will_paginate/array'
 require File.expand_path('../boot', __FILE__)
 require 'rails/all'
+
 WillPaginate.per_page = 30  #default to 30 globally.
 
 if defined?(Bundler)
