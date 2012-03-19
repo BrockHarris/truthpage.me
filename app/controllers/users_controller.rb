@@ -9,7 +9,9 @@ class UsersController < ApplicationController
   
   def index
     @title = "Truthpage.me | Friends"   
-    @facebook_user ||= FbGraph::User.me(current_user.token) 
+    @facebook_user = FbGraph::User.me(current_user.token)
+    @facebook_friends = @facebook_user.friends
+    @users = User.all
   end
   
   def show
