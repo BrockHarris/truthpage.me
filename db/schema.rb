@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120318231537) do
+ActiveRecord::Schema.define(:version => 20120319013147) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20120318231537) do
     t.string   "blurb"
     t.boolean  "mail_subscription",                       :default => true
     t.string   "token"
+    t.string   "facebook_id"
   end
 
   create_table "vanities", :force => true do |t|

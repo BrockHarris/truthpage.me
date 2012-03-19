@@ -74,7 +74,7 @@ class AuthenticationsController < ApplicationController
 
   def handle_new_user_creation_through_authentication
       username = @omniauth['info']['nickname'] || @omniauth['info']['name']
-      user = User.new(:mode=>"service", :email=>@omniauth['info']['email'], :token=>@omniauth['credentials']['token'], :username=>username.gsub(/\W/,''))
+      user = User.new(:mode=>"service", :email=>@omniauth['info']['email'], :facebook_id => @omniauth['uid'], :token=>@omniauth['credentials']['token'], :username=>username.gsub(/\W/,''))
       user.authentications.build(:provider => @omniauth ['provider'], :uid => @omniauth['uid'], :token=>@omniauth['credentials']['token'])
       user.save!
       sign_in_and_redirect_back_or_default(user, user_path(user))
