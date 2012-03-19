@@ -8,17 +8,18 @@
     <ul class="header_nav">
       <div class="headerlink_place">
         <% if current_user %>
-          <li><%= link_to "Home", root_path, :class =>"footer_links" %></li> · 
-          <li><%= link_to "Profile", user_path(current_user), :class =>"footer_links" %></li> ·
-          <li><%= link_to "Settings", edit_user_path(current_user), :class =>"footer_links" %></li> ·
+          <li><%= link_to "Home", root_path, :class =>"header_links" %></li> ·
+          <li><%= link_to "Friends", users_path(current_user), :class =>"header_links" %></li> · 
+          <li><%= link_to "Profile", user_path(current_user), :class =>"header_links" %></li> ·
+          <li><%= link_to "Settings", edit_user_path(current_user), :class =>"header_links" %></li> ·
         <% end %>
         
         <% if current_user %> 
-          <li><%= link_to "Signout", signout_path, :class =>"footer_links", :method => :delete %></li>
+          <li><%= link_to "Signout", signout_path, :class =>"header_links", :method => :delete %></li>
         <% else %>
-          <li><%= link_to "Home", root_path, :class =>"footer_links" %></li> · 
-          <li><%= link_to "Sign in", signin_path, :class =>"footer_links" %></li> · 
-		      <li><%= link_to "Sign up", signup_path, :class =>"footer_links" %></li>
+          <li><%= link_to "Home", root_path, :class =>"header_links" %></li> · 
+          <li><%= link_to "Sign in", signin_path, :class =>"header_links" %></li> · 
+		      <li><%= link_to "Sign up", signup_path, :class =>"header_links" %></li>
         <% end %>
       </div>
     </ul>

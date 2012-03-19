@@ -32,6 +32,7 @@ s/*************  footer/terms/about/etc.. pages  **********/
 	font-family:helvetica;
 	font-size:11pt;
 	font-weight:400;
+	color:#333;
 }
 
 /*************  CSS for general layout  **********/
@@ -93,6 +94,11 @@ body {
 }
 .header_text li a:hover {
 
+}
+.header_links {
+	font-family:helvetica;
+	font-size:11pt;
+	font-weight:400;
 }
 .welcome_user {
 	color: #EEE;
@@ -247,9 +253,9 @@ a:visited {
 .headerlink_place {
 	margin-top:-15px;
 	margin-right:52%;
-	color: #333333;
+	color: #EEE;
 }
-header_nav ul li a {
+header_nav li a {
 	color:#EEE;
 }
 nav {

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @title = "Truthpage.me | Friends"   
     @fb_user = FbGraph::User.me(current_user.token)
     @facebook_friends = @fb_user.friends.map &:identifier
-    @registered_friends = User.where(:facebook_id => :identifier)
+    @registered_friends = User.where("facebook_id IN (?)", @facebook_friends)
   end
   
   def show

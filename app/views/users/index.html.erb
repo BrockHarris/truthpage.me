@@ -1,4 +1,23 @@
 
-<%=  @facebook_friends %>
+   
 
 
+
+<% if current_user.facebook_id = nil? %>
+	Connect with Facebook to see which one's have truthpage.
+	<%= render :partial=>"authentications/services" %>
+<% else %>
+	<% if @registered_friends.empty? %>
+		None of your Facebook friends have a truthpage yet
+	<% else %>
+		<ul class="users">
+  		<% @registered_friends.each do |user| %>
+    		<li>
+    			<%=image_tag "http://graph.facebook.com/#{user.facebook_id}/picture"%>
+      		<%= render_user_avatar(user, :tiny) %>
+      		<%= link_to user.username, (user.username) %>
+    		</li>
+  		<% end %>
+		</ul>
+	<% end %>
+<% end %>
