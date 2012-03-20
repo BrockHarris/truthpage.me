@@ -10,7 +10,7 @@ class AuthenticationsController < ApplicationController
     @omniauth = request.env["omniauth.auth"]
     authentication = Authentication.where(:provider=>@omniauth['provider'], :token=>@omniauth['credentials']['token'],:uid=>@omniauth['uid']).where("user_id IS NOT NULL").first
     if authentication
-      flash[:notice] = "logged in via facebook."
+      flash[:notice] = "Welcome back #{authentication.user.username}!"
       sign_in_and_redirect_back_or_default(authentication.user, user_path(authentication.user))
     elsif current_user
       #the user is logged in and trying to add another authentication (we don't support this...yet.)
@@ -74,9 +74,11 @@ class AuthenticationsController < ApplicationController
 
   def handle_new_user_creation_through_authentication
       username = @omniauth['info']['nickname'] || @omniauth['info']['name']
-      user = User.new(:mode=>"service", :email=>@omniauth['info']['email'], :facebook_id => @omniauth['uid'], :token=>@omniauth['credentials']['token'], :username=>username.gsub(/\W/,''))
+      facebook_photo =  open("http://graph.facebook.com/#{@omniauth['uid']}/picture?type=large")
+      user = User.new(:mode=>"service", :email=>@omniauth['info']['email'], :facebook_id => @omniauth['uid'], :photo => facebook_photo, :token=>@omniauth['credentials']['token'], :username=>username.gsub(/\W/,''))
       user.authentications.build(:provider => @omniauth ['provider'], :uid => @omniauth['uid'], :token=>@omniauth['credentials']['token'])
       user.save!
+      flash[:notice] = "Hey #{user.username} thanks for signing up!"
       sign_in_and_redirect_back_or_default(user, user_path(user))
   end
 

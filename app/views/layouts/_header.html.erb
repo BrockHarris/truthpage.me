@@ -15,7 +15,7 @@
         <% end %>
         
         <% if current_user %> 
-          <li><%= link_to "Signout", signout_path, :class =>"header_links", :method => :delete %></li>
+          <li><%= link_to "Sign out", signout_path, :class =>"header_links", :method => :delete %></li>
         <% else %>
           <li><%= link_to "Home", root_path, :class =>"header_links" %></li> · 
           <li><%= link_to "Sign in", signin_path, :class =>"header_links" %></li> · 
