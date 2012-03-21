@@ -6,7 +6,7 @@
 		 		<% if notification.try(:noname?)%>
 		 			Someone <%= notification.format %>!
 		 		<% else %>
-    			<%= link_to notification.sender.username, notification.sender %> <%= notification.format %>!
+    			<%= link_to notification.sender.username, notification.sender.username %> <%= notification.format %>!
     		<% end %>
     	</div>
     	<div class="notification_time">

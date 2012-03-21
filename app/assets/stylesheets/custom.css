@@ -35,12 +35,29 @@ s/*************  footer/terms/about/etc.. pages  **********/
 	color:#333;
 }
 .admin_container {
+	text-align:left;
 	padding:10px;
 	width:100%;
 	background:white;
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
 	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
+}
+.admin_container2 {
+	text-align:left;
+	margin-bottom:10px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:10px;
+	width:95%;
+	background:white;
+	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
+}
+.row1 {
+	background:#E8F2FF;
+	padding:2px;
 }
 
 /*************  CSS for general layout  **********/
