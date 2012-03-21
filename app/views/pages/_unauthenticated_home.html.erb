@@ -26,18 +26,30 @@
 </script>
 
 <div class="signin_container1">
-  <div class="signin_font1">Sign in</div>
-  <%= form_tag sessions_path do %>
+  	<div class="signin_font1">
+		Sign in
+	</div>
+  	
+	<%= form_tag sessions_path do %>
+	
     <div class="field">
-      <div class="formlabel"> Username or Email </div>
-      <%= text_field_tag :login, params[:login], :class => "formfield" %>
-    </div>
+    <div class="formlabel">
+		Username or Email
+	</div>
+	
+    <%= text_field_tag :login, params[:login], :class => "formfield" %>
+	</div>
+
     <div class="field">
-      <div class="formlabel"> Password </div>
-      <%= password_field_tag :password, "", :class => "formfield" %>
-    </div>
+    <div class="formlabel"> 
+		Password
+	</div>
+	
+    <%= password_field_tag :password, "", :class => "formfield" %>
+	</div>
+	
     <div class="actions">
-      <%= submit_tag "Sign in", :class=>'signin_button' %>
+      	<%= submit_tag "Sign in", :class=>'signin_button' %>
     </div>
   <% end %>
 </div>
@@ -62,7 +74,8 @@
 </ul>
 
 <div class="fblike">
-  <g:plusone annotation="inline"></g:plusone>
+  <g:plusone annotation="inline">
+  </g:plusone>
 
   <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Join truthpage.me and share the truth with your friends" data-hashtags="truthpage.me">Tweet</a>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
