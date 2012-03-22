@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :followers, :through => :reverse_relationships, :source => :follower
   has_attached_file :photo,
                     :styles => {
-                    :tiny => "25x25",
+                    :tiny => "25x25#",
                     :thumb=> "50x50#",
                     :small  => "220x220>" },
                     :storage => :s3,

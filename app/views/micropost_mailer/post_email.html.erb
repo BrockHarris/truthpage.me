@@ -3,15 +3,25 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <style type="text/css" media="screen">
-      h1 { color: #f00; font-family:arial; }
-      ul { list-style: none; }
-      body {border-top:1px purple solid; width:600px;}
+      h1 { 
+        font-size: 30pt;
+        font-family: book antiqua; 
+        color:#2A4668;
+        text-decoration:none;
+      }
+      ul { 
+        list-style: none; 
+      }
+      body {
+        background: url('../images/mailer_bg.jpg')
+      }
     </style>
   </head>
   <body>
     <h1>
-		<%= @mailer_sender %> sent you a new truth on truthpage.me!
+		truthpage.me
 	</h1>
+  <%= @mailer_sender %> sent you a new truth on truthpage.me!
     <p>
       	Click here <%= @url %> to view this new truth.<br/>
     </p>

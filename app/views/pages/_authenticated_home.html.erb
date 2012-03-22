@@ -63,8 +63,28 @@
 					</script>
 				</div>
 			</div>
+
 			<div class="dash_column">
+				FB friends posts:
+				<%= render 'shared/fbfeed' %>
 				facebook friends
+				<% if current_user.authentications.empty? %>
+					<%= render :partial=>"authentications/services" %>
+					Connect with Facebook to see which which of you friends have truthpage.
+				<% else %>
+					<% if @registered_friends.empty? %>
+						None of your Facebook friends have a truthpage yet
+					<% else %>
+						<ul class="users">
+  						<% @registered_friends.each do |user| %>
+    						<li>
+      						<%= render_user_avatar(user, :tiny) %>
+      						<%= link_to user.username, (user.username) %>
+    						</li>
+  						<% end %>
+						</ul>
+					<% end %>
+				<% end %>
 			</div>
       <div class="dashfeed_title">
         Truth Feed

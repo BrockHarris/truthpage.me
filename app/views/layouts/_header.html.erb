@@ -8,8 +8,7 @@
     <ul class="header_nav">
       <div class="headerlink_place">
         <% if current_user %>
-          <li><%= link_to "Home", root_path, :class =>"header_links" %></li> ·
-          <li><%= link_to "Friends", users_path, :class =>"header_links" %></li> · 
+          <li><%= link_to "Friends", root_path, :class =>"header_links" %></li> ·
           <li><%= link_to "Profile", user_path(current_user), :class =>"header_links" %></li> ·
           <li><%= link_to "Settings", edit_user_path(current_user), :class =>"header_links" %></li> ·
         <% end %>

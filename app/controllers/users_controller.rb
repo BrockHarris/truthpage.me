@@ -8,17 +8,12 @@ class UsersController < ApplicationController
 
   
   def index
-    @title = "Truthpage.me | Friends"   
-    unless current_user.authentications.empty?
-      @fb_user = FbGraph::User.me(current_user.token)
-      @facebook_friends = @fb_user.friends.map &:identifier
-      @registered_friends = User.where("facebook_id IN (?)", @facebook_friends)
-    end
+    @title = "Truthpage.me"   
   end
   
   def show
-    @true_ratings = Rating.all
-    @false_ratings = Rating.all(:conditions => {:rating => "false"})
+    @true_ratings = Rating.all(:conditions => {:post_id => :id})
+
     @rating = Rating.new(params[:rating])
     if current_user
       @notification = Notification.new
