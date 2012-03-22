@@ -23,7 +23,7 @@ class AuthenticationsController < ApplicationController
         #if the user's email exists in our app, notify and redirect to signin. (They can add an auth after login - when we hook it up.)
         handle_authentication_email_conflict
       elsif user = User.find_by_username(@omniauth[:info][:nickname])
-        #else if the user's username exists in our app, redirect to a page where they can submit their truthapp username.
+        #else if the user's username exists in our app, redirect to a page where they can submit their truthpage.me username.
         handle_authentication_username_conflict
       else
         #else create the user with this username and email, associate auth and sign them in. 
@@ -73,13 +73,13 @@ class AuthenticationsController < ApplicationController
   end
 
   def handle_new_user_creation_through_authentication
-      username = @omniauth['info']['nickname'] || @omniauth['info']['name']
-      facebook_photo =  open("http://graph.facebook.com/#{@omniauth['uid']}/picture?type=large")
-      user = User.new(:mode=>"service", :email=>@omniauth['info']['email'], :facebook_id => @omniauth['uid'], :photo => facebook_photo, :token=>@omniauth['credentials']['token'], :username=>username.gsub(/\W/,''))
-      user.authentications.build(:provider => @omniauth ['provider'], :uid => @omniauth['uid'], :token=>@omniauth['credentials']['token'])
-      user.save!
-      flash[:notice] = "Hey #{user.username} thanks for signing up!"
-      sign_in_and_redirect_back_or_default(user, user_path(user))
+    username = @omniauth['info']['nickname'] || @omniauth['info']['name']
+    facebook_photo =  open("http://graph.facebook.com/#{@omniauth['uid']}/picture?type=large")
+    user = User.new(:mode=>"service", :email=>@omniauth['info']['email'], :facebook_id => @omniauth['uid'], :photo => facebook_photo, :token=>@omniauth['credentials']['token'], :username=>username.gsub(/\W/,''))
+    user.authentications.build(:provider => @omniauth ['provider'], :uid => @omniauth['uid'], :token=>@omniauth['credentials']['token'])
+    user.save!
+    flash[:notice] = "Hey #{user.username} thanks for signing up!"
+    sign_in_and_redirect_back_or_default(user, user_path(user))
   end
 
 end

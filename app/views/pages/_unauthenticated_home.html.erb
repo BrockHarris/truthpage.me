@@ -25,6 +25,16 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
+<div class="hero-unit">
+  <h1>Get a truth about yourself, from your friends.</h1>
+  <p>truthpage.me makes it fun and easy to share truth statuses with your friends.</p>
+  <p>
+    <a class="btn btn-primary btn-large">
+      Join the fun
+    </a>
+  </p>
+</div>
+
 <div class="signin_container1">
   	<div class="signin_font1">
 		Sign in
@@ -55,18 +65,25 @@
 </div>
 
 <div class="signin_container2">
-  <div class="signin_font2">Sign up</div>
-	 <%= render :partial=>"authentications/services" %>
-  <div class="signup_condition">
+	<div class="signin_font2">
+	Sign up
+	</div>
+	
+	<%= render :partial=>"authentications/services" %>
+	
+  	<div class="signup_condition">
     by clicking sign up you agree to our <%= link_to "terms of use", terms_path, :class => "footer_links" %>.
-  </div> 
-  <div class="signup_link">
+  	</div>
+
+  	<div class="signup_link">
     or <%= link_to "sign up here", signup_path%>.
-  </div>    
+  	</div>    
   </p>
 </div>
 
-<div class="ticker_header">truths shared so far...</div>	
+<div class="ticker_header">truths shared so far...
+</div>
+	
 <ul id="vertical-ticker" style="overflow-x: hidden; overflow-y: hidden; ">
   <% for mp in Micropost.all.take(50) do %>  
     <li><%= render :partial=>"microposts/ticker_micropost", :locals=>{:micropost=>mp} %></li>
