@@ -39,6 +39,7 @@ Truthpage::Application.routes.draw do
       end
   end
   resources :notifications, :only => [:create, :destroy]
+  resources :ratings, :only => [:create, :destroy]
   resources :authentications
   resources :sessions,   :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]

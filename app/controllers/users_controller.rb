@@ -17,6 +17,9 @@ class UsersController < ApplicationController
   end
   
   def show
+    @true_ratings = Rating.all
+    @false_ratings = Rating.all(:conditions => {:rating => "false"})
+    @rating = Rating.new(params[:rating])
     if current_user
       @notification = Notification.new
     end
@@ -192,7 +195,7 @@ class UsersController < ApplicationController
   private
 
   def admin_user
-        redirect_to(root_path) if current_user = current_user.admin
+    redirect_to(root_path) if current_user = current_user.admin
   end
   
   def find_user

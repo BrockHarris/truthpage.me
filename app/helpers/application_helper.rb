@@ -18,7 +18,7 @@ module ApplicationHelper
       image_tag "genericpic-#{size}.jpg" 
     end
   end
-  
+
   #TODO: include all helpers in app_ctrlr.rb and move these to the microposts helper module. 
   def render_feed_stamp(micropost)
     if micropost.try(:anon?)
