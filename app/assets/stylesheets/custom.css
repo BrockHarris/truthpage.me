@@ -73,8 +73,6 @@ section {
   font-size: 120%;
 	font-family: sans-serif;
 	font-style: black;
-
-	background-color: #E8E8E8;	
 }
 body {
   background-color: #E8E8E8;
@@ -1047,32 +1045,49 @@ table.microposts tr {
 	cursor:pointer;
 	background-position: bottom;
 }
+.dash_column {
+	float:left;
+	width:243px;
+	padding:5px;
+	margin-top:10px;
+	margin-left:-19px;
+	background:white;
+	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
+}
 .dash_container {
-	width:100%;
-	padding:10px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:-20px;
-	margin-bottom:10px;
+	width:836px;
+	height:210px;
+	margin-left:-19px;
+	margin-top:-19px;
 	background:white;
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
 	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 }
 .dashfeed_title {
+	width:550px;
 	color:#666;
 	font-size:18pt;
 	font-family:comic sans ms;
 	text-align:center;
+	background:white;
+	margin-top:10px;
+	padding:10px;
+	float:right;
+	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 }
 .dashfeed_content {
 	font-size: 13pt;
 	font-family: arial;
 	color:#333333;
-	margin-left:190px;
+	float:right;
 	vertical-align:bottom;
 	width: 500px;
-	float:left;
+	
 }
 .feed_timestamp{
 	vertical-align:top;

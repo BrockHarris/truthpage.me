@@ -1,0 +1,25 @@
+<div class="header_bar">
+<ul class="header_text">
+  <li>
+    <%= link_to "truthpage.me", root_path %>
+  </li>
+</ul>
+  <nav class="round">
+    <ul class="header_nav">
+      <div class="headerlink_place">
+        <% if current_user %>
+          <li><%= link_to "Settings", edit_user_path(current_user), :class =>"header_links" %></li> ·
+        <% end %>
+        
+        <% if current_user %> 
+          <li><%= link_to "Sign out", signout_path, :class =>"header_links", :method => :delete %></li>
+        <% else %>
+          <li><%= link_to "Home", root_path, :class =>"header_links" %></li> · 
+          <li><%= link_to "Sign in", signin_path, :class =>"header_links" %></li> · 
+		      <li><%= link_to "Sign up", signup_path, :class =>"header_links" %></li>
+        <% end %>
+      </div>
+    </ul>
+  </nav>
+</div>
+

@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,  
   :domain               => "truthpage.me",  
   :user_name            => "support@truthpage.me",  
-  :password             => "Truthpage1",  
+  :password             => "truthpage1",  
   :authentication       => "plain",  
   :enable_starttls_auto => true  
 }  

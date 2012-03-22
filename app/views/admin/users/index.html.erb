@@ -1,0 +1,55 @@
+<table class="admin_container2">
+  <thead>
+    <tr>
+      <th>Stats:</th>
+      <th></th>
+    <tr/>
+  </thead>
+  <tbody>
+    <tr class="row1">
+      <td>Registered users count:</td>
+      <td><%= @users.count %></td> 
+    <tr/>
+    <tr class="row2">
+      <td>Users connected to Facebook:</td>
+      <td><%= @facebook_users.count %> (<%= number_to_percentage(@facebook_users.count.to_f / @users.count*100, :precision => 2) %>)</td> 
+    <tr/>
+    <tr class="row1">
+      <td>Posts shared site-wide:</td>
+      <td><%= @microposts.count %> </td> 
+    <tr/>
+    <tr class="row2">
+      <td>Active notifications site-wide:</td>
+      <td><%= @notifications.count %></td> 
+    <tr/>
+    <tr class="row1">
+      <td>Relationships count: </td>
+      <td><%= @relationships.count %> </td> 
+    <tr/>
+  </tbody>
+<table>
+
+<table class="admin_container">
+  <thead>
+     <tr>
+      <th>Email</th>
+      <th>Username</th>
+      <th>Admin?</th>
+      <th></th>
+      <th>ID #</th>
+     <tr>
+  </thead>
+  <tbody>
+    <% for user in @users %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= link_to user.username, user %></td> 
+      <td><%= user.admin.to_yn %></td>
+      <td><%= button_to "Delete", admin_user_path(user), :method=>:delete, :confirm=>"Are you sure?" if user.id != current_user.id %></td>
+      <td><%= user.id %><td>
+    <tr>
+    <% end %>
+  </tbody>
+<table>
+</div>
+<%= will_paginate(@users) %>
