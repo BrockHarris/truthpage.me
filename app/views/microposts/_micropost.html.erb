@@ -11,7 +11,7 @@
 	    <% if micropost.try(:anon?) %>
 	      Someone said:
 	    <% else %>
-        <%= link_to micropost.user.username, micropost.user %> said:
+        <%= link_to micropost.user.username, micropost.user.username %> said:
 	    <% end %>
     </span>
 	  <span class="micropost_time">

@@ -1,0 +1,9 @@
+<% if @fbfeed_items.empty? %>
+  <div class="align-text">
+    fb friends havent left you truths.
+  </div>
+<% else %>
+  <table class="fb_feed">
+    <%= render :partial => 'shared/fbfeed_item', :collection => @fbfeed_items %>
+  </table>
+<% end %>

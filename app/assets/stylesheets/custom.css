@@ -174,6 +174,7 @@ body {
 .notification_counter {
 	float:right;
 	color: #F00880;
+	text-shadow:1px 1px 0px #ffffff;
 	font-family:arial;
 	font-size:12pt;
 	font-weight:bold;
@@ -1097,8 +1098,6 @@ table.microposts tr {
 	padding-bottom: 4px;
 	color:gray;
 }
-
-
 .dash_avatar {
 	float:left;
 	padding-top:5px;
@@ -1133,8 +1132,28 @@ table.microposts tr {
 	float:right;
 	border:1px orange solid;
 }
+.fb_feed {
+	border:1px solid orange;
+	width:100%;
+}
+.fb_feed_item {
+	border:1px solid red;
+}
+.fb_feed_users {
+	border:1px solid purple;
+	width:230px;
+	white-space:nowrap;
+	overflow:hidden;
+	font-family:arial;
+	font-size:12pt;
 
-/** Unauthenticated Home **/
+}
+.fb_feed_content {
+	border:1px solid green;
+	width:100%;
+}
+
+/************* Unauthenticated Home *************/
 
 .hero-unit {
   padding: 15px;
