@@ -63,6 +63,7 @@ s/*************  footer/terms/about/etc.. pages  **********/
 /*************  CSS for general layout  **********/
 
 .container {
+	font-family: arial;
 	margin-left:auto;
 	margin-right:auto; 
 	width: 840px;
@@ -71,10 +72,11 @@ s/*************  footer/terms/about/etc.. pages  **********/
 section {
   margin-top: 40px;
   font-size: 120%;
-	font-family: sans-serif;
+	font-family: arial;
 	font-style: black;
 }
 body {
+	font-family: arial;
   background-color: #E8E8E8;
 }
 
@@ -174,10 +176,9 @@ body {
 .notification_counter {
 	float:right;
 	color: #F00880;
-	text-shadow:0px -1px 0px #ffffff;
 	font-family:arial;
-	font-size:12pt;
 	font-weight:bold;
+	font-size:12pt;
 	padding-left:15px;
 	margin-top:5px;
 	margin-right:-20px;
@@ -918,12 +919,13 @@ table.microposts tr {
 	margin-top:20px;
 }
 .settings_blurb{
+	color:#666;;
 	margin-top:-80px;
 	padding-left:5px;
 	padding-bottom:2px;
 	height: 120px;
-	font-size: 12pt;
-	width: 230px;
+	font-size:11pt;
+	width: 237px;
 	font-family:helvetica;
   line-height: 1.2em;	
 	background: #fff;
@@ -944,6 +946,7 @@ table.microposts tr {
    border: 1px solid #999;
 }
 .settings_blurb:focus {
+	color:#333
 	-webkit-box-shadow: 0px 0px 3px 1px #30B2D6;
 	-moz-box-shadow: 0px 0px 3px 1px #30B2D6;
 	box-shadow: 0px 0px 3px 1px #30B2D6;
@@ -1060,7 +1063,7 @@ table.microposts tr {
 }
 .dash_container {
 	width:836px;
-	height:210px;
+	height:240px;
 	margin-left:-19px;
 	margin-top:-19px;
 	background:white;
@@ -1132,12 +1135,31 @@ table.microposts tr {
 	float:right;
 	border:1px orange solid;
 }
+.fb_feed_container {
+	height:200px;
+	overflow:auto;
+}
+.fb_feed_header {
+	font-family:arial;
+	color:blue;
+	margin:10px;
+	border-bottom:1px solid green;
+}
+.fb_feed_friends {
+	font-family:arial;
+	color:blue;
+	margin:10px;
+	border-bottom:1px solid green;
+}
 .fb_feed {
 	border:1px solid orange;
 	width:100%;
+	max-height:100px;
+
 }
 .fb_feed_item {
 	border:1px solid red;
+	margin-bottom:5px;
 }
 .fb_feed_users {
 	border:1px solid purple;

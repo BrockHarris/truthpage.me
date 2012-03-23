@@ -2,7 +2,7 @@ class MicropostMailer < ActionMailer::Base
   default :from => "support@truthpage.me"
   
 def post_email(micropost)
-  if  @micropost.try(:anon?)
+  if  micropost.try(:anon?)
   		@mailer_sender = "Someone anonymously"
   else
       @mailer_sender = micropost.user.username

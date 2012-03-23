@@ -56,9 +56,9 @@
 					<br/>	
 				
 				<div id="invite_friends">
-					<strong>Request truths via:</strong>
+					<strong>Share profile on</strong>
 		    	<%= link_to "", "#", :id => "invite_fb_friends", :class => 'facebook_share' %>
-						or
+			
 					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Join truthpage.me and share the truth with your friends" data-size="large" data-count="none">Tweet</a>
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 					</script>
@@ -66,15 +66,23 @@
 			</div>
 
 			<div class="dash_column">
-				FB friends posts:
-				<%= render 'shared/fbfeed' %>
-				facebook friends
+				<div class="fb_feed_header">
+					Facebook friend's posts:
+				</div>
 				<% if current_user.authentications.empty? %>
 					<%= render :partial=>"authentications/services" %>
-					Connect with Facebook to see which which of you friends have truthpage.
+					Connect with Facebook to see your friends on truthpage!
 				<% else %>
+					<div class="fb_feed_container">
+						<%= render 'shared/fbfeed' %>
+					</div>
+				<% end %>
+				<div class="fb_feed_friends">
+					Facebook friends
+				</div>
+				<% unless current_user.authentications.empty? %>
 					<% if @registered_friends.empty? %>
-						None of your Facebook friends have a truthpage yet
+						None of your Facebook friends have a truthpage yet...
 					<% else %>
 						<ul class="users">
   						<% @registered_friends.each do |user| %>
@@ -85,6 +93,8 @@
   						<% end %>
 						</ul>
 					<% end %>
+				<% else %>
+				  not connected to Facebook
 				<% end %>
 			</div>
       <div class="dashfeed_title">

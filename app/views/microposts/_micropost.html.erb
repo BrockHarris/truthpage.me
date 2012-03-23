@@ -11,7 +11,7 @@
 	    <% if micropost.try(:anon?) %>
 	      Someone said:
 	    <% else %>
-        <%= link_to micropost.user.username, micropost.user.username %> said:
+        <%= link_to micropost.user.username, micropost.user %> said:
 	    <% end %>
     </span>
 	  <span class="micropost_time">
@@ -19,7 +19,7 @@
     </span>
 	    <br/>
     <span class="micropost_content"> <%= micropost.content %></span>
-    
+    <% if current_user %>
     <%= form_for @rating do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
       <%= f.hidden_field :micropost_id, :value => micropost.id %>
@@ -28,6 +28,7 @@
       <%= f.hidden_field :rating, :value => "true" %>
       <%= f.submit 'true', :class => 'rate'%>
     <% end %>
+ 
       (<%= render_true_ratings(micropost) %>)
 
     <%= form_for @rating do |f| %>
@@ -38,8 +39,9 @@
       <%= f.hidden_field :rating, :value => "false" %>
       <%= f.submit 'false', :class => 'rate'%> 
     <% end %>
+     
       (<%= render_false_ratings(micropost) %>)
-
+<% end %>
   </td>
     <% if current_user = (micropost.user) %>
       <td> 

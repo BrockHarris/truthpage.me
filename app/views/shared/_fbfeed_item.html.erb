@@ -7,15 +7,9 @@
 	    <% else %>
 	      <%= render_user_avatar(fbfeed_item.user, :tiny) %> <%= link_to fbfeed_item.user.username, fbfeed_item.user.username %> >
 	    <% end %>
-        
-      <% if fbfeed_item.try(:anon?) %>
-        <%= image_tag("genericpic-tiny.jpg") %>
-      <% else %>
-        <%= render_user_avatar(fbfeed_item.target_user, :tiny) %>
-      <% end %>
-        <%= link_to fbfeed_item.target_user.username, fbfeed_item.target_user.username %>:
+      <%= render_user_avatar(fbfeed_item.target_user, :tiny) %>
+      <%= link_to fbfeed_item.target_user.username, fbfeed_item.target_user.username %>:
     </div>
-
     <div class="fb_feed_content"> 
       <%= fbfeed_item.content %>
     </div>
