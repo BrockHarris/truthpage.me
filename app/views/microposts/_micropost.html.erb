@@ -22,23 +22,24 @@
     
     <%= form_for @rating do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
-      <%= f.hidden_field :post_id, :value => micropost.id %>
+      <%= f.hidden_field :micropost_id, :value => micropost.id %>
       <%= f.hidden_field :owner_id, :value => micropost.belongs_to_id %>
       <%= f.hidden_field :rater_id, :value => current_user.id %>
       <%= f.hidden_field :rating, :value => "true" %>
       <%= f.submit 'true', :class => 'rate'%>
     <% end %>
-
-      (<%= @true_ratings.count %>)
+      (<%= render_true_ratings(micropost) %>)
 
     <%= form_for @rating do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
-      <%= f.hidden_field :post_id, :value => micropost.id %>
+      <%= f.hidden_field :micropost_id, :value => micropost.id %>
       <%= f.hidden_field :owner_id, :value => micropost.belongs_to_id %>
       <%= f.hidden_field :rater_id, :value => current_user.id %>
       <%= f.hidden_field :rating, :value => "false" %>
       <%= f.submit 'false', :class => 'rate'%> 
     <% end %>
+      (<%= render_false_ratings(micropost) %>)
+
   </td>
     <% if current_user = (micropost.user) %>
       <td> 

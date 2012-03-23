@@ -4,7 +4,7 @@ class Micropost < ActiveRecord::Base
   belongs_to :user
   belongs_to :target_user, :class_name=>"User", :foreign_key=>"belongs_to_id" 
 
-  has_many :ratings, :dependent => :destroy
+  has_many :ratings
   
   validates :content, :presence => true, :length => { :maximum => 250 }
   validates :user_id, :presence => true

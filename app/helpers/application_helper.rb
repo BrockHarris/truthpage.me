@@ -3,6 +3,14 @@ module ApplicationHelper
   #  content_for(:head) { javascript_include_tag(*args) }
   #end
 
+  def render_true_ratings(micropost)
+    "#{micropost.ratings.trues.count}".html_safe
+  end
+
+  def render_false_ratings(micropost)
+    "#{micropost.ratings.falses.count}".html_safe
+  end
+
   def render_user_avatar(user, size=:small, opts={})
     if user.photo.exists?
       return image_tag user.photo.url(size)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120322035919) do
+ActiveRecord::Schema.define(:version => 20120322035931) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20120322035919) do
   add_index "notifications", ["sender_id"], :name => "index_notifications_on_sender_id"
 
   create_table "ratings", :force => true do |t|
-    t.string   "post_id"
+    t.integer  "micropost_id"
     t.integer  "owner_id"
     t.integer  "rater_id"
     t.string   "rating"
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(:version => 20120322035919) do
     t.datetime "updated_at"
   end
 
+  add_index "ratings", ["micropost_id"], :name => "index_ratings_on_micropost_id"
   add_index "ratings", ["owner_id"], :name => "index_ratings_on_owner_id"
-  add_index "ratings", ["post_id"], :name => "index_ratings_on_post_id"
   add_index "ratings", ["rater_id"], :name => "index_ratings_on_rater_id"
 
   create_table "relationships", :force => true do |t|

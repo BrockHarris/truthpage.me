@@ -12,8 +12,6 @@ class UsersController < ApplicationController
   end
   
   def show
-    @true_ratings = Rating.all(:conditions => {:post_id => :id})
-
     @rating = Rating.new(params[:rating])
     if current_user
       @notification = Notification.new

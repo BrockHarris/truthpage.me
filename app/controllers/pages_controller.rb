@@ -3,7 +3,6 @@ skip_before_filter :verify_authenticity_token
   def home
     @title = "Truthpage.me | Friends"
     if current_user
-      @authenticated = 
       @micropost = Micropost.new
       @feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 20)
       @fbfeed_items = Micropost.where(:belongs_to_id => current_user.id).limit(5)
