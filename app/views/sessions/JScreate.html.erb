@@ -1,0 +1,12 @@
+<div class="fancybox_page">
+	<div class="fancybox_header">
+		Sign up for truthpage.me!
+	</div>
+  <%= render :partial=>"authentications/services" %>
+	<div class="fancybox_no_facebook">
+		Already have an account? Sign in <%= link_to "here", signin_path %>.
+	</div>
+	<div class="fancybox_signup_form">
+		<%= render :partial=>"form" %>
+	</div>
+</div>
