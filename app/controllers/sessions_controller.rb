@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 #skip_before_filter :verify_authenticity_token
 
   def new
+    @user = User.new
     redirect_to root_url if current_user
   end
 
