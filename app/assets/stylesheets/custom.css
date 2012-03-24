@@ -644,13 +644,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 .signin_header {
 	padding-bottom:20px;
 	color:#2A4668;
-	font-family:arial;
+	font-family:bitstream vera serif;
 	font-size: 24pt;
 	margin-left:120px;
 }
 .signup_header {
 	color:#2A4668;
+<<<<<<< HEAD
+	font-family:bitstream vera serif;
+=======
 	font-family:arial;
+>>>>>>> 9572b49ac3e37f49679f912dc581d096b9cd8312
 	font-size: 24pt;
 	margin-left:140px;
 }

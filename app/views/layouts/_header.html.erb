@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+
+ <script type="text/javascript">
+=======
 <script type="text/javascript">
+>>>>>>> 9572b49ac3e37f49679f912dc581d096b9cd8312
   $(function(){
     $("#signin").fancybox({
       'transitionIn'    :    'elastic',
@@ -7,6 +12,12 @@
       'speedOut'        :    200,
       'overlayShow'    :    true
     });
+<<<<<<< HEAD
+  });
+	</script>	
+
+
+=======
     $("#signup").fancybox({
       'transitionIn'    :    'elastic',
       'transitionOut'    :    'elastic',
@@ -16,6 +27,7 @@
     });
   });
   </script> 
+>>>>>>> 9572b49ac3e37f49679f912dc581d096b9cd8312
 <div class="header_bar">
 <ul class="header_text">
   <li>
@@ -36,7 +48,11 @@
         <% else %>
           <li><%= link_to "Home", root_path, :class =>"header_links" %></li> · 
           <li><%= link_to "Sign in", login_path, :id =>"signin", :class =>"header_links" %></li> · 
+<<<<<<< HEAD
+		      <li><%= link_to "Sign up", signup_path, :class =>"header_links" %></li>
+=======
 		      <li><%= link_to "Sign up", newlogin_path, :id =>"signup", :class =>"header_links" %></li>
+>>>>>>> 9572b49ac3e37f49679f912dc581d096b9cd8312
         <% end %>
       </div>
     </ul>
