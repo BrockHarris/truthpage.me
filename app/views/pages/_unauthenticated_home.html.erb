@@ -35,52 +35,6 @@
   </p>
 </div>
 
-<div class="signin_container1">
-  	<div class="signin_font1">
-		Sign in
-	</div>
-  	
-	<%= form_tag sessions_path do %>
-	
-    <div class="field">
-    <div class="formlabel">
-		Username or Email
-	</div>
-	
-    <%= text_field_tag :login, params[:login], :class => "formfield" %>
-	</div>
-
-    <div class="field">
-    <div class="formlabel"> 
-		Password
-	</div>
-	
-    <%= password_field_tag :password, "", :class => "formfield" %>
-	</div>
-	
-    <div class="actions">
-      	<%= submit_tag "Sign in", :class=>'signin_button' %>
-    </div>
-  <% end %>
-</div>
-
-<div class="signin_container2">
-	<div class="signin_font2">
-	Sign up
-	</div>
-	
-	<%= render :partial=>"authentications/services" %>
-	
-  	<div class="signup_condition">
-    by clicking sign up you agree to our <%= link_to "terms of use", terms_path, :class => "footer_links" %>.
-  	</div>
-
-  	<div class="signup_link">
-    or <%= link_to "sign up here", signup_path%>.
-  	</div>    
-  </p>
-</div>
-
 <div class="ticker_header">truths shared so far...
 </div>
 	
