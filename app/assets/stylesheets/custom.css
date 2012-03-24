@@ -261,7 +261,6 @@ ul, li {
 a {
   color: #005588;
   text-decoration: none;
-
 }
 
 a:hover {
@@ -285,34 +284,34 @@ header_nav li a {
 }
 nav {
 	margin-top:-30px;
-float:right;
+	float:right;
   padding: 0 0.7em;
   white-space: nowrap;
-color: #EEE;
+	color: #EEE;
+	font-family:arial;
 }
 
 nav ul {
   margin: 0;
   padding: 0;
-color: #EEE;
+	color: #EEE;
 }
 
 nav ul li {
   color: #EEE;
-list-style-type: none;
+	list-style-type: none;
   display: inline-block;
   padding: 0.2em 0;
 }
 
 nav ul li a {
   color: #333333;
-padding: 0 5px;
+	padding: 0 5px;
   font-weight: bold;
 }
 
 nav ul li a:visited {
   color: #333333;
-
 }
 
 nav ul li a:hover {
@@ -869,29 +868,34 @@ table.microposts tr {
   height: 80px;
 
 }
-
-.micropost_pic {
-	float:left;
-	padding:10px;
-	padding-right:10px;
-	border-right:1px gray solid;
-}
 .micropost_header {
-	color:gray;
-	font-size:12pt;
-	padding-bottom:5px;
-	padding-left:5px;
+	font-family:calibri;
+	margin-top:-3px;
+	padding:2px;
+}
+.micropost_userpic {
+	padding:2px;
+	margin-left:2px;
+}
+.micropost_username {
+	margin-left:35px;
+	margin-top:-28px;
+	font-size:14pt;
 }
 .micropost_content {
+	font-family:calibri;
+	margin-top:-18px;
+	padding-right:8px;
 	padding-left:5px;
+	text-indent:5px;
 }
 
-.micropost_time {
+.micropost_timestamp {
 	float:right;
-  font-size: 65%;
-  color: #666;
-  padding-left:5px;
+  font-size:8pt;
+  color:#666;
 	margin-right:5px;
+	font-family:arial;
 }
 .delete_link {
 	margin-bottom:-27px;
@@ -899,9 +903,39 @@ table.microposts tr {
 	font-size:12px;
 	margin-top:50px;
 }
-.delete_link_place {
+.micropost_delete {
 	margin-top:50px;
 }
+.micropost_true_button {
+	background-color:#FFF;
+	border: 1px solid #63AFEB;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	cursor:pointer;
+}
+.micropost_false_button {
+	background-color:#FFF;
+	border: 1px solid #63AFEB;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	cursor:pointer;
+}
+.micropost_true {
+	padding-bottom:2px;
+	padding-top:2px;
+	float:right;
+}
+.micropost_false {
+	float:right;
+	padding-left:5px;
+	padding-top:2px;
+}
+.unauth_spacer {
+	height:25px;
+}
+
 
 /************* profile settings page **********/
 
