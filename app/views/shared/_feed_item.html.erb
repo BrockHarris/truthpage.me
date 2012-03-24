@@ -1,32 +1,66 @@
 <tr>
   <td class="micropost">
-    <span class="micropost_pic">
-	    <% if feed_item.try(:anon?) %>
-	      <%= image_tag("genericpic-thumb.jpg") %>
-	    <% else %>
-	      <%= render_user_avatar(feed_item.user, :thumb) %>
-	    <% end %>
-    </span>
-    <span class="micropost_header">
+    <div class="micropost_header">
       <% if feed_item.try(:anon?) %>
-        Someone shared with <%= link_to feed_item.target_user.username, feed_item.target_user.username %>
+        <div class="micropost_userpic">
+          <%= image_tag("genericpic-tiny.jpg") %> 
+        </div>
+        <div class="micropost_username">
+          Anonymous  > <%= link_to feed_item.target_user.username, feed_item.target_user %>
+          <div class="micropost_timestamp">
+            <%= time_ago_in_words(feed_item.created_at) %> ago.
+          </div>
+        </div>
       <% else %>
-        <%= render_feed_stamp(feed_item) %>
+        <div class="micropost_userpic">
+          <%= render_user_avatar(feed_item.user, :tiny) %>
+        </div>
+        <div class="micropost_username">
+          <%= link_to feed_item.user.username, feed_item.user %>  > <%= link_to feed_item.target_user.username, feed_item.target_user %>
+          <div class="micropost_timestamp">
+            <%= time_ago_in_words(feed_item.created_at) %> ago.
+          </div>
+        </div>  
       <% end %>
-    </span>
-    <span class="micropost_time">
-      <%= time_ago_in_words(feed_item.created_at) %> ago.
-    </span>
+    </div>
       <br/>
-    <span class="micropost_content"> 
+    <div class="micropost_content"> 
       <%= feed_item.content %>
-    </span>
+    </div>
+    <% if current_user %>
+    <div class="micropost_true">
+    
+    <%= form_for @rating do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+      <%= f.hidden_field :micropost_id, :value => feed_item.id %>
+      <%= f.hidden_field :owner_id, :value => feed_item.belongs_to_id %>
+      <%= f.hidden_field :rater_id, :value => current_user.id %>
+      <%= f.hidden_field :rating, :value => "true" %>
+      <%= f.submit 'true', :class => 'micropost_true_button'%>
+        <%= render_true_ratings(feed_item)  %>
+    <% end %>
+  </div>
+  <div class="micropost_false">
+    <%= form_for @rating do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+      <%= f.hidden_field :micropost_id, :value => feed_item.id %>
+      <%= f.hidden_field :owner_id, :value => feed_item.belongs_to_id %>
+      <%= f.hidden_field :rater_id, :value => current_user.id %>
+      <%= f.hidden_field :rating, :value => "false" %>
+      <%= f.submit 'false', :class => 'micropost_false_button'%> 
+      <%= render_false_ratings(feed_item) %>
+    <% end %>   
+   </div>
+
+<% else %>
+  <div class="unauth_spacer"> </div>
+<% end %>
   </td>
-  <% if current_user = (feed_item.user) %>
-    <td> 
-      <div class="delete_link_place">   
-        <%= render_micropost_delete(feed_item) %>
-      </div>
-    </td>
-  <% end %>
+    <% if current_user = (feed_item.user) %>
+      <td> 
+        <div class="micropost_delete">   
+          <%= render_micropost_delete(feed_item) %>
+        </div>
+      </td>
+    <% end %>
 </tr>

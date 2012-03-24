@@ -47,13 +47,9 @@
 		 			http://truthpage.me/<%= current_user.username %> 
 				</div>
 				
-				<div class="dash_user">
-     			<%= current_user.username %>
-				</div> 
+		
 					<br/>
-					<br/>	
-				<%= render 'shared/stats' %>
-					<br/>	
+				
 				
 				<div id="invite_friends">
 					<strong>Share profile on</strong>
@@ -66,6 +62,22 @@
 			</div>
 
 			<div class="dash_column">
+				<div class="fb_feed_friends">
+					Facebook friends
+				</div>
+				<% unless current_user.authentications.empty? %>
+					<% if @registered_friends.empty? %>
+						None of your Facebook friends have a truthpage yet...
+					<% else %>
+						<div class="fbfriends_box">
+  						<% @registered_friends.each do |user| %>
+      					<%= link_to render_user_avatar(user, :thumb), user.username %>
+  						<% end %>
+						</div>
+					<% end %>
+				<% else %>
+				  not connected to Facebook
+				<% end %>
 				<div class="fb_feed_header">
 					Facebook friend's posts:
 				</div>
@@ -77,25 +89,7 @@
 						<%= render 'shared/fbfeed' %>
 					</div>
 				<% end %>
-				<div class="fb_feed_friends">
-					Facebook friends
-				</div>
-				<% unless current_user.authentications.empty? %>
-					<% if @registered_friends.empty? %>
-						None of your Facebook friends have a truthpage yet...
-					<% else %>
-						<ul class="users">
-  						<% @registered_friends.each do |user| %>
-    						<li>
-      						<%= render_user_avatar(user, :tiny) %>
-      						<%= link_to user.username, (user.username) %>
-    						</li>
-  						<% end %>
-						</ul>
-					<% end %>
-				<% else %>
-				  not connected to Facebook
-				<% end %>
+				
 			</div>
       <div class="dashfeed_title">
         Truth Feed

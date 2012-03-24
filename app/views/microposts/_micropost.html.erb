@@ -39,8 +39,8 @@
       <%= f.submit 'true', :class => 'micropost_true_button'%>
         <%= render_true_ratings(micropost)  %>
     <% end %>
-  </div>
-  <div class="micropost_false">
+    </div>
+    <div class="micropost_false">
     <%= form_for @rating do |f| %>
     <%= render 'shared/error_messages', :object => f.object %>
       <%= f.hidden_field :micropost_id, :value => micropost.id %>
