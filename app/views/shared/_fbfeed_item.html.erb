@@ -3,12 +3,11 @@
   <td class="fb_feed_item">
     <div class="fb_feed_users">
 	    <% if fbfeed_item.try(:anon?) %>
-	      <%= image_tag("genericpic-tiny.jpg") %> Someone >
+	      <%= image_tag("genericpic-tiny.jpg") %> >
 	    <% else %>
-	      <%= render_user_avatar(fbfeed_item.user, :tiny) %> <%= link_to fbfeed_item.user.username, fbfeed_item.user.username %> >
+	      <%= render_user_avatar(fbfeed_item.user, :tiny) %> >
 	    <% end %>
       <%= render_user_avatar(fbfeed_item.target_user, :tiny) %>
-      <%= link_to fbfeed_item.target_user.username, fbfeed_item.target_user.username %>:
     </div>
     <div class="fb_feed_content"> 
       <%= fbfeed_item.content %>

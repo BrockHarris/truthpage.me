@@ -7,6 +7,14 @@ class SessionsController < ApplicationController
   end
 
   def JSnew
+    @user = User.new
+    redirect_to root_url if current_user
+    @skip_render = true
+    render :layout => false
+  end
+
+  def JScreate
+    @user = User.new
     redirect_to root_url if current_user
     @skip_render = true
     render :layout => false
@@ -24,8 +32,8 @@ class SessionsController < ApplicationController
         redirect_back_or_default(current_user)
       end
     else
-      flash.now[:error] = "There was a problem with your email or password"
-      render :action => 'new'
+      flash[:error] = "There was a problem with your email or password"
+      redirect_to signin_path
     end
   end
 

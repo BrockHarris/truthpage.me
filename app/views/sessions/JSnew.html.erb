@@ -1,43 +1,23 @@
 <div class="fancybox_page">
-<strong>
-	Sign in with Facebook:
-</strong>
-  	<p/>
-  	<%= render :partial=>"authentications/services" %>
-  	<div style="clear:both">
-  	</div>
-	<p/>
-	
-<strong>
-	Don&rsquo;t use Facebook?
-</strong>
-
-    <%= link_to "Create a truthpage.me account", signup_path %> or login below.
-  	<p/>
-  
+	<div class="fancybox_header">
+		Sign in to truthpage.me!
+	</div>
+  <%= render :partial=>"authentications/services" %>
+	<div class="fancybox_no_facebook">
+		Don&rsquo;t use Facebook? Sign up <%= link_to "here", signin_path %>.
+	</div>
 	<%= form_tag sessions_path do %>
-	
   	<div class="field">
-  	<div class="formlabel"> 
-	Username or Email
-	</div>
-    
-	<%= text_field_tag :login, params[:login], :class => "formfield" %>
+  		<div class="formlabel">Username or Email</div>
+    	<%= text_field_tag :login, params[:login], :class => "formfield" %>
   	</div>
-  	
-	<div class="field">
-    <div class="formlabel">
-	Password
-	</div>
-    
-	<%= password_field_tag :password, "", :class => "formfield" %>
+		<div class="field">
+    	<div class="formlabel">Password</div>
+    	<%= password_field_tag :password, "", :class => "formfield" %>
   	</div>
-
-	<%= link_to "Forgot your Password?", assist_url, :id=>"forgot-password", :class =>"forgot_password" %> 
-	
-	<div class="actions">
-	<%= submit_tag "Sign in", :class=>'signin_button' %>
-	</div>
-  
-<% end %>
+		<%= link_to "Forgot your Password?", assist_url, :id=>"forgot-password", :class =>"forgot_password" %> 
+		<div class="fancybox_signin_button">
+			<%= submit_tag "Sign in", :class=>'signin_button' %>
+		</div>  
+	<% end %>
 </div>

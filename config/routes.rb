@@ -2,6 +2,7 @@ Truthpage::Application.routes.draw do
   
   match '/signin',  :to => 'sessions#new'
   match '/login',  :to => 'sessions#JSnew'
+  match '/newlogin', :to => 'sessions#JScreate'
   match '/signout', :to => 'sessions#destroy'
   match '/signup', :to => 'users#new'
   match '/contact', :to => 'pages#contact'
