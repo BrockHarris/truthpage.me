@@ -1,5 +1,4 @@
-<div id="fb-root">
-</div>
+<div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
 	$(function(){
@@ -36,34 +35,32 @@
 <table class="front" summary="for authenticated users">
   <tr>
     <td class="main">
-    	<div class="dash_container">
-				<div class="dash_avatar">
+    	<table class="dash_container">
+				<td class="dash_avatar">
 					<%= render_user_avatar(current_user, :small) %>
-				</div>
-				<div class="profile_link">
+				</td>
+				<td class="share_section">
 					<div class="profile_sharelink">
-						Share your profile:
+						Share your profile
 					</div>
-		 			http://truthpage.me/<%= current_user.username %> 
-				</div>
-				
-		
-					<br/>
-				
-				
-				<div id="invite_friends">
-					<strong>Share profile on</strong>
-		    	<%= link_to "", "#", :id => "invite_fb_friends", :class => 'facebook_share' %>
+					<div class="profile_link">
+		 				http://truthpage.me/<%= current_user.username %>
+					</div>
+						<br/>
+					<div id="invite_friends">
+						<strong>Share profile on</strong>
+		    		<%= link_to "", "#", :id => "invite_fb_friends", :class => 'facebook_share' %>
 			
-					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Join truthpage.me and share the truth with your friends" data-size="large" data-count="none">Tweet</a>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-					</script>
-				</div>
-			</div>
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://truthpage.me" data-text="Join truthpage.me and share the truth with your friends" data-size="large" data-count="none">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+						</script>
+					</div>
+				</td>
+			</table>
 
 			<div class="dash_column">
 				<div class="fb_feed_friends">
-					Facebook friends
+					Friends on truthpage
 				</div>
 				<% unless current_user.authentications.empty? %>
 					<% if @registered_friends.empty? %>
@@ -71,25 +68,17 @@
 					<% else %>
 						<div class="fbfriends_box">
   						<% @registered_friends.each do |user| %>
-      					<%= link_to render_user_avatar(user, :thumb), user.username %>
+  							<li>
+      						<%= link_to render_user_avatar(user, :tiny), user.username %>
+      						<%= link_to user.username, user.username, :class => 'followlist_name' %>
+  							</li>
   						<% end %>
 						</div>
 					<% end %>
 				<% else %>
-				  not connected to Facebook
-				<% end %>
-				<div class="fb_feed_header">
-					Facebook friend's posts:
-				</div>
-				<% if current_user.authentications.empty? %>
-					<%= render :partial=>"authentications/services" %>
+				  <%= render :partial=>"authentications/services" %>
 					Connect with Facebook to see your friends on truthpage!
-				<% else %>
-					<div class="fb_feed_container">
-						<%= render 'shared/fbfeed' %>
-					</div>
 				<% end %>
-				
 			</div>
       <div class="dashfeed_title">
         Truth Feed
