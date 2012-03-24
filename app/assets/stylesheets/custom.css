@@ -277,35 +277,35 @@ a:visited {
 .headerlink_place {
 	margin-top:-15px;
 	margin-right:52%;
-	color: #EEE;
+	color: #333;
 }
 header_nav li a {
-	color:#EEE;
+	color:#333;
 }
 nav {
 	margin-top:-30px;
 	float:right;
   padding: 0 0.7em;
   white-space: nowrap;
-	color: #EEE;
+	color: black;
 	font-family:arial;
 }
 
 nav ul {
   margin: 0;
   padding: 0;
-	color: #EEE;
+	color: black;
 }
 
 nav ul li {
-  color: #EEE;
+  color: black;
 	list-style-type: none;
   display: inline-block;
   padding: 0.2em 0;
 }
 
 nav ul li a {
-  color: #333333;
+  color: black;
 	padding: 0 5px;
   font-weight: bold;
 }
@@ -329,6 +329,7 @@ nav ul li a:hover {
 }
 
 footer {
+	color:black;
   text-align: center;
   margin-top: 40px;
   width: 710px;
@@ -337,6 +338,7 @@ footer {
 }
 
 footer nav {
+	color:black;
   float: none;
 }
 
@@ -650,11 +652,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 }
 .signup_header {
 	color:#2A4668;
-<<<<<<< HEAD
-	font-family:bitstream vera serif;
-=======
 	font-family:arial;
->>>>>>> 9572b49ac3e37f49679f912dc581d096b9cd8312
 	font-size: 24pt;
 	margin-left:140px;
 }
@@ -881,7 +879,7 @@ form.new_micropost textarea {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
-.truth-is {
+.profile_feed_header {
 	color:#2A4668;
 	font-family:comic sans ms;
 	font-size:18pt;
@@ -1192,25 +1190,12 @@ table.microposts tr {
 	top:1px;
 }
 
-#custom-tweet-button a {
-  display: block;
-  width:50px;
-  padding: 2px 5px 2px 20px;
-  background: url('http://a4.twimg.com/images/favicon.ico') 1px center no-repeat;
-  border: 1px solid #ccc;
+#custom-tweet-button {
+	color:red;
+	height:30px;
+	width:100px;
 }
-.twitter_share {
-	border:none;
-	display: block;
-	width: 134px; height: 35px;
-	background-image: url('twitter_share.png');
-	background-position: top;
-	text-indent: -9999px;
-}
-.twitter_share:hover {
-	cursor:pointer;
-	background-position: bottom;
-}
+
 .dash_column {
 	float:left;
 	width:243px;
