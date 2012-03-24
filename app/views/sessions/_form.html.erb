@@ -1,0 +1,30 @@
+
+<%= form_for @user, :validate => true, :html=> { :multipart => true} do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  
+  <div class="settings_fields">
+    <div class="formlabel"> Username </div>
+    <%= f.text_field :username, :class =>"formfield" %>
+  </div>
+  <div class="settings_fields">
+    <div class="formlabel"> Email </div>
+    <%= f.text_field :email, :class =>"formfield" %>
+  </div>
+  <div class="settings_fields">
+    <div class="formlabel"> Password </div>
+    <%= f.password_field :password, :class =>"formfield" %>
+  </div>
+  <div class="settings_fields">
+    <div class="formlabel"> Confirm Password </div>
+    <%= f.password_field :password_confirmation, :class =>"formfield" %>
+  </div>
+  <div class="captcha_holder">
+	<%= show_simple_captcha :image_style => 'simply_blue', :label => "(type the words in the image)" %>
+  </div>
+  <div class="signup_condition_link">by clicking sign up you agree to our 
+    <%= link_to "terms of use", terms_path, :class => "footer_links" %>.
+  </div>
+  <div class="save_button">
+    <%= f.submit 'Sign up!', :class => "signup_button" %>
+  </div>
+<% end %>

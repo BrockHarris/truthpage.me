@@ -642,19 +642,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 /********** Signin Page *************/
 
 .signin_header {
-
 	padding-bottom:20px;
 	color:#2A4668;
 	font-family:arial;
 	font-size: 24pt;
-	margin-left:100px;
+	margin-left:120px;
 }
 .signup_header {
-	padding-bottom:20px;
 	color:#2A4668;
-	font-family:verdana;
+	font-family:arial;
 	font-size: 24pt;
-	text-align:center;
+	margin-left:140px;
 }
 .signin_container {
 	padding:10px;
@@ -679,6 +677,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 }
 .signin_button_placement {
 	margin-left:95px;
+}
+.signup_condition_link {
+	color:#666;
+	font-size:9pt;
+	margin-top:20px;
+	margin-left:80px;
+	margin-bottom:-10px;
 }
 .signin_forgotpw {
 	margin-top:-5px;
