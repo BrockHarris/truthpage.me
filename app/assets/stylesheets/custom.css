@@ -605,7 +605,7 @@ footer nav {
 	padding: 0.5em;
    line-height: 1.2em;
    width: 230px;
-   height:24px;
+   height:20px;
    background: #fff;
    background: rgb(238,238,238); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(238,238,238,1) 1%, rgba(255,255,255,1) 85%); /* FF3.6+ */
@@ -634,6 +634,44 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
    outline: none;
 
 }
+.alt_formlabel {
+	color:#666;
+	font-size:12pt;
+}
+
+/********** Signin Page *************/
+
+.signin_header {
+	padding-bottom:20px;
+	color:#2A4668;
+	font-family:helvetica neue;
+	font-size: 24pt;
+	text-align:center;
+}
+.signin_container {
+	padding:10px;
+	background:white;
+	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
+}
+.signin_field {
+	float:right;
+	margin-bottom:10px;
+	margin-right:200px;
+}
+.signin_forgotpw {
+	margin-top:10px;
+	font-size:10pt;
+	float:right;
+}
+.signin_left {
+
+}
+.signin_right {
+	
+}
+
 
 /************* Styles for fancybox **********/
 
@@ -790,7 +828,7 @@ form.new_micropost textarea {
 }
 
 .truth-is {
-	color:#666;
+	color:#2A4668;
 	font-family:comic sans ms;
 	font-size:18pt;
 	padding:10px;
@@ -872,6 +910,7 @@ table.microposts tr {
 	font-family:calibri;
 	margin-top:-3px;
 	padding:2px;
+	color:#666;
 }
 .micropost_userpic {
 	padding:2px;
@@ -879,7 +918,7 @@ table.microposts tr {
 }
 .micropost_username {
 	margin-left:35px;
-	margin-top:-28px;
+	margin-top:-32px;
 	font-size:13pt;
 }
 .micropost_content {
@@ -900,13 +939,10 @@ table.microposts tr {
 	font-family:arial;
 }
 .delete_link {
-	margin-bottom:-27px;
-	margin-left:-47px;
 	font-size:12px;
-	margin-top:50px;
 }
 .micropost_delete {
-	margin-top:50px;
+	float:right;
 }
 .micropost_true_button {
 	margin-right:-3px;
@@ -937,7 +973,13 @@ table.microposts tr {
 	color:#666;
 	font-size:10pt;
 	float:left;
-
+}
+.micropost_accuracy {
+	color:green;
+	font-size:9pt;
+	float:right;
+	margin-right:5px;
+	margin-top:5px;
 }
 .unauth_spacer {
 	height:25px;
@@ -1033,7 +1075,7 @@ table.microposts tr {
 	margin-left:150px;
 }
 .settings_header {
-	color:#666;
+	color:#2A4668;
 	font-family:comic sans ms;
 	font-size: 24pt;
 	text-align:center;

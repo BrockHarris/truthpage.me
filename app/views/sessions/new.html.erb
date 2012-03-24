@@ -1,27 +1,33 @@
-<strong>
-  Sign in with Facebook:
-</strong>
-  <p/>
-<%= render :partial=>"authentications/services" %>
-<div style="clear:both">
+<div class="signin_container">
+  <div class="signin_header">
+    Sign in
+  </div>
+  <table>
+    <td class="signin_left">
+      <%= form_tag sessions_path do %>
+        <div class="signin_field">
+          <label for="username" class="alt_formlabel">Username / Email</label>
+          <%= text_field_tag :login, params[:login], :class => "formfield" %>
+        </div>
+        <div class="signin_field">
+          <label for="password" class="alt_formlabel">Password</label>
+          <%= password_field_tag :password, "", :class => "formfield" %>
+        </div>
+        <%= link_to "Forgot your Password?", assist_url, :id=>"forgot-password", :class =>"signin_forgotpw" %> 
+        <div class="signin_field">
+          <%= submit_tag "Sign in", :class=>'signin_button' %>
+        </div>
+      <% end %>
+    </td>
+    <td class="signin_right">
+      <%= render :partial=>"authentications/services" %>
+      <div style="clear:both"></div>
+    </td>
+  </table>
 </div>
-<p>
-  <strong>
+
+
+<strong>
     Don&rsquo;t use Facebook?
   </strong>
   <%= link_to "Create a truthpage.me account", signup_path %> or login below.
-</p>
-  
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <div class="formlabel"> Username or Email </div>
-    <%= text_field_tag :login, params[:login], :class => "formfield" %>
-  </div>
-  <div class="field">
-    <div class="formlabel"> Password </div>
-    <%= password_field_tag :password, "", :class => "formfield" %>
-  </div>
-<%= link_to "Forgot your Password?", assist_url, :id=>"forgot-password", :class =>"forgot_password" %> 
-<div class="actions"><%= submit_tag "Sign in", :class=>'signin_button' %></div>
-  
-<% end %>

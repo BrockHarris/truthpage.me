@@ -16,7 +16,11 @@
           <%= render_user_avatar(feed_item.user, :tiny) %>
         </div>
         <div class="micropost_username">
-          <%= link_to feed_item.user.username, feed_item.user %>  > <%= link_to feed_item.target_user.username, feed_item.target_user %>
+          <%= link_to feed_item.user.username, feed_item.user %>  > 
+          
+            <%= render_user_avatar(feed_item.target_user, :tiny) %>
+          
+          <%= link_to feed_item.target_user.username, feed_item.target_user %>
           <div class="micropost_timestamp">
             <%= time_ago_in_words(feed_item.created_at) %> ago.
           </div>
@@ -50,17 +54,21 @@
       <%= f.submit 'false', :class => 'micropost_false_button'%> 
       <%= render_false_ratings(feed_item) %>
     <% end %>   
-   </div>
-
+  </div>
+  <div class="micropost_accuracy">
+    <% unless feed_item.ratings.trues.empty? %>
+      <%=  number_to_percentage(feed_item.ratings.trues.count.to_f / feed_item.ratings.count*100, :precision => 0) %> accuracy
+    <% end %>
+    
+  </div>
+  <% if current_user = (feed_item.user) %>
+        <div class="micropost_delete">   
+          <%= render_micropost_delete(feed_item) %>
+        </div>
+    <% end %>
 <% else %>
   <div class="unauth_spacer"> </div>
 <% end %>
   </td>
-    <% if current_user = (feed_item.user) %>
-      <td> 
-        <div class="micropost_delete">   
-          <%= render_micropost_delete(feed_item) %>
-        </div>
-      </td>
-    <% end %>
+    
 </tr>

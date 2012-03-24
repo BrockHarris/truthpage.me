@@ -28,33 +28,37 @@
       <%= micropost.content %>
     </div>
     <% if current_user %>
-    <div class="micropost_true">
-    
-    <%= form_for @rating do |f| %>
-    <%= render 'shared/error_messages', :object => f.object %>
-      <%= f.hidden_field :micropost_id, :value => micropost.id %>
-      <%= f.hidden_field :owner_id, :value => micropost.belongs_to_id %>
-      <%= f.hidden_field :rater_id, :value => current_user.id %>
-      <%= f.hidden_field :rating, :value => "true" %>
-      <%= f.submit 'true', :class => 'micropost_true_button'%>
-        <%= render_true_ratings(micropost)  %>
-    <% end %>
-    </div>
-    <div class="micropost_false">
-    <%= form_for @rating do |f| %>
-    <%= render 'shared/error_messages', :object => f.object %>
-      <%= f.hidden_field :micropost_id, :value => micropost.id %>
-      <%= f.hidden_field :owner_id, :value => micropost.belongs_to_id %>
-      <%= f.hidden_field :rater_id, :value => current_user.id %>
-      <%= f.hidden_field :rating, :value => "false" %>
-      <%= f.submit 'false', :class => 'micropost_false_button'%> 
-      <%= render_false_ratings(micropost) %>
-    <% end %>   
-   </div>
+      <div class="micropost_true">
+        <%= form_for @rating do |f| %>
+          <%= render 'shared/error_messages', :object => f.object %>
+          <%= f.hidden_field :micropost_id, :value => micropost.id %>
+          <%= f.hidden_field :owner_id, :value => micropost.belongs_to_id %>
+          <%= f.hidden_field :rater_id, :value => current_user.id %>
+          <%= f.hidden_field :rating, :value => "true" %>
+          <%= f.submit 'true', :class => 'micropost_true_button'%>
+          <%= render_true_ratings(micropost)  %>
+        <% end %>
+      </div>
+      <div class="micropost_false">
+        <%= form_for @rating do |f| %>
+          <%= render 'shared/error_messages', :object => f.object %>
+          <%= f.hidden_field :micropost_id, :value => micropost.id %>
+          <%= f.hidden_field :owner_id, :value => micropost.belongs_to_id %>
+          <%= f.hidden_field :rater_id, :value => current_user.id %>
+          <%= f.hidden_field :rating, :value => "false" %>
+          <%= f.submit 'false', :class => 'micropost_false_button'%> 
+          <%= render_false_ratings(micropost) %>
+        <% end %>   
+      </div>
+      <div class="micropost_accuracy">
+        <% unless micropost.ratings.trues.empty? %>
+          <%=  number_to_percentage(micropost.ratings.trues.count.to_f / micropost.ratings.count*100, :precision => 0) %> accuracy
 
-<% else %>
-  <div class="unauth_spacer"> </div>
-<% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="unauth_spacer"></div>
+    <% end %>
   </td>
     <% if current_user = (micropost.user) %>
       <td> 
@@ -62,5 +66,5 @@
           <%= render_micropost_delete(micropost) %>
         </div>
       </td>
-    <% end %>
+  <% end %>
 </tr>
