@@ -873,14 +873,20 @@ form.new_micropost textarea {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
-.profile_feed_header {
-	color:#2A4668;
-	font-family:georgia;
+.truth-is {
+	color:#666;
+	font-family:comic sans ms;
 	font-size:18pt;
 	padding:10px;
 	text-align:center;
 }
-
+.profile_feed_header {
+	color:#666;
+	font-size:18pt;
+	font-family: georgia;
+	text-align:center;
+	padding:10px;
+}
 .profile_side {
 	float:left;
 	padding-left:10px;
@@ -1152,6 +1158,7 @@ table.microposts tr {
 
 
 .facebook_share {
+	margin-left:100px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #8ca6db;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #8ca6db;
 	box-shadow:inset 0px 1px 0px 0px #8ca6db;
@@ -1184,10 +1191,39 @@ table.microposts tr {
 	top:1px;
 }
 
-#custom-tweet-button {
-	color:red;
-	height:30px;
-	width:100px;
+
+.custom-tweet-button {
+	margin-left:10px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ade9ff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ade9ff;
+	box-shadow:inset 0px 1px 0px 0px #ade9ff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7dd7f5), color-stop(1, #22a0c7) );
+	background:-moz-linear-gradient( center top, #7dd7f5 5%, #22a0c7 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7dd7f5', endColorstr='#22a0c7');
+	background-color:#7dd7f5;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #2892ad;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #154f6e;
+}
+.custom-tweet-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #57c2e6), color-stop(1, #2589a8) );
+	background:-moz-linear-gradient( center top, #57c2e6 5%, #2589a8 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#57c2e6', endColorstr='#2589a8');
+	background-color:#57c2e6;
+	cursor:pointer;
+}
+.custom-tweet-button:active {
+	position:relative;
+	top:1px;
 }
 
 .dash_column {
@@ -1226,11 +1262,9 @@ table.microposts tr {
 .profile_link {
 	font-size:16pt;
 	font-family:arial;
-	background:#D6EBFF;
 	text-align:center;
 	padding:5px;
 	margin-bottom:5px;
-	border:1px solid #CCC;
 }
 .profile_sharelink {
 	font-size:20pt;
@@ -1302,6 +1336,15 @@ table.microposts tr {
 .fbfriends_box {
 	margin-left:14px;
 }
+.fbfriend_block {
+	float:left;
+	padding-right:5px;
+}
+.fbfriend_username {
+	font-size:9px;
+	width:50px;
+	overflow:hidden;
+}
 .fb_feed {
 	width:100%;
 	padding-bottom:10px;
@@ -1312,7 +1355,6 @@ table.microposts tr {
 }
 .fb_feed_users {
 	width:230px;
-	white-space:nowrap;
 	overflow:hidden;
 	font-family:arial;
 	font-size:12pt;

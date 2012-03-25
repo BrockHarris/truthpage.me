@@ -31,6 +31,15 @@
 		});
 	});
 </script>
+<script type="text/javascript">
+
+function tweetpopup() {
+
+window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.username %>&text=send%20me%20a%20truth%20on%20truthpage.me%20<%= root_url%><%= current_user.username %>&count=none/", "tweet", "height=450,width=550,resizable=1" ) 
+
+}
+
+</script>
 		  	
 <table class="front" summary="for authenticated users">
   <tr>
@@ -48,19 +57,16 @@
 					</div>
 						<br/>
 					<div id="invite_friends">
-						
 		    		<%= link_to "Share on Facebook", "#", :id => "invite_fb_friends", :class => 'facebook_share', :style=>'color:#FFFFFF;' %>
-						
-						<div id="custom-tweet-button">
-							<a href="http://twitter.com/share?url=http://www.djavupixel.com/design/wallpapers/stunning-apple-ipad/&text=truth is?&count=horiztonal" target="_blank" rel="nofollow"></a>
-						</div>
+					
+						<a href="http://twitter.com/share?url=url_you_wish_the_tweet_to_link_back_to&text=the%20text%20you%20wish%20the%20tweet%20to%20say&count=none/" class="custom-tweet-button" target="_blank" onClick="tweetpopup(); return false;" rel="nofollow" style="color:#FFFFFF;">Share on Twitter</a>
 					</div>
 				</td>
 			</table>
 
 			<div class="dash_column">
 				<div class="fb_feed_friends">
-					Friends on truthpage
+					Friends on truthpage.me
 				</div>
 				<% unless current_user.authentications.empty? %>
 					<% if @registered_friends.empty? %>
@@ -68,10 +74,10 @@
 					<% else %>
 						<div class="fbfriends_box">
   						<% @registered_friends.each do |user| %>
-  							<li>
-      						<%= link_to render_user_avatar(user, :tiny), user.username %>
-      						<%= link_to user.username, user.username, :class => 'followlist_name' %>
-  							</li>
+  							<div class="fbfriend_block">
+      						<%= link_to render_user_avatar(user, :thumb), user.username %>
+      						<div class="fbfriend_username"><%= link_to user.username, user.username %></div>
+  							</div>
   						<% end %>
 						</div>
 					<% end %>
