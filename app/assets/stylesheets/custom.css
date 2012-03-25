@@ -990,11 +990,21 @@ table.microposts tr {
 	margin-right:5px;
 	font-family:arial;
 }
+
 .delete_link {
-	font-size:12px;
-}
-.micropost_delete {
+	margin-top:-12px;
+	margin-left:7px;
 	float:right;
+	border:none;
+	display: block;
+	width: 14px; height: 14px;
+	background-image: url('post_delete.png');
+	background-position: top;
+	text-indent: -9999px;
+}
+.delete_link:hover {
+	cursor:pointer;
+	background-position: bottom;
 }
 .micropost_true_button {
 	margin-right:-3px;

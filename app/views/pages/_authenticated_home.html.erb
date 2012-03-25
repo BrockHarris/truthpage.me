@@ -13,9 +13,9 @@
 		FB.ui( {
 			method: 'feed',
 			message: 'message here',
-			name: 'Whats the truth about your friends?',
-			caption: 'Join me on truthpage.me to find out!',
-			link: '<%= user_url(current_user) %>',
+			name: 'Post a truth about me on truthpage.me!',
+			caption: 'truthpage.me/<%= current_user.username %>',
+			link: '<%= root_url%><%= current_user.username %>',
 			picture: '<%= root_url%>images/wallpost_image.jpg',
 			actions: [
 				{ name: 'truthpage.me', link: 'http://www.truthpage.me' }
