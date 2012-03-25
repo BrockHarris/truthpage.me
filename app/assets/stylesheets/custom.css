@@ -1415,75 +1415,43 @@ table.microposts tr {
 
 /************* Unauthenticated Home *************/
 
-.hero-unit {
-  padding: 15px;
+.header_box {
+  padding:15px;
   margin-bottom: 30px;
   background-color: #f5f5f5;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
-.hero-unit h1 {
+.header_box h1 {
   margin-bottom: 0;
   font-size: 40px;
   line-height: 1;
   letter-spacing: -1px;
 }
-.hero-unit p {
+.header_box p {
   font-size: 18px;
   font-weight: 200;
   line-height: 27px;
 }
-
-
-
 .fblike {
 	width: 50%;
 	margin-bottom: -20px;
 	margin-top: 30px;
 }
-.signin_container1 {
-	float:left;
-	margin-left:50px;
-}
-.signin_container2 {
-	float:right;
-	margin-right:100px;
-	margin-top:-40px;
-}
-.signin_font1 {
-	font-size: 20pt;
-	margin-top: 20px;
-	margin-bottom: 5px;
-	font-weight:500;
-	color: #EEE;
-	text-shadow: 1px 1px 1px gray;
-	filter: dropshadow(color=gray, offx=1, offy=1);
-}
-.signin_font2 {
-	font-size: 20pt;
-	margin-top: 60px;
-	margin-bottom: 5px;
-	font-weight:500;
-	color: #EEE;
-	text-shadow: 1px 1px 1px gray;
-	filter: dropshadow(color=gray, offx=1, offy=1);
-}
 .ticker_header{
-	float:left;
-	margin-top:120px;
+	margin-left:160px;
+	margin-top:20px;
 	margin-bottom:10px;
-	font-size: 17pt;
-	font-family: Comic Sans MS;
-	color:#EEE;
+	font-size: 18pt;
+	font-family: Georgia;
+	color:#666;
 }
-
 #vertical-ticker{
-	margin-left:130px;
-	height:600px;
-	width:595px;
+	height:640px;
+	width:580px;
 	padding-bottom:10px;
-	padding-left:15px;
+	padding-left:12px;
 	background: rgb(30,87,153); /* Old browsers */
 	background: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(232,232,232,1) 0%, rgba(206,206,206,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(0%,rgba(232,232,232,1)), color-stop(100%,rgba(206,206,206,1))); /* Chrome,Safari4+ */
@@ -1492,14 +1460,10 @@ table.microposts tr {
 	background: -ms-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(232,232,232,1) 0%,rgba(206,206,206,1) 100%); /* IE10+ */
 	background: linear-gradient(top, rgba(30,87,153,1) 0%,rgba(232,232,232,1) 0%,rgba(206,206,206,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#cecece',GradientType=0 ); /* IE6-9 */
-
 }
-
-
 #vertical-ticker li{
-	float:left;
 	height:80px;
-	width:580px;
+	width:560px;
 	overflow:hidden;
   display:block;
   background:#fff;
@@ -1538,6 +1502,20 @@ table.microposts tr {
 	float:left;
 	margin-left: 4px;
 }	
+.home_facepile_box {
+	margin-top:-620px;
+	float:right;
+	width:230px;
+	padding:4px;
+	background-color: #f5f5f5;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.home_facepile_box h1 {
+	color:blue;
+	font-family:arial;
+}
 
 table.profile {
   width: 100%;
@@ -1549,19 +1527,6 @@ td.main {
   padding: 1em;
 }
 
-
-.home_email{
-	margin-left: 38px;
-	margin-top:30px;
-	vertical-align:top;	
-}
-.home_password{
-	margin-top: 5px;
-}
-.home_submit {
-	margin-left: 120px;
-	
-}
 .signin_button {
 	margin-left:40px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #99d6ff;
@@ -1792,7 +1757,7 @@ color: #333333;
   text-align:center;
   height:25px;
 	width:340px;
-	background-color:rgba(36,36,36,0.5);
+	background-color:rgba(10,10,10,0.5);
   border: solid 1px #666;
   -webkit-border-radius: 5px;
 	-moz-border-radius: 5px;

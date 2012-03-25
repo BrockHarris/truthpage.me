@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 skip_before_filter :verify_authenticity_token
   def home
+    @faces = User.all(:limit => 28)
     @users = User.all
     @title = "Truthpage.me"
     if current_user
@@ -17,6 +18,10 @@ skip_before_filter :verify_authenticity_token
     end
   end
   
+  def welcome_page
+    @title = "Welcome!"
+  end
+
   def legal
     @title = "Truthpage.me | Legal"
   end

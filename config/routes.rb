@@ -5,6 +5,7 @@ Truthpage::Application.routes.draw do
   match '/newlogin', :to => 'sessions#JScreate'
   match '/signout', :to => 'sessions#destroy'
   match '/signup', :to => 'users#new'
+  match '/welcome', :to => 'pages#welcome_page'
   match '/contact', :to => 'pages#contact'
   match '/home',   :to => 'pages#home'
   match '/about',  :to => 'pages#about'

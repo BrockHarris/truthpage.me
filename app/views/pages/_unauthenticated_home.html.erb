@@ -25,17 +25,13 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="hero-unit">
+<div class="header_box">
   <h1>Get a truth about yourself, from your friends.</h1>
   <p>truthpage.me makes it fun and easy to share truth statuses with your friends.</p>
-  <p>
-    <a class="btn btn-primary btn-large">
-      Join the fun
-    </a>
-  </p>
 </div>
 
-<div class="ticker_header">truths shared so far...
+<div class="ticker_header">
+  truths shared so far...
 </div>
 	
 <ul id="vertical-ticker" style="overflow-x: hidden; overflow-y: hidden; ">
@@ -43,6 +39,20 @@
     <li><%= render :partial=>"microposts/ticker_micropost", :locals=>{:micropost=>mp} %></li>
   <% end %>
 </ul>
+
+<div class="home_facepile">
+  <div class="home_facepile_box">
+    <h1>Recently Joined:</h1>
+    <% @faces.each do |user| %>
+      <div class="fbfriend_block">
+        <%= link_to render_user_avatar(user, :thumb), user.username %>
+        <div class="fbfriend_username"><%= link_to user.username, user.username %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
 
 <div class="fblike">
   <g:plusone annotation="inline">
