@@ -11,11 +11,10 @@
   <body>
     <%= render 'layouts/header' unless @skip_render %>
     <%= render 'layouts/admin_header' if @render_admin_header %>
+      
       <div class="container">
 	      <section class="round">
-	      <% flash.each do |key, value| %>
-	        <div id="flash" class="<%= key %>"><%= value %></div>
-	      <% end %>
+	      
 	      <%= yield %>
 	    </section>
       <%= render 'layouts/footer' unless @skip_render %>

@@ -1,6 +1,10 @@
 
 <script type="text/javascript">
   $(function(){
+    $('#flash').delay(2000).fadeIn('normal', function() {
+      $(this).delay(2000).fadeOut();
+   });
+
     $("#signin").fancybox({
       'transitionIn'    :    'elastic',
       'transitionOut'    :    'elastic',
@@ -25,6 +29,7 @@
     <%= link_to "truthpage.me", root_path %>
   </li>
 </ul>
+
   <nav class="round">
     <ul class="header_nav">
       <div class="headerlink_place">
@@ -71,5 +76,8 @@
       </div>
     <% end %>
   <% end %>
+  <% flash.each do |key, value| %>
+          <div id="flash" class="<%= key %>"><%= value %></div>
+        <% end %>
 </div>
 

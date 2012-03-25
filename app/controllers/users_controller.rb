@@ -46,7 +46,7 @@ class UsersController < ApplicationController
         render :action => 'new'
       end
     else
-       flash[:error] = "The characters you entered in the captcha don't match, please try again."
+       flash[:error] = "There was a problem with your info, try again."
        redirect_to signin_path
     end
   end
