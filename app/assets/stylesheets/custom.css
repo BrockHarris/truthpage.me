@@ -1743,23 +1743,29 @@ color: #333333;
 }
 
 #flash {
-	font-size:11pt;
+	margin-top:-48px;
+	z-index:0;
+	font-size:10pt;
+	font-family:arial;
   padding: 10px;
   margin-left: auto;
 	margin-right:auto;
   text-align:center;
-	margin-bottom:20px;
-	width: 70%;
+  height:25px;
+	width:340px;
+	background-color:rgba(36,36,36,0.5);
+  border: solid 1px #666;
+  -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 #flash.notice {
-  background-color: #99ccff;
-  border: solid 1px #3388ff;
+
 }
 
 #flash.error, #flash.alert{
-  background-color: #FCC;
-  border: solid 1px #C66;
+  
 }
 
 input.readonly{background:#ccc;}
