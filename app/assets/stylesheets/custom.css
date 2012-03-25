@@ -881,7 +881,7 @@ form.new_micropost textarea {
 
 .profile_feed_header {
 	color:#2A4668;
-	font-family:comic sans ms;
+	font-family:georgia;
 	font-size:18pt;
 	padding:10px;
 	text-align:center;
@@ -976,7 +976,7 @@ table.microposts tr {
 .micropost_content {
 	border-bottom:1px solid #EEE;
 	font-family:calibri;
-	margin-top:-15px;
+	margin-top:-10px;
 	padding-bottom:6px;
 	padding-right:8px;
 	padding-left:5px;
@@ -1271,6 +1271,7 @@ table.microposts tr {
 	font-weight:500;
 	color:#2764A2;
 	font-size:24pt;
+	font-family:georgia;
 	padding:10px;
 	text-align:center;
 }
@@ -1278,7 +1279,7 @@ table.microposts tr {
 	width:550px;
 	color:#666;
 	font-size:18pt;
-	font-family:comic sans ms;
+	font-family: georgia;
 	text-align:center;
 	background:white;
 	margin-top:10px;
