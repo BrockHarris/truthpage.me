@@ -6,7 +6,9 @@
           <%= image_tag("genericpic-tiny.jpg") %> 
         </div>
         <div class="micropost_username">
-          Anonymous  > <%= link_to feed_item.target_user.username, feed_item.target_user %>
+          Anonymous  >
+          <%= render_user_avatar(feed_item.target_user, :tiny) %>
+           <%= link_to feed_item.target_user.username, feed_item.target_user %>
           <div class="micropost_timestamp">
             <%= time_ago_in_words(feed_item.created_at) %> ago.
             <% if current_user = (feed_item.user) %>

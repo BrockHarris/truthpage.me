@@ -30,9 +30,9 @@ module ApplicationHelper
   #TODO: include all helpers in app_ctrlr.rb and move these to the microposts helper module. 
   def render_feed_stamp(micropost)
     if micropost.try(:anon?)
-  	  "anonymously shared with #{link_to(micropost.target_user.username, micropost.target_user.username)}".html_safe
+  	  "Someone > #{link_to(micropost.target_user.username, micropost.target_user.username)}".html_safe
   	 else
-    "#{link_to(micropost.user.username, micropost.user.username)} shared with #{link_to(micropost.target_user.username, micropost.target_user.username)}".html_safe
+    "#{link_to(micropost.user.username, micropost.user.username)} > #{link_to(micropost.target_user.username, micropost.target_user.username)}".html_safe
    end
   end
   

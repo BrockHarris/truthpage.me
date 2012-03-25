@@ -16,7 +16,7 @@
   	<% if current_user %>
   		<%= f.submit 'Send', :class => 'submitpost'%>
   	<% else %>
-  		<%= link_to 'Send', login_path, :id => 'authenticate', :class => 'submitpost' %>
+  		<%= link_to 'Send', login_path, :id => 'authenticate', :class => 'submitpost', :style=>'color:#FFFFFF;' %>
   	<% end %>
   </div>
 <% end %>

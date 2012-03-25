@@ -830,22 +830,19 @@ form.new_micropost {
 form.new_micropost textarea:focus {
 	line-height: 1.2em;
 	background: #fff;
-   background: rgb(238,238,238); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(238,238,238,1) 1%, rgba(255,255,255,1) 85%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(238,238,238,1)), color-stop(85%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* IE10+ */
-background: linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-
+  background: rgb(238,238,238); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(238,238,238,1) 1%, rgba(255,255,255,1) 85%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(238,238,238,1)), color-stop(85%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* IE10+ */
+	background: linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 	-webkit-box-shadow: 0px 0px 3px 1px #30B2D6;
 	-moz-box-shadow: 0px 0px 3px 1px #30B2D6;
 	box-shadow: 0px 0px 3px 1px #30B2D6;
-
-   border: 1px solid #30B2D6;
-   outline: none;
-
+  border: 1px solid #30B2D6;
+  outline: none;
 }
 
 
@@ -1450,29 +1447,33 @@ table.microposts tr {
 }
 
 #vertical-ticker{
-	float:left;
-	margin-left: 130px;
-	height:550px;
-	width: 560px;
-  overflow:hidden;
-  box-shadow: 0 0 6px 2px #999;
-	background:#004B71;
-	border-radius: 6px; 
-	border-bottom: 1px solid #EEE;
-	-moz-border-radius: 6px; 
-	-webkit-border-radius: 6px;
+	margin-left:130px;
+	height:600px;
+	width:595px;
+	padding-bottom:10px;
+	padding-left:15px;
+	background: rgb(30,87,153); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(232,232,232,1) 0%, rgba(206,206,206,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(0%,rgba(232,232,232,1)), color-stop(100%,rgba(206,206,206,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(232,232,232,1) 0%,rgba(206,206,206,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(232,232,232,1) 0%,rgba(206,206,206,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(232,232,232,1) 0%,rgba(206,206,206,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(30,87,153,1) 0%,rgba(232,232,232,1) 0%,rgba(206,206,206,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#cecece',GradientType=0 ); /* IE6-9 */
+
 }
+
 
 #vertical-ticker li{
 	float:left;
-	margin-left:-40px;
 	height:80px;
-	width:600px;
+	width:580px;
 	overflow:hidden;
   display:block;
-  background:#efefef;
+  background:#fff;
   color:#000;
-	border-top:1px solid #ddd;
+	padding:4px;
+	margin-bottom:5px;
   text-align:left;
   font-size:13px;
   font-weight:normal;
@@ -1480,19 +1481,19 @@ table.microposts tr {
   webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	border-bottom: 1px solid #0081C2;
+	-webkit-box-shadow: 0px 1px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 1px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 1px 3px rgba(50, 50, 50, 0.9);
+
 }
 #vertical-ticker li img {
 	vertical-align:middle;
 	margin-top:3px;
 	}
 .ticker_content {
-	vertical-align:top;
-	overflow:hidden;
-	color:black;
-	margin-left: 10px;
-	float: left;
-	font-size:13px;
+	margin-top:-10px;
+	font-size:11pt;
+	font-family:arial;
 }
 .ticker_user {
 	float: left;
