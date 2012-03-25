@@ -1190,10 +1190,38 @@ table.microposts tr {
 	top:1px;
 }
 
-#custom-tweet-button {
-	color:red;
-	height:30px;
-	width:100px;
+
+.custom-tweet-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ade9ff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ade9ff;
+	box-shadow:inset 0px 1px 0px 0px #ade9ff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7dd7f5), color-stop(1, #22a0c7) );
+	background:-moz-linear-gradient( center top, #7dd7f5 5%, #22a0c7 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7dd7f5', endColorstr='#22a0c7');
+	background-color:#7dd7f5;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #2892ad;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #154f6e;
+}
+.custom-tweet-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #57c2e6), color-stop(1, #2589a8) );
+	background:-moz-linear-gradient( center top, #57c2e6 5%, #2589a8 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#57c2e6', endColorstr='#2589a8');
+	background-color:#57c2e6;
+	cursor:pointer;
+}
+.custom-tweet-button:active {
+	position:relative;
+	top:1px;
 }
 
 .dash_column {
