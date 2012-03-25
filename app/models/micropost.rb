@@ -34,7 +34,7 @@ class Micropost < ActiveRecord::Base
   
   private
 
-    # Return an SQL condition for users followed by the given user.
+    # Return a SQL condition for users followed by the given user.
     # We include the user's own id as well.
     def self.followed_by(user)
       following_ids = %(SELECT followed_id FROM relationships

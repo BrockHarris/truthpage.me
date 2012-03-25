@@ -26,12 +26,13 @@
 </script>
 
 <div class="header_box">
-  <h1>Get a truth about yourself, from your friends.</h1>
-  <p>truthpage.me makes it fun and easy to share truth statuses with your friends.</p>
+  	<h1>Get a truth about yourself, from your friends.</h1>
+  	<p>truthpage.me makes it fun and easy to share truths with your friends. rate your friends' truths. see how accurate their 		statements really are.</p>
+<%= link_to "Sign in", login_path, :id =>"signin", :class =>"header_links" %>
 </div>
 
 <div class="ticker_header">
-  truths shared so far...
+  truths being shared on truthpage.me
 </div>
 	
 <ul id="vertical-ticker" style="overflow-x: hidden; overflow-y: hidden; ">
@@ -42,7 +43,7 @@
 
 <div class="home_facepile">
   <div class="home_facepile_box">
-    <h1>Recently Joined:</h1>
+    <h1>Recently joined</h1>
     <% @faces.each do |user| %>
       <div class="fbfriend_block">
         <%= link_to render_user_avatar(user, :thumb), user.username %>
