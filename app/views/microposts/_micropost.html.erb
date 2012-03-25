@@ -9,6 +9,9 @@
           Anonymous
           <div class="micropost_timestamp">
             <%= time_ago_in_words(micropost.created_at) %> ago.
+            <% if current_user = (micropost.user) %>
+              <%= render_micropost_delete(micropost) %>
+            <% end %>
           </div>
         </div>
       <% else %>
@@ -19,6 +22,9 @@
           <%= link_to micropost.user.username, micropost.user %>
           <div class="micropost_timestamp">
             <%= time_ago_in_words(micropost.created_at) %> ago.
+            <% if current_user = (micropost.user) %>
+              <%= render_micropost_delete(micropost) %>
+            <% end %>
           </div>
         </div>  
       <% end %>
@@ -52,19 +58,11 @@
       </div>
       <div class="micropost_accuracy">
         <% unless micropost.ratings.trues.empty? %>
-          <%=  number_to_percentage(micropost.ratings.trues.count.to_f / micropost.ratings.count*100, :precision => 0) %> true
-
+          <%= number_to_percentage(micropost.ratings.trues.count.to_f / micropost.ratings.count*100, :precision => 0) %> true
         <% end %>
       </div>
     <% else %>
       <div class="unauth_spacer"></div>
     <% end %>
   </td>
-    <% if current_user = (micropost.user) %>
-      <td> 
-        <div class="micropost_delete">   
-          <%= render_micropost_delete(micropost) %>
-        </div>
-      </td>
-  <% end %>
 </tr>

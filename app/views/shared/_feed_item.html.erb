@@ -9,6 +9,9 @@
           Anonymous  > <%= link_to feed_item.target_user.username, feed_item.target_user %>
           <div class="micropost_timestamp">
             <%= time_ago_in_words(feed_item.created_at) %> ago.
+            <% if current_user = (feed_item.user) %>
+              <%= render_micropost_delete(feed_item) %>
+            <% end %>
           </div>
         </div>
       <% else %>
@@ -23,7 +26,11 @@
           <%= link_to feed_item.target_user.username, feed_item.target_user %>
           <div class="micropost_timestamp">
             <%= time_ago_in_words(feed_item.created_at) %> ago.
+            <% if current_user = (feed_item.user) %>
+              <%= render_micropost_delete(feed_item) %>
+            <% end %>
           </div>
+
         </div>  
       <% end %>
     </div>
@@ -61,11 +68,7 @@
     <% end %>
     
   </div>
-  <% if current_user = (feed_item.user) %>
-        <div class="micropost_delete">   
-          <%= render_micropost_delete(feed_item) %>
-        </div>
-    <% end %>
+  
 <% else %>
   <div class="unauth_spacer"> </div>
 <% end %>

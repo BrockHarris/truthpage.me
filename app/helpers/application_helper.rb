@@ -10,7 +10,7 @@ module ApplicationHelper
   def render_false_ratings(micropost)
     "#{micropost.ratings.falses.count}".html_safe
   end
-  
+
   def render_user_avatar(user, size=:small, opts={})
     if user.photo.exists?
       return image_tag user.photo.url(size)
@@ -42,8 +42,8 @@ module ApplicationHelper
 
   def render_micropost_delete(micropost)
     #assuming that an admin or the creator can delete his own post. What about the target, can he?
-    if current_user && (current_user.admin? || current_user==micropost.user)
-      label = current_user.admin? ? "administrator delete" : "delete"
+    if current_user && (current_user==micropost.target_user || current_user==micropost.user)
+      label = ""
       link_to label, micropost, :method => :delete,
                                 :confirm => "are you sure you want to delete this?",
                                 :title => micropost.content, 
