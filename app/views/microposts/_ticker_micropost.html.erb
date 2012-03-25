@@ -1,22 +1,38 @@
 <tr>
   <td class="micropost">
-	  <span class="micropost_pic">
-			<% if micropost.try(:anon?) %>
-				<%= image_tag("genericpic-thumb.jpg") %>
-			<% else %>
-		 		<%= render_user_avatar(micropost.user, :thumb) %>
-			<% end %>
-		</span>
-    <span class="micropost_header">
-	 		<% if micropost.try(:anon?) %>
-	  		anonymously shared with <%= micropost.target_user.username%>
-	 		<% else %>
-      	<%= render_feed_stamp(micropost) %>
-	 		<% end %>
-    </span>
-			<br/>
-    <span class="micropost_content"> 
-    	<%= micropost.content %>
-    </span>
+    <div class="micropost_header">
+      <% if micropost.try(:anon?) %>
+        <div class="micropost_userpic">
+          <%= image_tag("genericpic-tiny.jpg") %> 
+        </div>
+        <div class="micropost_username">
+          Anonymous  > 
+          <%= render_user_avatar(micropost.target_user, :tiny) %>
+          <%= link_to micropost.target_user.username, micropost.target_user %>
+          
+          
+        </div>
+      <% else %>
+        <div class="micropost_userpic">
+          <%= render_user_avatar(micropost.user, :tiny) %>
+        </div>
+        <div class="micropost_username">
+          <%= link_to micropost.user.username, micropost.user %>  > 
+          
+            <%= render_user_avatar(micropost.target_user, :tiny) %>
+          
+          <%= link_to micropost.target_user.username, micropost.target_user %>
+          
+
+        </div>  
+      <% end %>
+    </div>
+      <br/>
+    <div class="ticker_content"> 
+      <%= micropost.content %>
+    </div>
+    
+      <div class="unauth_spacer"></div>
+    
   </td>
 </tr>
