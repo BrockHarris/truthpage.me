@@ -969,7 +969,7 @@ table.microposts tr td.micropost {
 	width: 545px;
 	background:white;
 	padding-top:4px;
-	margin-right:5px;
+	margin-right:10px;
 	webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -981,7 +981,7 @@ table.microposts {
 	float:right;
 	width: 570px;
 	margin-top:12px;
-	padding-bottom:5px;
+	padding-bottom:10px;
 	background: rgb(30,87,153); /* Old browsers */
 	background: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(232,232,232,1) 0%, rgba(206,206,206,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(0%,rgba(232,232,232,1)), color-stop(100%,rgba(206,206,206,1))); /* Chrome,Safari4+ */
@@ -1758,7 +1758,6 @@ color: #333333;
   height:25px;
 	width:340px;
 	background-color:rgba(10,10,10,0.5);
-  border: solid 1px #666;
   -webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
