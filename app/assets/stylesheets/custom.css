@@ -80,7 +80,7 @@ body {
   background-color: #E8E8E8;
 }
 
-/************** header *******************/
+/** header **/
 
 .header_bar {
 	color: #EEE;
@@ -1416,7 +1416,7 @@ table.microposts tr {
 /************* Unauthenticated Home *************/
 
 .header_box {
-  padding:15px;
+  padding:10px;
   margin-bottom: 30px;
   background-color: #f5f5f5;
   -webkit-border-radius: 6px;
@@ -1428,11 +1428,13 @@ table.microposts tr {
   font-size: 40px;
   line-height: 1;
   letter-spacing: -1px;
+	text-align: center;
 }
 .header_box p {
   font-size: 18px;
   font-weight: 200;
   line-height: 27px;
+	text-align: center;
 }
 .fblike {
 	width: 50%;
@@ -1444,8 +1446,9 @@ table.microposts tr {
 	margin-top:20px;
 	margin-bottom:10px;
 	font-size: 18pt;
-	font-family: Georgia;
-	color:#666;
+	font-family: helvetica neue;
+	margin-left: 90px;
+	color:#26568D;
 }
 #vertical-ticker{
 	height:640px;
@@ -1503,7 +1506,7 @@ table.microposts tr {
 	margin-left: 4px;
 }	
 .home_facepile_box {
-	margin-top:-620px;
+	margin-top:-650px;
 	float:right;
 	width:230px;
 	padding:4px;
@@ -1513,8 +1516,10 @@ table.microposts tr {
   border-radius: 6px;
 }
 .home_facepile_box h1 {
-	color:blue;
-	font-family:arial;
+	color:#26568D;
+	font-family:helvetica neue;
+	text-align: center;
+	margin-top: 3px;
 }
 
 table.profile {
