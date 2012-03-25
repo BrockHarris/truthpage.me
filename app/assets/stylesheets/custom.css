@@ -879,14 +879,20 @@ form.new_micropost textarea {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
-.profile_feed_header {
-	color:#2A4668;
-	font-family:georgia;
+.truth-is {
+	color:#666;
+	font-family:comic sans ms;
 	font-size:18pt;
 	padding:10px;
 	text-align:center;
 }
-
+.profile_feed_header {
+	color:#666;
+	font-size:18pt;
+	font-family: georgia;
+	text-align:center;
+	padding:10px;
+}
 .profile_side {
 	float:left;
 	padding-left:10px;
@@ -1158,6 +1164,7 @@ table.microposts tr {
 
 
 .facebook_share {
+	margin-left:100px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #8ca6db;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #8ca6db;
 	box-shadow:inset 0px 1px 0px 0px #8ca6db;
@@ -1192,6 +1199,7 @@ table.microposts tr {
 
 
 .custom-tweet-button {
+	margin-left:10px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #ade9ff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ade9ff;
 	box-shadow:inset 0px 1px 0px 0px #ade9ff;
@@ -1260,11 +1268,9 @@ table.microposts tr {
 .profile_link {
 	font-size:16pt;
 	font-family:arial;
-	background:#D6EBFF;
 	text-align:center;
 	padding:5px;
 	margin-bottom:5px;
-	border:1px solid #CCC;
 }
 .profile_sharelink {
 	font-size:20pt;
@@ -1336,6 +1342,15 @@ table.microposts tr {
 .fbfriends_box {
 	margin-left:14px;
 }
+.fbfriend_block {
+	float:left;
+	padding-right:5px;
+}
+.fbfriend_username {
+	font-size:9px;
+	width:50px;
+	overflow:hidden;
+}
 .fb_feed {
 	width:100%;
 	padding-bottom:10px;
@@ -1346,7 +1361,6 @@ table.microposts tr {
 }
 .fb_feed_users {
 	width:230px;
-	white-space:nowrap;
 	overflow:hidden;
 	font-family:arial;
 	font-size:12pt;

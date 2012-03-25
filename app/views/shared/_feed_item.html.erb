@@ -57,7 +57,7 @@
   </div>
   <div class="micropost_accuracy">
     <% unless feed_item.ratings.trues.empty? %>
-      <%=  number_to_percentage(feed_item.ratings.trues.count.to_f / feed_item.ratings.count*100, :precision => 0) %> accuracy
+      <%=  number_to_percentage(feed_item.ratings.trues.count.to_f / feed_item.ratings.count*100, :precision => 0) %> true
     <% end %>
     
   </div>
