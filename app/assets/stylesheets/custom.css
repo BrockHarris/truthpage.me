@@ -640,14 +640,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 .signin_header {
 	padding-bottom:20px;
 	color:#2A4668;
-	font-family:bitstream vera serif;
+	font-family:arial;
+	font-size:24pt;
+	font-weight:500;
 	font-size: 24pt;
 	margin-left:120px;
 }
 .signup_header {
 	color:#2A4668;
 	font-family:arial;
-	font-size: 24pt;
+	font-size:24pt;
+	font-weight:500;
 	margin-left:140px;
 }
 .signin_container {
