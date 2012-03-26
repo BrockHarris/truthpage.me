@@ -14,7 +14,6 @@
     });
   </script>
 <% end %>
-
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -27,8 +26,9 @@
 
 <div class="header_box">
   	<h1>Get a truth about yourself, from your friends.</h1>
-  	<p>truthpage.me makes it fun and easy to share truths with your friends. rate your friends' truths. see how accurate their 		statements really are.</p>
+  	<p>truthpage.me makes it fun and easy to share truths with your friends. rate your friends' truths.</p>
 <%= link_to "Sign in", login_path, :id =>"signin", :class =>"header_links" %>
+<%= link_to "Sign up", newlogin_path, :id =>"signup", :class =>"header_links" %>
 </div>
 
 <div class="ticker_header">

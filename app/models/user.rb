@@ -134,7 +134,7 @@ class User < ActiveRecord::Base
 
 
   # Sends an activation email to the user. This email contains a link that
-  # allows the user to active the User. See UserMailer::activation. This method
+  # allows the user to activate their account. See UserMailer::activation. This method
   # saves this User.
   
   def send_activation_email!
