@@ -519,7 +519,7 @@ footer nav {
 	text-shadow:0px -1px 1px #ffffff;
 }
 .unfollow_button:active {
-	color:#EEE;
+	color:#666;
 }
 
 
@@ -1448,13 +1448,12 @@ table.microposts tr {
   margin-left:-2px;
   font-size: 38px;
   line-height: 1;
-
-	text-align: left;
+	text-align:left;
 	color:#FFF;
 }
 .header_body {
 	margin-left:10px;
-	margin-top:230px;
+	margin-top:260px;
   font-size: 18px;
   font-weight: 200;
   line-height: 27px;
@@ -1468,12 +1467,14 @@ table.microposts tr {
 	margin-top: 30px;
 }
 .ticker_header{
+	font-weight:500;
+	width:562px;
 	padding:10px;
 	margin-bottom:10px;
 	margin-top:-20px;
-	font-size: 18pt;
+	font-size:18pt;
 	font-family: helvetica neue;
-	padding-left: 90px;
+	padding-left:20px;
 	color:#26568D;
 	background-color: #f5f5f5;
   -webkit-border-radius: 6px;
@@ -1520,7 +1521,10 @@ table.microposts tr {
 	margin-top:3px;
 	}
 .ticker_content {
+	border-top:1px solid #EEE;
 	margin-top:-10px;
+	padding-top:3px;
+	padding-left:2px;
 	font-size:11pt;
 	font-family:arial;
 }
@@ -1536,7 +1540,7 @@ table.microposts tr {
 	margin-left: 4px;
 }	
 .home_signup_box {
-	margin-top:-650px;
+	margin-top:-709px;
 	float:right;
 	padding:5px;
 	width:224px;
@@ -1555,8 +1559,72 @@ table.microposts tr {
 	text-align:left;
 	line-height: 1;
 }
+.signup_box_fbconnect {
+	margin-left:7px;
+}
+.home_signin_or {
+	text-align:center;
+	padding:5px;
+	color:#666;
+}
+.home_signin_forgotpw {
+	font-size:8pt;
+	margin-left:5px;
+	margin-top:5px;
+}
+.home_signin_field {
+	margin-top:10px;
+	margin-left:3px;
+}
+.home_formlabel {
+	color:#666;
+	font-size:11pt;
+	padding-bottom:5px;
+	margin-left:5px;
+}
+.home_formfield {
+	color:#666;
+	font-size:11pt;
+	padding: 0.5em;
+   line-height: 1.2em;
+   width: 200px;
+   height:15px;
+   background: #fff;
+   background: rgb(238,238,238); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(238,238,238,1) 1%, rgba(255,255,255,1) 85%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(238,238,238,1)), color-stop(85%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* IE10+ */
+background: linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+-webkit-box-shadow: 0px 0px 1px 1px #ccc;
+	-moz-box-shadow: 0px 0px 1px 1px #ccc;
+	box-shadow: 0px 0px 1px 1px #ccc;
+  border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px;
+   border: 1px solid #999;
+
+}
+.home_formfield:focus {
+	-webkit-box-shadow: 0px 0px 3px 1px #30B2D6;
+	-moz-box-shadow: 0px 0px 3px 1px #30B2D6;
+	box-shadow: 0px 0px 3px 1px #30B2D6;
+	color:#333;
+   border: 1px solid #30B2D6;
+   outline: none;
+
+}
+
+.home_signin_button_placement {
+	margin-top:10px;
+	margin-left:20px;
+	margin-bottom:5px;
+}
 .home_facepile_box {
-	margin-top:-520px;
+	margin-top:-375px;
 	float:right;
 	width:220px;
 	padding:4px;

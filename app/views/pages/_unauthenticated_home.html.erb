@@ -28,14 +28,12 @@
 <div class="header_box">
   	<h1>Get a truth about yourself, from your friends.</h1>
   	<div class="header_body">
-      truthpage.me makes it fun and easy to share truths with your friends.
-      <br/> 
-      rate your friends' truths. see how accurate their statements really are.
+        truthpage.me is a fun and easy way to share and rate truths about your friends!
     </div>
 </div>
 
 <div class="ticker_header">
-  truths being shared on truthpage.me
+  Most recent truths on truthpage.me
 </div>
 	
 <ul id="vertical-ticker" style="overflow-x: hidden; overflow-y: hidden; ">
@@ -45,8 +43,28 @@
 </ul>
 
 <div class="home_signup_box">
-  <h1>Sign up</h1>
-  <%= render :partial=>"authentications/services" %>
+  <h1>Sign in</h1>
+  <div class="signup_box_fbconnect">
+    <%= render :partial=>"authentications/services" %>
+  </div>
+  <div class="home_signin_or">
+    or
+  </div>
+  <%= form_tag sessions_path do %>
+      <div class="home_signin_field">
+        <div class="home_formlabel">Username / Email</div>
+        <%= text_field_tag :login, params[:login], :class => "home_formfield" %>
+      </div>
+      <div class="home_signin_field">
+        <div class="home_formlabel">Password</div>
+        <%= password_field_tag :password, "", :class => "home_formfield" %>
+      </div>
+      <%= link_to "Forgot your Password?", assist_url, :id=>"forgot-password", :class =>"home_signin_forgotpw" %> 
+        <br/>
+      <div class="home_signin_button_placement">
+        <%= submit_tag "Sign in", :class=>'signin_button' %>
+      </div>
+  <% end %>
 </div>
 
 <div class="home_facepile">
