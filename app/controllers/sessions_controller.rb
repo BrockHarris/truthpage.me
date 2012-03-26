@@ -2,11 +2,13 @@ class SessionsController < ApplicationController
 #skip_before_filter :verify_authenticity_token
 
   def new
+    @title = "Truthpage.me | Sign up"
     @user = User.new
     redirect_to root_url if current_user
   end
 
   def JSnew
+    @title = "Truthpage.me | Sign up"
     @user = User.new
     redirect_to root_url if current_user
     @skip_render = true
@@ -14,6 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def JScreate
+    @title = "Truthpage.me | Sign up"
     @user = User.new
     redirect_to root_url if current_user
     @skip_render = true

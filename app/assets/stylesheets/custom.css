@@ -138,25 +138,50 @@ body {
 /************* Welcome page (for new users) ************/
 
 .welcome_banner {
-	padding:10px;
   background-color: #f5f5f5;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
 .welcome_banner h1 {
+	padding-top:10px;
 	font-weight:500;
 	font-size:38px;
 	color:#26568D;
 	font-family:helvetica neue;
 	text-align:center;
 	line-height: 1;
+	vertical-align:top;
+}
+.welcome_banner h2 {
+	margin-top:-20px;
+	padding-bottom:10px;
+	font-weight:500;
+	font-size:20px;
+	color:#000;
+	font-family:helvetica neue;
+	text-align:center;
+	line-height: 1;
 }
 .step_container {
+	width:80%;
+	height:80px;
+	margin-left:auto;
+	margin-right:auto;
 	background:white;
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
 	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
+}
+.step_container h1 {
+	padding:10px;
+	font-size:14pt;
+}
+.step_container h2 {
+	float:left;
+	margin-left:10px;
+	margin-right:20px;
+	font-size:24pt;
 }
 
 /************* Notifications ************/
@@ -685,8 +710,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 }
 .signin_facebook {
-	margin-left:60px;
-	padding-bottom:20px;
+	margin-left:76px;
+	padding-bottom:10px;
 }
 .signin_or {
 	font-size:18pt;
@@ -1048,6 +1073,13 @@ table.microposts tr {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	cursor:pointer;
+}
+
+.fake_rating_button {
+	font-size:9pt;
+	margin-left:5px;
+	padding:2px;
+	color:#0099FF;
 }
 .micropost_true {
 	color:#666;
