@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
+gem 'newrelic_rpm'
 gem 'fb_graph'
 gem 'client_side_validations'
 gem 'vanities'

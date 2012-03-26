@@ -1157,7 +1157,7 @@ table.microposts tr {
    border: 1px solid #999;
 }
 .settings_blurb:focus {
-	color:#333
+	color:#333;
 	-webkit-box-shadow: 0px 0px 3px 1px #30B2D6;
 	-moz-box-shadow: 0px 0px 3px 1px #30B2D6;
 	box-shadow: 0px 0px 3px 1px #30B2D6;
