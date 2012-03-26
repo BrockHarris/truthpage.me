@@ -1384,7 +1384,7 @@ table.microposts tr {
 }
 .dash_user {
 	font-size:18pt;
-	margin-top:;
+	margin-top:0px;
 	float:left;
 }
 .dash_stats {
