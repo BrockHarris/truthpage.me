@@ -41,14 +41,21 @@
   <% end %>
 </ul>
 
+<div class="home_signup_box">
+  <h1>Sign up</h1>
+  <%= render :partial=>"authentications/services" %>
+</div>
+
 <div class="home_facepile">
   <div class="home_facepile_box">
     <h1>Recently joined</h1>
     <% @faces.each do |user| %>
+      <% if user.photo.exists? %>
       <div class="fbfriend_block">
         <%= link_to render_user_avatar(user, :thumb), user.username %>
         <div class="fbfriend_username"><%= link_to user.username, user.username %></div>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>
