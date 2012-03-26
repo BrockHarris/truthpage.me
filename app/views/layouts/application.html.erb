@@ -11,10 +11,8 @@
   <body>
     <%= render 'layouts/header' unless @skip_render %>
     <%= render 'layouts/admin_header' if @render_admin_header %>
-      
       <div class="container">
 	      <section class="round">
-	      
 	      <%= yield %>
 	    </section>
       <%= render 'layouts/footer' unless @skip_render %>

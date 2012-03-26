@@ -1,11 +1,11 @@
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
-<script>
+<script type="text/javascript">
 	$(function(){
 		$("#invite_fb_friends").click(function() {
 		FB.init({ 
 		  appId:'186414394781001', 
-		  channelUrl : '//www.truthpage.me/channel.html', // Channel File
+		  channelUrl : '//truthpage.me/channel.html', // Channel File
 			status     : true, // check login status
 			cookie     : true, // enable cookies to allow the server to access the session
 			xfbml      : true  // parse XFBML
@@ -18,7 +18,7 @@
 			link: '<%= root_url%><%= current_user.username %>',
 			picture: '<%= root_url%>images/wallpost_image.jpg',
 			actions: [
-				{ name: 'truthpage.me', link: 'http://www.truthpage.me' }
+				{ name: 'truthpage.me', link: 'http://truthpage.me' }
 					],
 				user_message_prompt: 'Share a truth status'
 				},
@@ -30,12 +30,10 @@
 			);
 		});
 	});
-</script>
-<script type="text/javascript">
 
 function tweetpopup() {
 
-window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.username %>&text=send%20me%20a%20truth%20on%20truthpage.me%20http://truthpage.me/<%= current_user.username %>&count=none/", "tweet", "height=450,width=550,resizable=1" ) 
+window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.username %>&text=send%20me%20a%20truth%20on%20truthpage.me&count=none/", "tweet", "height=450,width=550,resizable=1" ) 
 
 }
 
