@@ -1,5 +1,5 @@
 class MicropostMailer < ActionMailer::Base
-  default :from => "support@truthpage.me"
+  default :from => "notifications@truthpage.me"
   
 def post_email(micropost)
   if  micropost.try(:anon?)
