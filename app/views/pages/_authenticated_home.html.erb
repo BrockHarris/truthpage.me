@@ -35,7 +35,7 @@
 
 function tweetpopup() {
 
-window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.username %>&text=send%20me%20a%20truth%20on%20truthpage.me%20<%= root_url%><%= current_user.username %>&count=none/", "tweet", "height=450,width=550,resizable=1" ) 
+window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.username %>&text=send%20me%20a%20truth%20on%20truthpage.me%20http://truthpage.me/<%= current_user.username %>&count=none/", "tweet", "height=450,width=550,resizable=1" ) 
 
 }
 
@@ -70,7 +70,9 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
 				</div>
 				<% unless current_user.authentications.empty? %>
 					<% if @registered_friends.empty? %>
-						None of your Facebook friends have a truthpage yet...
+						<div class="fb_friends_noshow">
+							None of your Facebook friends have a truthpage yet...
+						</div>
 					<% else %>
 						<div class="fbfriends_box">
   						<% @registered_friends.each do |user| %>
@@ -82,8 +84,12 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
 						</div>
 					<% end %>
 				<% else %>
-				  <%= render :partial=>"authentications/services" %>
-					Connect with Facebook to see your friends on truthpage!
+					<div class="fb_friends_noshow_fb">
+				  	<%= render :partial=>"authentications/services" %>
+				  </div>
+				  <div class="fb_friends_noshow">
+						Connect with Facebook to see your friends on truthpage!
+					</div>
 				<% end %>
 			</div>
       <div class="dashfeed_title">

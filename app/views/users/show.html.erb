@@ -36,6 +36,12 @@
 		<div class="profile_avatar"> 
 			<%= render_user_avatar(@user, :small) %>	
 		</div>
+		<div class="profile_truths_counter">
+			<%= @user.username %> has <%= @microposts.count %> truths <br/>
+			<% unless @true_ratings.empty? %>
+				which are <%= number_to_percentage(@true_ratings.count.to_f / @total_ratings.count*100, :precision => 0) %> accurate
+			<% end %>
+		</div>
 		<div class="profile_blurb"> 
 			<%= @user.blurb %> 
 		</div>	

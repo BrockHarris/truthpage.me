@@ -1358,7 +1358,11 @@ table.microposts tr {
 	float:right;
 	vertical-align:bottom;
 	width: 500px;
-	
+}
+.dashfeed_content_noshow {
+	margin-left:58px;
+	margin-top:20px;
+	font-size:11pt;
 }
 .feed_timestamp{
 	vertical-align:top;
@@ -1394,6 +1398,15 @@ table.microposts tr {
 	margin:10px;
 	padding-bottom:5px;
 	border-bottom:1px solid #CCC;
+}
+.fb_friends_noshow {
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size:10pt;
+	text-align:center;
+}
+.fb_friends_noshow_fb {
+	margin-left:15px;	
 }
 .fbfriends_box {
 	margin-left:14px;
