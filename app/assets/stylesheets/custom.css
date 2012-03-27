@@ -1327,10 +1327,14 @@ table.microposts tr {
 .dash_avatar {
 	float:left;
 	padding:5px;
+	width:220px;
 }
 .invite_friends {
+}
+.share_buttons {
 	float:right;
-	border:1px orange solid;
+	margin-right:120px;
+	margin-bottom:10px;
 }
 .profile_link {
 	font-size:16pt;

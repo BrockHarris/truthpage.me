@@ -55,9 +55,11 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
 					</div>
 						<br/>
 					<div id="invite_friends">
+					<div class="share_buttons">
 		    		<%= link_to "Share on Facebook", "#", :id => "invite_fb_friends", :class => 'facebook_share', :style=>'color:#FFFFFF;' %>
 					
 						<a href="http://twitter.com/share?url=url_you_wish_the_tweet_to_link_back_to&text=the%20text%20you%20wish%20the%20tweet%20to%20say&count=none/" class="custom-tweet-button" target="_blank" onClick="tweetpopup(); return false;" rel="nofollow" style="color:#FFFFFF;">Share on Twitter</a>
+					</div>
 					</div>
 				</td>
 			</table>
