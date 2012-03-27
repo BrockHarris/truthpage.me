@@ -225,7 +225,6 @@ DEPENDENCIES
   kaminari
   mocha
   mysql2 (>= 0.3.6)
-  newrelic_rpm
   nifty-generators (>= 0.4.0)
   omniauth
   omniauth-facebook
