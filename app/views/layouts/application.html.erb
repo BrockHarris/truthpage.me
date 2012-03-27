@@ -3,7 +3,7 @@
   <head>
     <title><%= @title %></title>
     <%= csrf_meta_tag %>
-    <%= javascript_include_tag "application", 'rails.validations' %>
+    <%= javascript_include_tag "application"%>
     <%= stylesheet_link_tag "application", :media => "all" %>    
     <%= yield :head %>
   </head>
@@ -14,7 +14,6 @@
       
       <div class="container">
 	      <section class="round">
-	      
 	      <%= yield %>
 	    </section>
       <%= render 'layouts/footer' unless @skip_render %>

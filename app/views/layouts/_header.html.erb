@@ -43,7 +43,6 @@
           <li><%= link_to "Sign out", signout_path, :class =>"header_links", :method => :delete %></li>
         <% else %>
           <li><%= link_to "Home", root_path, :class =>"header_links" %></li> · 
-          <li><%= link_to "Sign in", login_path, :id =>"signin", :class =>"header_links" %></li> · 
 		      <li><%= link_to "Sign up", newlogin_path, :id =>"signup", :class =>"header_links" %></li>
         <% end %>
       </div>
@@ -52,7 +51,7 @@
   <% if current_user %> 
     <% if notifications.empty? %>
       <div class="welcome_user">
-        <%= current_user.username %>
+        <%= link_to "#{ current_user.username }", "#{ root_url }#{ current_user.username }", :style=>'color:#EEEEEE;' %>
       </div>
     <% else %>
       <div class="notification_container">
@@ -62,7 +61,7 @@
           <%= notifications.count %>
           </div>
           <div class="notifications_user">
-          <%= current_user.username %>
+          <%= link_to "#{ current_user.username }", "#{ root_url }#{ current_user.username }", :style=>'color:#EEEEEE;' %>
           </div>
         </div>
         <ul class="the_menu">

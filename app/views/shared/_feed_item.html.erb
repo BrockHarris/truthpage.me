@@ -49,8 +49,12 @@
       <%= f.hidden_field :owner_id, :value => feed_item.belongs_to_id %>
       <%= f.hidden_field :rater_id, :value => current_user.id %>
       <%= f.hidden_field :rating, :value => "true" %>
-      <%= f.submit 'true', :class => 'micropost_true_button'%>
-        <%= render_true_ratings(feed_item)  %>
+      <% if feed_item.rateable_by_user?(current_user) %>
+        <%= f.submit 'true', :class => 'micropost_true_button'%>
+      <% else %>
+        <span class="fake_rating_button">true</span>
+      <% end %>
+      <%= render_true_ratings(feed_item)  %>
     <% end %>
   </div>
   <div class="micropost_false">
@@ -60,7 +64,11 @@
       <%= f.hidden_field :owner_id, :value => feed_item.belongs_to_id %>
       <%= f.hidden_field :rater_id, :value => current_user.id %>
       <%= f.hidden_field :rating, :value => "false" %>
-      <%= f.submit 'false', :class => 'micropost_false_button'%> 
+      <% if feed_item.rateable_by_user?(current_user) %>
+        <%= f.submit 'false', :class => 'micropost_false_button'%> 
+      <% else %>
+        <span class="fake_rating_button">false</span>
+      <% end %>
       <%= render_false_ratings(feed_item) %>
     <% end %>   
   </div>
