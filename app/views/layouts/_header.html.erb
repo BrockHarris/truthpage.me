@@ -51,7 +51,7 @@
   <% if current_user %> 
     <% if notifications.empty? %>
       <div class="welcome_user">
-        <%= current_user.username %>
+        <%= link_to "#{ current_user.username }", "#{ root_url }#{ current_user.username }", :style=>'color:#EEEEEE;' %>
       </div>
     <% else %>
       <div class="notification_container">

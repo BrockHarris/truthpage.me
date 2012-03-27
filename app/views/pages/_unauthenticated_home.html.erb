@@ -53,11 +53,11 @@
   <%= form_tag sessions_path do %>
       <div class="home_signin_field">
         <div class="home_formlabel">Username / Email</div>
-        <%= text_field_tag :login, params[:login], :class => "home_formfield" %>
+        <%= text_field_tag :login, params[:login], :class => "home_formfield", :id => "SAusername" %>
       </div>
       <div class="home_signin_field">
         <div class="home_formlabel">Password</div>
-        <%= password_field_tag :password, "", :class => "home_formfield" %>
+        <%= password_field_tag :password, "", :class => "home_formfield", :id => "SApassword" %>
       </div>
       <%= link_to "Forgot your Password?", assist_url, :id=>"forgot-password", :class =>"home_signin_forgotpw" %> 
         <br/>
