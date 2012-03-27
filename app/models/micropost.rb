@@ -32,8 +32,8 @@ class Micropost < ActiveRecord::Base
     Notification.create!(:noname=> true, :sender_id=>self.user_id, :receiver_id=>self.belongs_to_id, :format=>"posted a truth about you")
   end
   
-  def rateable_by_user?(user)
-   self.ratings.where(:rater_id=>user.id).empty?
+  def rateable_by_user?(user)  
+    self.ratings.where(:rater_id=>user.id).empty?
   end
   
   private
