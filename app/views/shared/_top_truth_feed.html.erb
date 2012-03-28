@@ -1,4 +1,7 @@
 <% unless @top_truths.empty? %>
+<div class="top_truths_header">
+		<%= @user.username %>'s top truths
+		</div>
   <table class="top_truths">
     <%= render :partial => 'shared/top_truths', :collection => @top_truths %>
   </table>
