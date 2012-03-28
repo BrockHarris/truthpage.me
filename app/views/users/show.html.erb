@@ -36,6 +36,9 @@
 		<div class="profile_avatar"> 
 			<%= render_user_avatar(@user, :small) %>	
 		</div>
+		<div class="profile_blurb"> 
+			<%= @user.blurb %> 
+		</div>	
 		<% unless @microposts.empty? %>
 			<div class="profile_truth_stats">
 				<span class="profile_stat_counter"><%= @microposts.count %></span> truths posted<br/>
@@ -45,12 +48,13 @@
 					<span class="profile_stat_counter"><%= number_to_percentage(@true_ratings.count.to_f / @total_ratings.count*100, :precision => 0) %></span> accuracy rate
 				
 				<% end %>
+			</div>
 		<% end %>
+		<div class="top_truths_header">
+		<%= @user.username %>'s top truths
 		</div>
-		<div class="profile_blurb"> 
-			<%= @user.blurb %> 
-		</div>	
-		<br/>
+			<%= render 'shared/top_truth_feed' %>
+		
 		<% if current_user %>
 			<% if @user == current_user %>
 			<% else %>

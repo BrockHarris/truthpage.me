@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    @top_truths = Micropost.where(:belongs_to_id => @user.id).limit(3)
     @rating = Rating.new(params[:rating])
     if current_user
       @notification = Notification.new
