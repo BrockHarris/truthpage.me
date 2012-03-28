@@ -190,7 +190,7 @@ class UsersController < ApplicationController
   private
 
   def admin_user
-    redirect_to(root_path) if current_user = current_user.admin
+    redirect_to(root_path) if current_user.admin?
   end
   
   def find_user

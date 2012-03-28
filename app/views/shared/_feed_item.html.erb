@@ -11,7 +11,7 @@
            <%= link_to feed_item.target_user.username, feed_item.target_user %>
           <div class="micropost_timestamp">
             <%= time_ago_in_words(feed_item.created_at) %> ago.
-            <% if current_user = (feed_item.user) %>
+            <% if current_user.eql?(feed_item.user) %>
               <%= render_micropost_delete(feed_item) %>
             <% end %>
           </div>
@@ -28,7 +28,7 @@
           <%= link_to feed_item.target_user.username, feed_item.target_user %>
           <div class="micropost_timestamp">
             <%= time_ago_in_words(feed_item.created_at) %> ago.
-            <% if current_user = (feed_item.user) %>
+            <% if current_user.eql?(feed_item.user) %>
               <%= render_micropost_delete(feed_item) %>
             <% end %>
           </div>
