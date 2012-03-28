@@ -1,0 +1,18 @@
+<tr>
+  <td class="top_truth_post">
+    <div class="top_truth_content">
+        <%= top_truths.content %>
+    </div>
+    <span class="top_truth_avatar">
+      <%= render_user_avatar(top_truths.user, :tiny) %>
+    </span>
+    <span class="top_truth_author">
+      <% if top_truths.try(:anon?) %>
+        - Anonymous
+      <% else %>
+        - <%= link_to top_truths.user.username, top_truths.user %>
+      <% end %>
+    </span>
+  </td>
+</tr>
+
