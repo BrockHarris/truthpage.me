@@ -1,6 +1,6 @@
-<% unless @top_truths.empty? %>
+<% unless @top_truths.count < 3 %>
 <div class="top_truths_header">
-		<%= @user.username %>'s top truths
+		<%= @user.username %>'s top 3
 		</div>
   <table class="top_truths">
     <%= render :partial => 'shared/top_truths', :collection => @top_truths %>

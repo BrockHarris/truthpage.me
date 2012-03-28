@@ -937,32 +937,41 @@ form.new_micropost textarea {
 }
 .top_truths {
 	padding-bottom:10px;
+	border-bottom:1px solid #CCC;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:15px;
 }
 .top_truths_header {
-	font-family: helvetica neue;
-	color:#26568D;
+	color:#666;
 	border-top:1px solid #CCC;
-	width:238px;
-	margin-left:3px;
+	width:235px;
+	margin-left:5px;
 	padding-left:5px;
-	padding-top:5px;
+	padding-top:8px;
 	padding-bottom:5px;
 	overflow:hidden;
 }
 .top_truth_post {
-	
-}
-.top_truth_quotation {
-	font-family:times new roman;
+	border-bottom:1px solid #EEE;
 }
 .top_truth_content {
-	
+	background:#E8F9FF;
+	padding:3px;
+	font-family:arial;
+	font-size:11pt;
 }
 .top_truth_avatar {
-	
+	float:right;
+	margin-left:5px;
+	margin-right:3px;
+	margin-top:3px;
 }
 .top_truth_author {
-	
+	float:right;
+	margin-top:6px;
+	font-size:12pt;
+	color:#666;
 }
 
 
@@ -1017,9 +1026,9 @@ table.microposts tr td.micropost {
 	webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	-webkit-box-shadow: 0px 1px 3px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 1px 3px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 1px 3px rgba(50, 50, 50, 0.9);
+	-webkit-box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 1px 1px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 1px 1px rgba(50, 50, 50, 0.9);
 }												
 table.microposts {
 	float:right;
