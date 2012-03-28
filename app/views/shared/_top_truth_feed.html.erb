@@ -1,7 +1,8 @@
-
-<div class="top_truths_header">
-		<%= @user.username %>'s top 3
-		</div>
+<% if  @user.received_microposts.most_truthy.having("truth_count > 3") %>
+	<div class="top_truths_header">
+		Top Rated
+	</div>
   <table class="top_truths">
     <%= render :partial => 'shared/top_truths', :collection => @top_truths %>
   </table>
+<% end %>
