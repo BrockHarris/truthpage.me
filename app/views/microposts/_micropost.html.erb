@@ -9,7 +9,7 @@
           Anonymous
           <div class="micropost_timestamp">
             <%= time_ago_in_words(micropost.created_at) %> ago.
-            <% if current_user = (micropost.user) %>
+            <% if current_user.eql?(micropost.user) %>
               <%= render_micropost_delete(micropost) %>
             <% end %>
           </div>
@@ -22,7 +22,7 @@
           <%= link_to micropost.user.username, micropost.user %>
           <div class="micropost_timestamp">
             <%= time_ago_in_words(micropost.created_at) %> ago.
-            <% if current_user = (micropost.user) %>
+            <% if current_user.eql?(micropost.user) %>
               <%= render_micropost_delete(micropost) %>
             <% end %>
           </div>
