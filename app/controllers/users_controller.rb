@@ -12,14 +12,14 @@ class UsersController < ApplicationController
   end
   
   def show
-    @top_truths = @user.received_microposts.most_truthy.limit(3)  
+    @top_truths = @user.received_microposts.most_true.limit(3)  
     @rating = Rating.new(params[:rating])
     if current_user
       @notification = Notification.new
     end
     @true_ratings = Rating.where(:owner_id => @user.id, :rating =>"true")
     @total_ratings = Rating.where(:owner_id => @user.id)
-    @microposts = Micropost.find_all_by_belongs_to_id(@user.id).paginate(:page => params[:page], :per_page => 15)
+    @microposts = Micropost.order.find_all_by_belongs_to_id(@user.id).paginate(:page => params[:page], :per_page => 15)
     @micropost  = @user.microposts.build(params[:micropost])
     @title = " Truthpage.me | #{@user.username}"
     @user = User.find_by_username(params[:id])

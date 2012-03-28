@@ -12,10 +12,10 @@ class Micropost < ActiveRecord::Base
   after_create :create_notification, :unless => :anon?
   after_create :create_anon_notification, :if => :anon?
 
-  default_scope where("microposts.deleted_at IS NULL").order("microposts.created_at DESC")
-
+  default_scope where("microposts.deleted_at IS NULL")
+  scope :order, order("microposts.created_at DESC")
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
-  scope :most_truthy, where("ratings.rating = 'true'")
+  scope :most_true, where("ratings.rating = 'true'")
                       .joins(:ratings)
                       .select("microposts.*, count(ratings.rating) AS truth_count")
                       .group("microposts.id")

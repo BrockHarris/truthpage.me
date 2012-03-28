@@ -45,7 +45,7 @@
 			</div>
 			<div class="profile_truth_stats">
 				<% unless @true_ratings.empty? %>
-					<span class="profile_stat_counter"><%= number_to_percentage(@true_ratings.count.to_f / @total_ratings.count*100, :precision => 0) %></span> accuracy rate
+					<span class="profile_stat_counter"><%= number_to_percentage(@true_ratings.count.to_f / @total_ratings.count*100, :precision => 0) %></span> truthful
 				
 				<% end %>
 			</div>

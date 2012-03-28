@@ -1,4 +1,4 @@
-<% if  @user.received_microposts.most_truthy.having("truth_count > 3") %>
+<% if  @user.received_microposts.most_true.having("truth_count > 3") %>
 	<div class="top_truths_header">
 		Top Rated
 	</div>
