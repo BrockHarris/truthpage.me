@@ -50,8 +50,9 @@
 				<% end %>
 			</div>
 		<% end %>
+		<% if @user_post_ratings.count > 1 %>
 			<%= render 'shared/top_truth_feed' %>
-		
+		<% end %>
 		<% if current_user %>
 			<% if @user == current_user %>
 			<% else %>

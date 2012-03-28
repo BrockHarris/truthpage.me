@@ -12,11 +12,10 @@ class UsersController < ApplicationController
   end
   
   def show
+    @user_post_ratings = Rating.where(:owner_id => @user.id)
+    @top_truths_count = @user.received_microposts.count
     @top_truths = @user.received_microposts.most_true.limit(3)  
     @rating = Rating.new(params[:rating])
-    if current_user
-      @notification = Notification.new
-    end
     @true_ratings = Rating.where(:owner_id => @user.id, :rating =>"true")
     @total_ratings = Rating.where(:owner_id => @user.id)
     @microposts = Micropost.order.find_all_by_belongs_to_id(@user.id).paginate(:page => params[:page], :per_page => 15)
@@ -25,6 +24,9 @@ class UsersController < ApplicationController
     @user = User.find_by_username(params[:id])
     @followers = @user.followers.paginate(:page => params[:page])
     @following = @user.following.paginate(:page => params[:page])
+    if current_user
+      @notification = Notification.new
+    end
   end
   
   def profile

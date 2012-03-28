@@ -4,6 +4,7 @@ class Admin::UsersController < ApplicationController
   before_filter :find_user, :except=>[:index]
 
   def index
+    @ratings = Rating.all
     @render_admin_header = true
     @skip_render = true
     @relationships = Relationship.all
