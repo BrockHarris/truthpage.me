@@ -1297,8 +1297,39 @@ table.microposts tr {
 .facebook_share:active {
 	color:#EEE;
 }
-
-
+.facebook_invite {
+	margin-top:10px;
+	margin-left:6px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #b9ff91;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #b9ff91;
+	box-shadow:inset 0px 1px 0px 0px #b9ff91;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #85db5a), color-stop(1, #56ab35) );
+	background:-moz-linear-gradient( center top, #85db5a 5%, #56ab35 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#85db5a', endColorstr='#56ab35');
+	background-color:#85db5a;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #3ba800;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #256600;
+}
+.facebook_invite:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7ec75a), color-stop(1, #529633) );
+	background:-moz-linear-gradient( center top, #7ec75a 5%, #529633 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7ec75a', endColorstr='#529633');
+	background-color:#7ec75a;
+	cursor:pointer;
+}
+.facebook_invite:active {
+	color:#EEE;
+}
 .custom-tweet-button {
 	margin-left:10px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #ade9ff;
