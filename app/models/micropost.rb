@@ -36,6 +36,11 @@ class Micropost < ActiveRecord::Base
   def rateable_by_user?(user)  
     self.ratings.where(:rater_id=>user.id).empty?
   end
+
+  def update_truth_percentage
+    n = (self.ratings.trues.count/self.ratings.count.to_f) * 100
+    connection.execute("UPDATE microposts SET truth_percentage = #{n.to_i} WHERE id = #{self.id}")
+  end
   
   private
 

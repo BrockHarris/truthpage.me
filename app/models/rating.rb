@@ -7,4 +7,11 @@ class Rating < ActiveRecord::Base
 
 	scope :trues, where("rating = ?", "true")
   scope :falses, where("rating = ?", "false")
+
+  after_save :update_micropost_truth_percentage
+
+  def update_micropost_truth_percentage
+    self.micropost.update_truth_percentage
+  end
+
 end
