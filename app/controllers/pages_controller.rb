@@ -8,7 +8,7 @@ skip_before_filter :verify_authenticity_token
       @title = "Truthpage.me | Friends"
       @rating = Rating.new(params[:rating])
       @micropost = Micropost.new
-      @feed_items = current_user.feed.percentage_order.paginate(:page => params[:page], :per_page => 20)
+      @feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 20)
       @fbfeed_items = Micropost.where(:belongs_to_id => current_user.id).limit(10)
       unless current_user.authentications.empty?
         @fb_user = FbGraph::User.me(current_user.token)
