@@ -12,9 +12,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user_post_ratings = Rating.where(:owner_id => @user.id)
-    @top_truths_count = @user.received_microposts.count
-    @top_truths = @user.received_microposts.most_true.limit(3)  
+    @top_truths = Micropost.percentage_order.rated.where(:belongs_to_id => @user.id).limit(3)  
     @rating = Rating.new(params[:rating])
     @true_ratings = Rating.where(:owner_id => @user.id, :rating =>"true")
     @total_ratings = Rating.where(:owner_id => @user.id)

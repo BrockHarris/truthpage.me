@@ -1,11 +1,11 @@
 class Micropost < ActiveRecord::Base
-  attr_accessible :content, :belongs_to_id, :anon, :notification_attributes
+  attr_accessible :content, :belongs_to_id, :anon, :notification_attributes, :truth_percentage
 
   belongs_to :user
   belongs_to :target_user, :class_name=>"User", :foreign_key=>"belongs_to_id" 
 
   has_many :ratings
-  has_one :stat
+
   validates :content, :presence => true, :length => { :maximum => 250 }
   validates :user_id, :presence => true
 
@@ -13,13 +13,11 @@ class Micropost < ActiveRecord::Base
   after_create :create_anon_notification, :if => :anon?
 
   default_scope where("microposts.deleted_at IS NULL")
+  scope :percentage_order, order("microposts.truth_percentage DESC")
   scope :order, order("microposts.created_at DESC")
+  scope :rated, :conditions => "truth_percentage IS NOT NULL"
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
-  scope :most_true, where("ratings.rating = 'true'")
-                      .joins(:ratings)
-                      .select("microposts.*, count(ratings.rating) AS truth_count")
-                      .group("microposts.id")
-                      .order("truth_count DESC")
+
   
   def destroy
     update_attribute(:deleted_at, Time.now.utc)
