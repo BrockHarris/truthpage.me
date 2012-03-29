@@ -78,7 +78,7 @@ class User < ActiveRecord::Base
   end
     
   def feed
-    Micropost.from_users_followed_by(self).order("microposts.truth_percentage DESC")
+    Micropost.percentage_order.from_users_followed_by(self)
   end
   
   def globalfeed
