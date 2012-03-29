@@ -33,7 +33,7 @@
 
 function tweetpopup() {
 
-window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.username %>&text=send%20me%20a%20truth%20on%20truthpage.me&count=none/", "tweet", "height=450,width=550,resizable=1" ) 
+window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.username %>&text=truth%20is?&count=none/", "tweet", "height=450,width=550,resizable=1" ) 
 }
 </script>
 
@@ -44,7 +44,7 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
       $("a#invite_fb_friends").click(function(event) {
         FB.ui({
         method: 'apprequests',
-        message: 'whats the truth about me? truthpage.me/<%= current_user.username %>'});
+        message: 'truth is? truthpage.me/<%= current_user.username %>'});
         event.preventDefault();
         return false;
       });

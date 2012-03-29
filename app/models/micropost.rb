@@ -14,6 +14,7 @@ class Micropost < ActiveRecord::Base
 
   default_scope where("microposts.deleted_at IS NULL")
   scope :percentage_order, order("microposts.truth_percentage DESC")
+  scope :reverse_order, order("microposts.truth_percentage ASC")
   scope :order, order("microposts.created_at DESC")
   scope :rated, :conditions => "truth_percentage IS NOT NULL"
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
