@@ -3,17 +3,17 @@
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
-# development:
-#   adapter: sqlite3
-#   database: db/development.sqlite3
-#   pool: 5
-#   timeout: 2000
-
 development:
-  adapter: postgresql
-  database: truthpage_development
-  username: mikedelgrosso
-  password: 
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 2000
+
+# development:
+#   adapter: postgresql
+#   database: truthpage_development
+#   username: mikedelgrosso
+#   password: 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
