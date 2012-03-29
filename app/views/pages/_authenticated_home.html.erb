@@ -2,7 +2,7 @@
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script type="text/javascript">
 	$(function(){
-		$("#invite_fb_friends").click(function() {
+		$("#share_profile").click(function() {
 		FB.init({ 
 		  appId:'186414394781001', 
 		  channelUrl : '//truthpage.me/channel.html', // Channel File
@@ -38,7 +38,21 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
 }
 
 </script>
-		  	
+
+<div id="fb-root">
+  <script src="http://connect.facebook.net/en_US/all.js"></script>
+  <script>
+      $(function sendRequestViaMultiFriendSelector(){
+      $("a#invite_fb_friends").click(function(event) {
+        FB.ui({
+        method: 'apprequests',
+        message: 'whats the truth about me? truthpage.me/<%= current_user.username %>'});
+        event.preventDefault();
+        return false;
+      });
+     });
+  </script>
+</div>  	
 <table class="front" summary="for authenticated users">
   <tr>
     <td class="main">
@@ -56,7 +70,7 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
 						<br/>
 					<div id="invite_friends">
 					<div class="share_buttons">
-		    		<%= link_to "Share on Facebook", "#", :id => "invite_fb_friends", :class => 'facebook_share', :style=>'color:#FFFFFF;' %>
+		    		<%= link_to "Share on Facebook", "#", :id => "share_profile", :class => 'facebook_share', :style=>'color:#FFFFFF;' %>
 					
 						<a href="http://twitter.com/share?url=url_you_wish_the_tweet_to_link_back_to&text=the%20text%20you%20wish%20the%20tweet%20to%20say&count=none/" class="custom-tweet-button" target="_blank" onClick="tweetpopup(); return false;" rel="nofollow" style="color:#FFFFFF;">Share on Twitter</a>
 					</div>
@@ -65,6 +79,7 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
 			</table>
 
 			<div class="dash_column">
+				<%= link_to 'Invite Friends', '#' , :id => 'invite_fb_friends' %> 
 				<div class="fb_feed_friends">
 					Friends on truthpage.me
 				</div>
