@@ -22,6 +22,12 @@ class User < ActiveRecord::Base
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :path => "/:style/:id/:filename" 
+  has_attached_file :background,
+                    :styles => {
+                    :small  => "220x220>" },
+                    :storage => :s3,
+                    :s3_credentials => "#{Rails.root}/config/s3.yml",
+                    :path => "/:style/:id/:filename" 
 
   validates :username, :length=>{:minimum => 3}, :uniqueness=>true, :format=>{ :with => /^[-\w\._@]+$/i, :message => "should only contain letters, numbers, or .-_@"}
   validates :email, :uniqueness=>true, :format=>{:with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i, :message => "we need a valid email address!"}
@@ -78,7 +84,7 @@ class User < ActiveRecord::Base
   end
     
   def feed
-    Micropost.reverse_order.from_users_followed_by(self)
+    Micropost.order.from_users_followed_by(self)
   end
   
   def globalfeed

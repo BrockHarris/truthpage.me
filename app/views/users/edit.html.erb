@@ -25,6 +25,10 @@
 	  <div class="formlabel"> Change your picture </div>
 	    <%= f.file_field :photo %>
     </div>
+    <%= image_tag current_user.background.url(:small) %>
+    <div class="formlabel"> Change your background </div>
+      <%= f.file_field :background %>
+    </div>
   </div>
   <div class="settings_fields" >
     <div class="formlabel"> Edit Blurb </div>

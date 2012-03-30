@@ -279,10 +279,10 @@ ul, li {
 .the_menu {
 	background:#E8F2FF;
   display:none;
-  width:300px;
+  width:340px;
   z-index:0;
   position:absolute;
-	left:700px;
+	left:660px;
 	top:63px;
 	border-radius: 0px 0px 5px 5px; 
 	-moz-border-radius: 0px 0px 5px 5px; 
@@ -957,7 +957,7 @@ form.new_micropost textarea {
 	border-bottom:1px solid #EEE;
 }
 .top_truth_content {
-	background:#E8F9FF;
+	background:#ddffdd;
 	padding:3px;
 	font-family:arial;
 	font-size:11pt;
@@ -1136,11 +1136,17 @@ table.microposts tr {
 	float:left;
 }
 .micropost_accuracy {
-	color:green;
+	color:red;
 	font-size:9pt;
 	float:right;
 	margin-right:5px;
 	margin-top:5px;
+}
+.yellow_percentage {
+	color:#CC6600;
+}
+.green_percentage {
+	color:green;
 }
 .unauth_spacer {
 	height:25px;

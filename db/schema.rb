@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120329011215) do
+ActiveRecord::Schema.define(:version => 20120330000611) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -107,6 +107,10 @@ ActiveRecord::Schema.define(:version => 20120329011215) do
     t.boolean  "mail_subscription",                       :default => true
     t.string   "token"
     t.string   "facebook_id"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
   end
 
   create_table "vanities", :force => true do |t|

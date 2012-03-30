@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   end
   
   def show
+    if @user.background.exists?
+      @user_custom_background = true
+    end
     @top_truths = Micropost.percentage_order.rated.where(:belongs_to_id => @user.id).limit(3)  
     @rating = Rating.new(params[:rating])
     @true_ratings = Rating.where(:owner_id => @user.id, :rating =>"true")
