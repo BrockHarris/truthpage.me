@@ -25,7 +25,9 @@
 	  <div class="formlabel"> Change your picture </div>
 	    <%= f.file_field :photo %>
     </div>
-    <%= image_tag current_user.background.url(:small) %>
+    <% if current_user.background.exists? %>
+      <%= image_tag current_user.background.url(:small) %>
+    <% end %>
     <div class="formlabel"> Change your background </div>
       <%= f.file_field :background %>
     </div>
