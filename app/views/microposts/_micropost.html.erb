@@ -64,10 +64,15 @@
           <%= render_false_ratings(micropost) %>
         <% end %>
       </div>
-<%= link_to "Comment (counter here)", "#", :class => "open_comments", :style=>'color:#999999;' %>
-<div class="post_comments"> 
-  a comment for this post can go here
-</div>
+
+      <%= link_to "Comment (#{micropost.comments.count})", "#", :class => "open_comments", :style=>'color:#999999;' %>
+      <div class="post_comments"> 
+        <%= render 'comments/new_comment' %>
+
+          <%= render @micropost.comments %>
+   
+      </div>
+
       <div class="micropost_accuracy">
         <% unless micropost.ratings.trues.empty? %>
           <% if micropost.truth_percentage < 34 %>

@@ -26,14 +26,9 @@ class UsersController < ApplicationController
     @followers = @user.followers.paginate(:page => params[:page])
     @following = @user.following.paginate(:page => params[:page])
     if current_user
+      @comment = Comment.new(params[:comment])
       @notification = Notification.new
     end
-  end
-  
-  def profile
-    @title = current_user.username
-    @microposts = Micropost.find_all_by_belongs_to_id(current_user.id).paginate(:page => params[:page], :per_page => 15)
-    @micropost  = current_user.microposts.build(params[:micropost])
   end
    
   def new

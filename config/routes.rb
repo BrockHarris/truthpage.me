@@ -16,7 +16,6 @@ Truthpage::Application.routes.draw do
   match '/help',    :to => 'pages#help'
   match '/admin', :to => 'admin/users#index'
   match '/',        :to => 'pages#home'
-  match '/profile', :to=> 'users#profile'
   match '/tickertest', :to=>'pages#tickertest'
   match "/auth/:provider/callback" => "authentications#create"
   match "/auth/failure" => "authentications#auth_failure"
@@ -45,6 +44,7 @@ Truthpage::Application.routes.draw do
   resources :authentications
   resources :sessions,   :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
+  resources :comments, :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
 
   namespace :admin do

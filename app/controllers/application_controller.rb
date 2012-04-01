@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
-
+  
   #query the notifications for the specified user.. or default to current_user
   def notifications(receiver=current_user, limit=9)
     @notifications = receiver.received_notifications.limit(limit)
