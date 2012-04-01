@@ -281,7 +281,7 @@ ul, li {
   z-index:0;
   position:absolute;
 	left:660px;
-	top:63px;
+	top:64px;
 	border-radius: 0px 0px 5px 5px; 
 	-moz-border-radius: 0px 0px 5px 5px; 
 	-webkit-border-radius: 0px 0px 5px 5px; 
@@ -799,13 +799,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 .name_container {
 	width:250px;
 	float:left;
-	background: -moz-linear-gradient(top, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.85) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.85)), color-stop(100%,rgba(255,255,255,0.85))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%); /* IE10+ */
-background: linear-gradient(top, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ffffff', endColorstr='#d9ffffff',GradientType=0 ); /* IE6-9 */
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.9)), color-stop(100%,rgba(255,255,255,0.9))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6ffffff', endColorstr='#e6ffffff',GradientType=0 ); /* IE6-9 */
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
 	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
@@ -865,13 +865,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ffffff', e
 	vertical-align:top;
 	width:570px;
 	float:right;
-	background: -moz-linear-gradient(top, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.85) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.85)), color-stop(100%,rgba(255,255,255,0.85))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%); /* IE10+ */
-background: linear-gradient(top, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ffffff', endColorstr='#d9ffffff',GradientType=0 ); /* IE6-9 */
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.9)), color-stop(100%,rgba(255,255,255,0.9))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.9) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6ffffff', endColorstr='#e6ffffff',GradientType=0 ); /* IE6-9 */
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
 	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
@@ -984,8 +984,6 @@ form.new_micropost textarea {
 	font-size:12pt;
 	color:#666;
 }
-
-
 .profile_following-h {
 	color:#666;
 	padding-top:10px;
@@ -1161,6 +1159,11 @@ table.microposts tr {
 .unauth_spacer {
 	height:25px;
 }
+.post_comments {
+	height:50px;
+	width:300px;
+	background:white;
+}
 
 
 /************* profile settings page **********/
@@ -1180,7 +1183,6 @@ table.microposts tr {
 }
 .settings_blurb{
 	color:#666;;
-	margin-top:-60px;
 	padding-left:5px;
 	padding-bottom:2px;
 	height: 120px;

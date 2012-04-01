@@ -24,7 +24,18 @@
     });
   });
 	</script>	
+	  <script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery(".post_comments").hide();
+  //toggle the component with class msg_body
+  jQuery(".open_comments").click(function()
+  {
+    jQuery(this).next(".post_comments").slideToggle(500);
+  });
+});
+</script>
 <% end %>
+
 <table>
 	<td class="name_container">
 		<div class="profile_name"> 

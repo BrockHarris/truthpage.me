@@ -17,13 +17,20 @@
     <%= f.check_box :mail_subscription, {}, true, false %>
     <%= f.label "Email notifications"%>
   </div>
-  <div class="photo_container">
+  <div class="settings_fields" >
+    <div class="formlabel"> Edit Blurb </div>
+	 <%= f.text_area :blurb, :maxlength=>"180", :class=>"settings_blurb" %>
+  </div>
+  <div class="save_button">
+    <%= f.submit 'Save', :class => "savesettings"%>
+  </div>
+<div class="photo_container">
     <div class="settings_photo">
-		  <%= render_user_avatar(current_user, :small) %>
-	  </div>
+      <%= render_user_avatar(current_user, :small) %>
+    </div>
     <div class="change_avatar">
-	  <div class="formlabel"> Change your picture </div>
-	    <%= f.file_field :photo %>
+    <div class="formlabel"> Change your picture </div>
+      <%= f.file_field :photo %>
     </div>
     <% if current_user.background.exists? %>
       <%= image_tag current_user.background.url(:small) %>
@@ -31,13 +38,6 @@
     <div class="formlabel"> Change your background </div>
       <%= f.file_field :background %>
     </div>
-  </div>
-  <div class="settings_fields" >
-    <div class="formlabel"> Edit Blurb </div>
-	 <%= f.text_area :blurb, :maxlength=>"180", :class=>"settings_blurb" %>
-  </div>
-  <div class="save_button">
-    <%= f.submit 'Save', :class => "savesettings"%>
   </div>
 <% end %>
 </div>
