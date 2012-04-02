@@ -1,6 +1,4 @@
-<tr>
-  <td>
-  	<%= comment.post_comment %>
-  	<%= comment.user.username %>
-	</td>
-</tr>
+<div class="micropost-comment">
+  	<span class="comment"><%= comment.post_comment %></span>
+  	<span class="username"><%= comment.user.username %></span>
+</div>
