@@ -67,18 +67,15 @@
 
       <%= link_to "Comment (#{micropost.comments.count})", "#", :class => "open_comments", :style=>'color:#999999;' %>
       <div class="post_comments"> 
-        <%= render 'comments/new_comment' %>
-
-          <%= render @micropost.comments %>
-   
+        <%= render :partial=> 'comments/new_comment', :locals=>{:micropost=>micropost} %>
+        <%= render micropost.comments %>
       </div>
-
       <div class="micropost_accuracy">
         <% unless micropost.ratings.trues.empty? %>
-          <% if micropost.truth_percentage < 34 %>
+          <% if micropost.truth_percentage.to_i < 34 %>
             <%= number_to_percentage(micropost.truth_percentage, :precision => 0) %> true
           <% elsif micropost.truth_percentage < 67 %>
-            <spand class="yellow_percentage"><%= number_to_percentage(micropost.truth_percentage, :precision => 0) %> true</span>
+            <span class="yellow_percentage"><%= number_to_percentage(micropost.truth_percentage, :precision => 0) %> true</span>
           <% else %>
             <span class="green_percentage"><%= number_to_percentage(micropost.truth_percentage, :precision => 0) %> true</span>
           <% end %>

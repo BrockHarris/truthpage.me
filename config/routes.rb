@@ -31,6 +31,7 @@ Truthpage::Application.routes.draw do
     collection do
       post :create_pending
     end
+    resources :comments
   end
   resources :users do
       member do

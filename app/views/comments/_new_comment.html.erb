@@ -1,7 +1,7 @@
-<%= form_for @comment do |f| %>
+<%= form_for [micropost, @comment] do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <%= f.text_field :post_comment, :class =>"" %>
-  <%= f.hidden_field :micropost_id, :value => @micropost.id %>
+  <%= f.hidden_field :micropost_id, :value => micropost.id %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.submit 'Post', :class => ''%> 
 <% end %>
