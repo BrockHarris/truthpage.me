@@ -22,18 +22,17 @@
       'speedOut'        :    200,
       'overlayShow'    :    true
     });
+    $(".post_comments").hide();
+    
+    //toggle the component with class msg_body
+    $(".open_comments").click(function(e)
+    {
+      $(this).next(".post_comments").slideToggle(200);
+      e.preventDefault();
+    });
   });
 	</script>	
-	  <script type="text/javascript">
-jQuery(document).ready(function() {
-  jQuery(".post_comments").hide();
-  //toggle the component with class msg_body
-  jQuery(".open_comments").click(function()
-  {
-    jQuery(this).next(".post_comments").slideToggle(200);
-  });
-});
-</script>
+  
 <% end %>
 
 <table>
