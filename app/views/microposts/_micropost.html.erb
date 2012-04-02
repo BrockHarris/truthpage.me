@@ -69,8 +69,9 @@
       <%= link_to "Comment (#{micropost.comments.count})", "#", :class => "open_comments", :style=>'color:#999999;' %>
       <div class="post_comments"> 
         <%= render :partial=> 'comments/new_comment', :locals=>{:micropost=>micropost} %>
+        <%= render micropost.comments %>
       </div>
-      <%= render micropost.comments %>
+      
 
       <div class="micropost_accuracy">
         <% unless micropost.ratings.trues.empty? %>
