@@ -19,8 +19,10 @@ class MicropostsController < ApplicationController
   end
 
   def create_pending
+    
     #add basic micropost data into a session variable from ajax call so it can be referenced for creation
     #of a micropost after authentication.
+    
     session[:pending_micropost] = nil
     if !current_user && params[:micropost][:content].present?
       session[:pending_micropost] = {:content=>params[:micropost][:content], :belongs_to_id=>params[:micropost][:belongs_to_id], :anon=>params[:micropost][:anon]}
