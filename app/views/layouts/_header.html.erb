@@ -33,15 +33,15 @@
     <ul class="header_nav">
       <div class="headerlink_place">
         <% if current_user %>
-          <li><%= link_to "Friends", root_url, :class =>"header_links" %></li> ·
-          <li><%= link_to "Profile", "#{ root_url }#{ current_user.username }" , :class =>"header_links" %></li> ·
-          <li><%= link_to "Settings", edit_user_path(current_user), :class =>"header_links" %></li> ·
+          <li><%= link_to "Friends", root_url, :class =>"header_links" %></li> 
+          <li><%= link_to "Profile", "#{ root_url }#{ current_user.username }" , :class =>"header_links" %></li> 
+          <li><%= link_to "Settings", edit_user_path(current_user), :class =>"header_links" %></li> 
         <% end %>
         
         <% if current_user %> 
           <li><%= link_to "Sign out", signout_path, :class =>"header_links", :method => :delete %></li>
         <% else %>
-          <li><%= link_to "Home", root_path, :class =>"header_links" %></li> · 
+          <li><%= link_to "Home", root_path, :class =>"header_links" %></li> 
 		      <li><%= link_to "Sign up", newlogin_path, :id =>"signup", :class =>"header_links" %></li>
         <% end %>
       </div>

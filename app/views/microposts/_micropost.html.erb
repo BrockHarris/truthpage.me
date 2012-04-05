@@ -42,9 +42,9 @@
           <%= f.hidden_field :rater_id, :value => current_user.id %>
           <%= f.hidden_field :rating, :value => "true" %>
           <% if micropost.rateable_by_user?(current_user) %> 
-            <%= f.submit 'true', :class => 'micropost_true_button'%>
+            <%= f.submit 'Like', :class => 'micropost_true_button'%>
           <% else %>
-            <span class="fake_rating_button">true</span>
+            <span class="fake_rating_button">Like</span>
           <% end %>
           <%= render_true_ratings(micropost)  %>
         <% end %>
@@ -57,9 +57,9 @@
           <%= f.hidden_field :rater_id, :value => current_user.id %>
           <%= f.hidden_field :rating, :value => "false" %>
           <% if micropost.rateable_by_user?(current_user) %> 
-            <%= f.submit 'false', :class => 'micropost_false_button'%> 
+            <%= f.submit 'Dislike', :class => 'micropost_false_button'%> 
           <% else %>
-            <span class="fake_rating_button">false</span>
+            <span class="fake_rating_button">Dislike</span>
           <% end %>
           <%= render_false_ratings(micropost) %>
         <% end %>
