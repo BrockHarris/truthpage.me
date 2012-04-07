@@ -34,9 +34,8 @@
 	</script>	
   
 <% end %>
-
-<table class="profile_container">
-	<td class="name_container">
+<div class="profile_wrapper">
+	<div class="profile_top">
 		<div class="profile_name"> 
 			<%= @user.username %> 
 		</div>
@@ -49,6 +48,15 @@
 		<div class="profile_blurb"> 
 			<%= @user.blurb %> 
 		</div>	
+		<% if current_user %>
+			<% if @user == current_user %>
+			<% else %>
+				<%= render_follow_links(@user) %>
+					<br/>
+				<%= render 'notifications/new_notification' %>
+				<p/>
+			<% end %>
+		<% end %>
 		<% unless @microposts.empty? %>
 			<div class="profile_truth_stats">
 				<span class="profile_stat_counter"><%= @microposts.count %></span> truths posted<br/>
@@ -63,15 +71,11 @@
 		<% unless @top_truths.empty? %>
 			<%= render 'shared/top_truth_feed' %>
 		<% end %>
-		<% if current_user %>
-			<% if @user == current_user %>
-			<% else %>
-				<%= render_follow_links(@user) %>
-					<br/>
-				<%= render 'notifications/new_notification' %>
-				<p/>
-			<% end %>
-		<% end %>
+	</div>
+<table>
+	<td class="name_container">
+		
+		
 
 		<div class="profile_side">
 			<div class="profile_following-h">
@@ -127,3 +131,4 @@
 			<%= will_paginate @microposts %>
 	</td>
 </table>
+</div>

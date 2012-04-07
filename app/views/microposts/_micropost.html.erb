@@ -73,17 +73,7 @@
       </div>
       
 
-      <div class="micropost_accuracy">
-        <% unless micropost.ratings.trues.empty? %>
-          <% if micropost.truth_percentage.to_i < 34 %>
-            <%= number_to_percentage(micropost.truth_percentage, :precision => 0) %> true
-          <% elsif micropost.truth_percentage < 67 %>
-            <span class="yellow_percentage"><%= number_to_percentage(micropost.truth_percentage, :precision => 0) %> true</span>
-          <% else %>
-            <span class="green_percentage"><%= number_to_percentage(micropost.truth_percentage, :precision => 0) %> true</span>
-          <% end %>
-        <% end %>
-      </div>
+      
     <% else %>
       <div class="unauth_spacer"></div>
     <% end %>

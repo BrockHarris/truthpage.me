@@ -776,15 +776,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 
 /************* (profile) User Show page **********/
 
-
-.profile_container {
-	background: -moz-linear-gradient(top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.6)), color-stop(100%,rgba(0,0,0,0.6))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%); /* IE10+ */
-background: linear-gradient(top, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#99000000',GradientType=0 ); /* IE6-9 */
+.profile_wrapper {
+	width:900px;
+	margin-top:-30px;
+	margin-left:-30px;
+	background:white;
+	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 }
 .profile_noshow {
 	text-align:center;
@@ -812,8 +811,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
 	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
-
 }
+
 .profile_avatar {
 	margin-top:-5px;
 	padding:15px;
@@ -1028,13 +1027,9 @@ table.microposts tr td.micropost {
 	width: 545px;
 	background:white;
 	padding-top:4px;
+	padding-bottom:4px;
 	margin-right:10px;
-	webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 1px 1px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 1px 1px rgba(50, 50, 50, 0.9);
+	border-bottom:1px solid #CCC;
 }												
 table.microposts {
 	float:right;
@@ -1063,7 +1058,6 @@ table.microposts tr {
 	font-size:13pt;
 }
 .micropost_content {
-	border-bottom:1px solid #EEE;
 	font-family:calibri;
 	margin-top:-10px;
 	padding-bottom:6px;
@@ -1097,8 +1091,8 @@ table.microposts tr {
 }
 .micropost_true_button {
 	margin-right:-3px;
-	border:none;
-	color:#0099FF;
+	border:1px solid #eee;
+	color:green;
 	background-color:#FFF;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -1107,8 +1101,8 @@ table.microposts tr {
 }
 .micropost_false_button {
 	margin-right:-3px;
-	border:none;
-	color:#0099FF;
+	border:1px solid #eee;
+	color:red;
 	background-color:#FFF;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -1149,7 +1143,15 @@ table.microposts tr {
 	height:25px;
 }
 .post_comments {
-	background:white;
+	width:525px;
+	padding:10px;
+	margin-top:20px;
+	border-top:1px solid #EEE;
+	background:#EEE;
+}
+.open_comments {
+	float:right;
+	padding-right:10px;
 }
 
 
