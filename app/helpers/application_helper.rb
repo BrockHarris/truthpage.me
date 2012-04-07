@@ -4,11 +4,15 @@ module ApplicationHelper
   #end
 
   def render_true_ratings(micropost)
-    "#{micropost.ratings.trues.count}".html_safe
+    unless micropost.ratings.trues.empty?
+      "#{micropost.ratings.trues.count}".html_safe
+    end
   end
 
   def render_false_ratings(micropost)
-    "#{micropost.ratings.falses.count}".html_safe
+    unless micropost.ratings.trues.empty?
+      "#{micropost.ratings.falses.count}".html_safe
+    end
   end
 
   def render_user_avatar(user, size=:small, opts={})

@@ -93,11 +93,8 @@ body {
 	color-stop(100%,rgba(35,83,138,1)));
 	width: 100%;
 	padding-top:5px;
-	padding-right:10px;
 	height:55px;
-	border-radius: 0px 0px 4px 4px; 
-	-moz-border-radius: 0px 0px 4px 4px; 
-	-webkit-border-radius: 0px 0px 4px 4px; 
+	border-bottom:1px solid #333;
 	box-shadow:0px 0px 4px #000000;
 }
 .header_text {
@@ -110,8 +107,8 @@ body {
   				rgba(255,255,255,0.5) 0 1px, 
   				rgba(0,0,0,0.3) -1px -2px;
 	color: #EEE;
-	margin-top:-15px;
-	margin-left:15px;
+	margin-top:-13px;
+	margin-left:25px;
 }
 .header_text li a {
   color:#2A4668;
@@ -125,6 +122,7 @@ body {
 	font-family:arial;
 	font-weight:600;
 	font-size:11pt;
+	margin-right:7px;
 }
 .welcome_user {
 	color: #EEE;
@@ -867,12 +865,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 }
 .newpost_container {
 	vertical-align:top;
-	width:570px;
+	width:610px;
 	float:right;
-	background:white;
-	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
+	border-bottom:1px solid #CCC;
 }
 form.new_micropost {
   margin-bottom: 2em;
@@ -895,7 +890,7 @@ form.new_micropost textarea:focus {
   outline: none;
 }
 form.new_micropost textarea {
-	width: 450px; 
+	width: 490px; 
 	height: 50px;
 	max-height:50px;
 	font-size: 12pt;
@@ -1157,8 +1152,20 @@ table.microposts tr {
 	background:#EEE;
 }
 .open_comments {
+	font-size:10pt;
+	padding:2px;
 	float:right;
 	padding-right:10px;
+	border:1px solid #CCC;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.open_comments:hover {
+	background:#EEE;
+}
+.micropost-comment{
+	width:100%;
 }
 
 

@@ -1,6 +1,7 @@
-
 <div class="micropost-comment">
+	<%= render_user_avatar(comment.user, :tiny) %>
+	<span class="username"><%= comment.user.username %></span> <br/>
   	<span class="comment"><%= comment.post_comment %></span>
-  	<span class="username"><%= comment.user.username %></span>
+  	
 </div>
 
