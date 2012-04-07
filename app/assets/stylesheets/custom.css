@@ -776,8 +776,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 
 /************* (profile) User Show page **********/
 
-.profile_wrapper {
+
+.profile_container {
 	width:900px;
+	padding:10px;
 	margin-top:-30px;
 	margin-left:-30px;
 	background:white;
@@ -1024,7 +1026,7 @@ table.microposts tr td.micropost {
 	float:right;
   font-size:11pt;
 	vertical-align: top;
-	width: 545px;
+	width: 585px;
 	background:white;
 	padding-top:4px;
 	padding-bottom:4px;
@@ -1091,7 +1093,7 @@ table.microposts tr {
 }
 .micropost_true_button {
 	margin-right:-3px;
-	border:1px solid #eee;
+	border:1px solid #CCC;
 	color:green;
 	background-color:#FFF;
 	-webkit-border-radius: 3px;
@@ -1099,9 +1101,12 @@ table.microposts tr {
 	border-radius: 3px;
 	cursor:pointer;
 }
+.micropost_true_button:hover {
+	background:#EEE;
+}
 .micropost_false_button {
 	margin-right:-3px;
-	border:1px solid #eee;
+	border:1px solid #CCC;
 	color:red;
 	background-color:#FFF;
 	-webkit-border-radius: 3px;
@@ -1109,7 +1114,9 @@ table.microposts tr {
 	border-radius: 3px;
 	cursor:pointer;
 }
-
+.micropost_false_button:hover {
+	background:#EEE;
+}
 .fake_rating_button {
 	font-size:9pt;
 	margin-left:5px;
@@ -1143,7 +1150,7 @@ table.microposts tr {
 	height:25px;
 }
 .post_comments {
-	width:525px;
+	width:565px;
 	padding:10px;
 	margin-top:20px;
 	border-top:1px solid #EEE;

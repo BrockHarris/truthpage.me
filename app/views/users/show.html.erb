@@ -34,8 +34,8 @@
 	</script>	
   
 <% end %>
-<div class="profile_wrapper">
-	<div class="profile_top">
+<table class="profile_container">
+	<td class="name_container">
 		<div class="profile_name"> 
 			<%= @user.username %> 
 		</div>
@@ -57,24 +57,10 @@
 				<p/>
 			<% end %>
 		<% end %>
-		<% unless @microposts.empty? %>
-			<div class="profile_truth_stats">
-				<span class="profile_stat_counter"><%= @microposts.count %></span> truths posted<br/>
-			</div>
-			<div class="profile_truth_stats">
-				<% unless @true_ratings.empty? %>
-					<span class="profile_stat_counter"><%= number_to_percentage(@true_ratings.count.to_f / @total_ratings.count*100, :precision => 0) %></span> truthful
-				
-				<% end %>
-			</div>
-		<% end %>
+		
 		<% unless @top_truths.empty? %>
 			<%= render 'shared/top_truth_feed' %>
 		<% end %>
-	</div>
-<table>
-	<td class="name_container">
-		
 		
 
 		<div class="profile_side">
@@ -131,4 +117,3 @@
 			<%= will_paginate @microposts %>
 	</td>
 </table>
-</div>
