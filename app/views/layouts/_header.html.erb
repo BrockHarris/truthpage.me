@@ -19,6 +19,15 @@
       'speedOut'        :    200,
       'overlayShow'    :    true
     });
+
+    $('.noty_menu').click(function () {
+      $('ul.the_menu').slideToggle('medium');
+      return false;
+    });
+
+    $('body').click(function() {
+      $('ul.the_menu').slideUp(150);
+    });
   });
 </script> 
 
@@ -35,6 +44,8 @@
         <% if current_user %>
           <li><%= link_to "Friends", root_url, :class =>"header_links" %></li> 
           <li><%= link_to "Profile", "#{ root_url }#{ current_user.username }" , :class =>"header_links" %></li> 
+             <%= link_to "#{ notifications.count}", "#", :class=> "noty_menu", :style=>'color:#EEEEEE;' %>
+
           <li><%= link_to "Settings", edit_user_path(current_user), :class =>"header_links" %></li> 
         <% end %>
         
@@ -47,35 +58,27 @@
       </div>
     </ul>
   </nav>
-  <% if current_user %> 
-    <% if notifications.empty? %>
-      <div class="welcome_user">
-        <%= link_to "#{ current_user.username }", "#{ root_url }#{ current_user.username }", :style=>'color:#EEEEEE;' %>
-      </div>
-    <% else %>
-      <div class="notification_container">
-        <div class="notification_bubble">
-          <%= image_tag "button.png", :class => "menu_class" %>
-          <div class="notification_counter">
-          <%= notifications.count %>
-          </div>
-          <div class="notifications_user">
-          <%= link_to "#{ current_user.username }", "#{ root_url }#{ current_user.username }", :style=>'color:#EEEEEE;' %>
-          </div>
-        </div>
-        <ul class="the_menu">
+  <ul class="the_menu">
           <div class="menu_header">
             Notifications (<%= notifications.count %>)
           </div>
           <li>
             <%= render notifications %>
           </li>
-        </ul>  
-      </div>
-    <% end %>
+        </ul> 
+
+  <% if current_user %> 
+    <div class="welcome_user">
+      <span class="welcome_user_text">
+        <%= link_to "#{ current_user.username }", "#{ root_url }#{ current_user.username }", :style=>'color:#EEEEEE;' %>
+      </span>
+      <span class="welcome_user_avatar">
+        <%= render_user_avatar(current_user, :tiny) %>
+      </span>
+    </div>
   <% end %>
   <% flash.each do |key, value| %>
-          <div id="flash" class="<%= key %>"><%= value %></div>
-        <% end %>
+    <div id="flash" class="<%= key %>"><%= value %></div>
+  <% end %>
 </div>
 

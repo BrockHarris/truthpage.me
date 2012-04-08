@@ -1,5 +1,5 @@
-<tr>
-  <td class="notification">
+<div>
+  <div class="notification">
 		<% if notification.try(:read?) %>
 		<% else%>
 		 	<div class="notification_type"> 
@@ -14,5 +14,5 @@
 			</div>
 		<% end %>
   		<%= button_to "", { :controller => 'notifications', :action => "destroy", :id => notification.id }, :method => :delete, :class => "notification_delete" %>
-	</td>
-</tr>
+	</div>
+</div>
