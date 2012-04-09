@@ -260,11 +260,28 @@ body {
 	margin-left:-10px;
 	height:20px;
 	width:20px;
-	padding-right:6px;
-	padding-left:5px;
-	padding-bottom:3px;
-	padding-top:3px;
-	background-image:url("bubble.png");
+	padding: 1px 4px 1px 3px;
+	background:red;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    1px 1px 2px rgba(50, 50, 50, 0.75);
+	box-shadow:         1px 1px 2px rgba(50, 50, 50, 0.75);
+}
+.noty_menu:hover {
+	background:#D62424;
+}
+.noty_menu:active {
+	-webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    1px 1px 5px rgba(50, 50, 50, 0.75);
+	box-shadow:         1px 1px 5px rgba(50, 50, 50, 0.75);
+}
+.bubble_placement {
+	float:right;
+	margin-top:-48px;
+	margin-right:45px;
+	z-index:9999;
 }
 .menu_header {
 	background-color:rgba(10,10,10,0.15);
