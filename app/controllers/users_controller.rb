@@ -67,6 +67,7 @@ class UsersController < ApplicationController
   def follow
     current_user.follow!(@user)
     redirect_to :back, :notice=>"You're now following #{@user.username}!"
+    #UserMailer.post_email(@micropost).deliver
   end
 
   def unfollow

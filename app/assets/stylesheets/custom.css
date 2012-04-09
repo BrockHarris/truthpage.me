@@ -222,12 +222,6 @@ body {
 	text-decoration:underline;
 	cursor:pointer;
 }
-.notification_container{
-	float:right;
-	margin-right:20px;
-	margin-top:-20px;
-	padding:5px;
-}
 .notification {
 	width:200px;
 	height:50px;
@@ -280,7 +274,7 @@ body {
 .bubble_placement {
 	float:right;
 	margin-top:-48px;
-	margin-right:45px;
+	margin-right:50px;
 	z-index:9999;
 }
 .menu_header {
@@ -380,9 +374,9 @@ nav ul li {
 
 nav ul li a {
 	text-decoration:none;
-	text-shadow:0px 1px 4px #000000;
-  color: #EEE;
-	padding: 0 5px;
+	text-shadow:0px 1px 1px #000000;
+  color: #FFF;
+	padding: 0 6px;
 }
 
 nav ul li a:visited {

@@ -14,7 +14,8 @@ class NotificationsController < ApplicationController
     redirect_to(:back)
   end
   def clear_all
-    Notification.where(:receiver_id => current_user.id).destroy
+    @notifications =  Notification.where(:receiver_id => current_user.id).all
+    Notification.destroy(@notifications)  
     redirect_to(:back)
   end
 end

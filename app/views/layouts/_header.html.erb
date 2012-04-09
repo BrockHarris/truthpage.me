@@ -75,7 +75,7 @@
         <%= render_user_avatar(current_user, :tiny) %>
       </span>
     </div>
-    <% if current_user %> 
+    <% unless notifications.empty? %> 
       <div class="bubble_placement">
         <%= link_to "#{ notifications.count}", "#", :class=> "noty_menu", :style=>'color:#FFFFFF;' %>
       </div>
