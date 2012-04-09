@@ -208,35 +208,11 @@ body {
 	cursor:pointer;
 	background-position: bottom;
 }
-.notifications_user {
-	color: #EEE;
-	font-size:14px;
-	text-align:right;
-	font-family:arial;
-	float:left;
-	margin-right:10px;
-	margin-top:4px;
-}
 .notification_container{
 	float:right;
 	margin-right:20px;
 	margin-top:-20px;
 	padding:5px;
-}
-.notification_bubble {
-	float:right;
-	color:red;
-}
-.notification_counter {
-	float:right;
-	color: #F00880;
-	font-family:arial;
-	font-weight:bold;
-	font-size:12pt;
-	padding-left:15px;
-	margin-top:5px;
-	margin-right:-20px;
-
 }
 .notification {
 	width:200px;
@@ -251,21 +227,23 @@ body {
 .notification_type {
 	margin-left:5px;
 	margin-right:5px;
-	color:#232426;
+	color:#EEE;
 	font-size:11pt;
-	font-family:helvetica;
+	font-family:arial;
 	margin-top:5px;
-	border-top: 1px #8CB3ED solid;
+	border-top: 1px #4C4C4C solid;
 	padding-top:3px;
 }
 .notification_time {
 	margin-left:10px;
 	font-family:helvetica;
 	font-size: 65%;
-  color: #666;
+  color: #ccc;
+  margin-top:5px;
   padding-bottom:10px;
 }
 .noty_menu {
+	font-size:11pt;
 	margin-left:-10px;
 	height:20px;
 	width:20px;
@@ -274,7 +252,16 @@ body {
 	padding-bottom:3px;
 	padding-top:3px;
 	background-image:url("bubble.png");
-
+}
+.menu_header {
+	text-align:left;
+	color: white;
+	font-size:16pt;
+	text-shadow:1px 1px 2px #000000;
+	font-family:arial;
+	margin:5px;
+	margin-left:10px;
+	padding:3px;
 }
 ul, li {
   margin:0;
@@ -288,23 +275,14 @@ ul, li {
 	cursor:pointer;
 	float:right;
 }
-.menu_header {
-	text-align:center;
-	color: #254D7A;
-	font-size:16pt;
-	font-family: comic sans ms;
-	background:white;
-	margin:5px;
-	padding:3px;
-}
 .the_menu {
-	background:#E8F2FF;
+	background-color:rgba(10,10,10,0.85);
   display:none;
   width:340px;
   z-index:0;
   position:absolute;
-	left:660px;
-	top:64px;
+	left:600px;
+	top:61px;
 	border-radius: 0px 0px 5px 5px; 
 	-moz-border-radius: 0px 0px 5px 5px; 
 	-webkit-border-radius: 0px 0px 5px 5px; 
@@ -316,7 +294,7 @@ ul, li {
 }
  
 .the_menu li a {
-  color:#315E78;
+  color:#98C8ED;
   text-decoration:none;
   text-align:center;
 }

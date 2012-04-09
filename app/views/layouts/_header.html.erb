@@ -44,8 +44,9 @@
         <% if current_user %>
           <li><%= link_to "Friends", root_url, :class =>"header_links" %></li> 
           <li><%= link_to "Profile", "#{ root_url }#{ current_user.username }" , :class =>"header_links" %></li> 
-             <%= link_to "#{ notifications.count}", "#", :class=> "noty_menu", :style=>'color:#EEEEEE;' %>
-
+            <% if current_user %> 
+              <%= link_to "#{ notifications.count}", "#", :class=> "noty_menu", :style=>'color:#FFFFFF;' %>
+            <% end %>
           <li><%= link_to "Settings", edit_user_path(current_user), :class =>"header_links" %></li> 
         <% end %>
         
@@ -58,16 +59,15 @@
       </div>
     </ul>
   </nav>
-  <ul class="the_menu">
-          <div class="menu_header">
-            Notifications (<%= notifications.count %>)
-          </div>
-          <li>
-            <%= render notifications %>
-          </li>
-        </ul> 
-
-  <% if current_user %> 
+  <% if current_user %>
+    <ul class="the_menu">
+      <div class="menu_header">
+        Notifications - <%= notifications.count %>
+      </div>
+      <li>
+        <%= render notifications %>
+      </li>
+    </ul> 
     <div class="welcome_user">
       <span class="welcome_user_text">
         <%= link_to "#{ current_user.username }", "#{ root_url }#{ current_user.username }", :style=>'color:#EEEEEE;' %>
