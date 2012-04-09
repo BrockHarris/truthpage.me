@@ -67,6 +67,9 @@
       <li>
         <%= render notifications %>
       </li>
+      <div class="notification_clear_all">
+        <%= button_to "Clear all", clear_all_notifications_path, :method=>:delete, :class=>'notification_clear_all_button' %>
+      </div>
     </ul> 
     <div class="welcome_user">
       <span class="welcome_user_text">

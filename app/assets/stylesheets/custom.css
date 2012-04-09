@@ -208,6 +208,20 @@ body {
 	cursor:pointer;
 	background-position: bottom;
 }
+.notification_clear_all {
+	border-top: 1px #4C4C4C solid;
+}
+.notification_clear_all_button {
+	border:none;
+	margin-left:135px;
+	background:none;
+	color:#CCC;
+	font-size:10pt;
+}
+.notification_clear_all_button:hover {
+	text-decoration:underline;
+	cursor:pointer;
+}
 .notification_container{
 	float:right;
 	margin-right:20px;
@@ -230,7 +244,6 @@ body {
 	color:#EEE;
 	font-size:11pt;
 	font-family:arial;
-	margin-top:5px;
 	border-top: 1px #4C4C4C solid;
 	padding-top:3px;
 }
@@ -254,14 +267,13 @@ body {
 	background-image:url("bubble.png");
 }
 .menu_header {
+	background-color:rgba(10,10,10,0.15);
 	text-align:left;
 	color: white;
-	font-size:16pt;
-	text-shadow:1px 1px 2px #000000;
+	font-size:14pt;
+	text-shadow:1px 1px 5px #000;
 	font-family:arial;
-	margin:5px;
-	margin-left:10px;
-	padding:3px;
+	padding:5px;
 }
 ul, li {
   margin:0;

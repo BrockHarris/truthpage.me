@@ -40,7 +40,11 @@ Truthpage::Application.routes.draw do
         get :following, :followers
       end
   end
-  resources :notifications, :only => [:create, :destroy]
+  resources :notifications, :only=>[:create, :destroy] do
+    collection do
+      delete :clear_all
+    end
+  end
   resources :ratings, :only => [:create, :destroy]
   resources :authentications
   resources :sessions,   :only => [:new, :create, :destroy]
