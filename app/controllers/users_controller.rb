@@ -67,7 +67,10 @@ class UsersController < ApplicationController
   def follow
     current_user.follow!(@user)
     redirect_to :back, :notice=>"You're now following #{@user.username}!"
-    #UserMailer.post_email(@micropost).deliver
+    Notification.create!(:sender_id=>current_user.id, :receiver_id=>@user.id, :format=>"is now following you")
+    if @user.try(:follower_email?)
+      UserMailer.new_follower_email(@user, current_user).deliver
+    end
   end
 
   def unfollow

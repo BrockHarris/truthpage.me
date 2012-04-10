@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120401003249) do
+ActiveRecord::Schema.define(:version => 20120410001359) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(:version => 20120401003249) do
     t.string   "background_content_type"
     t.integer  "background_file_size"
     t.datetime "background_updated_at"
+    t.boolean  "follower_email",                          :default => true
   end
 
   create_table "vanities", :force => true do |t|

@@ -15,7 +15,11 @@
   </div>
   <div class="settings_mail">
     <%= f.check_box :mail_subscription, {}, true, false %>
-    <%= f.label "Email notifications"%>
+    <%= f.label "Truth notification emails"%>
+  </div>
+  <div class="settings_mail">
+    <%= f.check_box :follower_email, {}, true, false %>
+    <%= f.label "Follower notification emails"%>
   </div>
   <div class="settings_fields" >
     <div class="formlabel"> Edit Blurb </div>
