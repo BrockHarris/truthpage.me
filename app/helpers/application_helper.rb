@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def render_false_ratings(micropost)
-    unless micropost.ratings.trues.empty?
+    unless micropost.ratings.falses.empty?
       "#{micropost.ratings.falses.count}".html_safe
     end
   end

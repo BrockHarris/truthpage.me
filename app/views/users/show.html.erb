@@ -11,10 +11,12 @@
 	    'msgWarningColor': 'red',
 	    'msgAppendMethod': 'insertAfter'
       });
+
     $("#authenticate").click(function(){
       $.post('/microposts/create_pending', $("#new_micropost").serialize());
       return false;
     });
+
     $("#authenticate").fancybox({
       'transitionIn'    :    'elastic',
       'transitionOut'    :    'elastic',
@@ -22,9 +24,8 @@
       'speedOut'        :    200,
       'overlayShow'    :    true
     });
+
     $(".post_comments").hide();
-    
-    //toggle the component with class msg_body
     $(".open_comments").click(function(e)
     {
       $(this).next(".post_comments").slideToggle(300);

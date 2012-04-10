@@ -8,7 +8,7 @@
         <div class="micropost_username">
           Anonymous
           <div class="micropost_timestamp">
-            <%= time_ago_in_words(micropost.created_at) %> ago.
+            <%= time_ago_in_words(micropost.created_at) %> ago
             
               <%= render_micropost_delete(micropost) %>
             
@@ -21,7 +21,7 @@
         <div class="micropost_username">
           <%= link_to micropost.user.username, micropost.user %>
           <div class="micropost_timestamp">
-            <%= time_ago_in_words(micropost.created_at) %> ago.
+            <%= time_ago_in_words(micropost.created_at) %> ago
             <% if current_user.eql?(micropost.target_user) %>
               <%= render_micropost_delete(micropost) %>
             <% end %>
@@ -34,7 +34,6 @@
       truth is <%= micropost.content %>
     </div>
     <% if current_user %>
-
       <div class="micropost_true">
         <%= form_for @rating do |f| %>
           <%= render 'shared/error_messages', :object => f.object %>
@@ -47,10 +46,13 @@
           <% else %>
             <span class="fake_rating_button">Like</span>
           <% end %>
-          <span class="post_stat_counters"><%= render_true_ratings(micropost)  %></span>
+          <% unless micropost.ratings.trues.empty? %>
+            <span class="true_counter"> <%= render_true_ratings(micropost) %></span>
+          <% else %>
+            <span class="counter_divider"> ·</span>
+          <% end %>
         <% end %>
       </div>
-
       <div class="micropost_false">
         <%= form_for @rating do |f| %>
           <%= render 'shared/error_messages', :object => f.object %>
@@ -63,19 +65,20 @@
           <% else %>
             <span class="fake_rating_button">Dislike</span>
           <% end %>
-          <span class="post_stat_counters"><%= render_false_ratings(micropost) %></span>
+          <% unless micropost.ratings.falses.empty? %>
+            <span class="false_counter"> <%= render_false_ratings(micropost) %></span>
+          <% end %>
         <% end %>
       </div>
-
-
-      <%= link_to "Comment", "#", :class => "open_comments", :style=>'color:#999999;' %>
       <% unless micropost.comments.empty? %>
-        <span class="post_stat_counters"><%= micropost.comments.count %></span>
+        <span class="comment_counter"> <%= micropost.comments.count %> </span>
       <% end %>
+      <%= link_to "Comment", "#", :class => "open_comments", :style=>'color:#216389;;' %>
       <div class="post_comments"> 
         <%= render :partial=> 'comments/new_comment', :locals=>{:micropost=>micropost} %>
         <%= render micropost.comments %>
       </div>
+      
     <% else %>
       <div class="unauth_spacer"></div>
     <% end %>
