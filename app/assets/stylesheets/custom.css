@@ -1111,8 +1111,8 @@ table.microposts tr {
 	background-position: bottom;
 }
 .micropost_true_button {
+	border:none;
 	margin-right:-3px;
-	border:1px solid #CCC;
 	color:green;
 	background-color:#FFF;
 	-webkit-border-radius: 3px;
@@ -1125,7 +1125,7 @@ table.microposts tr {
 }
 .micropost_false_button {
 	margin-right:-3px;
-	border:1px solid #CCC;
+	border:none;
 	color:red;
 	background-color:#FFF;
 	-webkit-border-radius: 3px;
@@ -1168,6 +1168,10 @@ table.microposts tr {
 .unauth_spacer {
 	height:25px;
 }
+.post_stat_counters {
+	font-size:10pt;
+	border:1px solid #CCC;
+}
 .post_comments {
 	width:565px;
 	padding:10px;
@@ -1176,11 +1180,9 @@ table.microposts tr {
 	background:#EEE;
 }
 .open_comments {
-	font-size:10pt;
+	font-size:9pt;
 	padding:2px;
-	float:right;
 	padding-right:10px;
-	border:1px solid #CCC;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;

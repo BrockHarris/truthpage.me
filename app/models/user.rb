@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
                     :styles => {
                     :tiny => "25x25#",
                     :thumb=> "50x50#",
+                    :medium=> "100x100#",
                     :small  => "220x220>" },
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
