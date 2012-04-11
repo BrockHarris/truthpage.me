@@ -27,7 +27,11 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:login], params[:password])
     if user
       session[:user_id] = user.id
-      flash[:notice] = "Welcome back #{user.username}!"
+      unless notifications.empty?
+        flash[:notice] = "Welcome back #{user.username}! <br/> You have #{notifications.count} new notifications.".html_safe
+      else
+        flash[:notice] = "Welcome back #{user.username}!".html_safe
+      end
       if micropost = handle_pending_micropost
         flash[:notice] << "<br/>Truth posted!".html_safe
         redirect_to micropost.target_user
