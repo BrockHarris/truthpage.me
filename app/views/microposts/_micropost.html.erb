@@ -8,10 +8,8 @@
         <div class="micropost_username">
           Anonymous
           <div class="micropost_timestamp">
-            <%= time_ago_in_words(micropost.created_at) %> ago
-            
-              <%= render_micropost_delete(micropost) %>
-            
+            <%= time_ago_in_words(micropost.created_at) %> ago 
+            <%= render_micropost_delete(micropost) %>
           </div>
         </div>
       <% else %>

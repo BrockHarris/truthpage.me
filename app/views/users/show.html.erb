@@ -9,7 +9,7 @@
 	    'msgFontFamily': 'helvetica',
 	    'msgTextAlign': 'right',
 	    'msgWarningColor': 'red',
-	    'msgAppendMethod': 'insertAfter'
+	    'msgAppendMethod': 'insertBefore'
       });
 
     $("#authenticate").click(function(){
@@ -32,38 +32,37 @@
       e.preventDefault();
     });
   });
-	</script>	
-  
+</script>	 
 <% end %>
+
 <table class="profile_container">
 	<td class="name_container">
 		<div class="profile_name"> 
 			<%= @user.username %> 
 		</div>
-		<div class="profile_url">
-		  truthpage.me/<%= @user.username %>
+		<div class="profile_stats">
+			 <%= pluralize(@user.followers.count, "follower") %> 
+			 	 <p/>
+			 <%= pluralize(@user.microposts.count, "truth") %> 
 		</div>
 		<div class="profile_avatar"> 
-			<%= render_user_avatar(@user, :medium) %>	
+			<%= render_profile_pic(@user, :medium) %>	
 		</div>
-		<div class="profile_blurb"> 
-			<%= @user.blurb %> 
-		</div>	
+		<div class="profile_buttons">
 		<% if current_user %>
-			<% if @user == current_user %>
-			<% else %>
+			<% unless @user == current_user %>
 				<%= render_follow_links(@user) %>
-					<br/>
+				<br/>
 				<%= render 'notifications/new_notification' %>
 				<p/>
 			<% end %>
 		<% end %>
-		
+		</div>
+
 		<% unless @top_truths.empty? %>
 			<%= render 'shared/top_truth_feed' %>
 		<% end %>
 		
-
 		<div class="profile_side">
 			<div class="profile_following-h">
 				Following · <%= @user.following.count %>
@@ -94,19 +93,24 @@
 	</td>
 
 	<td class="right_container">
+		<div class="profile_blurb"> 
+			<%= @user.blurb %> 
+		</div>	
 		<div class="newpost_container">
 			<% if @user == current_user %>
 				<div class="profile_feed_header">
 					Truths about <%= @user.username %>
 				</div>
 			<% else %>
-				<div class="truth-is">
-					truth is...
+				<div class="micropost_form_container">
+					<div class="truth-is">
+						truth is...
+					</div>
+					<%= render 'microposts/form' %>
 				</div>
-				<%= render 'microposts/form' %>
 			<% end %>
 		</div>
-		<table class="microposts" summary="User microposts">
+		<table class="microposts">
 			<% if @microposts.empty? %>
 				<td class="profile_noshow">
 					<%= @user.username %> doesn't have any truths yet.

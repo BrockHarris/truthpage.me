@@ -22,6 +22,13 @@ module ApplicationHelper
       image_tag "genericpic-#{size}.jpg" 
     end
   end
+  def render_profile_pic(user, size=:medium, opts={})
+    if user.photo.exists?
+      return image_tag user.photo.url(size)
+    else
+      image_tag "genericpic-#{size}.jpg" 
+    end
+  end
 
   def render_follow_avatar(user, size=:tiny, opts={})
     if user.photo.exists?

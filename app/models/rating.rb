@@ -19,9 +19,9 @@ class Rating < ActiveRecord::Base
   def create_rating_notification
     unless self.rater_id==self.owner_id
       if self.rating=="true"
-        Notification.create!(:sender_id=>self.rater_id, :receiver_id=>self.owner_id, :format=>"rated a truth about you as true")
+        Notification.create!(:sender_id=>self.rater_id, :receiver_id=>self.owner_id, :format=>"liked a truth about you.")
       else
-        Notification.create!(:sender_id=>self.rater_id, :receiver_id=>self.owner_id, :format=>"rated a truth about you as false")
+        Notification.create!(:sender_id=>self.rater_id, :receiver_id=>self.owner_id, :format=>"disliked a truth about you.")
       end
     end
   end

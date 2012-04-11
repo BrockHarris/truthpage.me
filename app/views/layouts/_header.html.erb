@@ -32,11 +32,11 @@
 </script> 
 
 <div class="header_bar">
-<ul class="header_text">
-  <li>
-    <%= link_to "truthpage.me", root_path %>
-  </li>
-</ul>
+  <ul class="header_text">
+    <li>
+      <%= link_to "truthpage.me", root_path %>
+    </li>
+  </ul>
   <nav class="round">
     <ul class="header_nav">
       <div class="headerlink_place">
@@ -67,13 +67,11 @@
         <%= button_to "Clear all", clear_all_notifications_path, :method=>:delete, :class=>'notification_clear_all_button' %>
       </div>
     </ul> 
-    <div class="welcome_user">
-      <span class="welcome_user_text">
-        <%= link_to "#{ current_user.username }", "#{ root_url }#{ current_user.username }", :style=>'color:#EEEEEE;' %>
-      </span>
-      <span class="welcome_user_avatar">
+    <div class="welcome_user_avatar">
         <%= render_user_avatar(current_user, :tiny) %>
-      </span>
+    </div>
+    <div class="welcome_user_text">
+        <%= link_to "#{ current_user.username }", "#{ root_url }#{ current_user.username }", :style=>'color:#EEEEEE;' %>
     </div>
     <% unless notifications.empty? %> 
       <div class="bubble_placement">
