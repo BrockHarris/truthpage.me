@@ -1,9 +1,6 @@
 <% unless top_truths.truth_percentage.blank? %>
 <tr>
   <td class="top_truth_post">
-    <div class="top_truth_content">
-        "<%= top_truths.content %>"
-    </div>
     <span class="top_truth_avatar">
     <% if top_truths.try(:anon?) %>
       <%= image_tag("genericpic-tiny.jpg") %> 
@@ -13,11 +10,15 @@
     </span>
     <span class="top_truth_author">
       <% if top_truths.try(:anon?) %>
-        - Anonymous
+        Anonymous
       <% else %>
-        - <%= link_to top_truths.user.username, top_truths.user %>
+        <%= link_to top_truths.user.username, top_truths.user %>
       <% end %>
     </span>
+    <div class="top_truth_content">
+      <%= top_truths.content %>
+    </div>
+    <%= top_truths.ratings.trues.count %>
   </td>
 </tr>
 <% end %>

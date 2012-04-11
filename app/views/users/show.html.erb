@@ -30,9 +30,9 @@
     });
 
     $(".post_comments").hide();
-    $(".open_comments").click(function(e){
-      $(this).next(".post_comments").slideToggle(300);
-      e.preventDefault();
+    	$(".open_comments").click(function(e){
+      	$(this).next(".post_comments").slideToggle(300);
+      	e.preventDefault();
     });
   });
 </script>	 
@@ -44,9 +44,10 @@
 			<%= @user.username %> 
 		</div>
 		<div class="profile_stats">
-			· <%= pluralize(@user.microposts.count, "truth") %>
-				<p/> 
-			· <%= pluralize(@user.followers.count, "follower") %> 
+			· <%= pluralize(@user.microposts.count, "Truth") %>
+		</div>
+		<div class="profile_stats">
+			· <%= pluralize(@user.followers.count, "Follower") %> 
 		</div>
 		<div class="profile_avatar"> 
 			<%= render_profile_pic(@user, :medium) %>	

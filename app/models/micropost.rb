@@ -15,8 +15,8 @@ class Micropost < ActiveRecord::Base
 
   default_scope where("microposts.deleted_at IS NULL")
   scope :percentage_order, order("microposts.truth_percentage DESC")
-  scope :order, order("microposts.created_at DESC")
   scope :rated, :conditions => "truth_percentage IS NOT NULL"
+  scope :order, order("microposts.created_at DESC")
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
 
   
@@ -37,18 +37,16 @@ class Micropost < ActiveRecord::Base
   end
 
   def update_truth_percentage
-    n = (self.ratings.trues.count/self.ratings.count.to_f) * 100
-    connection.execute("UPDATE microposts SET truth_percentage = #{n.to_i} WHERE id = #{self.id}")
+    count = self.ratings.trues.count
+    connection.execute("UPDATE microposts SET truth_percentage = #{count} WHERE id = #{self.id}")
   end
   
   private
 
-    # Return a SQL condition for users followed by the given user.
-    # We include the user's own id as well.
-    def self.followed_by(user)
+  def self.followed_by(user)
       following_ids = %(SELECT followed_id FROM relationships
                         WHERE follower_id = :user_id)
       where("user_id IN (#{following_ids}) OR user_id = :user_id",
             { :user_id => user })
-    end
   end
+end
