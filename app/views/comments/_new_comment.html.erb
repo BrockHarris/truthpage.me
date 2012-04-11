@@ -3,5 +3,6 @@
   <%= f.text_field :post_comment, :class =>"" %>
   <%= f.hidden_field :micropost_id, :value => micropost.id %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :owner_id, :value => micropost.belongs_to_id %>
   <%= f.submit 'Post', :class => ''%> 
 <% end %>

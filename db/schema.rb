@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20120410001359) do
   create_table "comments", :force => true do |t|
     t.integer  "micropost_id"
     t.integer  "user_id"
+    t.integer  "owner_id"
     t.string   "post_comment"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20120410001359) do
 
   add_index "comments", ["created_at"], :name => "index_comments_on_created_at"
   add_index "comments", ["micropost_id"], :name => "index_comments_on_micropost_id"
+  add_index "comments", ["owner_id"], :name => "index_comments_on_owner_id"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "microposts", :force => true do |t|

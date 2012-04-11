@@ -254,8 +254,8 @@ body {
   padding-bottom:10px;
 }
 .noty_menu {
+	margin-left:-82px;
 	font-size:11pt;
-	margin-left:-10px;
 	height:20px;
 	width:20px;
 	padding: 1px 4px 1px 3px;
@@ -268,6 +268,7 @@ body {
 	box-shadow:         1px 1px 2px rgba(50, 50, 50, 0.75);
 }
 .noty_menu:hover {
+	text-decoration:none;
 	background:#D62424;
 }
 .noty_menu:active {
@@ -309,7 +310,7 @@ ul, li {
   z-index:0;
   position:absolute;
 	left:600px;
-	top:61px;
+	top:65px;
 	border-top:1px solid #000;
 	border-radius: 0px 0px 5px 5px; 
 	-moz-border-radius: 0px 0px 5px 5px; 
@@ -328,8 +329,7 @@ ul, li {
 }
  
 .the_menu li a:hover {
-  font-weight:bold;
-  color: #F00880;
+  text-decoration:underline;
 }
 
 /*************  Style link options  **********/
@@ -378,13 +378,9 @@ nav ul li a {
   color: #FFF;
 	padding: 0 6px;
 }
-
-nav ul li a:visited {
-  color: #EEE;
-}
-
 nav ul li a:hover {
   color:#8fdcff;
+  text-decoration:none;
 }
 nav ul li a:active {
 	text-shadow:0px 0px 0px #000000;
