@@ -6,16 +6,16 @@
 	    'maxCharsWarning': 165,
 	    'msgFontSize': '15px',
 	    'msgFontColor': '#005588',
-	    'msgFontFamily': 'helvetica',
-	    'msgTextAlign': 'right',
+	    'msgFontFamily': 'arial',
+	    'msgTextAlign': 'left',
 	    'msgWarningColor': 'red',
-	    'msgAppendMethod': 'insertBefore'
+	    'msgAppendMethod': 'insertAfter'
     });
 
     $('textarea#truth_form').click(function () {
     	$(this).animate({ height: "80px" }, 200);
 		});
-
+  	
     $("#authenticate").click(function(){
       $.post('/microposts/create_pending', $("#new_micropost").serialize());
       return false;
@@ -30,8 +30,7 @@
     });
 
     $(".post_comments").hide();
-    $(".open_comments").click(function(e)
-    {
+    $(".open_comments").click(function(e){
       $(this).next(".post_comments").slideToggle(300);
       e.preventDefault();
     });
@@ -45,9 +44,9 @@
 			<%= @user.username %> 
 		</div>
 		<div class="profile_stats">
-			 <%= pluralize(@user.followers.count, "follower") %> 
-			 	 <p/>
-			 <%= pluralize(@user.microposts.count, "truth") %> 
+			· <%= pluralize(@user.microposts.count, "truth") %>
+				<p/> 
+			· <%= pluralize(@user.followers.count, "follower") %> 
 		</div>
 		<div class="profile_avatar"> 
 			<%= render_profile_pic(@user, :medium) %>	
@@ -56,9 +55,9 @@
 		<% if current_user %>
 			<% unless @user == current_user %>
 				<%= render_follow_links(@user) %>
-				<br/>
+					<br/>
 				<%= render 'notifications/new_notification' %>
-				<p/>
+					<p/>
 			<% end %>
 		<% end %>
 		</div>
@@ -107,6 +106,9 @@
 				</div>
 			<% else %>
 				<div class="micropost_form_container">
+					<div class="micropost_form_header">
+						Write a truth about <%= @user.username %>:
+					</div>
 					<%= render 'microposts/form' %>
 				</div>
 			<% end %>
