@@ -1,7 +1,7 @@
 <%= content_for :head do %>
  <script type="text/javascript">
   $(function(){
-    $('#counter').jqEasyCounter({
+    $('#truth_form').jqEasyCounter({
 		'maxChars': 180,
 	    'maxCharsWarning': 165,
 	    'msgFontSize': '15px',
@@ -10,7 +10,11 @@
 	    'msgTextAlign': 'right',
 	    'msgWarningColor': 'red',
 	    'msgAppendMethod': 'insertBefore'
-      });
+    });
+
+    $('textarea#truth_form').click(function () {
+    	$(this).animate({ height: "60px" }, 200);
+		});
 
     $("#authenticate").click(function(){
       $.post('/microposts/create_pending', $("#new_micropost").serialize());
@@ -103,9 +107,6 @@
 				</div>
 			<% else %>
 				<div class="micropost_form_container">
-					<div class="truth-is">
-						truth is...
-					</div>
 					<%= render 'microposts/form' %>
 				</div>
 			<% end %>

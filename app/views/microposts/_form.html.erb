@@ -1,7 +1,7 @@
 <%= form_for @micropost do |f| %>  
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field" >
-		<%= f.text_area :content, :maxlength=>"180", :id =>"counter" %>
+		<%= f.text_area :content, :placeholder =>"truth is...", :maxlength=>"180", :id =>"truth_form" %>
   </div>
   <div class="field">
 		<%= f.hidden_field :belongs_to_id, :value => @user.id %>
