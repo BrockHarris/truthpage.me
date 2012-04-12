@@ -52,6 +52,9 @@
 		<div class="profile_avatar"> 
 			<%= render_profile_pic(@user, :medium) %>	
 		</div>
+		<div class="profile_blurb"> 
+			<%= @user.blurb %> 
+		</div>
 		<div class="profile_buttons">
 		<% if current_user %>
 			<% unless @user == current_user %>
@@ -96,10 +99,7 @@
 		</div>
 	</td>
 
-	<td class="right_container">
-		<div class="profile_blurb"> 
-			<%= @user.blurb %> 
-		</div>	
+	<td class="right_container">	
 		<div class="newpost_container">
 			<% if @user == current_user %>
 				<div class="profile_feed_header">

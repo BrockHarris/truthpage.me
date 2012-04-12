@@ -10,7 +10,7 @@
   <% unless @user_custom_background %>
     <body> 
   <% else %>
-    <body style="background-image:url(<%= @user.background.url %>)">
+    <body style="background-image:url(<%= @user.background.url %>); background-repeat:repeat;">
   <% end %>
     <%= render 'layouts/header' unless @skip_render %>
     <%= render 'layouts/admin_header' if @render_admin_header %>
