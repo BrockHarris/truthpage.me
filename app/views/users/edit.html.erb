@@ -29,21 +29,32 @@
     <%= f.submit 'Save', :class => "savesettings"%>
   </div>
 <div class="photo_container">
+
     <div class="settings_photo">
       <%= render_user_avatar(current_user, :medium) %>
     </div>
+    
     <div class="change_avatar">
-    <div class="formlabel"> Change your picture </div>
+      
+      <div class="formlabel"> Change your picture </div>
       <%= f.file_field :photo %>
+      </div>
+      <%= link_to "Remove Profile Picture", {:controller => :users, :action => 'remove_photo' }, :method => :delete %>
+
+      <% if current_user.background.exists? %>
+        <%= image_tag current_user.background.url(:medium) %>
+      <% end %>
+      <div class="formlabel"> Change your background </div>
+        <%= f.file_field :background %>
+      </div>
+
+      <%= link_to "Remove Background", {:controller => :users, :action => 'remove_background' }, :method => :delete %>
+
     </div>
-    <% if current_user.background.exists? %>
-      <%= image_tag current_user.background.url(:medium) %>
-    <% end %>
-    <div class="formlabel"> Change your background </div>
-      <%= f.file_field :background %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+
+  <%= link_to "Deactivate Profile", {:controller => :users, :action => 'deactivate_profile'}, :method => :delete, :confirm => "Are you sure you want to deactivate your profile?" %>
+
 </div>
 <div class="settings_container">
 <%= form_for @user, :html=> { :multipart => true} do |f| %>

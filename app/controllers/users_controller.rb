@@ -82,6 +82,22 @@ class UsersController < ApplicationController
     @title = "Truthpage.me | Settings"
   end
 
+  def remove_photo
+    if current_user.photo.exists?
+      current_user.photo.destroy
+      flash[:notice] = "Your profile picture has been removed."
+      redirect_to (:back)
+    end
+  end
+
+  def remove_background
+    if current_user.background.exists?
+      current_user.background.destroy
+      flash[:notice] = "Your profile background has been removed."
+      redirect_to (:back)
+    end
+  end
+
   def update
     if @user.update_attributes(params[:user])
       flash[:notice] = "Your profile has been updated!"
@@ -97,6 +113,13 @@ class UsersController < ApplicationController
     @user = User.find_by_username(params[:id])
     flash[:success] = "Removed truthpage user."
     redirect_to(:back)
+  end
+
+  def deactivate_profile
+    current_user.destroy
+    session[:user_id] = nil
+    flash[:success] = "Your profile has been deactivated."
+    redirect_to root_url
   end
 
   def welcome

@@ -2,7 +2,6 @@ class RelationshipsController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_filter :login_required
 
-  #TODO: Not sure this controller is even necessary. Remove it, if not. 
   def create
     @user = User.find(params[:relationship][:followed_id])
     current_user.follow!(@user)

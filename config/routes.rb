@@ -38,6 +38,9 @@ Truthpage::Application.routes.draw do
         post :follow
         post :unfollow
         get :following, :followers
+        delete :remove_background
+        delete :remove_photo
+        delete :deactivate_profile
       end
   end
   resources :notifications, :only=>[:create, :destroy] do
