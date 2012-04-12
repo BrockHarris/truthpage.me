@@ -1,4 +1,3 @@
-<% unless top_truths.truth_percentage.blank? %>
 <tr>
   <td class="top_truth_post">
     <span class="top_truth_avatar">
@@ -18,7 +17,6 @@
     <div class="top_truth_content">
       <%= top_truths.content %>
     </div>
-    <%= top_truths.ratings.trues.count %>
+    <%= pluralize(top_truths.ratings.trues.count, "Like") %>
   </td>
 </tr>
-<% end %>

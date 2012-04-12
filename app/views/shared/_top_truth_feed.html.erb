@@ -1,6 +1,13 @@
-<div class="top_truths_header">
-	<%= @user.username %>'s top 3
-</div>
-<table class="top_truths">
-  <%= render :partial => 'shared/top_truths', :collection => @top_truths %>
-</table>
+<% unless @top_truths.empty? %>
+	<div class="top_truths_header">
+		<%= @user.username %>'s Top 3
+	</div>
+	<table class="top_truths">
+  	<%= render :partial => 'shared/top_truths', :collection => @top_truths %>
+	</table>
+	<% if @top_truths.count < 2 %>
+		2 more to go!
+	<% elsif @top_truths.count < 3 %>
+		1 more to go!
+	<% end %>
+<% end %>
