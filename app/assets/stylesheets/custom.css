@@ -69,22 +69,24 @@ s/*************  footer/terms/about/etc.. pages  **********/
 /*************  CSS for general layout  **********/
 
 .container {
-	font-family: arial;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-left:auto;
 	margin-right:auto; 
 	width: 840px;
 	margin-top:-20px;
 }
 section {
-  margin-top: 90px;
-  font-size: 120%;
-	font-family: arial;
+	
+  	margin-top: 90px;
+  	font-size: 120%;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-style: black;
 }
 body {
-	font-family: arial;
-  background-color: #E8E8E8;
-  margin:0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:500;
+  	background-color: #E8E8E8;
+  	margin:0;
 }
 
 /************* header ************/
@@ -1216,7 +1218,7 @@ table.microposts tr {
 
 
 .settings_container {
-	padding:10px;
+	padding: 10px;
 	padding-bottom:20px;
 	background:white;
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
@@ -1224,11 +1226,11 @@ table.microposts tr {
 	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 }
 .settings_fields{
-	margin-left:80px;
-	margin-top:20px;
+	width: 230px;
+	margin-bottom: 10px;
 }
 .settings_blurb{
-	color:#666;;
+	color:red;;
 	padding-left:5px;
 	padding-bottom:2px;
 	height: 120px;
@@ -1303,7 +1305,7 @@ table.microposts tr {
 	padding-bottom:15px;
 	color:#2764A2;
 	font-size: 24pt;
-	text-align:center;
+	text-align:left;
 	line-height: 1px;
   letter-spacing: -1px;
   font-weight:500;
