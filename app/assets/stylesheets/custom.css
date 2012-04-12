@@ -941,7 +941,7 @@ form.new_micropost textarea:focus {
 	color:#666;
 }
 .top_truth_stat {
-	padding-top:5px;
+	padding-top:10px;
 	text-align:center;
 	font-size:10pt;
 	color:#333;
