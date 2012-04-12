@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
                     :path => "/:style/:id/:filename" 
   has_attached_file :background,
                     :styles => {
+                    :medium=> "100x100#",
                     :small  => "220x220>" },
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",

@@ -30,14 +30,14 @@
   </div>
 <div class="photo_container">
     <div class="settings_photo">
-      <%= render_user_avatar(current_user, :small) %>
+      <%= render_user_avatar(current_user, :medium) %>
     </div>
     <div class="change_avatar">
     <div class="formlabel"> Change your picture </div>
       <%= f.file_field :photo %>
     </div>
     <% if current_user.background.exists? %>
-      <%= image_tag current_user.background.url(:small) %>
+      <%= image_tag current_user.background.url(:medium) %>
     <% end %>
     <div class="formlabel"> Change your background </div>
       <%= f.file_field :background %>
