@@ -2,9 +2,9 @@
 	<div class="top_truths_header">
 		<%= @user.username %>'s Top 3
 	</div>
-	<table class="top_truths">
+	<div class="top_truths">
   	<%= render :partial => 'shared/top_truths', :collection => @top_truths %>
-	</table>
+	</div>
 	<% if @top_truths.count < 2 %>
 		<div class="top_truth_countdown">2 more to go!</div>
 	<% elsif @top_truths.count < 3 %>

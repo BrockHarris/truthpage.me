@@ -749,7 +749,7 @@ footer nav {
 	color:#333;
 	font-family:helvetica neue;
 	line-height: 1;
-	padding:0 0px 7px 5px;
+	padding:7px 0px 7px 5px;
 	font-size:22pt;
 	border-bottom:1px solid #CCC;
 }
@@ -885,8 +885,9 @@ form.new_micropost textarea:focus {
 }
 .top_truths {
 	width:255px;
-	margin-right:5px;
 	margin-bottom:5px;
+	padding:0;
+	margin:0;
 }
 .top_truths_header {
 	color:#26568D;
@@ -896,7 +897,7 @@ form.new_micropost textarea:focus {
 	line-height:1;
 	border-top:1px solid #CCC;
 	border-bottom:1px solid #CCC;
-	width:254px;
+	width:255px;
 	text-align:center;
 	padding-top:8px;
 	padding-bottom:8px;
@@ -905,19 +906,16 @@ form.new_micropost textarea:focus {
 .top_truth_countdown {
 	color:#999;
 	background:#EEE;
-	width:251px;
-	font-size:11pt;
-	margin-top:-7px;
-	margin-left:2px;
+	width:255px;
+	font-size:10pt;
 	text-align:center;
 	padding-bottom:5px;
 	padding-top:3px;
 }
 .top_truth_post {
 	padding:5px;
-	width:250px;
-	margin-top:0;
-	margin-bottom:0;
+	width:245px;
+	margin:0;
 	background:#E8EFFF;
 	border-bottom:1px solid #CCC;
 }
@@ -944,7 +942,7 @@ form.new_micropost textarea:focus {
 	color:#333;
 }
 .profile_following-h {
-	width:251px;
+	width:255px;
 	color:#26568D;
 	font-family:helvetica neue;
 	font-weight:500;
@@ -952,7 +950,7 @@ form.new_micropost textarea:focus {
 	line-height: 1;
 	padding-top:10px;
 	margin-bottom:5px;
-	margin-left:-3px;
+	margin-left:-5px;
 	text-align:center;
 	border-top:1px solid #CCC;
 }
@@ -1245,6 +1243,7 @@ table.microposts tr {
 .settings_fields{
 	width: 230px;
 	margin-bottom: 10px;
+	margin-left:100px;
 }
 .settings_blurb{
 	color:#666;
