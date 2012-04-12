@@ -39,7 +39,9 @@
       <div class="formlabel"> Change your picture </div>
       <%= f.file_field :photo %>
       </div>
-      <%= link_to "Remove Profile Picture", {:controller => :users, :action => 'remove_photo' }, :method => :delete %>
+      <% if current_user.photo.exists? %>
+        <%= link_to "Remove Profile Picture", {:controller => :users, :action => 'remove_photo' }, :method => :delete %>
+      <% end %>
 
       <% if current_user.background.exists? %>
         <%= image_tag current_user.background.url(:medium) %>
@@ -47,9 +49,9 @@
       <div class="formlabel"> Change your background </div>
         <%= f.file_field :background %>
       </div>
-
-      <%= link_to "Remove Background", {:controller => :users, :action => 'remove_background' }, :method => :delete %>
-
+      <% if current_user.background.exists? %>
+        <%= link_to "Remove Background", {:controller => :users, :action => 'remove_background' }, :method => :delete %>
+      <% end %>
     </div>
   <% end %>
 
