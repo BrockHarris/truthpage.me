@@ -793,7 +793,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
 	font-size:14pt;
 	line-height:1;
 	font-weight:400;
-	font-family: helvetica neue;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 form.new_micropost {
   margin-bottom:2em;
@@ -876,7 +876,7 @@ form.new_micropost textarea:focus {
 	font-size:20pt;
 	line-height:1;
 	font-weight:400;
-	font-family: helvetica neue;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-shadow:0px 1px 1px #CCC;
 	text-align:center;
 	margin-top:10px;
@@ -1013,7 +1013,7 @@ table.microposts tr {
   height: 80px;
 }
 .micropost_header {
-	font-family:calibri;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-top:-3px;
 	padding:2px;
 	color:#666;
@@ -1028,7 +1028,7 @@ table.microposts tr {
 	font-size:13pt;
 }
 .micropost_content {
-	font-family:calibri;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: -10px 8px 15px 5px;
 	text-indent:5px;
 }
