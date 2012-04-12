@@ -1,22 +1,24 @@
 <tr>
   <td class="top_truth_post">
-    <span class="top_truth_avatar">
+    <div class="top_truth_avatar">
     <% if top_truths.try(:anon?) %>
       <%= image_tag("genericpic-tiny.jpg") %> 
     <% else %>
       <%= render_user_avatar(top_truths.user, :tiny) %>
     <% end %>
-    </span>
-    <span class="top_truth_author">
+    </div>
+    <div class="top_truth_author">
       <% if top_truths.try(:anon?) %>
         Anonymous
       <% else %>
         <%= link_to top_truths.user.username, top_truths.user %>
       <% end %>
-    </span>
+    </div>
     <div class="top_truth_content">
       <%= top_truths.content %>
     </div>
-    <%= pluralize(top_truths.ratings.trues.count, "Like") %>
+    <div class="top_truth_stat">
+      <%= pluralize(top_truths.ratings.trues.count, "Like") %> · <%= pluralize(top_truths.ratings.falses.count, "Dislike") %>
+    </div>
   </td>
 </tr>
