@@ -38,6 +38,7 @@
           <%= f.hidden_field :micropost_id, :value => micropost.id %>
           <%= f.hidden_field :owner_id, :value => micropost.belongs_to_id %>
           <%= f.hidden_field :rater_id, :value => current_user.id %>
+          <%= f.hidden_field :micropost_content, :value => micropost.content %>
           <%= f.hidden_field :rating, :value => "true" %>
           <% if micropost.rateable_by_user?(current_user) %> 
             <%= f.submit 'Like', :class => 'micropost_true_button'%>
@@ -57,6 +58,7 @@
           <%= f.hidden_field :micropost_id, :value => micropost.id %>
           <%= f.hidden_field :owner_id, :value => micropost.belongs_to_id %>
           <%= f.hidden_field :rater_id, :value => current_user.id %>
+          <%= f.hidden_field :micropost_content, :value => micropost.content %>
           <%= f.hidden_field :rating, :value => "false" %>
           <% if micropost.rateable_by_user?(current_user) %> 
             <%= f.submit 'Dislike', :class => 'micropost_false_button'%> 

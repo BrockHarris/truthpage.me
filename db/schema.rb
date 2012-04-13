@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120410001359) do
+ActiveRecord::Schema.define(:version => 20120413033036) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20120410001359) do
     t.string   "post_comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "micropost_content"
   end
 
   add_index "comments", ["created_at"], :name => "index_comments_on_created_at"
@@ -55,10 +56,12 @@ ActiveRecord::Schema.define(:version => 20120410001359) do
     t.integer  "receiver_id"
     t.integer  "sender_id"
     t.string   "format"
-    t.boolean  "read",        :default => false
+    t.boolean  "read",              :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "noname",      :default => false
+    t.boolean  "noname",            :default => false
+    t.string   "content"
+    t.string   "micropost_content"
   end
 
   add_index "notifications", ["receiver_id"], :name => "index_notifications_on_receiver_id"
@@ -71,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20120410001359) do
     t.string   "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "micropost_content"
   end
 
   add_index "ratings", ["micropost_id"], :name => "index_ratings_on_micropost_id"

@@ -1113,7 +1113,7 @@ table.microposts tr {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 }
-._counter {
+.comment_counter {
 	color:#333;
 	padding:2px 4px 2px;
 	border:1px solid #CCC;
