@@ -73,7 +73,7 @@ s/*************  footer/terms/about/etc.. pages  **********/
 	margin-left:auto;
 	margin-right:auto; 
 	width: 840px;
-	margin-top:-20px;
+	margin-top:-30px;
 }
 section {
   margin-top: 90px;
@@ -736,9 +736,9 @@ footer nav {
 	height:100px;
 	margin-top:-35px;
 	margin-left:10px;
-	-webkit-box-shadow: 0px 0px 1px 1px #333;
-	-moz-box-shadow: 0px 0px 1px 1px #333;
-	box-shadow: 0px 0px 1px 1px #333;
+	-webkit-box-shadow: 0px 0px 1px 1px #CCC;
+	-moz-box-shadow: 0px 0px 1px 1px #CCC;
+	box-shadow: 0px 0px 1px 1px #CCC;
 }
 .profile_name {
 	margin-top:-4px;
@@ -1113,7 +1113,7 @@ table.microposts tr {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 }
-.comment_counter {
+._counter {
 	color:#333;
 	padding:2px 4px 2px;
 	border:1px solid #CCC;
@@ -1188,7 +1188,7 @@ table.microposts tr {
 	padding:0 5px 0 5px;
 	width:420px; 
 	height:30px;
-	font-size:11pt;
+	font-size:10pt;
 	font-weight:200;
 	color: #333;
 	border:none;
@@ -1244,6 +1244,12 @@ table.microposts tr {
 	width: 230px;
 	margin-bottom: 10px;
 	margin-left:100px;
+}
+.settings_left {
+	border:1px solid purple;
+}
+.settings_bottom {
+	border:1px solid orange;
 }
 .settings_blurb{
 	color:#666;
@@ -1336,6 +1342,15 @@ table.microposts tr {
 .change_avatar {
 	padding-top:10px;
 	padding-left:20px;
+}
+.remover_avatar {
+	
+}
+.remove_background {
+	
+}
+.settings_background {
+	
 }
 .settings_mail {
 	color:#666;

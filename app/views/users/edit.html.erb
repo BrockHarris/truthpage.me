@@ -1,78 +1,80 @@
-
-<table>
 <div class="settings_container">
-<div class="settings_header">Settings</div>
-<%= form_for @user, :html=> { :multipart => true} do |f| %>
-  <%= render 'shared/error_messages', :object => f.object %>
-  
-  <div class="settings_fields">
-    <div class="formlabel"> Username </div>
-    <%= f.text_field :username, :class =>"formfield" %>
+  <div class="settings_header">
+    Profile Settings
   </div>
-  <div class="settings_fields">
-    <div class="formlabel"> Email </div>
-    <%= f.text_field :email, :class =>"formfield" %>
-  </div>
-  <div class="settings_mail">
-    <%= f.check_box :mail_subscription, {}, true, false %>
-    <%= f.label "Truth notification emails"%>
-  </div>
-  <div class="settings_mail">
-    <%= f.check_box :follower_email, {}, true, false %>
-    <%= f.label "Follower notification emails"%>
-  </div>
-  <div class="settings_fields" >
-    <div class="formlabel"> Edit Blurb </div>
-	 <%= f.text_area :blurb, :maxlength=>"180", :class=>"settings_blurb" %>
-  </div>
-  <div class="save_button">
-    <%= f.submit 'Save', :class => "savesettings"%>
-  </div>
-<div class="photo_container">
-
-    <div class="settings_photo">
-      <%= render_user_avatar(current_user, :medium) %>
-    </div>
-    
-    <div class="change_avatar">
-      
-      <div class="formlabel"> Change your picture </div>
-      <%= f.file_field :photo %>
+  <div class="settings_left">
+    <%= form_for @user, :html=> { :multipart => true} do |f| %>
+      <%= render 'shared/error_messages', :object => f.object %>
+      <div class="settings_fields">
+        <div class="formlabel"> Username </div>
+        <%= f.text_field :username, :class =>"formfield" %>
       </div>
-      <% if current_user.photo.exists? %>
-        <%= link_to "Remove Profile Picture", {:controller => :users, :action => 'remove_photo' }, :method => :delete %>
-      <% end %>
-
-      <% if current_user.background.exists? %>
-        <%= image_tag current_user.background.url(:medium) %>
-      <% end %>
-      <div class="formlabel"> Change your background </div>
-        <%= f.file_field :background %>
+      <div class="settings_fields">
+        <div class="formlabel"> Email </div>
+        <%= f.text_field :email, :class =>"formfield" %>
       </div>
-      <% if current_user.background.exists? %>
-        <%= link_to "Remove Background", {:controller => :users, :action => 'remove_background' }, :method => :delete %>
-      <% end %>
+      <div class="settings_fields" >
+        <div class="formlabel"> Edit Blurb </div>
+	      <%= f.text_area :blurb, :maxlength=>"180", :class=>"settings_blurb" %>
+      </div>
+      <div class="save_button">
+        <%= f.submit 'Save', :class => "savesettings"%>
+      </div>
+      <div class="photo_container">
+        <div class="settings_photo">
+          <%= render_user_avatar(current_user, :medium) %>
+        </div>
+        <div class="formlabel"> Change your picture </div>
+          <%= f.file_field :photo %>
+        <div class="remover_avatar">
+          <% if current_user.photo.exists? %>
+            <%= link_to "Remove Profile Picture", {:controller => :users, :action => 'remove_photo' }, :method => :delete %>
+          <% end %>
+        </div>
+        <div class="settings_background">
+          <% if current_user.background.exists? %>
+            <%= image_tag current_user.background.url(:medium) %>
+          <% end %> 
+        </div>
+        <div class="formlabel"> Change your background </div>
+          <%= f.file_field :background %>
+        <div class="remove_background">
+          <% if current_user.background.exists? %>
+            <%= link_to "Remove Background", {:controller => :users, :action => 'remove_background' }, :method => :delete %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="settings_bottom">
+    <div class="settings_header">
+      Account Settings
     </div>
-  <% end %>
-
-  <%= link_to "Deactivate Profile", {:controller => :users, :action => 'deactivate_profile'}, :method => :delete, :confirm => "Are you sure you want to deactivate your profile?" %>
-
+    <%= form_for @user, :html=> { :multipart => true} do |f| %>
+      <%= render 'shared/error_messages', :object => f.object %>
+      <div class="settings_mail">
+        <%= f.check_box :mail_subscription, {}, true, false %>
+        <%= f.label "Truth notification emails"%>
+      </div>
+      <div class="settings_mail">
+        <%= f.check_box :follower_email, {}, true, false %>
+        <%= f.label "Follower notification emails"%>
+      </div>
+      <div class="settings_fields">
+        <div class="formlabel"> New Password </div>
+        <%= f.password_field :password, :class =>"formfield" %>
+      </div>
+      <div class="settings_fields">
+        <div class="formlabel"> New Password Confirmation </div>
+        <%= f.password_field :password_confirmation, :class =>"formfield" %>
+      </div>
+      <div class="save_button">
+        <%= f.submit 'Save', :class => "savesettings"%>
+      </div>
+    <% end %>
+    <div class="delete_profile">
+      <%= link_to "Deactivate Profile", {:controller => :users, :action => 'deactivate_profile'}, :method => :delete, :confirm => "Are you sure you want to deactivate your profile?" %>
+    </div>
+  </div>
 </div>
-<div class="settings_container">
-<%= form_for @user, :html=> { :multipart => true} do |f| %>
-  <%= render 'shared/error_messages', :object => f.object %>
- 
-  <div class="settings_fields">
-    <div class="formlabel"> New Password </div>
-    <%= f.password_field :password, :class =>"formfield" %>
-  </div>
-  <div class="settings_fields">
-    <div class="formlabel"> New Password Confirmation </div>
-    <%= f.password_field :password_confirmation, :class =>"formfield" %>
-  </div>
-  <div class="save_button">
-    <%= f.submit 'Save', :class => "savesettings"%>
-  </div>
-<% end %>
-</div>
-</table>
