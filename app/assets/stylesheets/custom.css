@@ -40,7 +40,7 @@ s/*************  footer/terms/about/etc.. pages  **********/
 	-webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-	background:rgba(0,0,0,0.40);
+	background-color:rgba(0,0,0,0.3);
 }
 .admin_container {
 	text-align:left;
@@ -87,6 +87,7 @@ body {
 	margin:0;
   background: url('body_background.png');
   background-repeat:repeat;
+  background-attachment:fixed;
 }
 
 /************* header ************/
@@ -96,9 +97,18 @@ body {
 	position:fixed;
 	color: #EEE;
 	background: 
-	-webkit-gradient(linear, left top, left bottom, 
-	color-stop(0%,rgba(107,157,219,1)), 
-	color-stop(100%,rgba(35,83,138,1)));
+	background-image: linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
+	background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(42,91,147)),
+	color-stop(1, rgb(83,134,192))
+);
 	width: 100%;
 	height:65px;
 	border-bottom:1px solid #333;
@@ -135,7 +145,7 @@ body {
 	margin:-23px 25px 0 0;
 	width:25px;
 	height:25px;
-	border: 1px solid #CCC;
+	border: 1px solid #999;
 	-webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -451,7 +461,7 @@ footer nav {
 	font-weight:bold;
 	padding:3px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #256600;
+	text-shadow:0px 0px 2px #256600;
 }
 .truth_request:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7ec75a), color-stop(1, #529633) );
@@ -485,7 +495,7 @@ footer nav {
 	font-weight:bold;
 	padding:3px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #256600;
+	text-shadow:0px 0px 2px #256600;
 }
 .follow_button:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7ec75a), color-stop(1, #529633) );
@@ -520,7 +530,7 @@ footer nav {
 	font-weight:bold;
 	padding:3px 24px;
 	text-decoration:none;
-	text-shadow:0px -1px 1px #ffffff;
+	text-shadow:0px 0px 2px #ffffff;
 }
 .unfollow_button:hover {
 	cursor:pointer;
@@ -542,7 +552,7 @@ footer nav {
 	font-weight:bold;
 	padding:3px 24px;
 	text-decoration:none;
-	text-shadow:0px -1px 1px #ffffff;
+	text-shadow:0px 0px 2px #ffffff;
 }
 .unfollow_button:active {
 	color:#666;
@@ -818,7 +828,7 @@ form.new_micropost textarea {
 	padding:5px 5px 0 5px;
 	width: 520px; 
 	height: 30px;
-	margin-top:5px;
+	margin-top:40px;
 	margin-left:-25px;
 	font-size: 12pt;
 	font-weight:200;
@@ -870,7 +880,7 @@ form.new_micropost textarea:focus {
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #00058a;
+	text-shadow:0px 0px 2px #00058a;
 }
 .submitpost:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36a2e0), color-stop(1, #0065b3) );
@@ -889,15 +899,17 @@ form.new_micropost textarea:focus {
 	margin-left:200px;
 }
 .profile_feed_header {
-	color:#26568D;
-	font-size:20pt;
-	line-height:1;
-	font-weight:400;
+	color:#2764A2;
+	background:#E8EFFF;
+	font-size: 20pt;
+	line-height: 1px;
+  letter-spacing: -1px;
+  font-weight:500;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-shadow:0px 1px 1px #666;
 	text-align:center;
-	margin-top:15px;
-	margin-bottom:-20px;
+	padding:25px;
+	margin:5px -57px -36px -29px;
+	border-bottom:1px solid #CCC;
 }
 .profile_side {
 	float:left;
@@ -934,14 +946,13 @@ form.new_micropost textarea:focus {
 	padding-bottom:5px;
 	padding-top:3px;
 	border-top:1px solid #333;
-
 }
 .top_truth_post {
 	padding:5px;
 	width:245px;
 	margin:0;
 	background-color:rgba(128,128,128,0.3);
-	border-top:1px solid #666;
+	border-top:1px solid #555;
 }
 .top_truth_content {
 	margin-top:7px;
@@ -1209,7 +1220,7 @@ table.microposts tr {
 	font-weight:bold;
 	padding:3px 10px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #00058a;
+	text-shadow:0px 0px 2px #00058a;
 }
 .comment_button:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36a2e0), color-stop(1, #0065b3) );
@@ -1308,9 +1319,9 @@ table.microposts tr {
 	background: -ms-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* IE10+ */
 	background: linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-	-webkit-box-shadow: 0px 0px 1px 1px #ccc;
-	-moz-box-shadow: 0px 0px 1px 1px #ccc;
-	box-shadow: 0px 0px 1px 1px #ccc;
+	-webkit-box-shadow: 0px 0px 1px 0px #ccc;
+	-moz-box-shadow: 0px 0px 1px 0px #ccc;
+	box-shadow: 0px 0px 1px 0px #ccc;
   border-radius: 4px; 
 	-moz-border-radius: 4px; 
 	-webkit-border-radius: 4px;
@@ -1343,7 +1354,7 @@ table.microposts tr {
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #00058a;
+	text-shadow:0px 0px 2px #00058a;
 }
 .savesettings:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36a2e0), color-stop(1, #0065b3) );
@@ -1395,42 +1406,85 @@ table.microposts tr {
 .remove_background {
 	
 }
-
 .delete_photo {
-	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e0d9e0), color-stop(1, #d9d2d9) );
-	background:-moz-linear-gradient( center top, #e0d9e0 5%, #d9d2d9 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e0d9e0', endColorstr='#d9d2d9');
-	background-color:#e0d9e0;
+	margin-top:5px;
+	margin-bottom:10px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #f7f7f7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f7f7f7;
+	box-shadow:inset 0px 1px 0px 0px #f7f7f7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #cccccc) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #cccccc 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#cccccc');
+	background-color:#ededed;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
-	border:1px solid #d6ced6;
+	border:1px solid #b8b8b8;
 	display:inline-block;
-	color:#756a75;
+	color:#e64545;
 	font-family:arial;
-	font-size:15px;
+	font-size:13px;
 	font-weight:bold;
-	padding:6px 49px;
+	padding:4px 18px;
 	text-decoration:none;
-	text-shadow:1px 1px 0px #ebdfeb;
-}.delete_photo:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d9d2d9), color-stop(1, #e0d9e0) );
-	background:-moz-linear-gradient( center top, #d9d2d9 5%, #e0d9e0 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9d2d9', endColorstr='#e0d9e0');
-	background-color:#d9d2d9;
-}.delete_photo:active {
-	position:relative;
-	top:1px;
+	text-shadow:1px 1px 0px #e0e0e0;
 }
-
+.delete_photo:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dedede), color-stop(1, #bdbdbd) );
+	background:-moz-linear-gradient( center top, #dedede 5%, #bdbdbd 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dedede', endColorstr='#bdbdbd');
+	background-color:#dedede;
+	text-decoration:none;
+}
+.delete_photo:active {
+	color:#cf6161;
+}
+.email_settings_h {
+	color:#666;
+	font-size:12pt;
+	margin-bottom:10px;
+	margin-left:100px;
+}
 .settings_mail {
 	color:#666;
 	font-size:12pt;
 	margin-bottom:10px;
 	margin-left:110px;
+}
+.delete_profile {
+	float:right;
+	margin-right:130px;
+	margin-top:-195px;
+}
+.deactivate_button {
+	margin-left:5px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ff9e9e;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ff9e9e;
+	box-shadow:inset 0px 1px 0px 0px #ff9e9e;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff6969), color-stop(1, #ff4a4a) );
+	background:-moz-linear-gradient( center top, #ff6969 5%, #ff4a4a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6969', endColorstr='#ff4a4a');
+	background-color:#ff6969;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #ff4a4a;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 0px 2px #690f0f;
+}.deactivate_button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff4a4a), color-stop(1, #ff6969) );
+	background:-moz-linear-gradient( center top, #ff4a4a 5%, #ff6969 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4a4a', endColorstr='#ff6969');
+	background-color:#ff4a4a;
+}.deactivate_button:active {
+	position:relative;
+	top:1px;
 }
 
 /************* AuthHome **********/
@@ -1871,9 +1925,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	background: -ms-linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* IE10+ */
 	background: linear-gradient(top, rgba(238,238,238,1) 1%,rgba(255,255,255,1) 85%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-	-webkit-box-shadow: 0px 0px 1px 1px #ccc;
-	-moz-box-shadow: 0px 0px 1px 1px #ccc;
-	box-shadow: 0px 0px 1px 1px #ccc;
+	-webkit-box-shadow: 0px 0px 1px 0px #ccc;
+	-moz-box-shadow: 0px 0px 1px 0px #ccc;
+	box-shadow: 0px 0px 1px 0px #ccc;
   border-radius: 4px; 
 	-moz-border-radius: 4px; 
 	-webkit-border-radius: 4px;
