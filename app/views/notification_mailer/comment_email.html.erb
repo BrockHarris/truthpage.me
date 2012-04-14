@@ -32,8 +32,10 @@
       <%= @mailer_sender %> commented on a truth about you.
       <p>
         The truth commented on is: <br/>
-        <%= @notification.micropost_content %>
+        <%= @notification.micropost_content %> <br/>
       </p>
+        The comment said: <br/>
+        <%= @notification.comment %>
       <p>
       	<%= link_to "Click here", @url %> to see your profile. <br/>
       </p>
