@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <style type="text/css" media="screen">
+      body {
+        background: url('http://truthpage.me/images/mailer_bgimage.jpg');
+        background-repeat: no-repeat;
+        background-color:#E8E8E8;
+      }
+      h1 { 
+        margin-top:-3px;
+        margin-left:15px;
+        font-size: 30pt;
+        font-family: book antiqua; 
+        color:#2A4668;
+        text-decoration:none;
+      }
+      ul { 
+        list-style: none; 
+      }
+      div.container {
+        padding-top:10px;
+        margin-left:25px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1> truthpage.me </h1>
+    <div class="container"> 
+      <%= @mailer_sender %> <%= @notification.format %>
+      <p>
+        The truth is: <br/>
+        <%= @notification.micropost_content %> <br/>
+      </p>
+      <p>
+      	<%= link_to "Click here", @url %> to see your profile. <br/>
+      </p>
+	    <p>
+		    To change your email notification settings <%= link_to "click here", @settings_url %>.
+	    </p>
+	    <p>
+		    - The truthpage team
+	    </p>
+    </div>
+  </body>
+</html>
