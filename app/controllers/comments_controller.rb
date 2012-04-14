@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_filter :find_micropost
 	
   def create
+
 		@comment = @micropost.comments.new(params[:comment])
     @comment.user = current_user
     if @comment.save

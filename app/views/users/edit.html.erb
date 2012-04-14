@@ -63,6 +63,14 @@
         <%= f.check_box :follower_email, {}, true, false %>
         <%= f.label "Follower notification emails"%>
       </div>
+      <div class="settings_mail">
+        <%= f.check_box :rating_email, {}, true, false %>
+        <%= f.label "Truth rating notification emails"%>
+      </div>
+      <div class="settings_mail">
+        <%= f.check_box :comment_email, {}, true, false %>
+        <%= f.label "Truth comment notification emails"%>
+      </div>
       <div class="settings_fields">
         <div class="formlabel"> New Password </div>
         <%= f.password_field :password, :class =>"formfield" %>
