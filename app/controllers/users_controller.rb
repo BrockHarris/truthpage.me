@@ -20,8 +20,8 @@ class UsersController < ApplicationController
     @true_ratings = Rating.where(:owner_id => @user.id, :rating =>"true")
     @total_ratings = Rating.where(:owner_id => @user.id)
 
-    @microposts = Micropost.order.find_all_by_belongs_to_id(@user.id).paginate(:page => params[:page], :per_page => 5)
-    
+    @microposts = Micropost.order.find_all_by_belongs_to_id(@user.id).paginate(:page => params[:page], :per_page => 15)
+
     @micropost  = @user.microposts.build(params[:micropost])
     @title = " Truthpage.me | #{@user.username}"
     @user = User.find_by_username(params[:id])
