@@ -87,6 +87,7 @@ body {
 	margin:0;
   background: url('body_background.png');
   background-repeat:repeat;
+  background-attachment:fixed;
 }
 
 /************* header ************/
