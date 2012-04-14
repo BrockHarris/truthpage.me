@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.background.exists?
       @user_custom_background = true
     end
-    @top_truths = Micropost.rated.count_order.where(:belongs_to_id => @user.id)
+    @top_truths = Micropost.rated.count_order.where(:belongs_to_id => @user.id).limit(3)
     @rating = Rating.new(params[:rating])
     @true_ratings = Rating.where(:owner_id => @user.id, :rating =>"true")
     @total_ratings = Rating.where(:owner_id => @user.id)

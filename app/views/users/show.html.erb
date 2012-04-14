@@ -44,7 +44,7 @@
 			<%= @user.username %> 
 		</div>
 		<div class="profile_stats">
-			· <%= pluralize(@user.microposts.count, "Truth") %>
+			· <%= pluralize(@microposts.count, "Truth") %>
 		</div>
 		<div class="profile_stats">
 			· <%= pluralize(@user.followers.count, "Follower") %> 

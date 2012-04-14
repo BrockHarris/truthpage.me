@@ -1,8 +1,8 @@
 <div class="settings_container">
-  <div class="settings_header">
-    Profile Settings
-  </div>
   <div class="settings_left">
+    <div class="settings_header">
+      Profile Settings
+    </div>
     <%= form_for @user, :html=> { :multipart => true} do |f| %>
       <%= render 'shared/error_messages', :object => f.object %>
       <div class="settings_fields">
@@ -31,10 +31,12 @@
             <%= link_to "Remove Profile Picture", {:controller => :users, :action => 'remove_photo' }, :method => :delete %>
           <% end %>
         </div>
-        <div class="settings_background">
+        <div class="settings_photo">
           <% if current_user.background.exists? %>
             <%= image_tag current_user.background.url(:medium) %>
-          <% end %> 
+          <% else %> 
+            <%= image_tag "no_profilebg.png" %>
+          <% end %>
         </div>
         <div class="formlabel"> Change your background </div>
           <%= f.file_field :background %>

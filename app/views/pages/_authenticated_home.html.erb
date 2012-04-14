@@ -2,6 +2,11 @@
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script type="text/javascript">
 	$(function(){
+		$(".post_comments").hide();
+    	$(".open_comments").click(function(e){
+      	$(this).next(".post_comments").slideToggle(300);
+      	e.preventDefault();
+    });
 		$("#share_profile").click(function() {
 		FB.init({ 
 		  appId:'186414394781001', 
@@ -50,8 +55,9 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
       });
      });
   </script>
-</div>  	
-<table class="front" summary="for authenticated users">
+</div>
+
+<table class="friends_container">
   <tr>
     <td class="main">
     	<table class="dash_container">

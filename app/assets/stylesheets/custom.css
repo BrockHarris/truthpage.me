@@ -35,6 +35,8 @@ s/*************  footer/terms/about/etc.. pages  **********/
 	color:#EEE;
 }
 .footer_background {
+	margin-top:60px;
+	margin-bottom:10px;
 	-webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -773,12 +775,12 @@ footer nav {
 	vertical-align:top;
 	width:555px;
 	float:right;
-	margin:20px 14px 0 0;
+	margin:0px 14px 0 0;
 	padding:0 30px 35px 0;
 	border-bottom:1px solid #CCC;
 }
 .micropost_form_container {
-	margin:40px 0 -30px 50px;
+	margin:20px 0 -35px 50px;
 }
 .micropost_form_header {
 	padding-right:40px;
@@ -824,9 +826,10 @@ form.new_micropost textarea:focus {
 	font-family:helvetica;
 	font-size:11pt;
 	font-weight:200;
-	margin:-25px 0 -20px 174px;
+	margin:-25px 0 -40px 174px;
 }
 .share_placement{
+	margin-top:15px;
 	margin-left:410px;
 }
 .submitpost {
@@ -1246,10 +1249,10 @@ table.microposts tr {
 	margin-left:100px;
 }
 .settings_left {
-	border:1px solid purple;
+	
 }
 .settings_bottom {
-	border:1px solid orange;
+	
 }
 .settings_blurb{
 	color:#666;
@@ -1284,9 +1287,7 @@ table.microposts tr {
 	box-shadow: 0px 0px 3px 1px #30B2D6;
   border: 1px solid #30B2D6;
   outline: none;
-
 }
-
 .savesettings {
 	-moz-box-shadow:inset 0px 1px 0px 0px #99d6ff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #99d6ff;
@@ -1320,24 +1321,34 @@ table.microposts tr {
 }
 .save_button {
 	margin-top:30px;
-	margin-left:150px;
+	margin-left:180px;
 }
 .settings_header {
-	margin-top:15px;
-	padding-bottom:15px;
+	padding:25px;
+	margin:20px -10px 20px -10px;
 	color:#2764A2;
 	font-size: 24pt;
 	text-align:left;
 	line-height: 1px;
   letter-spacing: -1px;
   font-weight:500;
+  background:#E8EFFF;
+  border-top:1px solid #CCC;
+  border-bottom:1px solid #CCC;
 }
 .photo_container {
 	margin-left:500px;
-	margin-top:-170px;
+	margin-top:-360px;
+	margin-bottom:100px;
+
 }
 .settings_photo{
-
+	margin-left:25px;
+	margin-bottom:10px;
+	margin-top:10px;
+	width:100px;
+	height:100px;
+	border:1px solid #CCC;
 }
 .change_avatar {
 	padding-top:10px;
@@ -1349,14 +1360,11 @@ table.microposts tr {
 .remove_background {
 	
 }
-.settings_background {
-	
-}
 .settings_mail {
 	color:#666;
 	font-size:12pt;
-	margin-top:20px;
-	margin-left:90px;
+	margin-bottom:10px;
+	margin-left:110px;
 }
 
 /************* AuthHome **********/
@@ -1459,13 +1467,21 @@ table.microposts tr {
 .custom-tweet-button:active {
 	color:#EEE;
 }
-
+.friends_container {
+	width:900px;
+	margin-top:-30px;
+	margin-left:-30px;
+	background:white;
+	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
+}
 .dash_column {
 	float:left;
-	width:243px;
+	width:250px;
 	padding:5px;
 	margin-top:10px;
-	margin-left:-19px;
+	margin-left:-5px;
 	background:white;
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
@@ -1473,8 +1489,7 @@ table.microposts tr {
 }
 .dash_container {
 	width:836px;
-	margin-left:-19px;
-	margin-top:-19px;
+	margin-top:;
 	background:white;
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
@@ -1514,24 +1529,27 @@ table.microposts tr {
 	text-align:center;
 }
 .dashfeed_title {
-	width:550px;
-	color:#666;
-	font-size:18pt;
-	font-family: georgia;
+	width:580px;
+	color:#26568D;
+	font-size:20pt;
+	line-height:1;
+	font-weight:400;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow:0px 1px 1px #CCC;
+	border-bottom:1px solid #CCC;
 	text-align:center;
 	background:white;
-	margin-top:10px;
+	margin:10px -5px -10px 0;
 	padding:10px;
+	padding-bottom:20px;
 	float:right;
-	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 }
 .dashfeed_content {
 	font-size: 13pt;
 	font-family: arial;
 	color:#333333;
 	float:right;
+	margin-right:-10px;
 	vertical-align:bottom;
 	width: 500px;
 }

@@ -2,6 +2,7 @@ class MicropostsController < ApplicationController
   #skip_before_filter :verify_authenticity_token
   before_filter :login_required, :except=>[:create_pending]
   
+
   def create
     @micropost = current_user.microposts.build(params[:micropost])
     if @micropost.save
