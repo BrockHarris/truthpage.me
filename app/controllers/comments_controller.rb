@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 	
   def create
 		@comment = @micropost.comments.new(params[:comment])
+    @comment.user = current_user
     if @comment.save
       flash[:notice] = "Your comment has been posted!" 
       redirect_to(:back)
