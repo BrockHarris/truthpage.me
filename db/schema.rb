@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20120414181404) do
     t.datetime "updated_at"
     t.datetime "deleted_at"
     t.boolean  "anon"
-    t.string   "stat",             :limit => nil
+    t.string   "stat"
     t.integer  "truth_percentage"
   end
 
@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(:version => 20120414181404) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "noname",            :default => false
-    t.string   "content"
     t.string   "micropost_content"
     t.string   "comment"
   end
