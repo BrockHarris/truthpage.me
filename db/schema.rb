@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120414032205) do
+ActiveRecord::Schema.define(:version => 20120414032734) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(:version => 20120414032205) do
     t.boolean  "follower_email",                          :default => true
     t.boolean  "rating_email",                            :default => true
     t.boolean  "comment_email",                           :default => true
+    t.boolean  "request_email",                           :default => true
   end
 
   create_table "vanities", :force => true do |t|
