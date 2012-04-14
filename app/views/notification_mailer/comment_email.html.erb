@@ -23,7 +23,18 @@
         padding-top:10px;
         margin-left:25px;
       }
-      
+      div.micropost_container {
+        width: 75%;
+        margin-left: 20px;
+        margin-right: 20px;
+        background: #E8EFFF;
+      }
+      div.comments_container {
+        width: 75%;
+        margin-left: 20px;
+        margin-right: 20px;
+        background:#E8EFFF;
+      }
     </style>
   </head>
   <body>
@@ -31,19 +42,29 @@
     <div class="container"> 
       <%= @mailer_sender %> commented on a truth about you.
       <p>
-        The truth commented on is: <br/>
-        <%= @notification.micropost_content %> <br/>
+        <div class="micropost_container">
+          They commented on this truth about you: <br/>
+          <%= @notification.micropost_content %> <br/>
+        </div>
       </p>
-        The comment said: <br/>
-        <%= @notification.comment %>
+
       <p>
-      	<%= link_to "Click here", @url %> to see your profile. <br/>
+        <div class="comments_container">
+          Here's what they said: <br/>
+          <%= @notification.comment %>
+        </div>
       </p>
+
+      <p>
+      	<%= link_to "Click here", @url %> to see the both the truth and comment. <br/>
+      </p>
+
 	    <p>
 		    To change your email notification settings <%= link_to "click here", @settings_url %>.
 	    </p>
+
 	    <p>
-		    - The truthpage team
+		    -The truthpage team
 	    </p>
     </div>
   </body>
