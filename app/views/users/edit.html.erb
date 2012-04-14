@@ -42,7 +42,7 @@
           <%= f.file_field :background %>
         <div class="remove_background">
           <% if current_user.background.exists? %>
-            <%= link_to "Remove Background", {:controller => :users, :action => 'remove_background' }, :method => :delete %>
+            <%= link_to "Remove Background", {:controller => :users, :action => 'remove_background' }, :method => :delete, :class => "delete_photo" %>
           <% end %>
         </div>
       </div>
@@ -57,11 +57,11 @@
       <%= render 'shared/error_messages', :object => f.object %>
       <div class="settings_mail">
         <%= f.check_box :mail_subscription, {}, true, false %>
-        <%= f.label "Truth notification emails"%>
+        <%= f.label "Email me when someone writes a new truth about me"%>
       </div>
       <div class="settings_mail">
         <%= f.check_box :follower_email, {}, true, false %>
-        <%= f.label "Follower notification emails"%>
+        <%= f.label "Email me when someone new follows me"%>
       </div>
       <div class="settings_mail">
         <%= f.check_box :rating_email, {}, true, false %>
@@ -84,7 +84,7 @@
         <%= f.password_field :password_confirmation, :class =>"formfield" %>
       </div>
       <div class="save_button">
-        <%= f.submit 'Save', :class => "savesettings"%>
+        <%= f.submit 'Save', :class => "savesettings" %>
       </div>
     <% end %>
     <div class="delete_profile">
