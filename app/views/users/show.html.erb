@@ -105,15 +105,19 @@
 
 	<td class="right_container">	
 		<div class="newpost_container">
-			<% if @user == current_user %>
+		<% if @user == current_user %>
 				<div class="profile_feed_header">
 					Truths about you
 				</div>
 			<% else %>
-				<div class="micropost_form_container">
-					<div class="micropost_form_header">
+				<div class="profile_feed_header">
 						Write a truth about <%= @user.username %>:
 					</div>
+			<% end %>
+			
+			<% unless @user == current_user %>
+				<div class="micropost_form_container">
+					
 					<%= render 'microposts/form' %>
 				</div>
 			<% end %>

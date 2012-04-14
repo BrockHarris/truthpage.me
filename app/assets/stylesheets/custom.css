@@ -801,9 +801,10 @@ footer nav {
 }
 .newpost_container {
 	vertical-align:top;
-	width:611px;
+	width:555px;
 	float:right;
-	padding:0 30px 35px 50px;
+	margin:0px 27px 0 0;
+	padding:0 30px 35px 0;
 	border-bottom:1px solid #CCC;
 }
 .micropost_form_container {
@@ -826,7 +827,7 @@ form.new_micropost textarea {
 	padding:5px 5px 0 5px;
 	width: 520px; 
 	height: 30px;
-	margin-top:5px;
+	margin-top:40px;
 	margin-left:-25px;
 	font-size: 12pt;
 	font-weight:200;
@@ -906,7 +907,8 @@ form.new_micropost textarea:focus {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align:center;
 	padding:25px;
-	margin:5px -57px -35px -29px;
+	margin:5px -57px -36px -29px;
+	border-bottom:1px solid #CCC;
 }
 .profile_side {
 	float:left;
