@@ -76,8 +76,9 @@
     <% unless feed_item.ratings.trues.empty? %>
       <%=  number_to_percentage(feed_item.truth_percentage, :precision => 0) %> true
     <% end %>
-    
   </div>
+  <%= render :partial =>"comments/comment", :collection => feed_item.comments %>
+  <%= render :partial=>"comments/feed_item_comment_form", :locals=>{:micropost=>feed_item}%>
   
 <% else %>
   <div class="unauth_spacer"> </div>
