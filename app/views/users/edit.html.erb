@@ -89,7 +89,8 @@
       </div>
     <% end %>
     <div class="delete_profile">
-      <%= link_to "Deactivate Profile", {:controller => :users, :action => 'deactivate_profile'}, :method => :delete, :confirm => "Are you sure you want to deactivate your profile?", :class=>"deactivate_button" %>
+      <div class="formlabel"> Deactivate your account </div>
+      <%= link_to "Deactivate Account", {:controller => :users, :action => 'deactivate_profile'}, :method => :delete, :confirm => "Are you sure you want to permanently deactivate your account?", :class=>"deactivate_button" %>
     </div>
   </div>
 </div>

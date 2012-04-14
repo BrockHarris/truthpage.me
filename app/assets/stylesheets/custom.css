@@ -40,7 +40,7 @@ s/*************  footer/terms/about/etc.. pages  **********/
 	-webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-	background:rgba(0,0,0,0.40);
+	background-color:rgba(0,0,0,0.3);
 }
 .admin_container {
 	text-align:left;
@@ -144,7 +144,7 @@ body {
 	margin:-23px 25px 0 0;
 	width:25px;
 	height:25px;
-	border: 1px solid #CCC;
+	border: 1px solid #999;
 	-webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -801,10 +801,9 @@ footer nav {
 }
 .newpost_container {
 	vertical-align:top;
-	width:555px;
+	width:611px;
 	float:right;
-	margin:0px 27px 0 0;
-	padding:0 30px 35px 0;
+	padding:0 30px 35px 50px;
 	border-bottom:1px solid #CCC;
 }
 .micropost_form_container {
@@ -898,15 +897,16 @@ form.new_micropost textarea:focus {
 	margin-left:200px;
 }
 .profile_feed_header {
-	color:#26568D;
-	font-size:20pt;
-	line-height:1;
-	font-weight:400;
+	color:#2764A2;
+	background:#E8EFFF;
+	font-size: 20pt;
+	line-height: 1px;
+  letter-spacing: -1px;
+  font-weight:500;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-shadow:0px 1px 1px #666;
 	text-align:center;
-	margin-top:15px;
-	margin-bottom:-20px;
+	padding:25px;
+	margin:5px -57px -35px -29px;
 }
 .profile_side {
 	float:left;
@@ -1448,9 +1448,13 @@ table.microposts tr {
 	margin-bottom:10px;
 	margin-left:110px;
 }
-.deactivate_button {
+.delete_profile {
 	float:right;
-	
+	margin-right:130px;
+	margin-top:-195px;
+}
+.deactivate_button {
+	margin-left:5px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #ff9e9e;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ff9e9e;
 	box-shadow:inset 0px 1px 0px 0px #ff9e9e;
