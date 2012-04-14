@@ -4,7 +4,7 @@ class RatingsController < ApplicationController
 	def create
     @rating = Rating.new(params[:rating])
     if @rating.save
-      flash[:notice] = "Your rating has been posted" 
+      flash[:notice] = "Your rating has been posted." 
       redirect_to(:back)
     end
   end

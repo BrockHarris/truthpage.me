@@ -10,7 +10,7 @@
       <% if top_truths.try(:anon?) %>
         Anonymous
       <% else %>
-        <%= link_to top_truths.user.username, top_truths.user %>
+        <%= link_to top_truths.user.username, top_truths.user, :style=>"color:#56A8CE;" %>
       <% end %>
     </div>
     <div class="top_truth_content">

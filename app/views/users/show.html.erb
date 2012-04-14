@@ -77,8 +77,10 @@
 			<div class="profile_following">
  				<% unless @following.empty? %>
     			<% @following.each do |user| %>
-	  				<%= link_to render_follow_avatar(user, :tiny), user %>
-	  				<%= link_to user.username, user, :class => 'followlist_name' %> 
+	  				<div class="followings_avatar"><%= link_to render_follow_avatar(user, :tiny), user %></div>
+	  				<div class="followings_username">
+	  					<%= link_to user.username, user, :class => 'followlist_name', :style=>"color:#56A8CE;" %>
+	  				</div> 
 	  				<br/>
     			<% end %>
   			<% end %>
@@ -90,8 +92,10 @@
 			<div class="profile_followers">
 				<% unless @followers.empty? %>
     			<% @followers.each do |user| %>
-	   				<%= link_to render_follow_avatar(user, :tiny), user %>
-	   				<%= link_to user.username, user, :class => 'followlist_name' %> 
+	   				<div class="followings_avatar"><%= link_to render_follow_avatar(user, :tiny), user %></div>
+	   				<div class="followings_username">
+	   					<%= link_to user.username, user, :class => 'followlist_name', :style=>"color:#56A8CE;" %>
+	   				</div> 
 	   				<br/>
     			<% end %>
   			<% end %>

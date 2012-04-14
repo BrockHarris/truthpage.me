@@ -430,7 +430,7 @@ footer nav {
 }
 .truth_request_placement {
 	margin-left:28px;
-	margin-top:-20px;
+	margin-top:-15px;
 }
 .truth_request {
 	-moz-box-shadow:inset 0px 1px 0px 0px #b9ff91;
@@ -750,19 +750,20 @@ footer nav {
 	height:100px;
 	margin-top:-40px;
 	margin-left:10px;
-	-webkit-box-shadow: 0px 0px 1px 1px #CCC;
-	-moz-box-shadow: 0px 0px 1px 1px #CCC;
-	box-shadow: 0px 0px 1px 1px #CCC;
+	-webkit-box-shadow: 0px 0px 1px 1px #666;
+	-moz-box-shadow: 0px 0px 1px 1px #666;
+	box-shadow: 0px 0px 1px 1px #666;
 }
 .profile_name {
 	margin-bottom:5px;
 	width:250px;
 	font-weight:500;
-	color:#CCC;
+	color:#EEE;
 	font-family:helvetica neue;
 	line-height: 1;
 	padding:7px 0px 7px 5px;
 	font-size:22pt;
+	text-shadow:0px 0px 1px #000;
 }
 .profile_blurb {
 	text-indent:5px;
@@ -771,7 +772,7 @@ footer nav {
 	font-weight:200;
 	font-family:arial;
 	text-align:left;
-	color:#666;
+	color:#999;
 	padding-left:5px;
 	margin:10px 0 0 3px;
 }
@@ -792,7 +793,7 @@ footer nav {
 	vertical-align:top;
 	width:555px;
 	float:right;
-	margin:0px 14px 0 0;
+	margin:0px 27px 0 0;
 	padding:0 30px 35px 0;
 	border-bottom:1px solid #CCC;
 }
@@ -892,7 +893,7 @@ form.new_micropost textarea:focus {
 	line-height:1;
 	font-weight:400;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-shadow:0px 1px 1px #CCC;
+	text-shadow:0px 1px 1px #666;
 	text-align:center;
 	margin-top:15px;
 	margin-bottom:-20px;
@@ -910,13 +911,13 @@ form.new_micropost textarea:focus {
 	margin:0;
 }
 .top_truths_header {
-	color:#26568D;
+	color:#FF14AC;
+	text-shadow:0px 0px 1px #000;
 	font-family:helvetica neue;
 	font-weight:500;
 	font-size:20px;
 	line-height:1;
 	border-top:1px solid #333;
-	border-bottom:1px solid #CCC;
 	width:255px;
 	text-align:center;
 	padding-top:8px;
@@ -925,45 +926,52 @@ form.new_micropost textarea:focus {
 }
 .top_truth_countdown {
 	color:#999;
-	background:#EEE;
+	background-color:rgba(128,128,128,0.1);
 	width:255px;
 	font-size:10pt;
 	text-align:center;
 	padding-bottom:5px;
 	padding-top:3px;
+	border-top:1px solid #333;
+
 }
 .top_truth_post {
 	padding:5px;
 	width:245px;
 	margin:0;
-	background:#E8EFFF;
-	border-bottom:1px solid #CCC;
+	background-color:rgba(128,128,128,0.3);
+	border-top:1px solid #666;
 }
 .top_truth_content {
-	margin-top:5px;
+	margin-top:7px;
 	margin-left:3px;
 	text-indent:5px;
-	font-family:arial;
+	font-family:helvetica neue;
 	font-size:11pt;
+	color:#999;
 }
 .top_truth_avatar {
 	margin-left:3px;
+	height:25px;
+	width:25px;
+	border:1px solid #666;
 }
 .top_truth_author {
 	margin-left:33px;
-	margin-top:-25px;
+	margin-top:-23px;
 	font-size:12pt;
-	color:#666;
+	color:#999;
 }
 .top_truth_stat {
 	padding-top:10px;
 	text-align:center;
 	font-size:10pt;
-	color:#333;
+	color:#666;
 }
 .profile_following-h {
 	width:255px;
-	color:#26568D;
+	color:#FF14AC;
+	text-shadow:0px 0px 1px #000;
 	font-family:helvetica neue;
 	font-weight:500;
 	font-size:20px;
@@ -972,7 +980,16 @@ form.new_micropost textarea:focus {
 	margin-bottom:5px;
 	margin-left:-5px;
 	text-align:center;
-	border-top:1px solid #CCC;
+	border-top:1px solid #333;
+}
+.followings_avatar {
+	height:25px;
+	width:25px;
+	border:1px solid #666;
+}
+.followings_username {
+	margin-left:30px;
+	margin-top:-22px;
 }
 .profile_truth_stats {
 	margin-bottom:15px;
@@ -1021,6 +1038,7 @@ table.microposts {
 	width: 570px;
 	margin-top:12px;
 	padding-bottom:10px;
+	margin-right:15px;
 }
 table.microposts tr {
   height: 80px;

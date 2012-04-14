@@ -1,7 +1,7 @@
 <div class="comment_form_container">
 <%= form_for [micropost, @comment] do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
-  <%= f.text_field :post_comment, :placeholder=>"What's good with this?", :class =>"comment_field", :maxlength=>"120" %>
+  <%= f.text_field :post_comment, :placeholder=>"What do you think?", :class =>"comment_field", :maxlength=>"120" %>
   <%= f.hidden_field :micropost_id, :value => micropost.id %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.hidden_field :owner_id, :value => micropost.belongs_to_id %>
