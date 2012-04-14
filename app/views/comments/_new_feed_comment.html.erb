@@ -1,0 +1,6 @@
+<div class="comment_form_container">
+<%= form_for [feed_item, Comment.new] do |mpf| %>
+  <%= mpf.text_field :post_comment, :placeholder=>"Comment on this", :class =>"comment_field", :maxlength=>"120" %>
+  <%= mpf.submit 'Comment', :class => 'comment_button' %> 
+<% end %>
+</div>

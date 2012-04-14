@@ -76,38 +76,10 @@
       <%= link_to "Comment", "#", :class => "open_comments", :style=>'color:#216389;;' %>
       <div class="post_comments"> 
         <%= render :partial=> 'comments/new_feed_comment', :locals=>{:feed_item=>feed_item} %>
-        <%# render feed_item.comments %>
+        <%= render :partial =>"comments/comment", :collection => feed_item.comments %>
       </div>
     <% else %>
       <div class="unauth_spacer"></div>
     <% end %>
-  </div>
-  <div class="micropost_false">
-    <%= form_for @rating do |f| %>
-    <%= render 'shared/error_messages', :object => f.object %>
-      <%= f.hidden_field :micropost_id, :value => feed_item.id %>
-      <%= f.hidden_field :owner_id, :value => feed_item.belongs_to_id %>
-      <%= f.hidden_field :rater_id, :value => current_user.id %>
-      <%= f.hidden_field :rating, :value => "false" %>
-      <% if feed_item.rateable_by_user?(current_user) %>
-        <%= f.submit 'false', :class => 'micropost_false_button'%> 
-      <% else %>
-        <span class="fake_rating_button">false</span>
-      <% end %>
-      <%= render_false_ratings(feed_item) %>
-    <% end %>   
-  </div>
-  <div class="micropost_accuracy">
-    <% unless feed_item.ratings.trues.empty? %>
-      <%=  number_to_percentage(feed_item.truth_percentage, :precision => 0) %> true
-    <% end %>
-  </div>
-  <%= render :partial =>"comments/comment", :collection => feed_item.comments %>
-  <%= render :partial=>"comments/feed_item_comment_form", :locals=>{:micropost=>feed_item}%>
-  
-<% else %>
-  <div class="unauth_spacer"> </div>
-<% end %>
-
   </td>
 </tr>
