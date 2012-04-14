@@ -28,7 +28,7 @@
           <%= f.file_field :photo %>
         <div class="remover_avatar">
           <% if current_user.photo.exists? %>
-            <%= link_to "Remove Profile Picture", {:controller => :users, :action => 'remove_photo' }, :method => :delete %>
+            <%= link_to "Remove Profile Picture", {:controller => :users, :action => 'remove_photo' }, :method => :delete, :class => "delete_photo" %>
           <% end %>
         </div>
         <div class="settings_photo">
@@ -55,6 +55,7 @@
     </div>
     <%= form_for @user, :html=> { :multipart => true} do |f| %>
       <%= render 'shared/error_messages', :object => f.object %>
+      <div class="email_settings_h"> Email notification settings </div>
       <div class="settings_mail">
         <%= f.check_box :mail_subscription, {}, true, false %>
         <%= f.label "Email me when someone writes a new truth about me"%>
@@ -88,7 +89,7 @@
       </div>
     <% end %>
     <div class="delete_profile">
-      <%= link_to "Deactivate Profile", {:controller => :users, :action => 'deactivate_profile'}, :method => :delete, :confirm => "Are you sure you want to deactivate your profile?" %>
+      <%= link_to "Deactivate Profile", {:controller => :users, :action => 'deactivate_profile'}, :method => :delete, :confirm => "Are you sure you want to deactivate your profile?", :class=>"deactivate_button" %>
     </div>
   </div>
 </div>
