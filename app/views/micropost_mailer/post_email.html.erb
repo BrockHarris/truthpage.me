@@ -29,7 +29,12 @@
   <body>
     <h1> truthpage.me </h1>
     <div class="container"> 
-      <%= @mailer_sender %> sent you a new truth on truthpage.me! 
+      <%= @mailer_sender %> sent you a new truth on truthpage.me! <br/>
+      <p>
+        The truth said:
+
+        "<%= @micropost.content %>"
+      </p>
       <p>
       	Check out your profile at <%= @url %> to view this new truth.<br/>
       </p>

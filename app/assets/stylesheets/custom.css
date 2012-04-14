@@ -252,6 +252,13 @@ body {
 	border-top: 1px #4C4C4C solid;
 	padding-top:3px;
 }
+.notification_post_content {
+	font-size:10pt;
+	width:310px;
+	margin-left:10px;
+	margin-top:5px;
+	border:1px solid yellow;
+}
 .notification_time {
 	margin-left:10px;
 	font-family:helvetica;
@@ -313,7 +320,7 @@ ul, li {
 .the_menu {
 	background-color:rgba(10,10,10,0.85);
   display:none;
-  width:340px;
+  width:360px;
   z-index:0;
   position:absolute;
 	left:600px;
@@ -691,10 +698,10 @@ footer nav {
 
 .profile_container {
 	width:900px;
-	padding:10px;
 	margin-top:-30px;
 	margin-left:-30px;
-	background:white;
+	padding:0;
+	border:0;
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
 	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
@@ -729,9 +736,16 @@ footer nav {
 	font-size:14pt;
 }
 .name_container {
-	margin-top:5px;
+	margin-top:-6px;
 	float:left;
-	border:1px solid #CCC;
+	margin-left:1px;
+	margin-bottom:-1px;
+	border:0;
+	padding:0;
+		-webkit-box-shadow: 0px 0px 1px 1px #000;
+	-moz-box-shadow: 0px 0px 1px 1px #000;
+	box-shadow: 0px 0px 1px 1px #000;
+	background-color:rgba(10,10,10,0.85);
 }
 .profile_avatar {
 	width:100px;
@@ -743,7 +757,6 @@ footer nav {
 	box-shadow: 0px 0px 1px 1px #CCC;
 }
 .profile_name {
-	margin-top:-4px;
 	margin-bottom:5px;
 	width:250px;
 	text-shadow:0px 1px 1px #CCC;
@@ -769,7 +782,11 @@ footer nav {
 	margin-top:10px;
 }
 .right_container {
+		background:white;
 	vertical-align:top;
+	padding:0;
+	margin:0;
+	border:0;
 }
 .newpost_container {
 	vertical-align:top;

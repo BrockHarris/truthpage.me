@@ -27,11 +27,11 @@ class Micropost < ActiveRecord::Base
   end
 
   def create_notification
-    Notification.create!(:sender_id=>self.user_id, :receiver_id=>self.belongs_to_id, :format=>"posted a truth about you.")
+    Notification.create!(:sender_id=>self.user_id, :receiver_id=>self.belongs_to_id, :format=>"posted a truth about you.", :micropost_content=>self.content)
   end
 
   def create_anon_notification
-    Notification.create!(:noname=> true, :sender_id=>self.user_id, :receiver_id=>self.belongs_to_id, :format=>"posted a truth about you.")
+    Notification.create!(:noname=> true, :sender_id=>self.user_id, :receiver_id=>self.belongs_to_id, :format=>"posted a truth about you.", :micropost_content=>self.content)
   end
   
   def rateable_by_user?(user)  
