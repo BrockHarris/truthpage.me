@@ -5,12 +5,11 @@
     <style type="text/css" media="screen">
       body {
         background: url('http://truthpage.me/images/mailer_bgimage.jpg');
-        background-repeat: no-repeat;
-        background-color:#E8E8E8;
+        background-repeat: repeat-x;
+        background-color:#FFF;
       }
       h1 { 
         margin-top:-3px;
-        margin-left:15px;
         font-size: 30pt;
         font-family: book antiqua; 
         color:#2A4668;
@@ -23,6 +22,11 @@
         padding-top:10px;
         margin-left:25px;
       }
+      div.post_content {
+        background-color:#E8EFFF;
+        width:80%;
+        padding:10px;
+      }
       
     </style>
   </head>
@@ -31,12 +35,14 @@
     <div class="container"> 
       <%= @mailer_sender %> sent you a new truth on truthpage.me! <br/>
       <p>
+        <div class="post_content">
         The truth said:
 
         "<%= @micropost.content %>"
+        </div>
       </p>
       <p>
-      	Check out your profile at <%= @url %> to view this new truth.<br/>
+      	<%= link_to "Click here", @url %> to see your profile.<br/>
       </p>
 	    <p>
 		    To change your email notification settings <%= link_to "click here", @settings_url %>.

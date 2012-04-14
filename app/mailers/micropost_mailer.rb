@@ -10,6 +10,6 @@ def post_email(micropost)
   @micropost = micropost
   @url  = "http://truthpage.me/#{@micropost.target_user.username}"
   @settings_url  = "http://truthpage.me/users/#{@micropost.target_user.username}/edit"
-  mail(:to => @micropost.target_user.email, :subject => "You've received a new truth on truthpage.me!")
+  mail(:to => @micropost.target_user.email, :subject => "You have a new truth on truthpage.me")
   end
 end
