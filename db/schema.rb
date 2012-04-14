@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120413033036) do
+ActiveRecord::Schema.define(:version => 20120414032734) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -46,7 +46,11 @@ ActiveRecord::Schema.define(:version => 20120413033036) do
     t.datetime "updated_at"
     t.datetime "deleted_at"
     t.boolean  "anon"
+<<<<<<< HEAD
     t.string   "stat"
+=======
+    t.string   "stat",             :limit => nil
+>>>>>>> 2dc745a54ca23411d47a29ba7f723d47f1a1da2b
     t.integer  "truth_percentage"
   end
 
@@ -60,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20120413033036) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "noname",            :default => false
+    t.string   "content"
     t.string   "micropost_content"
   end
 
@@ -129,6 +134,9 @@ ActiveRecord::Schema.define(:version => 20120413033036) do
     t.integer  "background_file_size"
     t.datetime "background_updated_at"
     t.boolean  "follower_email",                          :default => true
+    t.boolean  "rating_email",                            :default => true
+    t.boolean  "comment_email",                           :default => true
+    t.boolean  "request_email",                           :default => true
   end
 
   create_table "vanities", :force => true do |t|
@@ -182,6 +190,60 @@ ActiveRecord::Schema.define(:version => 20120413033036) do
     t.integer "converted"
   end
 
+<<<<<<< HEAD
+  create_table "vanities", :force => true do |t|
+    t.string  "name"
+    t.integer "vain_id"
+    t.string  "vain_type"
+  end
+
+  add_index "vanities", ["name"], :name => "index_vanities_on_name", :unique => true
+  add_index "vanities", ["vain_id"], :name => "index_vanities_on_vain_id"
+  add_index "vanities", ["vain_type"], :name => "index_vanities_on_vain_type"
+
+  create_table "vanity_conversions", :force => true do |t|
+    t.integer "vanity_experiment_id"
+    t.integer "alternative"
+    t.integer "conversions"
+  end
+
+  add_index "vanity_conversions", ["vanity_experiment_id", "alternative"], :name => "by_experiment_id_and_alternative"
+
+  create_table "vanity_experiments", :force => true do |t|
+    t.string   "experiment_id"
+    t.integer  "outcome"
+    t.datetime "created_at"
+    t.datetime "completed_at"
+  end
+
+  add_index "vanity_experiments", ["experiment_id"], :name => "index_vanity_experiments_on_experiment_id"
+
+  create_table "vanity_metric_values", :force => true do |t|
+    t.integer "vanity_metric_id"
+    t.integer "index"
+    t.integer "value"
+    t.string  "date"
+  end
+
+  add_index "vanity_metric_values", ["vanity_metric_id"], :name => "index_vanity_metric_values_on_vanity_metric_id"
+
+  create_table "vanity_metrics", :force => true do |t|
+    t.string   "metric_id"
+    t.datetime "updated_at"
+  end
+
+  add_index "vanity_metrics", ["metric_id"], :name => "index_vanity_metrics_on_metric_id"
+
+  create_table "vanity_participants", :force => true do |t|
+    t.string  "experiment_id"
+    t.string  "identity"
+    t.integer "shown"
+    t.integer "seen"
+    t.integer "converted"
+  end
+
+=======
+>>>>>>> 2dc745a54ca23411d47a29ba7f723d47f1a1da2b
   add_index "vanity_participants", ["experiment_id", "converted"], :name => "by_experiment_id_and_converted"
   add_index "vanity_participants", ["experiment_id", "identity"], :name => "by_experiment_id_and_identity"
   add_index "vanity_participants", ["experiment_id", "seen"], :name => "by_experiment_id_and_seen"

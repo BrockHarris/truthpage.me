@@ -4,7 +4,9 @@ class NotificationsController < ApplicationController
 	def create
     @notification = Notification.new(params[:notification])
     if @notification.save
-      NotificationMailer.truth_request_email(@notification).deliver
+      if @notification.receiver.try(:request_email?)
+        NotificationMailer.truth_request_email(@notification).deliver
+      end
       flash[:notice] = "Your request has been sent!" 
       redirect_to(:back)
     end

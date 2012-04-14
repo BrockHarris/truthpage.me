@@ -17,7 +17,11 @@
           <%= render_user_avatar(feed_item.user, :tiny) %>
         </div>
         <div class="micropost_username">
-          <%= link_to feed_item.user.username, feed_item.user %>
+          <%= link_to feed_item.user.username, feed_item.user %> >
+          
+          <%= render_user_avatar(feed_item.target_user, :tiny) %>
+          
+          <%= link_to feed_item.target_user.username, feed_item.target_user %>
           <div class="micropost_timestamp">
             <%= time_ago_in_words(feed_item.created_at) %> ago
             <% if current_user.eql?(feed_item.target_user) %>
@@ -27,6 +31,7 @@
         </div>  
       <% end %>
     </div>
+
       <br/>
     <div class="micropost_content"> 
       truth is <%= feed_item.content %>

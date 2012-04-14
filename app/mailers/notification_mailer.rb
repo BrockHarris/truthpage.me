@@ -10,11 +10,9 @@ class NotificationMailer < ActionMailer::Base
     mail(:to => @notification.receiver.email, :subject => "You have a truth request on truthpage.me")
   end
   def comment_email(notification)
-    @mailer_sender = "self"
-
+    @mailer_sender = "any name"
     @url  = "http://truthpage.me/"
     @settings_url  = "http://truthpage.me/users/edit"
-
-    mail(:to => self.receiver.email, :subject => "new comment")
+    mail(:to => notification.receiver.email, :subject => "new comment")
   end
 end
