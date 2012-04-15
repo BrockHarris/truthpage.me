@@ -1,14 +1,5 @@
 /*************  footer/terms/about/etc.. pages  **********/
 
-#loading-indicator {
-   position: absolute;
-   left: 10px;
-   top: 10px;
-   width:100px;
-   height:100px;
-   background:red;
- }
-
 .footer_container {
 	width:900px;
 	margin-top: -30px;
@@ -1115,7 +1106,7 @@ table.microposts tr {
 }
 .micropost_content {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin: -10px 8px 15px 5px;
+	margin:-10px 8px 15px 5px;
 	text-indent:5px;
 }
 .micropost_timestamp {
