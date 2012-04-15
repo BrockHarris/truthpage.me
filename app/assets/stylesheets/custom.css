@@ -1,14 +1,5 @@
 /*************  footer/terms/about/etc.. pages  **********/
 
-#loading-indicator {
-   position: absolute;
-   left: 10px;
-   top: 10px;
-   width:100px;
-   height:100px;
-   background:red;
- }
-
 .footer_container {
 	width:900px;
 	margin-top: -30px;
@@ -646,6 +637,7 @@ footer nav {
 
 /********** Signin Page *************/
 
+<<<<<<< HEAD
 .authentications_header {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:24pt;
@@ -653,6 +645,13 @@ footer nav {
 	text-align: center;
 }
 
+=======
+.signin_page_header {
+	width:100%;
+	text-align:center;
+	font-size:22pt;
+}
+>>>>>>> 3c8ece81f5f275968a5148e84366261d3d54ef6a
 .signin_header {
 	padding-bottom:20px;
 	color:#2A4668;
@@ -672,6 +671,7 @@ footer nav {
 .signin_container {
 	padding:10px;
 	width:100%;
+	margin-top:-24px;
 	background:white;
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
@@ -707,10 +707,11 @@ footer nav {
 	float:left;
 }
 .signin_left {
-	vertical-align:top;
+	margin-top:20px;
 }
 .signin_right {
-	vertical-align:top;
+	margin-left:400px;
+	margin-top:-335px;
 }
 
 /************* Styles for fancybox **********/
@@ -1115,7 +1116,7 @@ table.microposts tr {
 }
 .micropost_content {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin: -10px 8px 15px 5px;
+	margin:-10px 8px 15px 5px;
 	text-indent:5px;
 }
 .micropost_timestamp {
@@ -1821,11 +1822,14 @@ table.microposts tr {
   width:820px;
   height:320px;
   margin-bottom:30px;
-  margin-top:-15px;
+  margin-top:-25px;
   background-image: url('crowd.png');
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+-webkit-border-bottom-left-radius: 6px;
+-moz-border-radius-bottomright: 6px;
+-moz-border-radius-bottomleft: 6px;
+border-bottom-right-radius: 6px;
+border-bottom-left-radius: 6px;
 }
 .header_box h1 {
   margin-top:-1px;
