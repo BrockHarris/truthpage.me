@@ -1,5 +1,14 @@
 /*************  footer/terms/about/etc.. pages  **********/
 
+#loading-indicator {
+   position: absolute;
+   left: 10px;
+   top: 10px;
+   width:100px;
+   height:100px;
+   background:red;
+ }
+
 .footer_container {
 	width:900px;
 	margin-top: -30px;
@@ -118,13 +127,19 @@ body {
 	top:0;
 	position:fixed;
 	color:#EEE;
-	background: 
-	background-image: linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
-	background-image: -o-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
-	background-image: -moz-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
-	background-image: -webkit-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
-	background-image: -ms-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
-	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(42,91,147)), color-stop(1, rgb(83,134,192)));
+background-image: linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+background-image: -o-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+background-image: -moz-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+background-image: -webkit-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+background-image: -ms-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.01, rgb(38,83,135)),
+	color-stop(0.97, rgb(87,145,207))
+);
 	width: 100%;
 	height:65px;
 	border-bottom:1px solid #333;
@@ -1083,6 +1098,14 @@ table.microposts tr {
 	margin-top:-32px;
 	font-size:13pt;
 }
+.truth_is_bg {
+	padding:1px 4px 1px 4px;
+	background-color:#d6e2ff;
+	color:#555;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
 .micropost_content {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: -10px 8px 15px 5px;
@@ -1431,9 +1454,9 @@ table.microposts tr {
 	display:inline-block;
 	color:#e64545;
 	font-family:arial;
-	font-size:13px;
+	font-size:12px;
 	font-weight:bold;
-	padding:4px 18px;
+	padding:3px 12px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #e0e0e0;
 }
@@ -1790,7 +1813,8 @@ table.microposts tr {
   padding:10px;
   width:820px;
   height:320px;
-  margin-bottom: 30px;
+  margin-bottom:30px;
+  margin-top:-15px;
   background-image: url('crowd.png');
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -1886,7 +1910,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 #vertical-ticker li img {
 	vertical-align:middle;
 	margin-top:3px;
-	}
+}
 .ticker_content {
 	border-top:1px solid #EEE;
 	margin-top:-10px;
@@ -1906,7 +1930,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	margin-left: 4px;
 }	
 .home_signup_box {
-	margin-top:-711px;
+	margin-top:-731px;
 	float:right;
 	padding:5px;
 	width:224px;
@@ -2233,7 +2257,6 @@ color: #333333;
 	cursor:pointer;
 	background-position: bottom;
 }
-
 #flash {
 	margin-top:-45px;
 	z-index:0;
@@ -2249,17 +2272,11 @@ color: #333333;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
-
 #flash.notice {
-
 }
-
-#flash.error, #flash.alert{
-  
+#flash.error, #flash.alert{ 
 }
-
 input.readonly{background:#ccc;}
-
 .signup_link {
 	font-size:14pt;
 	margin-top:5px;

@@ -1,7 +1,6 @@
 <%= content_for :head do %>
  <script type="text/javascript">
   $(function(){
-  	$("#microposts").append("<%= escape_javascript render( @microposts) %>");
     $('#truth_form').jqEasyCounter({
 		'maxChars': 180,
 	    'maxCharsWarning': 165,
@@ -38,11 +37,12 @@
 
     //this is a jquery example of doing an ajax request, and selecting the rows from the table and appending. 
     //you'll still have to determine which page you're on to use in the request's url (this.href) -- perhaps a page level js variable
+
     $("#load-more").click(function(e){
       $.get(this.href, function(data) {
-        var rows = $(data).find(".microposts tr");
-        $('.microposts').append(rows);
-      });
+        var rows = $(data).find("#posts_table tr");
+          $('#posts_table').append(rows);
+        });
       e.preventDefault();
     }); 
          
@@ -131,7 +131,7 @@
 				</div>
 			<% end %>
 		</div>
-		<table class="microposts" id="microposts">
+		<table class="microposts" id="posts_table">
 			<% if @microposts.empty? %>
 				<td class="profile_noshow">
 					<%= @user.username %> doesn't have any truths yet.
@@ -142,8 +142,8 @@
 		</table>
 
     <%= link_to "Load More...", "#", :id=>"load-more" %>
-		<% unless @microposts.total_pages < 2 %>
-      <%# will_paginate @microposts %>
-    <% end %>
+		<%=  @microposts.total_pages %>
+
+
 	</td>
 </table>
