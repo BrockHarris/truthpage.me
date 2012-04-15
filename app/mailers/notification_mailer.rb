@@ -13,8 +13,8 @@ class NotificationMailer < ActionMailer::Base
     @sender = notification.sender
     @sender_url  = "http://truthpage.me/#{notification.sender.username}"
     @notification = notification
-    @url  = "http://truthpage.me/"
-    @settings_url  = "http://truthpage.me/users#{notification.receiver.username}/edit"
+    @url  = "http://truthpage.me/#{notification.receiver.username}"
+    @settings_url  = "http://truthpage.me/users/#{notification.receiver.username}/edit"
     mail(:to => notification.receiver.email, :subject => "You have a new comment on truthpage.me")
   end
 

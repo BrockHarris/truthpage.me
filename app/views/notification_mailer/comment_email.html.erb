@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-    <style type="text/css" media="screen">
+ <style type="text/css" media="screen">
       body {
         background: url('http://truthpage.me/images/mailer_background.jpg');
         background-repeat: repeat-x;
@@ -49,6 +49,22 @@
      span.truth-label {
         color:#999;
       }
+     div.response {
+        text-align:center;
+        color:#333;
+        font-size:11pt;
+        margin-top:10px;
+        margin-bottom:10px;
+      }
+        div.box2 {
+        font-size:11pt;
+        background-color:#EEE;
+        width:90%;
+        padding:10px;
+        margin-left:20px;
+        margin-top:10px;
+        color:#666;
+      }
     </style>
   </head>
   <body>
@@ -66,9 +82,15 @@
      </h2>
       <p>
         <div class="post_content">
-          <span class="truth-label">truth is </span>
-          <%= @notification.micropost_content %>
+          <%= @notification.comment %>
         </div>
+        <div class="response">
+           In response to:
+        </div>
+        <div class="box2">
+          <span class="truth-label">truth is </span>
+           <%= @notification.micropost_content %>
+         </div>
       </p>
       <p>
         To comment on or rate this truth visit your <%= link_to "profile", @url %>.<br/>
@@ -77,39 +99,6 @@
       <p>
         - The truthpage team
       </p>
-    </div>
-  </body>
-</html>
-
-  <body>
-    <h1> truthpage.me </h1>
-    <div class="container"> 
-      <%= @mailer_sender %> commented on a truth about you.
-      <p>
-        <div class="micropost_container">
-          They commented on this truth about you: <br/>
-           <br/>
-        </div>
-      </p>
-
-      <p>
-        <div class="comments_container">
-          Here's what they said: <br/>
-          <%= @notification.comment %>
-        </div>
-      </p>
-
-      <p>
-      	<%= link_to "Click here", @url %> to see the both the truth and comment. <br/>
-      </p>
-
-	    <p>
-		    To change your email notification settings <%= link_to "click here", @settings_url %>.
-	    </p>
-
-	    <p>
-		    -The truthpage team
-	    </p>
     </div>
   </body>
 </html>
