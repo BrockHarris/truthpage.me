@@ -732,8 +732,7 @@ footer nav {
 }
 .profile_stats {
 	margin-left:120px;
-	margin-top:20px;
-	padding-bottom:2px;
+	margin-top:25px;
 	line-height:1px;
 	color:#56A8CE;
 	font-family:helvetica neue;
@@ -758,7 +757,7 @@ footer nav {
 	box-shadow: 0px 0px 1px 1px #666;
 }
 .profile_name {
-	margin-bottom:5px;
+	margin-bottom:10px;
 	width:250px;
 	font-weight:500;
 	color:#EEE;
@@ -766,7 +765,8 @@ footer nav {
 	line-height: 1;
 	padding:7px 0px 7px 5px;
 	font-size:22pt;
-	text-shadow:0px 0px 1px #000;
+	background-color:rgba(128,128,128,0.3);
+	text-shadow:0px 1px 2px #000;
 }
 .profile_blurb {
 	text-indent:5px;
@@ -916,13 +916,13 @@ form.new_micropost textarea:focus {
 	margin:0;
 }
 .top_truths_header {
-	color:#FF14AC;
-	text-shadow:0px 0px 1px #000;
+	color:#CCC;
+	text-shadow:0px 1px 1px #000;
 	font-family:helvetica neue;
 	font-weight:500;
-	font-size:20px;
+	font-size:18px;
 	line-height:1;
-	border-top:1px solid #333;
+	border-top:1px solid #666;
 	width:255px;
 	text-align:center;
 	padding-top:8px;
@@ -932,7 +932,6 @@ form.new_micropost textarea:focus {
 }
 .top_truth_countdown {
 	color:#999;
-	background-color:rgba(128,128,128,0.1);
 	width:255px;
 	font-size:10pt;
 	text-align:center;
@@ -945,7 +944,7 @@ form.new_micropost textarea:focus {
 	width:245px;
 	margin:0;
 	background-color:rgba(128,128,128,0.15);
-	border-top:1px solid #555;
+	border-top:1px solid #444;
 }
 .top_truth_content {
 	margin-top:7px;
@@ -975,23 +974,24 @@ form.new_micropost textarea:focus {
 }
 .profile_following-h {
 	width:255px;
-	color:#FF14AC;
-	text-shadow:0px 0px 1px #000;
+	color:#CCC;
+	text-shadow:0px 1px 1px #000;
 	font-family:helvetica neue;
 	font-weight:500;
-	font-size:20px;
+	font-size:18px;
 	line-height: 1;
 	padding-top:8px;
 	padding-bottom:8px;
 	margin-left:-5px;
 	text-align:center;
-	border-top:1px solid #333;
-	background-color:rgba(128,128,128,0.3);
+	border-top:1px solid #666;
+	background-color:rgba(128,128,128,0.1);
 }
 .followings_avatar {
 	height:25px;
 	width:25px;
 	border:1px solid #666;
+	margin-top:10px;
 }
 .followings_username {
 	margin-left:30px;
@@ -1016,13 +1016,12 @@ form.new_micropost textarea:focus {
 .profile_following {
 	margin-left:10px;
 	padding:5px;
-	margin-bottom:20px;
+	margin-bottom:10px;
 	overflow:hidden;
 }
 .profile_followers {
 	margin-left:10px;
 	padding:5px;
-	margin-bottom:20px;
 	overflow:hidden;
 }
 h1.micropost {

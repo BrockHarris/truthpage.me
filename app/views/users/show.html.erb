@@ -1,6 +1,7 @@
 <%= content_for :head do %>
  <script type="text/javascript">
   $(function(){
+  	$("#microposts").append("<%= escape_javascript render( @microposts) %>");
     $('#truth_form').jqEasyCounter({
 		'maxChars': 180,
 	    'maxCharsWarning': 165,
@@ -91,7 +92,6 @@
 	  				<div class="followings_username">
 	  					<%= link_to user.username, user, :class => 'followlist_name', :style=>"color:#56A8CE;" %>
 	  				</div> 
-	  				<br/>
     			<% end %>
   			<% end %>
 			</div>
@@ -105,8 +105,7 @@
 	   				<div class="followings_avatar"><%= link_to render_follow_avatar(user, :tiny), user %></div>
 	   				<div class="followings_username">
 	   					<%= link_to user.username, user, :class => 'followlist_name', :style=>"color:#56A8CE;" %>
-	   				</div> 
-	   				<br/>
+	   				</div>
     			<% end %>
   			<% end %>
 			</div>
@@ -132,7 +131,7 @@
 				</div>
 			<% end %>
 		</div>
-		<table class="microposts">
+		<table class="microposts" id="microposts">
 			<% if @microposts.empty? %>
 				<td class="profile_noshow">
 					<%= @user.username %> doesn't have any truths yet.
@@ -141,7 +140,11 @@
 				<%= render @microposts  %>
 			<% end %>
 		</table>
-			<%= will_paginate @microposts %>
-      <%= link_to "Load More...", "#", :id=>"load-more" %>
+
+    <%= link_to "Load More...", "#", :id=>"load-more" %>
+		<% unless @microposts.total_pages < 2 %>
+      <%= link_to 'show_more', "#{@user.username}/microposts", :remote => true, :id => 'show_more_link' %>
+      <%# will_paginate @microposts %>
+    <% end %>
 	</td>
 </table>
