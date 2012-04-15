@@ -637,36 +637,31 @@ footer nav {
 
 /********** Signin Page *************/
 
-<<<<<<< HEAD
-.authentications_header {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size:24pt;
-	font-weight:500;
-	text-align: center;
-}
 
-=======
 .signin_page_header {
 	width:100%;
 	text-align:center;
 	font-size:22pt;
+	color:#2764A2;
+	font-weight:500;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
->>>>>>> 3c8ece81f5f275968a5148e84366261d3d54ef6a
+
 .signin_header {
 	padding-bottom:20px;
-	color:#2A4668;
+	color:#2764A2;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:24pt;
 	font-weight:500;
-	font-size: 24pt;
 	margin-left:120px;
 }
 .signup_header {
-	color:#2A4668;
+	color:#2764A2;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:24pt;
 	font-weight:500;
-	margin-left:140px;
+	margin-left:160px;
+	padding-bottom: 25px;
 }
 .signin_container {
 	padding:10px;
@@ -682,6 +677,8 @@ footer nav {
 	padding-bottom:10px;
 }
 .signin_or {
+	color:#2764A2;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:18pt;
 	padding-left:160px;
 	padding-bottom:20px;
@@ -708,6 +705,8 @@ footer nav {
 }
 .signin_left {
 	margin-top:20px;
+	color:#2764A2;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .signin_right {
 	margin-left:400px;
