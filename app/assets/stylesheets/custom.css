@@ -2298,9 +2298,15 @@ input.readonly{background:#ccc;}
 	margin-bottom: -20px;
 	margin-top:10px;
 }
+
+.terms_link {
+	font-size:10pt;
+	color:#2A4668;
+}
+
 .signup_condition {
 	font-size:8pt;
-	color:gray;
+	color:#2A4668;
 }
 .facepile {
 	padding-top:20px;
