@@ -1792,12 +1792,25 @@ table.microposts tr {
   font-weight:500;
 	text-align:left;
 	color:#EEE;
+} 
+
+.social_network_buttons_container {
+	background: #FFF;
+	border:1px solid #CCC;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	width: 580px;
+	margin-left: 5px;
 }
-.fblike {
+
+.social_network_buttons { 
 	width: 50%;
-	margin-bottom: -20px;
-	margin-top: 30px;
+	margin-bottom: 0px;
+	margin-top: 10px;
+	margin-left: 10px;
 }
+
 .ticker_header{
 	font-weight:500;
 	width:562px;
@@ -1819,6 +1832,7 @@ table.microposts tr {
 	width:580px;
 	padding-bottom:10px;
 	padding-left:12px;
+	margin-bottom: 20px;
 	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.2))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */
