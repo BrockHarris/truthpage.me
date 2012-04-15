@@ -700,9 +700,10 @@ footer nav {
 }
 .fancybox_header {
 	line-height: 1px;
-  letter-spacing: -1px;
+  	letter-spacing: -1px;
 	padding-bottom:20px;
 	text-align:center;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
 	font-size:24pt;
 	font-weight:500;
 	color:#2764A2;
@@ -713,6 +714,7 @@ footer nav {
 	font-size:11pt;
 	margin-top:5px;
 	margin-bottom:15px;
+	text-align: center;
 }
 .fancybox_signin_button {
 	padding-top:10px;
@@ -720,6 +722,10 @@ footer nav {
 }
 .fancybox_signup_form {
 	margin-left:-80px;
+}
+
+.facebook_connect_jsnew {
+	margin-left: 100px;
 }
 
 /************* (profile) User Show page **********/
