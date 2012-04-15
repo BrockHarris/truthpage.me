@@ -98,10 +98,9 @@
 	margin-left:auto;
 	margin-right:auto; 
 	width: 840px;
-	margin-top:-30px;
+	margin-top:90px;
 }
 section {
-  margin-top: 90px;
 	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 	font-style: black;
 }
@@ -118,34 +117,27 @@ body {
 .header_bar {
 	top:0;
 	position:fixed;
-	color: #EEE;
+	color:#EEE;
 	background: 
 	background-image: linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
 	background-image: -o-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
 	background-image: -moz-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
 	background-image: -webkit-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
 	background-image: -ms-linear-gradient(bottom, rgb(42,91,147) 0%, rgb(83,134,192) 100%);
-	background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	left top,
-	color-stop(0, rgb(42,91,147)),
-	color-stop(1, rgb(83,134,192))
-);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(42,91,147)), color-stop(1, rgb(83,134,192)));
 	width: 100%;
 	height:65px;
 	border-bottom:1px solid #333;
 	box-shadow:0px 0px 4px #000000;
+	-moz-box-shadow: 0px 0px 4px #000000;
+	-webkit-box-shadow: 0px 0px 4px #000000;
 }
 .header_text {
 	padding-top:15px;
 	font-weight:400;
 	font-size: 32pt;
   font-family: book antiqua;
-  text-shadow: rgba(0,0,0,0.3) -1px 0, 
-  				rgba(0,0,0,0.3) 0 -1px, 
-  				rgba(255,255,255,0.5) 0 1px, 
-  				rgba(0,0,0,0.3) -1px -2px;
+  text-shadow: rgba(0,0,0,0.3) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
 	margin-top:-13px;
 	margin-left:25px;
 }
@@ -287,10 +279,12 @@ body {
 }
 .notification_post_content {
 	font-size:10pt;
-	width:310px;
-	margin-left:10px;
+	width:315px;
+	padding:3px;
+	margin-left:8px;
 	margin-top:5px;
-	border:1px solid yellow;
+	color:#888;
+	background-color:rgba(128,128,128,0.2);
 }
 .notification_time {
 	margin-left:10px;
@@ -763,8 +757,7 @@ footer nav {
 }
 .profile_stats {
 	margin-left:120px;
-	margin-top:20px;
-	padding-bottom:2px;
+	margin-top:25px;
 	line-height:1px;
 	color:#56A8CE;
 	font-family:helvetica neue;
@@ -789,7 +782,7 @@ footer nav {
 	box-shadow: 0px 0px 1px 1px #666;
 }
 .profile_name {
-	margin-bottom:5px;
+	margin-bottom:10px;
 	width:250px;
 	font-weight:500;
 	color:#EEE;
@@ -797,7 +790,8 @@ footer nav {
 	line-height: 1;
 	padding:7px 0px 7px 5px;
 	font-size:22pt;
-	text-shadow:0px 0px 1px #000;
+	background-color:rgba(128,128,128,0.3);
+	text-shadow:0px 1px 2px #000;
 }
 .profile_blurb {
 	text-indent:5px;
@@ -938,6 +932,7 @@ form.new_micropost textarea:focus {
 	float:left;
 	padding-left:10px;
 	margin-left:-5px;	
+	margin-bottom:10px;
 	overflow:hidden;
 }
 .top_truths {
@@ -947,22 +942,22 @@ form.new_micropost textarea:focus {
 	margin:0;
 }
 .top_truths_header {
-	color:#FF14AC;
-	text-shadow:0px 0px 1px #000;
+	color:#CCC;
+	text-shadow:0px 1px 1px #000;
 	font-family:helvetica neue;
 	font-weight:500;
-	font-size:20px;
+	font-size:18px;
 	line-height:1;
-	border-top:1px solid #333;
+	border-top:1px solid #666;
 	width:255px;
 	text-align:center;
 	padding-top:8px;
 	padding-bottom:8px;
 	overflow:hidden;
+	background-color:rgba(128,128,128,0.3);
 }
 .top_truth_countdown {
 	color:#999;
-	background-color:rgba(128,128,128,0.1);
 	width:255px;
 	font-size:10pt;
 	text-align:center;
@@ -974,8 +969,8 @@ form.new_micropost textarea:focus {
 	padding:5px;
 	width:245px;
 	margin:0;
-	background-color:rgba(128,128,128,0.3);
-	border-top:1px solid #555;
+	background-color:rgba(128,128,128,0.15);
+	border-top:1px solid #444;
 }
 .top_truth_content {
 	margin-top:7px;
@@ -1005,22 +1000,24 @@ form.new_micropost textarea:focus {
 }
 .profile_following-h {
 	width:255px;
-	color:#FF14AC;
-	text-shadow:0px 0px 1px #000;
+	color:#CCC;
+	text-shadow:0px 1px 1px #000;
 	font-family:helvetica neue;
 	font-weight:500;
-	font-size:20px;
+	font-size:18px;
 	line-height: 1;
-	padding-top:10px;
-	margin-bottom:5px;
+	padding-top:8px;
+	padding-bottom:8px;
 	margin-left:-5px;
 	text-align:center;
-	border-top:1px solid #333;
+	border-top:1px solid #666;
+	background-color:rgba(128,128,128,0.1);
 }
 .followings_avatar {
 	height:25px;
 	width:25px;
 	border:1px solid #666;
+	margin-top:10px;
 }
 .followings_username {
 	margin-left:30px;
@@ -1045,13 +1042,12 @@ form.new_micropost textarea:focus {
 .profile_following {
 	margin-left:10px;
 	padding:5px;
-	margin-bottom:20px;
+	margin-bottom:10px;
 	overflow:hidden;
 }
 .profile_followers {
 	margin-left:10px;
 	padding:5px;
-	margin-bottom:20px;
 	overflow:hidden;
 }
 h1.micropost {
@@ -1082,6 +1078,7 @@ table.microposts tr {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-top:-3px;
 	padding:2px;
+	margin-bottom:5px;
 	color:#666;
 }
 .micropost_userpic {
@@ -1306,7 +1303,8 @@ table.microposts tr {
 
 
 .settings_container {
-	padding: 10px;
+	padding:10px;
+	margin-top:-24px;
 	padding-bottom:20px;
 	background:white;
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
@@ -1317,12 +1315,6 @@ table.microposts tr {
 	width: 230px;
 	margin-bottom: 10px;
 	margin-left:100px;
-}
-.settings_left {
-	
-}
-.settings_bottom {
-	
 }
 .settings_blurb{
 	color:#666;
@@ -1395,9 +1387,9 @@ table.microposts tr {
 }
 .settings_header {
 	padding:25px;
-	margin:-5px -10px 20px -10px;
+	margin:-12px -10px 20px -10px;
 	color:#2764A2;
-	font-size: 24pt;
+	font-size: 20pt;
 	text-align:left;
 	line-height: 1px;
   letter-spacing: -1px;
@@ -1516,7 +1508,6 @@ table.microposts tr {
 
 
 .facebook_share {
-	margin-left:100px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #8ca6db;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #8ca6db;
 	box-shadow:inset 0px 1px 0px 0px #8ca6db;
@@ -1535,7 +1526,7 @@ table.microposts tr {
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #221c47;
+	text-shadow:0px 0px 2px  #221c47;
 }
 .facebook_share:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5976b3), color-stop(1, #3a5691) );
@@ -1549,8 +1540,6 @@ table.microposts tr {
 	color:#EEE;
 }
 .facebook_invite {
-	margin-top:10px;
-	margin-left:6px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #b9ff91;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #b9ff91;
 	box-shadow:inset 0px 1px 0px 0px #b9ff91;
@@ -1569,7 +1558,7 @@ table.microposts tr {
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #256600;
+	text-shadow:0px 0px 2px #256600;
 }
 .facebook_invite:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7ec75a), color-stop(1, #529633) );
@@ -1583,7 +1572,6 @@ table.microposts tr {
 	color:#EEE;
 }
 .custom-tweet-button {
-	margin-left:10px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #ade9ff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ade9ff;
 	box-shadow:inset 0px 1px 0px 0px #ade9ff;
@@ -1602,7 +1590,7 @@ table.microposts tr {
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #154f6e;
+	text-shadow:0px 0px 2px #154f6e;
 }
 .custom-tweet-button:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #57c2e6), color-stop(1, #2589a8) );
@@ -1619,87 +1607,51 @@ table.microposts tr {
 	width:900px;
 	margin-top:-30px;
 	margin-left:-30px;
-	background:white;
+	background-color:rgba(10,10,10,0.85);
 	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
 	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 }
-.dash_column {
-	float:left;
-	width:250px;
-	padding:5px;
-	margin-top:10px;
-	margin-left:-5px;
-	background:white;
-	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
-}
-.dash_container {
-	width:836px;
-	margin-top:;
-	background:white;
-	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
-}
-.share_section {
+.friends-left {
 	vertical-align:top;
-	width:100%;
-	padding-right:5px;
-}
-.dash_avatar {
-	float:left;
-	padding:5px;
-	width:220px;
-}
-.invite_friends {
-}
-.share_buttons {
-	float:right;
-	margin-right:120px;
-	margin-bottom:10px;
-}
-.profile_link {
-	font-size:16pt;
-	font-family:arial;
-	text-align:center;
-	padding:5px;
-	margin-bottom:5px;
-}
-.profile_sharelink {
-	font-size:20pt;
-	font-weight:500;
-	color:#2764A2;
-	font-size:24pt;
-	font-family:georgia;
-	padding:10px;
-	text-align:center;
 }
 .dashfeed_title {
-	width:580px;
-	color:#26568D;
-	font-size:20pt;
-	line-height:1;
-	font-weight:400;
+	width:590px;
+	color:#2764A2;
+	background:#E8EFFF;
+	font-size: 20pt;
+	line-height: 1px;
+  letter-spacing: -1px;
+  font-weight:500;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-shadow:0px 1px 1px #CCC;
-	border-bottom:1px solid #CCC;
 	text-align:center;
-	background:white;
-	margin:10px -5px -10px 0;
-	padding:10px;
-	padding-bottom:20px;
-	float:right;
+	padding:25px;
+	border-bottom:1px solid #CCC;
+	margin:5px -1px 0 0;
 }
 .dashfeed_content {
 	font-size: 13pt;
 	font-family: arial;
 	color:#333333;
 	float:right;
-	margin-right:-10px;
-	vertical-align:bottom;
-	width: 500px;
+	margin-right:-1px;
+	vertical-align:top;
+	width:640px;
+	background:#FFF;
+	margin-bottom:-1px;
+}
+.dash_column {
+	float:left;
+	width:250px;
+	padding:5px;
+	margin-top:5px;
+	margin-left:-1px;
+	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
+}
+.share_url {
+	color:#EEE;
 }
 .dashfeed_content_noshow {
 	margin-left:58px;
@@ -2037,7 +1989,7 @@ td.main {
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #00058a;
+	text-shadow:0px 0px 2px #00058a;
 }
 .signin_button:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36a2e0), color-stop(1, #0065b3) );
@@ -2074,7 +2026,7 @@ td.main {
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #00058a;
+	text-shadow:0px 0px 2px #00058a;
 }
 .signup_button:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36a2e0), color-stop(1, #0065b3) );
