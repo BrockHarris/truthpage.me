@@ -44,7 +44,7 @@
         $('.microposts').append(rows);
       });
       e.preventDefault();
-    }) 
+    }); 
          
   });
 </script>	 
@@ -143,7 +143,6 @@
 
     <%= link_to "Load More...", "#", :id=>"load-more" %>
 		<% unless @microposts.total_pages < 2 %>
-      <%= link_to 'show_more', "#{@user.username}/microposts", :remote => true, :id => 'show_more_link' %>
       <%# will_paginate @microposts %>
     <% end %>
 	</td>

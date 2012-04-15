@@ -742,19 +742,6 @@ footer nav {
 	margin-left:-80px;
 	margin-top:20px;
 }
-.share_url {
-	padding-top:30px;
-	padding-left:20px;
-	color:black;
-}
-.share_url_ribbon {
-	margin-top:-10px;
-	width: 610px;
-	height: 80px;
-	margin-left:-46px;
-	color: white;
-	background-image: url("banner.png");
-}
 .profile_stats {
 	margin-left:120px;
 	margin-top:25px;
@@ -1508,6 +1495,8 @@ table.microposts tr {
 
 
 .facebook_share {
+	margin-left:33px;
+	margin-top:5px;
 	-moz-box-shadow:inset 0px 1px 0px 0px #8ca6db;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #8ca6db;
 	box-shadow:inset 0px 1px 0px 0px #8ca6db;
@@ -1540,6 +1529,10 @@ table.microposts tr {
 	color:#EEE;
 }
 .facebook_invite {
+	margin-bottom:15px;
+	margin-top:5px;
+	margin-left:20px;
+
 	-moz-box-shadow:inset 0px 1px 0px 0px #b9ff91;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #b9ff91;
 	box-shadow:inset 0px 1px 0px 0px #b9ff91;
@@ -1554,9 +1547,9 @@ table.microposts tr {
 	display:inline-block;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:15px;
+	font-size:14px;
 	font-weight:bold;
-	padding:6px 24px;
+	padding:4px 14px;
 	text-decoration:none;
 	text-shadow:0px 0px 2px #256600;
 }
@@ -1572,6 +1565,10 @@ table.microposts tr {
 	color:#EEE;
 }
 .custom-tweet-button {
+	margin-left:33px;
+	margin-top:6px;
+	margin-bottom:15px;
+
 	-moz-box-shadow:inset 0px 1px 0px 0px #ade9ff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ade9ff;
 	box-shadow:inset 0px 1px 0px 0px #ade9ff;
@@ -1588,7 +1585,7 @@ table.microposts tr {
 	font-family:arial;
 	font-size:15px;
 	font-weight:bold;
-	padding:6px 24px;
+	padding:6px 33px;
 	text-decoration:none;
 	text-shadow:0px 0px 2px #154f6e;
 }
@@ -1650,8 +1647,30 @@ table.microposts tr {
 	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
 	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
 }
-.share_url {
-	color:#EEE;
+.friends_column_share {
+	color:#CCC;
+	text-shadow:0px 1px 1px #000;
+	font-family:helvetica neue;
+	font-weight:500;
+	font-size:18px;
+	line-height: 1;
+	padding-top:8px;
+	padding-bottom:8px;
+	margin:-5px -5px 10px -3px;
+	text-align:center;
+	border-top:1px solid #666;
+	background-color:rgba(128,128,128,0.1);
+}
+.share_url_span {
+	color:#BBB;
+	font-size:12pt;
+}
+.share_profile_url {
+	text-align:left;
+	color:#56A8CE;
+	margin-bottom:15px;
+	margin-top:5px;
+	margin-left:3px;
 }
 .dashfeed_content_noshow {
 	margin-left:58px;
@@ -1676,6 +1695,20 @@ table.microposts tr {
 	padding:5px;
 	margin-left:5px;
 }
+.friends_column_h {
+	color:#CCC;
+	text-shadow:0px 1px 1px #000;
+	font-family:helvetica neue;
+	font-weight:500;
+	font-size:18px;
+	line-height: 1;
+	padding-top:8px;
+	padding-bottom:8px;
+	margin:0 -5px 8px -3px;
+	text-align:center;
+	border-top:1px solid #666;
+	background-color:rgba(128,128,128,0.1);
+}
 .fb_feed_container {
 	height:200px;
 	overflow:auto;
@@ -1687,20 +1720,27 @@ table.microposts tr {
 	border-top:1px solid #CCC;
 }
 .fb_feed_friends {
-	font-weight:400;
-	color:#666;
-	margin:10px;
-	padding-bottom:5px;
-	border-bottom:1px solid #CCC;
+	color:#CCC;
+	text-shadow:0px 1px 1px #000;
+	font-family:helvetica neue;
+	font-weight:500;
+	font-size:18px;
+	line-height: 1;
+	padding-top:8px;
+	padding-bottom:8px;
+	margin:0 -5px 8px -3px;
+	text-align:center;
+	border-top:1px solid #666;
+	background-color:rgba(128,128,128,0.1);
 }
 .fb_friends_noshow {
-	margin-top:10px;
-	margin-bottom:10px;
+	margin:10px;
 	font-size:10pt;
 	text-align:center;
+	color:#666;
 }
 .fb_friends_noshow_fb {
-	margin-left:15px;	
+	margin-left:20px;	
 }
 .fbfriends_box {
 	margin-left:14px;

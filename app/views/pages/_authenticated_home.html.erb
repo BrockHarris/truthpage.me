@@ -61,19 +61,26 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
   <tr>
     <td class="friends-left">
 			<div class="dash_column">
-			<%= render_user_avatar(current_user, :medium) %>
-			<div class="share_url">
-			truthpage.me/<%= current_user.username %>
-			</div>
+				<div class="friends_column_share">
+					Your profile URL
+				</div>
+				<div class="share_profile_url">
+					<span class="share_url_span">truthpage.me/</span><%= current_user.username %>
+				</div>
+				<div class="friends_column_h">
+					Share your profile
+				</div>
+				
 		    		<%= link_to "Share on Facebook", "#", :id => "share_profile", :class => 'facebook_share', :style=>'color:#FFFFFF;' %>
 					
 						<a href="http://twitter.com/share?url=url_you_wish_the_tweet_to_link_back_to&text=the%20text%20you%20wish%20the%20tweet%20to%20say&count=none/" class="custom-tweet-button" target="_blank" onClick="tweetpopup(); return false;" rel="nofollow" style="color:#FFFFFF;">Share on Twitter</a>
 
 
-				<%= link_to '+ Invite Facebook Friends', '#' , :id => 'invite_fb_friends', :class => 'facebook_invite', :style=>'color:#FFFFFF;'  %> 
+				
 				<div class="fb_feed_friends">
 					Friends on truthpage.me
 				</div>
+				<%= link_to '+ Invite Facebook Friends', '#' , :id => 'invite_fb_friends', :class => 'facebook_invite', :style=>'color:#FFFFFF;'  %> 
 				<% unless current_user.authentications.empty? %>
 					<% if @registered_friends.empty? %>
 						<div class="fb_friends_noshow">
