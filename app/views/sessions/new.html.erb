@@ -1,5 +1,10 @@
-<table class="signin_container">
-  <td class="signin_left">
+<div class="signin_container">
+
+    <div class="signin_page_header">
+      header for the signin page
+    </div>
+  
+  <div class="signin_left">
     <div class="signin_header">
       Sign in
     </div>
@@ -24,12 +29,12 @@
         <%= submit_tag "Sign in", :class=>'signin_button' %>
       </div>
     <% end %>
-  </td>
-  <td class="signin_right">
+  </div>
+  <div class="signin_right">
     <div class="signup_header">
       Sign up
     </div>
     <%= render :partial=>"form" %>
-  </td>
-</table>
+  </div>
+</div>
 

@@ -6,9 +6,11 @@ class Comment < ActiveRecord::Base
 	after_create :create_notification
 	
 	def create_notification
-    notification = Notification.create!(:sender_id=>self.user_id, :receiver_id=>self.owner_id, :format=>"commented on a truth about you.", :micropost_content=>self.micropost_content, :comment=>self.post_comment)
-		if notification.receiver.try(:comment_email?)
-			NotificationMailer.comment_email(notification).deliver	
+		unless self.user_id==self.owner_id
+    	notification = Notification.create!(:sender_id=>self.user_id, :receiver_id=>self.owner_id, :format=>"commented on a truth about you.", :micropost_content=>self.micropost_content, :comment=>self.post_comment)
+			if notification.receiver.try(:comment_email?)
+				NotificationMailer.comment_email(notification).deliver	
+			end
 		end
 	end
 end
