@@ -57,32 +57,19 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
   </script>
 </div>
 
-<table class="friends_container">
+<table class="friends_container" cellspacing="0">
   <tr>
-    <td class="main">
-    	<table class="dash_container">
-				<td class="dash_avatar">
-					<%= render_user_avatar(current_user, :medium) %>
-				</td>
-				<td class="share_section">
-					<div class="profile_sharelink">
-						Share your profile
-					</div>
-					<div class="profile_link">
-		 				truthpage.me/<%= current_user.username %>
-					</div>
-						<br/>
-					<div id="invite_friends">
-					<div class="share_buttons">
+    <td class="friends-left">
+			<div class="dash_column">
+			<%= render_user_avatar(current_user, :medium) %>
+			<div class="share_url">
+			truthpage.me/<%= current_user.username %>
+			</div>
 		    		<%= link_to "Share on Facebook", "#", :id => "share_profile", :class => 'facebook_share', :style=>'color:#FFFFFF;' %>
 					
 						<a href="http://twitter.com/share?url=url_you_wish_the_tweet_to_link_back_to&text=the%20text%20you%20wish%20the%20tweet%20to%20say&count=none/" class="custom-tweet-button" target="_blank" onClick="tweetpopup(); return false;" rel="nofollow" style="color:#FFFFFF;">Share on Twitter</a>
-					</div>
-					</div>
-				</td>
-			</table>
 
-			<div class="dash_column">
+
 				<%= link_to '+ Invite Facebook Friends', '#' , :id => 'invite_fb_friends', :class => 'facebook_invite', :style=>'color:#FFFFFF;'  %> 
 				<div class="fb_feed_friends">
 					Friends on truthpage.me
@@ -97,7 +84,7 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
   						<% @registered_friends.each do |user| %>
   							<div class="fbfriend_block">
       						<%= link_to render_user_avatar(user, :thumb), user.username %>
-      						<div class="fbfriend_username"><%= link_to user.username, user.username %></div>
+      						<div class="fbfriend_username"><%= link_to user.username, user.username, :style=>"color:#56A8CE;" %></div>
   							</div>
   						<% end %>
 						</div>
@@ -111,12 +98,15 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
 					</div>
 				<% end %>
 			</div>
+			</td>
+			<td>
       <div class="dashfeed_title">
         Truths about friends you're following
       </div>
 			<div class="dashfeed_content">
 				<%= render 'shared/feed' %>
 			</div>
+			</td>
     </td>
   </tr>
 </table>
