@@ -9,9 +9,9 @@
     			<%= link_to notification.sender.username, current_user.username %> <%= notification.format %>
     		<% end %>
     	</div>
-    	<% if notification.format == "posted a truth about you." %>
+    	<% unless notification.micropost_content.blank? %>
     		<div class="notification_post_content">
-    			truth is <%=h truncate(notification.micropost_content, :length => 42) %>
+    			"truth is <%=h truncate(notification.micropost_content, :length => 45) %>"
     		</div>
     	<% end %>
     	<div class="notification_time">

@@ -256,10 +256,12 @@ body {
 }
 .notification_post_content {
 	font-size:10pt;
-	width:310px;
-	margin-left:10px;
+	width:315px;
+	padding:3px;
+	margin-left:8px;
 	margin-top:5px;
-	border:1px solid yellow;
+	color:#888;
+	background-color:rgba(128,128,128,0.2);
 }
 .notification_time {
 	margin-left:10px;
@@ -907,6 +909,7 @@ form.new_micropost textarea:focus {
 	float:left;
 	padding-left:10px;
 	margin-left:-5px;	
+	margin-bottom:10px;
 	overflow:hidden;
 }
 .top_truths {
@@ -1052,6 +1055,7 @@ table.microposts tr {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-top:-3px;
 	padding:2px;
+	margin-bottom:5px;
 	color:#666;
 }
 .micropost_userpic {
@@ -1948,7 +1952,7 @@ td.main {
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #00058a;
+	text-shadow:0px 0px 2px #00058a;
 }
 .signin_button:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36a2e0), color-stop(1, #0065b3) );
@@ -1985,7 +1989,7 @@ td.main {
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #00058a;
+	text-shadow:0px 0px 2px #00058a;
 }
 .signup_button:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #36a2e0), color-stop(1, #0065b3) );
