@@ -34,10 +34,20 @@
       	$(this).next(".post_comments").slideToggle(300);
       	e.preventDefault();
     });
+
+    //this is a jquery example of doing an ajax request, and selecting the rows from the table and appending. 
+    //you'll still have to determine which page you're on to use in the request's url (this.href) -- perhaps a page level js variable
+    $("#load-more").click(function(e){
+      $.get(this.href, function(data) {
+        var rows = $(data).find(".microposts tr");
+        $('.microposts').append(rows);
+      });
+      e.preventDefault();
+    }) 
+         
   });
 </script>	 
 <% end %>
-
 <table class="profile_container" cellspacing="0">
 	<td class="name_container">
 		<div class="profile_name"> 
@@ -132,5 +142,6 @@
 			<% end %>
 		</table>
 			<%= will_paginate @microposts %>
+      <%= link_to "Load More...", "#", :id=>"load-more" %>
 	</td>
 </table>
