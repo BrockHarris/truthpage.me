@@ -2,15 +2,16 @@ class NotificationMailer < ActionMailer::Base
   default :from => "notifications@truthpage.me"
   
 	def truth_request_email(notification)
-    @mailer_sender = notification.sender.username
+    @sender = notification.sender
+    @sender_url  = "http://truthpage.me/#{notification.sender.username}"
     @notification = notification
-    @url  = "http://truthpage.me/#{@mailer_sender}"
     @settings_url  = "http://truthpage.me/users/#{@notification.receiver.username}/edit"
     mail(:to => @notification.receiver.email, :subject => "You have a truth request on truthpage.me")
   end
 
   def comment_email(notification)
-    @mailer_sender = notification.sender.username
+    @sender = notification.sender
+    @sender_url  = "http://truthpage.me/#{notification.sender.username}"
     @notification = notification
     @url  = "http://truthpage.me/"
     @settings_url  = "http://truthpage.me/users#{notification.receiver.username}/edit"
@@ -18,10 +19,11 @@ class NotificationMailer < ActionMailer::Base
   end
 
   def rating_email(notification)
-    @mailer_sender = notification.sender.username
+    @sender = notification.sender
     @notification = notification
-    @url  = "http://truthpage.me/"
-    @settings_url  = "http://truthpage.me/users#{notification.receiver.username}/edit"
+    @url = "http://truthpage.me/#{notification.receiver.username}"
+    @sender_url  = "http://truthpage.me/#{notification.sender.username}"
+    @settings_url  = "http://truthpage.me/users/#{notification.receiver.username}/edit"
     if notification.format == "liked a truth about you."
       mail(:to => notification.receiver.email, :subject => "#{notification.sender.username} liked a truth about you on truthpage.me")
     else

@@ -27,10 +27,12 @@ class UserMailer < ActionMailer::Base
   end
   
   def new_follower_email(user, current_user)
-    @follower = current_user.username
+    @follower = current_user
+    
+    @follower_url = "http://truthpage.me/#{current_user.username}"
     @profile_url  = "http://truthpage.me/#{user.username}"
     @settings_url  = "http://truthpage.me/users/#{user.username}/edit"
-    mail(:to => user.email, :subject => "You have a new follower on truthpage.me!")
+    mail(:to => user.email, :subject => "You have a new follower on truthpage.me")
   end
 
   # Sets up an email that gives the user instructions on how to reset the
