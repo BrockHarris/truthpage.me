@@ -57,14 +57,6 @@
 	font-weight:400;
 	color:#EEE;
 }
-.footer_background {
-	margin-top:60px;
-	margin-bottom:10px;
-	-webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-	background-color:rgba(0,0,0,0.3);
-}
 .admin_container {
 	text-align:left;
 	padding:10px;
@@ -394,7 +386,7 @@ a:hover {
 
 .headerlink_place {
 	margin-top:-18px;
-	margin-right:52%;
+
 	color: #EEE;
 }
 
@@ -434,17 +426,20 @@ nav ul li a:active {
 }
 
 .round {
--moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  border-radius:         10px;
+
 }
 
 footer {
   text-align: center;
-  margin-top: 40px;
   width: 710px;
   margin-left: auto;
   margin-right: auto;
+  margin-top:60px;
+	margin-bottom:10px;
+	-webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+	background-color:rgba(0,0,0,0.3);
 }
 
 footer nav {

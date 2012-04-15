@@ -1,8 +1,6 @@
-
-<footer class="footer_background">
+<footer>
   <nav class="round">
-    <ul class="footer_link">
-      <div class="footer_link"> 	
+    <ul>
 				<li><%= link_to "truthpage.me © 2012", root_path, :class => "footer_links"  %></li> ·
 				<li><%= link_to "about", about_path, :class => "footer_links"  %></li> ·
         <li><%= link_to "privacy policy", privacy_path, :class => "footer_links"  %></li> ·
@@ -12,7 +10,6 @@
 		   <% if current_user.try(:admin?) %> · 
 				<li><%= link_to "admin", admin_path, :class => "footer_links" %></li>
        <% end %>
-	  </div>
     </ul>
   </nav>
 </footer>
