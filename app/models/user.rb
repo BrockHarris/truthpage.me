@@ -88,10 +88,6 @@ class User < ActiveRecord::Base
   def feed
     Micropost.order.from_users_followed_by(self)
   end
-  
-  def globalfeed
-    Micropost.from_users
-  end
 
   # Auth support
   
