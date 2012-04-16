@@ -1,17 +1,5 @@
 /*************  footer/terms/about/etc.. pages  **********/
 
-.footer_container {
-	width:900px;
-	margin-top: -30px;
-	margin-left:-30px;
-	padding:0;
-	border:0;
-	background-color:white;
-	-webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
-	-moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
-	box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
-	padding-bottom: 30px;
-}
 
 .align-text {
 	text-align:center;
@@ -50,12 +38,6 @@
 	margin-left: 20px;
 	margin-right: 20px;
 	text-align:center;
-}
-.footer_links {
-	font-family:helvetica;
-	font-size:11pt;
-	font-weight:400;
-	color:#EEE;
 }
 .admin_container {
 	text-align:left;
@@ -293,18 +275,17 @@ background-image: -webkit-gradient(
   padding-bottom:10px;
 }
 .noty_menu {
-	margin-left:-82px;
 	font-size:11pt;
 	height:20px;
 	width:20px;
 	padding: 1px 4px 1px 3px;
-	background:red;
-	-webkit-border-radius: 3px;
+	background-color:red;
+	border-radius:3px;
 	-moz-border-radius: 3px;
-	border-radius: 3px;
-	-webkit-box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow:    1px 1px 2px rgba(50, 50, 50, 0.75);
-	box-shadow:         1px 1px 2px rgba(50, 50, 50, 0.75);
+	-webkit-border-radius: 3px;
+	box-shadow:1px 1px 2px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:1px 1px 2px rgba(50, 50, 50, 0.75);
+	-webkit-box-shadow:1px 1px 2px rgba(50, 50, 50, 0.75);
 }
 .noty_menu:hover {
 	text-decoration:none;
@@ -318,8 +299,8 @@ background-image: -webkit-gradient(
 .bubble_placement {
 	float:right;
 	margin-top:-48px;
-	margin-right:50px;
-	z-index:9999;
+	margin-right:117px;
+	-moz-margin-end:28px;
 }
 .menu_header {
 	background-color:rgba(10,10,10,0.15);
@@ -355,7 +336,8 @@ ul, li {
 	-moz-border-radius: 0px 0px 5px 5px; 
 	-webkit-border-radius: 0px 0px 5px 5px; 
 	box-shadow:0px 6px 13px #323133;
-
+	-moz-box-shadow:0px 6px 13px #323133;
+	-webkit-box-shadow:0px 6px 13px #323133;
 }
 .the_menu li {
   background: none;
@@ -386,7 +368,6 @@ a:hover {
 
 .headerlink_place {
 	margin-top:-18px;
-
 	color: #EEE;
 }
 
@@ -395,8 +376,6 @@ nav {
 	float:right;
   padding: 0 0.7em;
   white-space: nowrap;
-	color: black;
-	font-family:arial;
 }
 
 nav ul {
@@ -426,25 +405,31 @@ nav ul li a:active {
 }
 
 .round {
-
 }
 
 footer {
   text-align: center;
-  width: 710px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top:60px;
 	margin-bottom:10px;
-	-webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-	background-color:rgba(0,0,0,0.3);
 }
-
+.footer_bg{
+	margin-left: auto;
+  margin-right: auto;
+  width: 710px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+	background:rgba(0,0,0,0.3);
+}
 footer nav {
 	color:#EEE;
   float: none;
+}
+.footer_links {
+	font-family:helvetica;
+	font-size:11pt;
+	font-weight:400;
+	color:#EEE;
 }
 
 /*************** Stuff for Authenticated users *************/
@@ -859,6 +844,7 @@ form.new_micropost textarea {
 	margin-left:-25px;
 	font-size: 12pt;
 	font-weight:200;
+	font-family: Arial;
 	color: #333;
 	border:none;
 	border: 1px solid #CCC;
@@ -1850,13 +1836,12 @@ border-bottom-left-radius: 6px;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
-	width: 580px;
+	width:580px;
 	margin-left: 5px;
 }
 
 .social_network_buttons { 
 	width: 50%;
-	margin-bottom: 0px;
 	margin-top: 10px;
 	margin-left: 10px;
 }
