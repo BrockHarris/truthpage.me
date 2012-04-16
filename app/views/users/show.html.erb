@@ -76,11 +76,7 @@
 			<% end %>
 		<% end %>
 		</div>
-
-
-			<%= render 'shared/top_truth_feed' %>
-	
-		
+		<%= render 'shared/top_truth_feed' %>
 		<div class="profile_side">
 			<div class="profile_following-h">
 				Following · <%= @user.following.count %>
@@ -114,36 +110,34 @@
 
 	<td class="right_container">	
 		<div class="newpost_container">
-		<% if @user == current_user %>
+			<% if @user == current_user %>
 				<div class="profile_feed_header">
 					Truths about you
 				</div>
 			<% else %>
 				<div class="profile_feed_header">
-						Write a truth about <%= @user.username %>
-					</div>
+					Write a truth about <%= @user.username %>
+				</div>
 			<% end %>
-
 			<% unless @user == current_user %>
 				<div class="micropost_form_container">
-					
 					<%= render 'microposts/form' %>
 				</div>
 			<% end %>
 		</div>
 		<table class="microposts" id="posts_table">
 			<% if @microposts.empty? %>
-				<td class="profile_noshow">
-					<%= @user.username %> doesn't have any truths yet.
-				</td>
+				<tr>
+					<td class="profile_noshow">
+						<%= @user.username %> doesn't have any truths yet.
+					</td>
+				</tr>
   		<% else %>
 				<%= render @microposts  %>
 			<% end %>
 		</table>
-
-    <%= link_to "Load More...", "#", :id=>"load-more" %>
-		<%=  @microposts.total_pages %>
-
-
+		<% if @microposts.total_pages > 1 %>
+    	<%= link_to "Load More Posts", "#", :id=>"load-more" %>
+		<% end %>
 	</td>
 </table>

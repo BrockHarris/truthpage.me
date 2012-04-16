@@ -1642,6 +1642,7 @@ table.microposts tr {
 	padding:25px;
 	border-bottom:1px solid #CCC;
 	margin:5px -1px 0 0;
+	vertical-align:top;
 }
 .dashfeed_content {
 	font-size: 13pt;
@@ -1653,6 +1654,9 @@ table.microposts tr {
 	width:640px;
 	background:#FFF;
 	margin-bottom:-1px;
+}
+.dash_right_cell {
+	vertical-align:top;
 }
 .dash_column {
 	float:left;
