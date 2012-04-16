@@ -127,11 +127,9 @@
 		</div>
 		<table class="microposts" id="posts_table">
 			<% if @microposts.empty? %>
-				<tr>
 					<td class="profile_noshow">
 						<%= @user.username %> doesn't have any truths yet.
 					</td>
-				</tr>
   		<% else %>
 				<%= render @microposts  %>
 			<% end %>

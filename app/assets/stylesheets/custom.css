@@ -745,10 +745,12 @@ footer nav {
 }
 .profile_noshow {
 	color:#666;
+	border:1px solid orange;
 	text-align:center;
 	font-size:11pt;
-	margin-left:-80px;
 	margin-top:20px;
+	float:left;
+	width:518px;
 }
 .profile_stats {
 	margin-left:120px;
