@@ -45,7 +45,17 @@
         });
       e.preventDefault();
     }); 
-         
+
+		$('#loading-animation').hide();
+			$("#load_animate").click(function(){
+       $('#loading-animation').show();
+			$.ajax({
+        url: "/microposts/create",
+        success: function(){
+           $('#loading-animation').hide();
+        }
+      })
+    });      
   });
 </script>	 
 <% end %>
@@ -123,12 +133,27 @@
 				<div class="micropost_form_container">
 					<%= render 'microposts/form' %>
 				</div>
+				<div id="loading-animation">
+<div id="circleG">
+<div id="circleG_1" class="circleG">
+</div>
+<div id="circleG_2" class="circleG">
+</div>
+<div id="circleG_3" class="circleG">
+</div>
+</div>
+</div>
 			<% end %>
 		</div>
 		<table class="microposts" id="posts_table">
 			<% if @microposts.empty? %>
 					<td class="profile_noshow">
 						<%= @user.username %> doesn't have any truths yet.
+						<% if @user == current_user %>
+
+						Add the steps here, only the current user will see this on their own profile.
+
+						<% end %>
 					</td>
   		<% else %>
 				<%= render @microposts  %>

@@ -12,7 +12,7 @@
 	</div>
   <div class ="share_placement">
   	<% if current_user %>
-  		<%= f.submit 'Send', :class => 'submitpost'%>
+  		<%= f.submit 'Send', :class => 'submitpost', :id=> 'load_animate'%>
   	<% else %>
   		<%= link_to 'Send', login_path, :id => 'authenticate', :class => 'submitpost', :style=>'color:#FFFFFF;' %>
   	<% end %>
