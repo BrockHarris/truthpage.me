@@ -750,6 +750,7 @@ footer nav {
 	font-size:11pt;
 	margin-top:20px;
 	float:left;
+	margin-left:60px;
 	width:518px;
 }
 .profile_stats {
@@ -1048,6 +1049,24 @@ form.new_micropost textarea:focus {
 	padding:5px;
 	overflow:hidden;
 }
+.load_more_container {
+	margin-bottom:15px;
+	padding-bottom:10px;
+}
+#load-more {
+	font-size:10pt;
+	margin-left:80px;
+	padding:5px 200px 5px 200px;
+	border:1px solid #CCC;
+}
+#load-more:hover {
+	background:#EEE;
+	text-decoration:none;
+}
+#pages_loading {
+	margin-top:20px;
+	margin-left:273px;
+}
 h1.micropost {
   margin-bottom: 0.3em;
 }
@@ -1066,7 +1085,7 @@ table.microposts {
 	float:right;
 	width: 570px;
 	margin-top:12px;
-	padding-bottom:10px;
+	padding-bottom:15px;
 	margin-right:15px;
 }
 table.microposts tr {
@@ -1679,7 +1698,7 @@ table.microposts tr {
 	line-height: 1;
 	padding-top:8px;
 	padding-bottom:8px;
-	margin:-5px -5px 10px -3px;
+	margin:-6px -5px 10px -3px;
 	text-align:center;
 	border-top:1px solid #666;
 	background-color:rgba(128,128,128,0.1);
