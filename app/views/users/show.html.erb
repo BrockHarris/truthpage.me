@@ -1,5 +1,7 @@
 <%= content_for :head do %>
  <script type="text/javascript">
+  var pageCount = 1;
+
   $(function(){
     $('#truth_form').jqEasyCounter({
 		'maxChars': 180,
@@ -30,18 +32,20 @@
     });
 
     $(".post_comments").hide();
-    	$(".open_comments").click(function(e){
-      	$(this).next(".post_comments").slideToggle(300);
-      	e.preventDefault();
+
+  	$(".microposts").delegate(".open_comments", "click", function(e){
+      $(this).next(".post_comments").slideToggle(300);
+    	e.preventDefault();
     });
 
     //this is a jquery example of doing an ajax request, and selecting the rows from the table and appending. 
     //you'll still have to determine which page you're on to use in the request's url (this.href) -- perhaps a page level js variable
 
     $("#load-more").click(function(e){
-      $.get(this.href, function(data) {
+      $.get(this.href, {page:pageCount+=1}, function(data) {
         var rows = $(data).find("#posts_table tr");
           $('#posts_table').append(rows);
+          $(".post_comments").hide();
         });
       e.preventDefault();
     }); 
