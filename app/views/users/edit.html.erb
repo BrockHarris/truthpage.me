@@ -55,26 +55,26 @@
     </div>
     <%= form_for @user, :html=> { :multipart => true} do |f| %>
       <%= render 'shared/error_messages', :object => f.object %>
-      <div class="email_settings_h"> Email notification settings </div>
+      <div class="email_settings_h">Notify me via email for:</div>
       <div class="settings_mail">
         <%= f.check_box :mail_subscription, {}, true, false %>
-        <%= f.label "Email me when someone writes a new truth about me"%>
+        <%= f.label "New truths about me"%>
       </div>
       <div class="settings_mail">
         <%= f.check_box :follower_email, {}, true, false %>
-        <%= f.label "Email me when someone new follows me"%>
+        <%= f.label "New followers"%>
       </div>
       <div class="settings_mail">
         <%= f.check_box :rating_email, {}, true, false %>
-        <%= f.label "Truth rating notification emails"%>
+        <%= f.label "New ratings about my truths"%>
       </div>
       <div class="settings_mail">
         <%= f.check_box :comment_email, {}, true, false %>
-        <%= f.label "Truth comment notification emails"%>
+        <%= f.label "New comments on my truths"%>
       </div>
       <div class="settings_mail">
         <%= f.check_box :request_email, {}, true, false %>
-        <%= f.label "Truth request emails"%>
+        <%= f.label "New truth requests"%>
       </div>
       <div class="settings_fields">
         <div class="formlabel"> New Password </div>
