@@ -14,11 +14,10 @@ class Micropost < ActiveRecord::Base
   after_create :create_anon_notification, :if => :anon?
 
   default_scope where("microposts.deleted_at IS NULL")
-  
+
   scope :rated, where("microposts.truth_percentage IS NOT NULL AND microposts.truth_percentage > 0")
   scope :count_order, order("microposts.truth_percentage DESC")
   scope :order, order("microposts.created_at DESC")
-  scope :from_users_followed_by, lambda { |user| followed_by(user) }
 
   
   def destroy
@@ -40,14 +39,5 @@ class Micropost < ActiveRecord::Base
   def update_truth_percentage
     count = self.ratings.trues.count
     connection.execute("UPDATE microposts SET truth_percentage = #{count} WHERE id = #{self.id}")
-  end
-  
-  private
-
-  def self.followed_by(user)
-      following_ids = %(SELECT followed_id FROM relationships
-                        WHERE follower_id = :user_id)
-      where("user_id IN (#{following_ids}) OR user_id = :user_id",
-            { :user_id => user })
   end
 end
