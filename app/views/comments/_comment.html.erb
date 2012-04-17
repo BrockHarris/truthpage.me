@@ -4,7 +4,7 @@
   <div class="comment-content"><%= comment.post_comment %></div>
   <div class="comment-timestamp"><%= time_ago_in_words(comment.created_at) %> ago</div>
   <% if current_user == comment.user %>
-  	<%= link_to "delete", { :controller => 'comments', :action => "destroy", :id => comment.id }, :method => :delete %>
+		<%= link_to "delete", { :controller => 'comments', :action => "destroy", :id => comment.id }, :method => :delete, :class=>"comment_delete" %>
   <% end %>
 </div>
 
