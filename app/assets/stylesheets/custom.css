@@ -745,9 +745,10 @@ footer nav {
 }
 .profile_noshow {
 	color:#666;
-	border:1px solid orange;
+	background:#E8EFFF;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align:center;
-	font-size:11pt;
+	font-size:13pt;
 	margin-top:20px;
 	float:left;
 	width:518px;
@@ -757,7 +758,7 @@ footer nav {
 	margin-top:25px;
 	line-height:1px;
 	color:#56A8CE;
-	font-family:helvetica neue;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:14pt;
 }
 .name_container {
@@ -783,7 +784,7 @@ footer nav {
 	width:250px;
 	font-weight:500;
 	color:#EEE;
-	font-family:helvetica neue;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	line-height: 1;
 	padding:7px 0px 7px 5px;
 	font-size:22pt;

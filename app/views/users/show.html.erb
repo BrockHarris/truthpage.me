@@ -148,10 +148,12 @@
 		<table class="microposts" id="posts_table">
 			<% if @microposts.empty? %>
 					<td class="profile_noshow">
-						<%= @user.username %> doesn't have any truths yet.
+	
 						<% if @user == current_user %>
 
-						Add the steps here, only the current user will see this on their own profile.
+						<div class="profile_noshow_content">
+							You dont have any truths yet. Find your friends and post truths about them. Then follow them to see what theyre sharing.
+						</div>
 
 						<% end %>
 					</td>
