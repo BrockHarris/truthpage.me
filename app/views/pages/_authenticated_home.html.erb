@@ -1,12 +1,26 @@
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <script type="text/javascript">
+ var pageCount = 1;
 	$(function(){
 		$(".post_comments").hide();
     	$(".open_comments").click(function(e){
       	$(this).next(".post_comments").slideToggle(300);
       	e.preventDefault();
     });
+
+    $('#pages_loading').hide();
+    	$("#load-more").click(function(e){
+    	$('#pages_loading').show();
+      $.get(this.href, {page:pageCount+=1}, function(data) {
+        var rows = $(data).find("#posts_table tr");
+          $('#posts_table').append(rows);
+          $(".post_comments").hide();
+          $('#pages_loading').hide();
+        });
+      e.preventDefault();
+    }); 
+
 		$("#share_profile").click(function() {
 		FB.init({ 
 		  appId:'186414394781001', 

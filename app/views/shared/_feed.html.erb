@@ -4,8 +4,19 @@
 	</div>
  
 <% else %>
-  <table class="microposts">
+  <table class="microposts" id="posts_table">
     <%= render :partial => 'shared/feed_item', :collection => @feed_items %>
   </table>
-  <%= will_paginate @feed_items %>
+<% if @feed_items.total_pages > 1 %>
+			<div class="load_more_container">
+  			<%= link_to "Load more", "#", :id=>"load-more" %>
+  			<div id="pages_loading">
+  				<div id="circleG">
+						<div id="circleG_1" class="circleG"></div>
+						<div id="circleG_2" class="circleG"></div>
+						<div id="circleG_3" class="circleG"></div>
+					</div>
+  			</div>
+  		</div>
+		<% end %>
 <% end %>
