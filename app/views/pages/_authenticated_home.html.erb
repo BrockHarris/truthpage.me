@@ -32,8 +32,8 @@
 		FB.ui( {
 			method: 'feed',
 			message: 'message here',
-			name: 'Post a truth about me on truthpage.me!',
-			caption: 'truthpage.me/<%= current_user.username %>',
+			name: 'truth is? truthpage.me/<%= current_user.username %>',
+			caption: 'Post a truth about me on truthpage.me',
 			link: '<%= root_url%><%= current_user.username %>',
 			picture: '<%= root_url%>images/wallpost_image.jpg',
 			actions: [
