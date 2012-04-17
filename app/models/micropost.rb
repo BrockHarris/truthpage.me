@@ -15,7 +15,7 @@ class Micropost < ActiveRecord::Base
 
   default_scope where("microposts.deleted_at IS NULL")
 
-  scope :rated, where("microposts.truth_percentage > 0")
+  scope :rated, where("microposts.truth_percentage IS NOT NULL")
   scope :count_order, order("microposts.truth_percentage DESC")
   
   scope :order, order("microposts.created_at DESC")

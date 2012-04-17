@@ -49,12 +49,6 @@
 		$('#loading-animation').hide();
 			$("#load_animate").click(function(){
        $('#loading-animation').show();
-			$.ajax({
-        url: "/microposts/create",
-        success: function(){
-           $('#loading-animation').hide();
-        }
-      })
     });      
   });
 </script>	 
@@ -73,9 +67,15 @@
 		<div class="profile_avatar"> 
 			<%= render_profile_pic(@user, :medium) %>	
 		</div>
+		<% if (@user == current_user) && (@user.blurb.blank?) %>
+		<div class="profile_blurb"> 
+			<%= link_to "Click here", edit_user_path(current_user) %> to add a profile blurb
+		</div>
+		<% else %>
 		<div class="profile_blurb"> 
 			<%= @user.blurb %> 
 		</div>
+		<% end %>
 		<div class="profile_buttons">
 		<% if current_user %>
 			<% unless @user == current_user %>
@@ -99,7 +99,31 @@
 	  					<%= link_to user.username, user, :class => 'followlist_name', :style=>"color:#56A8CE;" %>
 	  				</div> 
     			<% end %>
-  			<% end %>
+  			<% else %>
+  				<% unless current_user.authentications.empty? %>
+					<% if @registered_friends.empty? %>
+						<div class="fb_friends_noshow">
+							None of your Facebook friends have a truthpage yet...
+						</div>
+					<% else %>
+						<div class="fbfriends_box">
+  						<% @registered_friends.each do |user| %>
+  							<div class="fbfriend_block">
+      						<%= link_to render_user_avatar(user, :thumb), user.username %>
+      						<div class="fbfriend_username"><%= link_to user.username, user.username, :style=>"color:#56A8CE;" %></div>
+  							</div>
+  						<% end %>
+						</div>
+					<% end %>
+				<% else %>
+					<div class="fb_friends_noshow_fb">
+				  	<%= render :partial=>"authentications/services" %>
+				  </div>
+				  <div class="fb_friends_noshow">
+						Connect with Facebook to see your friends on truthpage!
+					</div>
+				<% end %>
+				<% end %>
 			</div>
 
 			<div class="profile_following-h">
