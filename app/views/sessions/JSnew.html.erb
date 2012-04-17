@@ -1,14 +1,14 @@
 <div class="fancybox_page">
 	<div class="fancybox_header">
-		Sign in to truthpage.me!
+		Sign in to truthpage.me
 	</div>
-	
+  <div class="facebook_connect_jsnew">
   	<%= render :partial=>"authentications/services" %>
-  	</div>
-
+  </div>
 	<div class="fancybox_no_facebook">
 		Don&rsquo;t use Facebook? Sign up <%= link_to "here", signin_path %>.
 	</div>
+	<div class="fancybox_signin_form">
 	<%= form_tag sessions_path do %>
   	<div class="field">
   		<div class="formlabel">Username or Email</div>
@@ -23,4 +23,5 @@
 			<%= submit_tag "Sign in", :class=>'signin_button' %>
 		</div>  
 	<% end %>
+	</div>
 </div>

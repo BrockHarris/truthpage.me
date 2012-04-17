@@ -619,26 +619,34 @@ footer nav {
 
 
 .signin_page_header {
-	width:100%;
+	background:#E8EFFF;
+	border-top:1px solid #CCC;
+	border-bottom:1px solid #CCC;
+	width:850px;
+	margin:-12px 0 0 -10px;
+	padding:5px;
 	text-align:center;
-	font-size:22pt;
+	font-size:24pt;
 	color:#2764A2;
 	font-weight:500;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow:0px 1px 0px #CCC;
 }
 
 .signin_header {
 	padding-bottom:20px;
 	color:#2764A2;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size:24pt;
+	text-shadow:0px 0px 2px #CCC;
+	font-size:22pt;
 	font-weight:500;
 	margin-left:120px;
 }
 .signup_header {
 	color:#2764A2;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size:24pt;
+	text-shadow:0px 0px 2px #CCC;
+	font-size:22pt;
 	font-weight:500;
 	margin-left:160px;
 	padding-bottom: 25px;
@@ -724,6 +732,9 @@ footer nav {
 }
 .fancybox_signup_form {
 	margin-left:-25px;
+}
+.fancybox_signin_form {
+	margin-left:70px;
 }
 
 .facebook_connect_jsnew {
