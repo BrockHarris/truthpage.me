@@ -19,10 +19,10 @@
     <%= f.password_field :password_confirmation, :class =>"formfield" %>
   </div>
   <div class="captcha_holder">
-	<%= show_simple_captcha :image_style => 'simply_blue', :label => "(type the words in the image)" %>
+	<%= show_simple_captcha :image_style => 'simply_blue', :label => "Type the words in the image." %>
   </div>
   <div class="save_button">
-    <%= f.submit 'Sign up!', :class => "signup_button" %>
+    <%= f.submit 'Sign up', :class => "signup_button" %>
   </div>
   <div class="signup_condition">by clicking sign up you agree to our 
     <%= link_to "terms of use", terms_path, :style=>"color:#555;" %>.

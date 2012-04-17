@@ -79,11 +79,7 @@
 	outline: none;
 	position: relative;
 	overflow: hidden;
-	z-index: 1102;
-	border-radius: 9px; 
-	-moz-border-radius: 9px; 
-	-webkit-border-radius: 9px; 
-	border: 1px solid gray;
+	z-index: 1102; 
 }
 
 #fancybox-hide-sel-frame {
