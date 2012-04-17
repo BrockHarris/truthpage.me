@@ -6,7 +6,7 @@
           <%= image_tag("genericpic-tiny.jpg") %> 
         </div>
         <div class="micropost_username">
-          Anonymous >
+          Anonymous <span class="arrow-e"></span>
           
           <%= render_user_avatar(feed_item.target_user, :tiny) %>
           
@@ -21,7 +21,8 @@
           <%= render_user_avatar(feed_item.user, :tiny) %>
         </div>
         <div class="micropost_username">
-          <%= link_to feed_item.user.username, feed_item.user %> >
+          <%= link_to feed_item.user.username, feed_item.user %> <span class="arrow-e"></span>
+
           
           <%= render_user_avatar(feed_item.target_user, :tiny) %>
           

@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>
-truthpage.me
+Truthpage.me
 </title>
 	<style type="text/css">
     .header_bar {
@@ -22,8 +22,7 @@ truthpage.me
 		-webkit-box-shadow: 0 0 6px 2px#888;
 		box-shadow: 0 0 6px 1px #999;
 	}
-  	</style>
-	<style>
+
 	.header_text {
 		padding-top:10px;
 		font-weight:400;
@@ -37,29 +36,28 @@ truthpage.me
 		margin-top:-15px;
 		margin-left:15px;
 	}
-	</style>
-	
-  <title>The page you were looking for doesn't exist (404)</title>
-  <style type="text/css">
+
+
     body {
-      background-color: #E8E8E8;
+      background-image: url('http://truthpage.me/images/error_bg.png');
       margin:0;
+      background-repeat:repeat;
+      background-attachment:fixed;
     }
     div.header_bar {
       color: white;
       background-image: linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
-background-image: -o-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
-background-image: -moz-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
-background-image: -webkit-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
-background-image: -ms-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
-
-background-image: -webkit-gradient(
-  linear,
-  left bottom,
-  left top,
-  color-stop(0.01, rgb(38,83,135)),
-  color-stop(0.97, rgb(87,145,207))
-);
+      background-image: -o-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+      background-image: -moz-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+      background-image: -webkit-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+      background-image: -ms-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+      background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.01, rgb(38,83,135)),
+      color-stop(0.97, rgb(87,145,207))
+      );
       height:80px;
       margin:0;
       moz-box-shadow: 0 0 6px 2px #888;
@@ -82,10 +80,19 @@ background-image: -webkit-gradient(
     }
 
     div.dialog {
-      	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-		   font-weight: 150;}
-		h1 { font-size: 28px; color: #2A4668; line-height: 1.5em; text-align: center; padding: 40px; }
-		h2 { font-size: 28px; color: #2A4668; line-height: 1.5em; text-align: center; }
+      padding:20px;
+      position:relative;
+      z-index:-9999;
+      margin-top:-24px;
+      margin-left:auto;
+      margin-right:auto;
+      color:#000;
+      width:75%;
+      background-color:#FFFFFF;
+  -webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+  -moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+  box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
+    }
 
   </style>
 </head>
@@ -99,7 +106,7 @@ background-image: -webkit-gradient(
     <div class="header_text"> truthpage.me </div>
   </div>
   <div class="dialog">
-    <h1>Oh snap! Something isn't quite right. We'll make sure we fix this.</h1>
+    <h1>I couldn't find the page you were looking for.</h1>
 	<h2>Click <a href="#" onclick="history.back();">here</a> to go back. </h2>
   </div>
 </body>

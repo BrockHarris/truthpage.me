@@ -6,24 +6,18 @@
           <%= image_tag("genericpic-tiny.jpg") %> 
         </div>
         <div class="micropost_username">
-          Anonymous  > 
+          Anonymous  <span class="arrow-e2"></span>
           <%= render_user_avatar(micropost.target_user, :tiny) %>
-          <%= link_to micropost.target_user.username, micropost.target_user %>
-          
-          
+          <%= link_to micropost.target_user.username, micropost.target_user %>       
         </div>
       <% else %>
         <div class="micropost_userpic">
           <%= render_user_avatar(micropost.user, :tiny) %>
         </div>
         <div class="micropost_username">
-          <%= link_to micropost.user.username, micropost.user %>  > 
-          
-            <%= render_user_avatar(micropost.target_user, :tiny) %>
-          
+          <%= link_to micropost.user.username, micropost.user %>  <span class="arrow-e2"></span> 
+          <%= render_user_avatar(micropost.target_user, :tiny) %>
           <%= link_to micropost.target_user.username, micropost.target_user %>
-          
-
         </div>  
       <% end %>
     </div>
@@ -31,9 +25,6 @@
     <div class="ticker_content"> 
       <%= micropost.content %>
     </div>
-    
-    
-      <div class="unauth_spacer"></div>
-    
+    <div class="unauth_spacer"></div>
   </td>
 </tr>

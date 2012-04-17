@@ -1,12 +1,49 @@
 /*************  footer/terms/about/etc.. pages  **********/
 
-.arrow {
-  border-top : 10px solid transparent;
-  border-bottom : 10px solid transparent;
-  border-left : 10px solid black;
-  width:0;
-  height:0;
+.arrow-e{
+  border-style: dashed;
+  border-color: transparent;
+  border-width: 6px;
+  display: -moz-inline-box;
+  display: inline-block;
+  /* Use font-size to control the size of the arrow. */
+  font-size: 100px;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: middle;
+  width: 0;
 }
+.arrow-e {
+  border-left-width: 6px;
+  border-left-style: solid;
+  border-left-color: #AAA;
+  left: 3px;
+  top:-4px;
+}
+
+.arrow-e2{
+  border-style: dashed;
+  border-color: transparent;
+  border-width: 6px;
+  display: -moz-inline-box;
+  display: inline-block;
+  /* Use font-size to control the size of the arrow. */
+  font-size: 100px;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: middle;
+  width: 0;
+}
+.arrow-e2 {
+  border-left-width: 6px;
+  border-left-style: solid;
+  border-left-color: #AAA;
+  left: 3px;
+  top:-1px;
+}           
+
 .align-text {
 	text-align:center;
 }
@@ -96,6 +133,7 @@ body {
 
 .header_bar {
 	top:0;
+	z-index:1;
 	position:fixed;
 	color:#EEE;
 background-image: linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
