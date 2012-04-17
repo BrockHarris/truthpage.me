@@ -1,5 +1,7 @@
 <%= content_for :head do %>
  <script type="text/javascript">
+ var pageCount = 1;
+
   $(function(){
     $('#truth_form').jqEasyCounter({
 		'maxChars': 180,
@@ -30,35 +32,32 @@
     });
 
     $(".post_comments").hide();
-    	$(".open_comments").click(function(e){
-      	$(this).next(".post_comments").slideToggle(300);
-      	e.preventDefault();
-    });
+    	$(".microposts").delegate(".open_comments", "click", function(e){
+	      $(this).next(".post_comments").slideToggle(300);
+       e.preventDefault();
+     });
 
-    //this is a jquery example of doing an ajax request, and selecting the rows from the table and appending. 
-    //you'll still have to determine which page you're on to use in the request's url (this.href) -- perhaps a page level js variable
-
-    $("#load-more").click(function(e){
-      $.get(this.href, function(data) {
+    $('#pages_loading').hide();
+    	$("#load-more").click(function(e){
+    	$('#pages_loading').show();
+      $.get(this.href, {page:pageCount+=1}, function(data) {
         var rows = $(data).find("#posts_table tr");
           $('#posts_table').append(rows);
+          $(".post_comments").hide();
+          $('#pages_loading').hide();
         });
       e.preventDefault();
     }); 
 
 		$('#loading-animation').hide();
 			$("#load_animate").click(function(){
-       $('#loading-animation').show();
-			$.ajax({
-        url: "/microposts/create",
-        success: function(){
-           $('#loading-animation').hide();
-        }
-      })
+      $('#loading-animation').show();
     });      
   });
 </script>	 
 <% end %>
+
+
 <table class="profile_container" cellspacing="0">
 	<td class="name_container">
 		<div class="profile_name"> 
@@ -73,9 +72,15 @@
 		<div class="profile_avatar"> 
 			<%= render_profile_pic(@user, :medium) %>	
 		</div>
+		<% if (@user == current_user) && (@user.blurb.blank?) %>
+		<div class="profile_blurb"> 
+			<%= link_to "Click here", edit_user_path(current_user) %> to add a profile blurb
+		</div>
+		<% else %>
 		<div class="profile_blurb"> 
 			<%= @user.blurb %> 
 		</div>
+		<% end %>
 		<div class="profile_buttons">
 		<% if current_user %>
 			<% unless @user == current_user %>
@@ -134,35 +139,39 @@
 					<%= render 'microposts/form' %>
 				</div>
 				<div id="loading-animation">
-<div id="circleG">
-<div id="circleG_1" class="circleG">
-</div>
-<div id="circleG_2" class="circleG">
-</div>
-<div id="circleG_3" class="circleG">
-</div>
-</div>
-</div>
+					<div id="circleG">
+						<div id="circleG_1" class="circleG"></div>
+						<div id="circleG_2" class="circleG"></div>
+						<div id="circleG_3" class="circleG"></div>
+					</div>
+				</div>
 			<% end %>
 		</div>
 		<table class="microposts" id="posts_table">
 			<% if @microposts.empty? %>
 					<td class="profile_noshow">
-	
-						<% if @user == current_user %>
 
 						<div class="profile_noshow_content">
 							You dont have any truths yet. Find your friends and post truths about them. Then follow them to see what theyre sharing.
 						</div>
 
 						<% end %>
-					</td>
+					</div>
   		<% else %>
 				<%= render @microposts  %>
 			<% end %>
 		</table>
 		<% if @microposts.total_pages > 1 %>
-    	<%= link_to "Load More Posts", "#", :id=>"load-more" %>
+			<div class="load_more_container">
+  			<%= link_to "Load more", "#", :id=>"load-more" %>
+  			<div id="pages_loading">
+  				<div id="circleG">
+						<div id="circleG_1" class="circleG"></div>
+						<div id="circleG_2" class="circleG"></div>
+						<div id="circleG_3" class="circleG"></div>
+					</div>
+  			</div>
+  		</div>
 		<% end %>
 	</td>
 </table>
