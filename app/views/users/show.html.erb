@@ -149,12 +149,21 @@
 		</div>
 		<table class="microposts" id="posts_table">
 			<% if @microposts.empty? %>
-					<td class="profile_noshow">
-
-						<div class="profile_noshow_content">
-							You dont have any truths yet. Find your friends and post truths about them. Then follow them to see what theyre sharing.
-						</div>
-
+					<div class="profile_noshow">
+						hmm no truths yet...
+						<% if @user == current_user %>
+							<div class="profile_noshow_content">
+								<div class="step_number"> 1 </div>
+								Share your profile URL with your friends to get truths. <strong>truthpage.me/<%= @user.username %></strong>
+							</div>
+							<div class="profile_noshow_content">
+								<div class="step_number"> 2 </div>
+								Find your <%= link_to "friends", root_url %> and rate or comment on truths about them.
+							</div>
+							<div class="profile_noshow_content">
+								<div class="step_number"> 3 </div>
+								Follow your friends and see what the truth is about them!
+							</div>
 						<% end %>
 					</div>
   		<% else %>
