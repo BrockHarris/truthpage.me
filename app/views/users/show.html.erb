@@ -151,6 +151,8 @@
 			<% if @microposts.empty? %>
 					<td class="profile_noshow">
 
+						<% if @user == current_user %>
+
 						<div class="profile_noshow_content">
 							You dont have any truths yet. Find your friends and post truths about them. Then follow them to see what theyre sharing.
 						</div>
