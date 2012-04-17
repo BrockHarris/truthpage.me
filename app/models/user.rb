@@ -84,11 +84,7 @@ class User < ActiveRecord::Base
     return false if user.following?(self) #can't follow someone already following
     true #otherwise 
   end
-    
-  def feed
-    Micropost.order.from_users_followed_by(self)
-  end
-
+  
   # Auth support
   
   def pending?
