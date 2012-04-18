@@ -5,6 +5,10 @@ skip_before_filter :verify_authenticity_token
     @users = User.all
     @title = "Truthpage.me"
     if current_user
+      if current_user.background.exists?
+         @user = current_user 
+         @user_custom_background = true
+      end
       @title = "Truthpage.me | Friends"
       @rating = Rating.new(params[:rating])
       @micropost = Micropost.new
