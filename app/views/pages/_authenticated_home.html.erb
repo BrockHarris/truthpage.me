@@ -121,9 +121,15 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
 			</div>
 			</td>
 			<td class ="dash_right_cell">
-      <div class="dashfeed_title">
-        Truths about friends you're following
-      </div>
+				<% if @change_feed_header %>
+					<div class="dashfeed_title">
+        		Truths about your Facebook friends
+      		</div>
+      	<% else %>
+      		<div class="dashfeed_title">
+        		Truths about friends you're following
+      		</div>
+      	<% end %>
 			<div class="dashfeed_content">
 				<%= render 'shared/feed' %>
 			</div>
