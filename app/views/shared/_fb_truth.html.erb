@@ -1,0 +1,22 @@
+  <div class="top_truth_post">
+    <div class="top_truth_avatar">
+    <% if fb_truth.try(:anon?) %>
+      <%= image_tag("genericpic-tiny.jpg") %> 
+    <% else %>
+      <%= render_user_avatar(fb_truth.user, :tiny) %>
+    <% end %>
+    </div>
+    <div class="top_truth_author">
+      <% if fb_truth.try(:anon?) %>
+        Anonymous
+      <% else %>
+        <%= link_to fb_truth.user.username, fb_truth.user, :style=>"color:#56A8CE;" %>
+      <% end %>
+    </div>
+    <div class="top_truth_content">
+      truth is <%= fb_truth.content %>
+    </div>
+    <div class="top_truth_stat">
+      <%= pluralize(fb_truth.ratings.trues.count, "Like") %> · <%= pluralize(fb_truth.ratings.falses.count, "Dislike") %>
+    </div>
+  </div>

@@ -1,0 +1,8 @@
+<% if @fb_truths.count > 3 %>
+	<div class="top_truths_header">
+		Your friend's truths
+	</div>
+	<div class="top_truths">
+  	<%= render :partial => 'shared/fb_truth', :collection => @fb_truths %>
+	</div>
+<% end %>
