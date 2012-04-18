@@ -13,8 +13,9 @@ skip_before_filter :verify_authenticity_token
         @fb_user = FbGraph::User.me(current_user.token)
         @facebook_friends = @fb_user.friends.map &:identifier
         @registered_friends = User.where("facebook_id IN (?)", @facebook_friends)
+        @fb_truths = Micropost.where("belongs_to_id IN (?)", @registered_friends)
       end
-      if Micropost.where("belongs_to_id IN (?)", @followers).exists?
+      if @followers.count > 2
         @feed_items = Micropost.order.where("belongs_to_id IN (?)", @followers).paginate(:page => params[:page], :per_page => 20)
       elsif current_user.authentications.empty?
         @feed_items = Micropost.order.where("belongs_to_id IN (?)", @followers).paginate(:page => params[:page], :per_page => 20)

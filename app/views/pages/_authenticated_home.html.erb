@@ -89,8 +89,9 @@ window.open( "http://twitter.com/share?url=<%= root_url%><%= current_user.userna
 					
 						<a href="http://twitter.com/share?url=url_you_wish_the_tweet_to_link_back_to&text=the%20text%20you%20wish%20the%20tweet%20to%20say&count=none/" class="custom-tweet-button" target="_blank" onClick="tweetpopup(); return false;" rel="nofollow" style="color:#FFFFFF;">Share on Twitter</a>
 
-
-				
+				<%# unless current_user.authentications.empty? %>
+					<%# render 'shared/fb_truth_feed' %>
+				<%# end %>
 				<div class="fb_feed_friends">
 					Friends on truthpage.me
 				</div>

@@ -165,13 +165,14 @@ background-image: -webkit-gradient(
 	margin-top:-13px;
 	margin-left:25px;
 }
+
 .header_text li a {
   color:#2A4668;
   text-decoration:none;
   text-align:center;
 }
 .header_text li a:hover {
-
+	cursor:pointer;
 }
 .header_links {
 	font-family:arial;
