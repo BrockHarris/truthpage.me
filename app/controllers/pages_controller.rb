@@ -9,7 +9,7 @@ skip_before_filter :verify_authenticity_token
       @rating = Rating.new(params[:rating])
       @micropost = Micropost.new
       @followers = current_user.following
-      @feed_items = Micropost.where("belongs_to_id IN (?)", @followers).paginate(:page => params[:page], :per_page => 20)
+      @feed_items = Micropost.order.where("belongs_to_id IN (?)", @followers).paginate(:page => params[:page], :per_page => 20)
       unless current_user.authentications.empty?
         @fb_user = FbGraph::User.me(current_user.token)
         @facebook_friends = @fb_user.friends.map &:identifier
