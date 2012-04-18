@@ -4,9 +4,13 @@
 		<% else%>
 		 	<div class="notification_type"> 
 		 		<% if notification.try(:noname?)%>
-		 			<%= link_to "Someone", current_user.username %> <%= notification.format %>
+		 			<%= link_to "Someone", current_user.username %> 
+                    <%= notification.format %> 
+                    <%= link_to "view", current_user %>
 		 		<% else %>
-    			<%= link_to notification.sender.username, current_user.username %> <%= notification.format %>
+    			<%= link_to notification.sender.username, notification.sender.username %> 
+                <%= notification.format %>
+                <%= link_to "view", current_user, :style=>"font-size:10pt; color:#777;" %>
     		<% end %>
     	</div>
     	<% unless notification.micropost_content.blank? %>
