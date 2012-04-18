@@ -1,3 +1,38 @@
+<body onLoad="warmup();">
+ 
+<div id="fb-root"></div>
+      <script src="http://connect.facebook.net/en_US/all.js">
+      </script>
+      <script>
+function postonwall(){
+         FB.init({ 
+            appId:'186414394781001', cookie:true, 
+            status:true, xfbml:true
+         });
+ 
+         FB.ui({ method:'feed',from:'727488',to:'525366073' ,
+            message: 'testing sdk'},
+ 
+function(response) {
+    if (response && response.post_id) {
+       
+    } else {
+       
+    }
+  }
+);
+}
+   
+function warmup(){
+FB.init({ 
+       appId:'186414394781001', cookie:true, 
+       status:true, xfbml:true
+     });
+}
+</script>
+
+<a href="#" onclick="postonwall();"><div class="quote"><center><h2>Post on  wall</h2></center></div></a>
+
 <table class="admin_container2">
   <thead>
     <tr>
