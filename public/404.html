@@ -2,69 +2,76 @@
 <html>
 <head>
 <title>
-truthpage.me
+Truthpage.me
 </title>
-	<style type="text/css">
-    .header_bar {
-		color: white;
-		background: 
-		-webkit-gradient(linear, left top, left bottom, 
-		color-stop(0%,rgba(107,157,219,1)), 
-		color-stop(100%,rgba(35,83,138,1)));
-		width: 1000px;
-		height:70px;
-		margin-left:auto;
-		margin-right:auto;
-		border-radius: 0px 0px 4px 4px; 
-		-moz-border-radius: 0px 0px 4px 4px; 
-		-webkit-border-radius: 0px 0px 4px 4px; 
-		moz-box-shadow: 0 0 6px 2px #888;
-		-webkit-box-shadow: 0 0 6px 2px#888;
-		box-shadow: 0 0 6px 1px #999;
-	}
-  	</style>
-	<style>
-	.header_text {
-		padding-top:10px;
-		font-weight:400;
-		font-size: 32pt;
-	  font-family: book antiqua;
-	  text-shadow: rgba(0,0,0,0.3) -1px 0, 
-	  						 rgba(0,0,0,0.3) 0 -1px, 
-	  						 rgba(255,255,255,0.5) 0 1px, 
-	  						 rgba(0,0,0,0.3) -1px -2px;
-		color: #EEE;
-		margin-top:-15px;
-		margin-left:15px;
-	}
-	</style>
-	
-  <title>The page you were looking for doesn't exist (404)</title>
   <style type="text/css">
+    .header_bar {
+    color: white;
+    background: 
+    -webkit-gradient(linear, left top, left bottom, 
+    color-stop(0%,rgba(107,157,219,1)), 
+    color-stop(100%,rgba(35,83,138,1)));
+    width: 1000px;
+    height:70px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 0px 0px 4px 4px; 
+    -moz-border-radius: 0px 0px 4px 4px; 
+    -webkit-border-radius: 0px 0px 4px 4px; 
+    moz-box-shadow: 0 0 6px 2px #888;
+    -webkit-box-shadow: 0 0 6px 2px#888;
+    box-shadow: 0 0 6px 1px #999;
+  }
+
+  .header_text {
+    padding-top:10px;
+    font-weight:400;
+    font-size: 32pt;
+    font-family: book antiqua;
+    text-shadow: rgba(0,0,0,0.3) -1px 0, 
+                 rgba(0,0,0,0.3) 0 -1px, 
+                 rgba(255,255,255,0.5) 0 1px, 
+                 rgba(0,0,0,0.3) -1px -2px;
+    color: #EEE;
+    margin-top:-15px;
+    margin-left:15px;
+  }
+
+
     body {
-      background-color: #E8E8E8;
+      background-image: url('http://truthpage.me/images/error_bg.png');
+      margin:0;
+      background-repeat:repeat;
+      background-attachment:fixed;
     }
     div.header_bar {
       color: white;
-      background: 
-      -webkit-gradient(linear, left top, left bottom, 
-      color-stop(0%,rgba(107,157,219,1)), 
-      color-stop(100%,rgba(35,83,138,1)));
-      width: 1000px;
-      height:70px;
-      margin-top:-10px;
-      margin-left:auto;
-      margin-right:auto;
-      border-radius: 0px 0px 4px 4px; 
-      -moz-border-radius: 0px 0px 4px 4px; 
-      -webkit-border-radius: 0px 0px 4px 4px; 
+      background-image: linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+      background-image: -o-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+      background-image: -moz-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+      background-image: -webkit-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+      background-image: -ms-linear-gradient(bottom, rgb(38,83,135) 1%, rgb(87,145,207) 97%);
+      background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.01, rgb(38,83,135)),
+      color-stop(0.97, rgb(87,145,207))
+      );
+      height:80px;
+      margin:0;
       moz-box-shadow: 0 0 6px 2px #888;
       -webkit-box-shadow: 0 0 6px 2px#888;
       box-shadow: 0 0 6px 1px #999;
+      width:100%;
+      border-bottom:1px solid #444;
+      -moz-border-radius:0px;
+      -webkit-border-radius:0px;
+      -khtml-border-radius:0px;
+      border-radius:0px;
     }
     div.header_text {
       color:#2A4668;
-      padding-top:10px;
       font-weight:400;
       font-size: 32pt;
       font-family: book antiqua;
@@ -72,30 +79,77 @@ truthpage.me
                    rgba(0,0,0,0.3) 0 -1px, 
                    rgba(255,255,255,0.5) 0 1px, 
                    rgba(0,0,0,0.3) -1px -2px;
-      margin-top:-15px;
-      margin-left:15px;
+      padding-top:17px;
+      margin-left:25px;
     }
 
     div.dialog {
-      	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-		   font-weight: 150;}
-		h1 { font-size: 32px; color: #2A4668; line-height: 1.5em; text-align: center; padding: 40px; }
-		h2 { font-size: 32px; color: #2A4668; line-height: 1.5em; text-align: center; }
+      padding:20px;
+      position:relative;
+      z-index:-9999;
+      margin-top:0;
+      margin-left:auto;
+      margin-right:auto;
+      width:75%;
+      background-color:#FFFFFF;
+      -webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.9);
+      -moz-box-shadow:    0px 0px 3px rgba(50, 50, 50, 0.9);
+      box-shadow:         0px 0px 3px rgba(50, 50, 50, 0.9);
+    }
+    div.text_upper {
+      border:1px solid #EEE;
+      -moz-border-radius:8px;
+      -webkit-border-radius:8px;
+      -khtml-border-radius:8px;
+      border-radius:8px;
+      padding-top:35px;
+      height:70px;
+      text-align:center;
+      color:#2764A2;
+      background:#E8EFFF;
+      font-size: 20pt;
+      line-height: 1px;
+      letter-spacing: -1px;
+      font-weight:500;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-shadow:0px 0px 1px #666;
+    }
+    div.text_lower {
+      color:#666;
+      padding-top:10px;
+      border:1px solid #EEE;
+      -moz-border-radius:8px;
+      -webkit-border-radius:8px;
+      -khtml-border-radius:8px;
+      margin-top:20px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-align:center;
+      background:#E8EFFF;
+      height:30px;
+    }
+    div.subhead {
+      color:#888;
+      margin-top:40px;
+      font-size:12pt;
+      font-weight:400;
+      letter-spacing:0;
+      text-shadow:0px 0px 0px #666;
+    }
 
   </style>
 </head>
-
 <body>
-  <!-- This file lives in public/404.html -->
-<div class= "header_bar">
-<div class+ "dialog">
-
-  <div class="header_bar">
-    <div class="header_text"> truthpage.me </div>
-  </div>
+<div class="header_bar">
+  <div class="header_text"> truthpage.me </div>
+</div>
   <div class="dialog">
-    <h1>Oh snap! We can't find that page. We'll work on fixing this.</h1>
-	<h2>Click <a href="#" onclick="history.back();">here</a> to go back. </h2>
+    <div class="text_upper">
+      I couldn't find the page you were looking for.
+      <div class="subhead">
+        If you were attempting to visit a profile double-check the URL.
+      </div>
+    </div>
+    <div class="text_lower">Click <a href="http://truthpage.me" style="color:#005588;">here</a> to go back to the homepage.</div>
   </div>
 </body>
 </html>
