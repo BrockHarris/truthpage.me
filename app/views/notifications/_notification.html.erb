@@ -6,7 +6,7 @@
 		 		<% if notification.try(:noname?)%>
 		 			<%= link_to "Someone", current_user.username %> 
                     <%= notification.format %> 
-                    <%= link_to "view", current_user %>
+                    <%= link_to "view", current_user, :style=>"font-size:10pt; color:#777;"  %>
 		 		<% else %>
     			<%= link_to notification.sender.username, notification.sender.username %> 
                 <%= notification.format %>
