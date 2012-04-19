@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(:version => 20120414181404) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
-    t.boolean  "anon",                            :default => false
-    t.integer  "truth_percentage"
+    t.boolean  "anon"
     t.string   "stat",             :limit => nil
+    t.integer  "truth_percentage"
   end
 
   add_index "microposts", ["user_id", "profile_id", "created_at"], :name => "index_microposts_on_user_id_and_profile_id_and_created_at"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20120414181404) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "noname",            :default => false
+    t.string   "content"
     t.string   "micropost_content"
     t.string   "comment"
   end
@@ -86,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20120414181404) do
     t.integer  "followed_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
 
   add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
@@ -112,7 +114,7 @@ ActiveRecord::Schema.define(:version => 20120414181404) do
     t.string   "activation_code",          :limit => 100
     t.datetime "activated_at"
     t.datetime "activation_email_sent_at"
-    t.boolean  "admin",                                   :default => false
+    t.boolean  "admin"
     t.integer  "created_by"
     t.string   "photo_file_name"
     t.string   "photo_file_type"
@@ -120,7 +122,7 @@ ActiveRecord::Schema.define(:version => 20120414181404) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
-    t.string   "blurb",                    :limit => nil
+    t.string   "blurb"
     t.boolean  "mail_subscription",                       :default => true
     t.string   "token"
     t.string   "facebook_id"
@@ -134,7 +136,61 @@ ActiveRecord::Schema.define(:version => 20120414181404) do
     t.boolean  "request_email",                           :default => true
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email"
-  add_index "users", ["username"], :name => "index_users_on_username"
+  create_table "vanities", :force => true do |t|
+    t.string  "name"
+    t.integer "vain_id"
+    t.string  "vain_type"
+  end
+
+  add_index "vanities", ["name"], :name => "index_vanities_on_name", :unique => true
+  add_index "vanities", ["vain_id"], :name => "index_vanities_on_vain_id"
+  add_index "vanities", ["vain_type"], :name => "index_vanities_on_vain_type"
+
+  create_table "vanity_conversions", :force => true do |t|
+    t.integer "vanity_experiment_id"
+    t.integer "alternative"
+    t.integer "conversions"
+  end
+
+  add_index "vanity_conversions", ["vanity_experiment_id", "alternative"], :name => "by_experiment_id_and_alternative"
+
+  create_table "vanity_experiments", :force => true do |t|
+    t.string   "experiment_id"
+    t.integer  "outcome"
+    t.datetime "created_at"
+    t.datetime "completed_at"
+  end
+
+  add_index "vanity_experiments", ["experiment_id"], :name => "index_vanity_experiments_on_experiment_id"
+
+  create_table "vanity_metric_values", :force => true do |t|
+    t.integer "vanity_metric_id"
+    t.integer "index"
+    t.integer "value"
+    t.string  "date"
+  end
+
+  add_index "vanity_metric_values", ["vanity_metric_id"], :name => "index_vanity_metric_values_on_vanity_metric_id"
+
+  create_table "vanity_metrics", :force => true do |t|
+    t.string   "metric_id"
+    t.datetime "updated_at"
+  end
+
+  add_index "vanity_metrics", ["metric_id"], :name => "index_vanity_metrics_on_metric_id"
+
+  create_table "vanity_participants", :force => true do |t|
+    t.string  "experiment_id"
+    t.string  "identity"
+    t.integer "shown"
+    t.integer "seen"
+    t.integer "converted"
+  end
+
+  add_index "vanity_participants", ["experiment_id", "converted"], :name => "by_experiment_id_and_converted"
+  add_index "vanity_participants", ["experiment_id", "identity"], :name => "by_experiment_id_and_identity"
+  add_index "vanity_participants", ["experiment_id", "seen"], :name => "by_experiment_id_and_seen"
+  add_index "vanity_participants", ["experiment_id", "shown"], :name => "by_experiment_id_and_shown"
+  add_index "vanity_participants", ["experiment_id"], :name => "index_vanity_participants_on_experiment_id"
 
 end
