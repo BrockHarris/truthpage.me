@@ -1806,11 +1806,12 @@ table.microposts tr {
 	font-size:12pt;
 }
 .share_profile_url {
-	text-align:left;
+	text-align:center;
 	color:#56A8CE;
 	margin-bottom:15px;
 	margin-top:5px;
 	margin-left:3px;
+	overflow:auto;
 }
 .dashfeed_content_noshow {
 	color:#666;
