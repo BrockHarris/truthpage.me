@@ -60,7 +60,7 @@ Truthpage::Application.routes.draw do
   end
 
   controller :users do
-    match ':id' => :show, :via => :get, :constraints => { :id => /[A-Za-z0-9\-\+]+/ }
+    match ':id' => :show, :via => :get, :constraints => { :id => /[A-Za-z0-9\-\_\+]+/ }
   end
 
   root :to => 'pages#home'
