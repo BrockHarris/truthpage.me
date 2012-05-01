@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 skip_before_filter :verify_authenticity_token
   def home
-    @faces = User.order('created_at DESC').all(:limit => 9)
+    @faces = User.created_order.all(:limit => 16)
     @users = User.all
     @title = "Truthpage.me"
     if current_user
